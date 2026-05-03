@@ -1,0 +1,11 @@
+{
+  "history": [
+    {
+      "role": "user",
+      "content": "test message",
+      "timestamp": "2026-04-26T20:18:21.817001"
+    }
+  ],
+  "projects": {},
+  "last_clean": "2026-04-26T20:18:21.817001"
+}

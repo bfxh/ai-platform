@@ -1,0 +1,252 @@
+{
+  "name": "terraria-mod-compatibility",
+  "version": "1.0.0",
+  "description": "泰拉瑞亚模组兼容性系统 - 为GPU粒子系统添加多模组兼容支持",
+  "author": "AI Assistant",
+  "category": "game_modding",
+  "tags": ["terraria", "compatibility", "mods", "gpu", "particles"],
+  
+  "capabilities": [
+    "模组兼容层创建",
+    "粒子自动转换",
+    "模组间通信API",
+    "兼容性测试",
+    "冲突检测",
+    "联机兼容支持",
+    "网络同步",
+    "多服务器兼容"
+  ],
+  
+  "supported_mods": [
+    {
+      "name": "CalamityMod",
+      "status": "full",
+      "features": ["native_support", "gpu_particles", "auto_convert", "online_compatibility"]
+    },
+    {
+      "name": "InfernumMode",
+      "status": "full",
+      "features": ["native_support", "gpu_particles", "online_compatibility"]
+    },
+    {
+      "name": "ThoriumMod",
+      "status": "full",
+      "features": ["compatibility_layer", "particle_convert", "online_compatibility"]
+    },
+    {
+      "name": "FargoSouls",
+      "status": "full",
+      "features": ["compatibility_layer", "particle_convert", "online_compatibility"]
+    },
+    {
+      "name": "SpiritMod",
+      "status": "full",
+      "features": ["compatibility_layer", "particle_convert", "online_compatibility"]
+    },
+    {
+      "name": "StarsAbove",
+      "status": "full",
+      "features": ["compatibility_layer", "particle_convert", "online_compatibility"]
+    },
+    {
+      "name": "ParticleLibrary",
+      "status": "partial",
+      "features": ["auto_convert", "online_compatibility"]
+    },
+    {
+      "name": "TerrariaOverhaul",
+      "status": "partial",
+      "features": ["config_adjustment", "online_compatibility"]
+    }
+  ],
+  
+  "inputs": {
+    "target_mods": {
+      "type": "array",
+      "required": false,
+      "description": "目标兼容模组列表",
+      "default": ["CalamityMod", "ThoriumMod", "FargoSouls"]
+    },
+    "auto_convert": {
+      "type": "boolean",
+      "required": false,
+      "description": "自动转换粒子",
+      "default": true
+    },
+    "create_api": {
+      "type": "boolean",
+      "required": false,
+      "description": "创建模组间通信API",
+      "default": true
+    },
+    "enable_testing": {
+      "type": "boolean",
+      "required": false,
+      "description": "启用兼容性测试",
+      "default": true
+    },
+    "enable_online_compatibility": {
+      "type": "boolean",
+      "required": false,
+      "description": "启用联机兼容支持",
+      "default": true
+    },
+    "network_sync": {
+      "type": "boolean",
+      "required": false,
+      "description": "启用网络同步",
+      "default": true
+    }
+  },
+  
+  "outputs": {
+    "compatibility_layer": {
+      "type": "file",
+      "description": "兼容层文件"
+    },
+    "api_system": {
+      "type": "file",
+      "description": "API系统文件"
+    },
+    "test_framework": {
+      "type": "file",
+      "description": "测试框架文件"
+    },
+    "compatibility_report": {
+      "type": "report",
+      "description": "兼容性报告"
+    },
+    "online_compatibility_layer": {
+      "type": "file",
+      "description": "联机兼容层文件"
+    },
+    "network_sync_system": {
+      "type": "file",
+      "description": "网络同步系统文件"
+    },
+    "online_compatibility_report": {
+      "type": "report",
+      "description": "联机兼容性报告"
+    }
+  },
+  
+  "workflow": {
+    "steps": [
+      {
+        "id": "scan_mods",
+        "name": "扫描已加载模组",
+        "description": "扫描并列出所有已加载的模组",
+        "action": "scan_loaded_mods"
+      },
+      {
+        "id": "analyze_compatibility",
+        "name": "分析兼容性",
+        "description": "分析每个模组的粒子系统兼容性",
+        "action": "analyze_mod_compatibility"
+      },
+      {
+        "id": "create_layer",
+        "name": "创建兼容层",
+        "description": "为每个模组创建兼容层",
+        "action": "create_compatibility_layer"
+      },
+      {
+        "id": "generate_api",
+        "name": "生成API",
+        "description": "生成模组间通信API",
+        "action": "generate_mod_api"
+      },
+      {
+        "id": "create_online_layer",
+        "name": "创建联机兼容层",
+        "description": "为每个模组创建联机兼容层",
+        "action": "create_online_compatibility_layer"
+      },
+      {
+        "id": "create_network_sync",
+        "name": "创建网络同步系统",
+        "description": "创建网络同步系统",
+        "action": "create_network_sync_system"
+      },
+      {
+        "id": "create_tests",
+        "name": "创建测试",
+        "description": "创建兼容性测试框架",
+        "action": "create_test_framework"
+      },
+      {
+        "id": "test_online_compatibility",
+        "name": "测试联机兼容性",
+        "description": "测试联机兼容性",
+        "action": "test_online_compatibility"
+      },
+      {
+        "id": "generate_report",
+        "name": "生成报告",
+        "description": "生成兼容性报告",
+        "action": "generate_compatibility_report"
+      },
+      {
+        "id": "generate_online_report",
+        "name": "生成联机兼容性报告",
+        "description": "生成联机兼容性报告",
+        "action": "generate_online_compatibility_report"
+      }
+    ]
+  },
+  
+  "commands": {
+    "setup": {
+      "description": "设置模组兼容性系统",
+      "usage": "terraria-mod-compatibility setup --target_mods CalamityMod,ThoriumMod --enable_online_compatibility true"
+    },
+    "test": {
+      "description": "测试模组兼容性",
+      "usage": "terraria-mod-compatibility test --mod_name ThoriumMod"
+    },
+    "convert": {
+      "description": "转换模组粒子",
+      "usage": "terraria-mod-compatibility convert --source_mod ThoriumMod --particle_type Dust"
+    },
+    "report": {
+      "description": "生成兼容性报告",
+      "usage": "terraria-mod-compatibility report --output %DEV_DIR%\\泰拉瑞亚\\兼容性报告.md"
+    },
+    "online_setup": {
+      "description": "设置联机兼容性系统",
+      "usage": "terraria-mod-compatibility online_setup --target_mods CalamityMod,ThoriumMod"
+    },
+    "test_online": {
+      "description": "测试联机兼容性",
+      "usage": "terraria-mod-compatibility test_online --mod_name CalamityMod"
+    },
+    "sync_test": {
+      "description": "测试网络同步",
+      "usage": "terraria-mod-compatibility sync_test --particle_count 10000"
+    },
+    "online_report": {
+      "description": "生成联机兼容性报告",
+      "usage": "terraria-mod-compatibility online_report --output %DEV_DIR%\\泰拉瑞亚\\联机兼容性报告.md"
+    }
+  },
+  
+  "examples": [
+    {
+      "name": "为多个模组设置兼容性",
+      "command": "terraria-mod-compatibility setup --target_mods CalamityMod,ThoriumMod,FargoSouls",
+      "result": "已为3个模组创建兼容层，支持自动粒子转换"
+    },
+    {
+      "name": "测试ThoriumMod兼容性",
+      "command": "terraria-mod-compatibility test --mod_name ThoriumMod",
+      "result": "兼容性测试通过，所有粒子类型支持转换"
+    }
+  ],
+  
+  "metadata": {
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "license": "MIT",
+    "repository": "local"
+  }
+}

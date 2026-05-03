@@ -1,0 +1,47 @@
+name: test-loop
+trigger: manual
+nodes:
+  - id: launch
+    type: cli
+    ref: game-launcher
+    input:
+      args:
+        - "--editor"
+        - "--map"
+        - "TestLab"
+  - id: explore
+    type: skill
+    ref: explore
+    input:
+      actions:
+        - move
+        - jump
+        - attack
+      duration: 60
+  - id: verify
+    type: mcp
+    ref: game-state
+    input:
+      checks:
+        - position_changed
+        - no_crash
+  - id: record
+    type: skill
+    ref: explore
+    input:
+      action: record_result
+  - id: cleanup
+    type: cli
+    ref: game-launcher
+    input:
+      action: stop
+edges:
+  - from: launch
+    to: explore
+  - from: explore
+    to: verify
+  - from: verify
+    to: record
+  - from: record
+    to: cleanup
+description: 游戏闭环测试流程

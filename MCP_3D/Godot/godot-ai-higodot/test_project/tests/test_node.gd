@@ -1,0 +1,1335 @@
+@tool
+extends McpTestSuite
+
+const NodeHandler := preload("res://addons/godot_ai/handlers/node_handler.gd")
+
+## Tests for NodeHandler — node reads and writes.
+
+var _handler: NodeHandler
+var _undo_redo: EditorUndoRedoManager
+
+const TEST_MATERIAL_PATH := "res://tests/_mcp_test_material.tres"
+
+
+func suite_name() -> String:
+	return "node"
+
+
+func suite_setup(ctx: Dictionary) -> void:
+	_undo_redo = ctx.get("undo_redo")
+	_handler = NodeHandler.new(_undo_redo)
+	var mat := StandardMaterial3D.new()
+	ResourceSaver.save(mat, TEST_MATERIAL_PATH)
+
+
+func suite_teardown() -> void:
+	if FileAccess.file_exists(TEST_MATERIAL_PATH):
+		DirAccess.remove_absolute(TEST_MATERIAL_PATH)
+
+
+# ----- get_children -----
+
+func test_get_children_of_root() -> void:
+	var result := _handler.get_children({"path": "/Main"})
+	assert_has_key(result, "data")
+	assert_has_key(result.data, "children")
+	assert_gt(result.data.count, 0, "Main should have children")
+	var names: Array[String] = []
+	for child: Dictionary in result.data.children:
+		names.append(child.name)
+	assert_contains(names, "Camera3D")
+	assert_contains(names, "World")
+
+
+func test_get_children_of_world() -> void:
+	var result := _handler.get_children({"path": "/Main/World"})
+	assert_has_key(result, "data")
+	assert_eq(result.data.count, 1, "World should have 1 child")
+	assert_eq(result.data.children[0].name, "Ground")
+
+
+func test_get_children_includes_metadata() -> void:
+	var result := _handler.get_children({"path": "/Main"})
+	var first: Dictionary = result.data.children[0]
+	assert_has_key(first, "name")
+	assert_has_key(first, "type")
+	assert_has_key(first, "path")
+	assert_has_key(first, "children_count")
+
+
+func test_get_children_invalid_path() -> void:
+	var result := _handler.get_children({"path": "/Main/DoesNotExist"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_get_children_missing_path() -> void:
+	var result := _handler.get_children({})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+# ----- get_node_properties -----
+
+func test_get_properties_camera() -> void:
+	var result := _handler.get_node_properties({"path": "/Main/Camera3D"})
+	assert_has_key(result, "data")
+	assert_has_key(result.data, "properties")
+	assert_eq(result.data.node_type, "Camera3D")
+	## Camera3D should have "fov" among its properties
+	var prop_names: Array[String] = []
+	for prop: Dictionary in result.data.properties:
+		prop_names.append(prop.name)
+	assert_contains(prop_names, "fov", "Camera3D should have fov property")
+
+
+func test_get_properties_has_value_and_type() -> void:
+	var result := _handler.get_node_properties({"path": "/Main/Camera3D"})
+	var fov_prop: Dictionary
+	for prop: Dictionary in result.data.properties:
+		if prop.name == "fov":
+			fov_prop = prop
+			break
+	assert_has_key(fov_prop, "value")
+	assert_has_key(fov_prop, "type")
+	assert_eq(fov_prop.type, "float")
+	assert_gt(fov_prop.value, 0, "FOV should be positive")
+
+
+func test_get_properties_invalid_path() -> void:
+	var result := _handler.get_node_properties({"path": "/Main/Nope"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_get_properties_missing_path() -> void:
+	var result := _handler.get_node_properties({})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+# ----- get_groups -----
+
+func test_get_groups_returns_array() -> void:
+	var result := _handler.get_groups({"path": "/Main/Camera3D"})
+	assert_has_key(result, "data")
+	assert_has_key(result.data, "groups")
+	assert_true(result.data.groups is Array, "groups should be an Array")
+
+
+func test_get_groups_invalid_path() -> void:
+	var result := _handler.get_groups({"path": "/Main/Missing"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+# ----- create_node -----
+
+func test_create_node_basic() -> void:
+	var result := _handler.create_node({
+		"type": "Node3D",
+		"name": "_McpTest",
+		"parent_path": "/Main",
+	})
+	assert_has_key(result, "data")
+	assert_true(str(result.data.name).begins_with("_McpTest"), "Name should start with _McpTest")
+	assert_eq(result.data.type, "Node3D")
+	assert_true(result.data.undoable, "Create should be undoable")
+	## Clean up via undo (reverses the create action)
+	_undo_redo.undo()
+
+
+func test_create_node_invalid_type() -> void:
+	var result := _handler.create_node({"type": "NotARealNodeType"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_create_node_missing_type() -> void:
+	var result := _handler.create_node({})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_create_node_non_node_type() -> void:
+	var result := _handler.create_node({"type": "Resource"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_create_node_accepts_root_alias_for_parent_path() -> void:
+	## Agents reach for /root/Main right after scene creation. Resolve it as
+	## an alias for the edited scene root rather than failing.
+	var result := _handler.create_node({
+		"type": "Node3D",
+		"name": "_McpTestRootAlias",
+		"parent_path": "/root/Main",
+	})
+	assert_has_key(result, "data")
+	assert_eq(result.data.parent_path, "/Main", "should resolve to scene root")
+	_undo_redo.undo()
+
+
+func test_create_node_parent_not_found_error_names_convention() -> void:
+	## The plain "Parent not found: X" error doesn't tell the agent that
+	## paths are scene-relative. The upgraded message must spell that out.
+	var result := _handler.create_node({
+		"type": "Node3D",
+		"parent_path": "/SomeBogusPath",
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "relative to the edited scene root")
+	assert_contains(result.error.message, "Scene root is")
+
+
+# ----- delete_node -----
+
+func test_delete_node_basic() -> void:
+	## Create a node, then delete it
+	_handler.create_node({
+		"type": "Node3D",
+		"name": "_McpTestDelete",
+		"parent_path": "/Main",
+	})
+	var result := _handler.delete_node({"path": "/Main/_McpTestDelete"})
+	assert_has_key(result, "data")
+	assert_true(result.data.undoable, "Delete should be undoable")
+
+
+func test_delete_node_scene_root() -> void:
+	var result := _handler.delete_node({"path": "/Main"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_delete_node_invalid_path() -> void:
+	var result := _handler.delete_node({"path": "/Main/DoesNotExist"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_delete_node_missing_path() -> void:
+	var result := _handler.delete_node({})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+# ----- reparent_node -----
+
+func test_reparent_scene_root() -> void:
+	var result := _handler.reparent_node({"path": "/Main", "new_parent": "/Main/World"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_reparent_missing_new_parent() -> void:
+	var result := _handler.reparent_node({"path": "/Main/Camera3D"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_reparent_to_self() -> void:
+	var result := _handler.reparent_node({"path": "/Main/Camera3D", "new_parent": "/Main/Camera3D"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_reparent_to_own_descendant_errors_without_destroying_subtree() -> void:
+	## Issue #121 regression test. Before the fix, reparenting a node into one
+	## of its own descendants would silently succeed, destroying the entire
+	## subtree (both the node and the descendant disappeared from the scene).
+	## The cycle-check `new_parent.is_ancestor_of(node)` was inverted — it
+	## caught "reparent to own ancestor" (a valid operation) rather than
+	## "reparent to own descendant" (the one that creates a cycle).
+	##
+	## Build a throwaway _McpTestReparent/_McpTestChild subtree so the test
+	## can't pollute the shared scene fixture regardless of the outcome.
+	var chain := _build_temp_chain(["_McpTestReparent", "_McpTestChild"] as Array[String])
+	var scene_root := EditorInterface.get_edited_scene_root()
+	var parent_before := scene_root.get_node_or_null("_McpTestReparent")
+	var child_before := scene_root.get_node_or_null("_McpTestReparent/_McpTestChild")
+	assert_ne(parent_before, null, "precondition: parent subtree created")
+	assert_ne(child_before, null, "precondition: child under parent created")
+
+	var result := _handler.reparent_node({
+		"path": "/Main/_McpTestReparent",
+		"new_parent": chain.leaf_path,
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+	## Subtree must be unchanged — no accidental remove_child() should have run.
+	assert_eq(scene_root.get_node_or_null("_McpTestReparent"), parent_before, "parent must still exist")
+	assert_eq(scene_root.get_node_or_null("_McpTestReparent/_McpTestChild"), child_before, "child must still exist under parent")
+
+	chain.teardown.call()
+
+
+func test_reparent_to_ancestor_is_allowed() -> void:
+	## Coverage for the other half of the inverted cycle check: reparenting a
+	## node UP to one of its own ancestors is a perfectly valid operation and
+	## must succeed. Before the #121 fix this path would have been rejected
+	## by the inverted check.
+	##
+	## Build a throwaway _McpTestUpParent/_McpTestUpChild/_McpTestUpGrand
+	## subtree and reparent the grandchild up to the parent. Previous
+	## revisions of this test mutated shared scene nodes (/Main/World/Ground)
+	## and relied on _undo_redo.undo() to restore the scene for downstream
+	## suites — that teardown was flaky in CI and polluted scene_* tests.
+	var chain := _build_temp_chain(
+		["_McpTestUpParent", "_McpTestUpChild", "_McpTestUpGrand"] as Array[String]
+	)
+	var scene_root := EditorInterface.get_edited_scene_root()
+
+	var result := _handler.reparent_node({
+		"path": chain.leaf_path,
+		"new_parent": "/Main/_McpTestUpParent",
+	})
+	assert_has_key(result, "data")
+	assert_true(result.data.undoable, "reparent-up should be undoable")
+	assert_ne(scene_root.get_node_or_null("_McpTestUpParent/_McpTestUpGrand"), null,
+		"Grand should now be a direct child of _McpTestUpParent")
+
+	## Unwind: undo reparent first, then unwind each create via the helper.
+	## editor_undo walks both scene and global histories so actions registered
+	## against different targets unwind reliably across the chain.
+	editor_undo(_undo_redo)  # reparent
+	chain.teardown.call()
+
+
+## Build a nested chain of throwaway Node3D test nodes under /Main, returning
+## the deepest path and a teardown closure that unwinds each create via undo.
+## Used by the reparent regression tests; promote to test_suite.gd if a third
+## caller appears.
+func _build_temp_chain(names: Array[String]) -> Dictionary:
+	var parent_path := "/Main"
+	for name in names:
+		_handler.create_node({"type": "Node3D", "name": name, "parent_path": parent_path})
+		parent_path += "/" + name
+	var teardown := func() -> void:
+		for _i in names.size():
+			editor_undo(_undo_redo)
+	return {"leaf_path": parent_path, "teardown": teardown}
+
+
+# ----- set_property -----
+
+func test_set_property_float() -> void:
+	var result := _handler.set_property({
+		"path": "/Main/Camera3D",
+		"property": "fov",
+		"value": 90.0,
+	})
+	assert_has_key(result, "data")
+	assert_eq(result.data.property, "fov")
+	assert_true(result.data.undoable, "Set property should be undoable")
+	## Restore via undo
+	_undo_redo.undo()
+
+
+func test_set_property_missing_property() -> void:
+	var result := _handler.set_property({"path": "/Main/Camera3D", "value": 10})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_set_property_missing_value() -> void:
+	var result := _handler.set_property({"path": "/Main/Camera3D", "property": "fov"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_set_property_vector3_accepts_valid_dict() -> void:
+	## Positive guard for the #123 fix: a right-shape Vector3 dict must
+	## still coerce and land correctly. Prevents over-correcting the strict
+	## key check from breaking the happy path.
+	_handler.create_node({"type": "Node3D", "name": "_McpTestV3", "parent_path": "/Main"})
+	var result := _handler.set_property({
+		"path": "/Main/_McpTestV3",
+		"property": "position",
+		"value": {"x": 1.0, "y": 2.0, "z": 3.0},
+	})
+	assert_has_key(result, "data")
+	assert_true(result.data.undoable)
+	var node := EditorInterface.get_edited_scene_root().get_node("_McpTestV3") as Node3D
+	assert_eq(node.position, Vector3(1, 2, 3))
+	_undo_redo.undo()  # undo set
+	_undo_redo.undo()  # undo create
+
+
+func test_set_property_vector3_rejects_color_shaped_dict() -> void:
+	## Issue #123 regression: passing a Color-shaped dict {r,g,b,a} to a
+	## Vector3 slot used to silently zero-fill x/y/z and store (0,0,0)
+	## with status=ok. Must now return INVALID_PARAMS and leave the
+	## property unchanged.
+	_handler.create_node({"type": "Node3D", "name": "_McpTestBadV3", "parent_path": "/Main"})
+	var node := EditorInterface.get_edited_scene_root().get_node("_McpTestBadV3") as Node3D
+	var original := node.position
+
+	var result := _handler.set_property({
+		"path": "/Main/_McpTestBadV3",
+		"property": "position",
+		"value": {"r": 1, "g": 0, "b": 0, "a": 1},
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "Vector3")
+
+	assert_eq(node.position, original, "Position must be unchanged after a rejected coerce")
+	_undo_redo.undo()  # undo create
+
+
+func test_set_property_vector3_rejects_partial_dict() -> void:
+	## Second half of #123: a dict with some but not all required keys
+	## used to get the missing axes zero-filled (e.g. {x:1} → (1,0,0)).
+	## Must now reject.
+	_handler.create_node({"type": "Node3D", "name": "_McpTestPartial", "parent_path": "/Main"})
+	var result := _handler.set_property({
+		"path": "/Main/_McpTestPartial",
+		"property": "position",
+		"value": {"x": 1},  # missing y, z
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	_undo_redo.undo()  # undo create
+
+
+func test_set_property_color_rejects_vector3_shaped_dict() -> void:
+	## Symmetric check for Color coercion. Before the fix, passing
+	## {x,y,z} to a Color slot would stuff Color(0,0,0,1) silently.
+	## Exercises _coerce_value directly — the mismatch is detectable at
+	## the coercer boundary, no scene node needed.
+	var coerced = NodeHandler._coerce_value({"x": 1, "y": 0, "z": 0}, TYPE_COLOR)
+	assert_true(coerced is Dictionary, "Wrong-shape dict must flow through unchanged so caller's type check fires")
+
+
+# ----- #191 — non-dict inputs to compound targets must error loudly -----
+
+func test_set_property_vector3_rejects_array_input() -> void:
+	## Issue #191: passing [x,y,z] to a Vector3 property used to flow
+	## through _coerce_value unchanged and Godot default-constructed
+	## Vector3.ZERO via add_do_property. Must now reject and leave the
+	## property untouched.
+	_handler.create_node({"type": "Node3D", "name": "_McpTestArrV3", "parent_path": "/Main"})
+	var node := EditorInterface.get_edited_scene_root().get_node("_McpTestArrV3") as Node3D
+	var original := node.position
+
+	var result := _handler.set_property({
+		"path": "/Main/_McpTestArrV3",
+		"property": "position",
+		"value": [5, 5, 5],
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "Vector3")
+	## Read back the stored Variant — the silent-zero failure mode would
+	## leave the node at (0,0,0) even though the response said "error".
+	assert_eq(node.position, original, "Position must be unchanged after rejected array coerce")
+	_undo_redo.undo()  # undo create
+
+
+func test_set_property_vector3_rejects_json_string_input() -> void:
+	## Issue #191: a JSON string like "{\"x\":1,...}" used to fall through
+	## to add_do_property and store Vector3.ZERO.
+	_handler.create_node({"type": "Node3D", "name": "_McpTestStrV3", "parent_path": "/Main"})
+	var node := EditorInterface.get_edited_scene_root().get_node("_McpTestStrV3") as Node3D
+	var original := node.position
+
+	var result := _handler.set_property({
+		"path": "/Main/_McpTestStrV3",
+		"property": "position",
+		"value": "{\"x\":1,\"y\":2,\"z\":3}",
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "Vector3")
+	assert_eq(node.position, original, "Position must be unchanged after rejected string coerce")
+	_undo_redo.undo()  # undo create
+
+
+func test_set_property_vector2_rejects_array_input() -> void:
+	## Symmetric guard for Vector2.
+	_handler.create_node({"type": "Sprite2D", "name": "_McpTestArrV2", "parent_path": "/Main"})
+	var node := EditorInterface.get_edited_scene_root().get_node("_McpTestArrV2") as Sprite2D
+	var original := node.position
+
+	var result := _handler.set_property({
+		"path": "/Main/_McpTestArrV2",
+		"property": "position",
+		"value": [1, 2],
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "Vector2")
+	assert_eq(node.position, original, "Position must be unchanged after rejected array coerce")
+	_undo_redo.undo()  # undo create
+
+
+func test_set_property_color_rejects_array_input() -> void:
+	## Symmetric guard for Color.
+	_handler.create_node({"type": "Sprite2D", "name": "_McpTestArrColor", "parent_path": "/Main"})
+	var node := EditorInterface.get_edited_scene_root().get_node("_McpTestArrColor") as Sprite2D
+	var original := node.modulate
+
+	var result := _handler.set_property({
+		"path": "/Main/_McpTestArrColor",
+		"property": "modulate",
+		"value": [1, 0, 0, 1],
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "Color")
+	assert_eq(node.modulate, original, "Modulate must be unchanged after rejected array coerce")
+	_undo_redo.undo()  # undo create
+
+
+func test_check_coerced_array_vector3_returns_invalid_params() -> void:
+	## Direct unit check on the helper — no scene needed. Pins the
+	## error shape so the message format change in #191 stays bisect-friendly.
+	var coerce_err: Variant = NodeHandler._check_coerced([1, 2, 3], TYPE_VECTOR3)
+	assert_true(coerce_err is Dictionary, "Non-coerced Array input must produce an error dict")
+	assert_eq(coerce_err.error.code, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(coerce_err.error.message, "Vector3")
+	assert_contains(coerce_err.error.message, "Array")  # names the received type
+
+
+func test_check_coerced_noop_for_non_compound_target() -> void:
+	## TYPE_INT / TYPE_FLOAT / TYPE_BOOL are not handled by _coerce_value
+	## as compound targets; the strict check must return null so Godot's
+	## setter handles them. Otherwise every non-Vector property mutation
+	## would false-fail.
+	assert_eq(NodeHandler._check_coerced(42, TYPE_INT), null)
+	assert_eq(NodeHandler._check_coerced(true, TYPE_BOOL), null)
+	assert_eq(NodeHandler._check_coerced("hello", TYPE_STRING), null)
+	assert_eq(NodeHandler._check_coerced(null, TYPE_OBJECT), null)
+
+
+func test_check_coerced_passes_correct_compound_value() -> void:
+	## Right-typed compound values must pass through (return null) so the
+	## strict check doesn't false-fail the happy path.
+	assert_eq(NodeHandler._check_coerced(Vector3(1, 2, 3), TYPE_VECTOR3), null)
+	assert_eq(NodeHandler._check_coerced(Vector2(1, 2), TYPE_VECTOR2), null)
+	assert_eq(NodeHandler._check_coerced(Color(1, 0, 0), TYPE_COLOR), null)
+
+
+func test_coerce_value_passes_right_shape_color() -> void:
+	var coerced = NodeHandler._coerce_value({"r": 1.0, "g": 0.5, "b": 0.0, "a": 1.0}, TYPE_COLOR)
+	assert_true(coerced is Color)
+	assert_eq(coerced.r, 1.0)
+	assert_eq(coerced.g, 0.5)
+
+
+func test_coerce_value_accepts_color_without_alpha() -> void:
+	## Alpha is optional and defaults to 1.0 — {r,g,b} without 'a' is a
+	## valid shape. The strict check should only require r/g/b.
+	var coerced = NodeHandler._coerce_value({"r": 1.0, "g": 0.0, "b": 0.0}, TYPE_COLOR)
+	assert_true(coerced is Color)
+	assert_eq(coerced.a, 1.0)
+
+
+func test_set_property_resource_path() -> void:
+	## Use a fresh MeshInstance3D for a clean material_override slot.
+	_handler.create_node({
+		"type": "MeshInstance3D",
+		"name": "_McpTestMat",
+		"parent_path": "/Main",
+	})
+	var result := _handler.set_property({
+		"path": "/Main/_McpTestMat",
+		"property": "material_override",
+		"value": TEST_MATERIAL_PATH,
+	})
+	assert_has_key(result, "data")
+	assert_eq(result.data.value, TEST_MATERIAL_PATH)
+	assert_true(result.data.undoable)
+	_undo_redo.undo()  # undo assign
+	_undo_redo.undo()  # undo create
+
+
+func test_set_property_resource_not_found() -> void:
+	var result := _handler.set_property({
+		"path": "/Main/Camera3D",
+		"property": "environment",
+		"value": "res://does/not/exist.tres",
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_set_property_resource_null_clears() -> void:
+	_handler.create_node({
+		"type": "MeshInstance3D",
+		"name": "_McpTestClear",
+		"parent_path": "/Main",
+	})
+	_handler.set_property({
+		"path": "/Main/_McpTestClear",
+		"property": "material_override",
+		"value": TEST_MATERIAL_PATH,
+	})
+	var result := _handler.set_property({
+		"path": "/Main/_McpTestClear",
+		"property": "material_override",
+		"value": null,
+	})
+	assert_has_key(result, "data")
+	assert_eq(result.data.value, null)
+	_undo_redo.undo()
+	_undo_redo.undo()
+	_undo_redo.undo()
+
+
+func test_set_property_node_path() -> void:
+	_handler.create_node({
+		"type": "RemoteTransform3D",
+		"name": "_McpTestRemote",
+		"parent_path": "/Main",
+	})
+	var result := _handler.set_property({
+		"path": "/Main/_McpTestRemote",
+		"property": "remote_path",
+		"value": "../Camera3D",
+	})
+	assert_has_key(result, "data")
+	assert_eq(result.data.value, "../Camera3D")
+	_undo_redo.undo()
+	_undo_redo.undo()
+
+
+func test_set_property_nonexistent_property() -> void:
+	var result := _handler.set_property({
+		"path": "/Main/Camera3D",
+		"property": "nonexistent_xyz",
+		"value": 42,
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+# ----- set_property __class__ shortcut (fresh built-in Resource) -----
+
+func _add_mesh_instance_for_shortcut(node_name: String) -> Node:
+	var scene_root := EditorInterface.get_edited_scene_root()
+	if scene_root == null:
+		return null
+	var mi := MeshInstance3D.new()
+	mi.name = node_name
+	scene_root.add_child(mi)
+	mi.set_owner(scene_root)
+	return mi
+
+
+func test_set_property_class_dict_instantiates_fresh_resource() -> void:
+	var mi := _add_mesh_instance_for_shortcut("TestClassDictBox")
+	if mi == null:
+		skip("No scene root — is a scene open?")
+		return
+	var result := _handler.set_property({
+		"path": "/%s/TestClassDictBox" % mi.get_parent().name,
+		"property": "mesh",
+		"value": {"__class__": "BoxMesh", "size": {"x": 2, "y": 3, "z": 4}},
+	})
+	assert_has_key(result, "data")
+	# Assert on stored Variant — not just the response — per CLAUDE.md.
+	assert_true(mi.mesh is BoxMesh, "mesh should be a BoxMesh instance")
+	assert_true(mi.mesh.size is Vector3)
+	assert_eq(mi.mesh.size.x, 2.0)
+	assert_eq(mi.mesh.size.z, 4.0)
+	# Undo should restore null.
+	assert_true(editor_undo(_undo_redo), "mesh undo should succeed")
+	assert_true(mi.mesh == null)
+	if mi.get_parent():
+		mi.get_parent().remove_child(mi)
+	mi.queue_free()
+
+
+func test_set_property_class_dict_invalid_class() -> void:
+	var mi := _add_mesh_instance_for_shortcut("TestClassDictBad")
+	if mi == null:
+		skip("No scene root — is a scene open?")
+		return
+	var result := _handler.set_property({
+		"path": "/%s/TestClassDictBad" % mi.get_parent().name,
+		"property": "mesh",
+		"value": {"__class__": "NotARealClass"},
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	if mi.get_parent():
+		mi.get_parent().remove_child(mi)
+	mi.queue_free()
+
+
+func test_set_property_class_dict_abstract_class() -> void:
+	var mi := _add_mesh_instance_for_shortcut("TestClassDictAbstract")
+	if mi == null:
+		skip("No scene root — is a scene open?")
+		return
+	# Shape3D is truly abstract per ClassDB.can_instantiate().
+	# PrimitiveMesh is technically instantiable, so it's not a good test target.
+	var result := _handler.set_property({
+		"path": "/%s/TestClassDictAbstract" % mi.get_parent().name,
+		"property": "mesh",
+		"value": {"__class__": "Shape3D"},
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "abstract")
+	if mi.get_parent():
+		mi.get_parent().remove_child(mi)
+	mi.queue_free()
+
+
+func test_set_property_resource_path_still_works() -> void:
+	# Regression: __class__ shortcut must not break the existing
+	# "string value = res:// path" behavior.
+	var mi := _add_mesh_instance_for_shortcut("TestResPathRegression")
+	if mi == null:
+		skip("No scene root — is a scene open?")
+		return
+	var result := _handler.set_property({
+		"path": "/%s/TestResPathRegression" % mi.get_parent().name,
+		"property": "material_override",
+		"value": TEST_MATERIAL_PATH,
+	})
+	assert_has_key(result, "data")
+	assert_true(mi.material_override is StandardMaterial3D)
+	editor_undo(_undo_redo)
+	if mi.get_parent():
+		mi.get_parent().remove_child(mi)
+	mi.queue_free()
+
+
+# ----- _coerce_value / _serialize_value unit coverage -----
+
+func test_coerce_array_passthrough() -> void:
+	var coerced = NodeHandler._coerce_value([1, 2, 3], TYPE_ARRAY)
+	assert_true(coerced is Array)
+	assert_eq(coerced.size(), 3)
+
+
+func test_shared_key_constants_match_coercer_requirements() -> void:
+	## The shared key-list constants (#131) must stay aligned with what
+	## _coerce_value / _check_dict_coerce_failed actually require. If
+	## someone adds a new axis (e.g. Vector4) they should bump both.
+	assert_eq(NodeHandler.VECTOR2_KEYS, ["x", "y"])
+	assert_eq(NodeHandler.VECTOR3_KEYS, ["x", "y", "z"])
+	assert_eq(NodeHandler.COLOR_KEYS, ["r", "g", "b"])
+	# Dropping any required key must flip coercion off.
+	var missing_y = NodeHandler._coerce_value({"x": 1}, TYPE_VECTOR2)
+	assert_true(missing_y is Dictionary)
+	var missing_z = NodeHandler._coerce_value({"x": 1, "y": 2}, TYPE_VECTOR3)
+	assert_true(missing_z is Dictionary)
+	var missing_b = NodeHandler._coerce_value({"r": 1, "g": 0}, TYPE_COLOR)
+	assert_true(missing_b is Dictionary)
+
+
+func test_coerce_dictionary_passthrough() -> void:
+	var coerced = NodeHandler._coerce_value({"a": 1, "b": 2}, TYPE_DICTIONARY)
+	assert_true(coerced is Dictionary)
+	assert_eq(coerced["a"], 1)
+
+
+func test_coerce_node_path_from_string() -> void:
+	var coerced = NodeHandler._coerce_value("../Sibling", TYPE_NODE_PATH)
+	assert_true(coerced is NodePath)
+	assert_eq(str(coerced), "../Sibling")
+
+
+func test_coerce_string_name_from_string() -> void:
+	var coerced = NodeHandler._coerce_value("my_name", TYPE_STRING_NAME)
+	assert_true(coerced is StringName)
+
+
+func test_serialize_array_recursive() -> void:
+	var result = NodeHandler._serialize_value([Vector2(1, 2), "hello", 3])
+	assert_true(result is Array)
+	assert_eq(result[0]["x"], 1.0)
+	assert_eq(result[1], "hello")
+
+
+func test_serialize_dictionary_recursive() -> void:
+	var result = NodeHandler._serialize_value({"pos": Vector3(1, 2, 3), "name": "x"})
+	assert_true(result is Dictionary)
+	assert_eq(result["pos"]["z"], 3.0)
+	assert_eq(result["name"], "x")
+
+
+# Issue #214: AABB / Rect2 / Transform / Packed* used to come back as Godot's
+# debug-print strings (e.g. "[P: (0,0,0), S: (0,0,0)]" or "[]"), so agents
+# couldn't programmatically inspect or round-trip them. Each test below
+# asserts a specific structured shape — count-only / `is Dictionary` checks
+# would silently pass against the old broken behavior on most of these.
+
+func test_serialize_aabb_returns_position_and_size() -> void:
+	var result = NodeHandler._serialize_value(AABB(Vector3(1, 2, 3), Vector3(4, 5, 6)))
+	assert_true(result is Dictionary)
+	assert_has_key(result, "position")
+	assert_has_key(result, "size")
+	assert_eq(result["position"]["x"], 1.0)
+	assert_eq(result["position"]["y"], 2.0)
+	assert_eq(result["position"]["z"], 3.0)
+	assert_eq(result["size"]["x"], 4.0)
+	assert_eq(result["size"]["y"], 5.0)
+	assert_eq(result["size"]["z"], 6.0)
+
+
+func test_serialize_rect2_returns_position_and_size() -> void:
+	var result = NodeHandler._serialize_value(Rect2(1, 2, 3, 4))
+	assert_true(result is Dictionary)
+	assert_eq(result["position"]["x"], 1.0)
+	assert_eq(result["position"]["y"], 2.0)
+	assert_eq(result["size"]["x"], 3.0)
+	assert_eq(result["size"]["y"], 4.0)
+
+
+func test_serialize_rect2i_returns_position_and_size() -> void:
+	var result = NodeHandler._serialize_value(Rect2i(1, 2, 3, 4))
+	assert_true(result is Dictionary)
+	assert_eq(result["position"]["x"], 1)
+	assert_eq(result["size"]["y"], 4)
+
+
+func test_serialize_vector2i_returns_xy_dict() -> void:
+	var result = NodeHandler._serialize_value(Vector2i(7, 8))
+	assert_true(result is Dictionary)
+	assert_eq(result["x"], 7)
+	assert_eq(result["y"], 8)
+
+
+func test_serialize_vector3i_returns_xyz_dict() -> void:
+	var result = NodeHandler._serialize_value(Vector3i(7, 8, 9))
+	assert_true(result is Dictionary)
+	assert_eq(result["x"], 7)
+	assert_eq(result["y"], 8)
+	assert_eq(result["z"], 9)
+
+
+func test_serialize_vector4_returns_xyzw_dict() -> void:
+	var result = NodeHandler._serialize_value(Vector4(1, 2, 3, 4))
+	assert_true(result is Dictionary)
+	assert_eq(result["x"], 1.0)
+	assert_eq(result["y"], 2.0)
+	assert_eq(result["z"], 3.0)
+	assert_eq(result["w"], 4.0)
+
+
+func test_serialize_quaternion_returns_xyzw_dict() -> void:
+	var result = NodeHandler._serialize_value(Quaternion(0.1, 0.2, 0.3, 1.0))
+	assert_true(result is Dictionary)
+	assert_eq(result["w"], 1.0)
+
+
+func test_serialize_plane_returns_normal_and_d() -> void:
+	var result = NodeHandler._serialize_value(Plane(Vector3(0, 1, 0), 5))
+	assert_true(result is Dictionary)
+	assert_has_key(result, "normal")
+	assert_eq(result["normal"]["y"], 1.0)
+	assert_eq(result["d"], 5.0)
+
+
+func test_serialize_basis_returns_three_column_vectors() -> void:
+	var result = NodeHandler._serialize_value(Basis.IDENTITY)
+	assert_true(result is Dictionary)
+	# Identity basis: x=(1,0,0), y=(0,1,0), z=(0,0,1).
+	assert_eq(result["x"]["x"], 1.0)
+	assert_eq(result["y"]["y"], 1.0)
+	assert_eq(result["z"]["z"], 1.0)
+
+
+func test_serialize_transform2d_returns_basis_cols_and_origin() -> void:
+	var result = NodeHandler._serialize_value(Transform2D(0.0, Vector2(7, 8)))
+	assert_true(result is Dictionary)
+	assert_has_key(result, "x")
+	assert_has_key(result, "y")
+	assert_has_key(result, "origin")
+	assert_eq(result["origin"]["x"], 7.0)
+	assert_eq(result["origin"]["y"], 8.0)
+
+
+func test_serialize_transform3d_returns_basis_and_origin() -> void:
+	var result = NodeHandler._serialize_value(Transform3D(Basis.IDENTITY, Vector3(1, 2, 3)))
+	assert_true(result is Dictionary)
+	assert_has_key(result, "basis")
+	assert_has_key(result, "origin")
+	# Basis serializes recursively, so origin should be a {x,y,z} dict.
+	assert_eq(result["origin"]["x"], 1.0)
+	assert_eq(result["basis"]["x"]["x"], 1.0)
+
+
+func test_serialize_projection_returns_four_column_vectors() -> void:
+	var result = NodeHandler._serialize_value(Projection.IDENTITY)
+	assert_true(result is Dictionary)
+	for axis in ["x", "y", "z", "w"]:
+		assert_has_key(result, axis)
+		assert_has_key(result[axis], "w")  # column vectors are Vector4
+
+
+func test_serialize_packed_float32_array_returns_array_of_floats() -> void:
+	var packed := PackedFloat32Array([1.5, 2.5, 3.5])
+	var result = NodeHandler._serialize_value(packed)
+	assert_true(result is Array)
+	assert_eq(result.size(), 3)
+	assert_eq(result[0], 1.5)
+	assert_true(result[2] is float)
+
+
+func test_serialize_packed_float32_empty_returns_empty_array() -> void:
+	# Issue #214 repro: Label.tab_stops used to come back as the string "[]".
+	var result = NodeHandler._serialize_value(PackedFloat32Array())
+	assert_true(result is Array)
+	assert_eq(result.size(), 0)
+
+
+func test_serialize_packed_int32_array_returns_array_of_ints() -> void:
+	var result = NodeHandler._serialize_value(PackedInt32Array([10, 20, 30]))
+	assert_true(result is Array)
+	assert_eq(result[1], 20)
+
+
+func test_serialize_packed_byte_array_returns_array_of_ints() -> void:
+	var result = NodeHandler._serialize_value(PackedByteArray([0, 128, 255]))
+	assert_true(result is Array)
+	assert_eq(result[2], 255)
+
+
+func test_serialize_packed_string_array_returns_array_of_strings() -> void:
+	var result = NodeHandler._serialize_value(PackedStringArray(["a", "bb", "ccc"]))
+	assert_true(result is Array)
+	assert_eq(result[1], "bb")
+	assert_true(result[0] is String)
+
+
+func test_serialize_packed_vector2_array_returns_xy_dicts() -> void:
+	var packed := PackedVector2Array([Vector2(1, 2), Vector2(3, 4)])
+	var result = NodeHandler._serialize_value(packed)
+	assert_true(result is Array)
+	assert_eq(result.size(), 2)
+	assert_eq(result[0]["x"], 1.0)
+	assert_eq(result[1]["y"], 4.0)
+
+
+func test_serialize_packed_vector3_array_returns_xyz_dicts() -> void:
+	var result = NodeHandler._serialize_value(PackedVector3Array([Vector3(1, 2, 3)]))
+	assert_true(result is Array)
+	assert_eq(result[0]["z"], 3.0)
+
+
+func test_serialize_packed_color_array_returns_rgba_dicts() -> void:
+	var result = NodeHandler._serialize_value(PackedColorArray([Color(1, 0, 0, 0.5)]))
+	assert_true(result is Array)
+	assert_eq(result[0]["r"], 1.0)
+	assert_eq(result[0]["a"], 0.5)
+
+
+func test_get_node_properties_aabb_value_is_structured() -> void:
+	# End-to-end: a MeshInstance3D has `custom_aabb: AABB`. The repro in
+	# issue #214 was getting `"[P: (0.0, 0.0, 0.0), S: (0.0, 0.0, 0.0)]"`
+	# back as a string from this exact path.
+	var scene_root := EditorInterface.get_edited_scene_root()
+	if scene_root == null:
+		skip("No scene root — is a scene open?")
+		return
+	var mi := MeshInstance3D.new()
+	mi.name = "_McpAabbProbe%s" % str(Time.get_ticks_usec())
+	mi.custom_aabb = AABB(Vector3(1, 2, 3), Vector3(4, 5, 6))
+	scene_root.add_child(mi)
+	mi.owner = scene_root
+	var node_path := "/%s/%s" % [scene_root.name, mi.name]
+	var result := _handler.get_node_properties({"path": node_path})
+	mi.queue_free()
+	assert_has_key(result, "data")
+	var found_aabb := false
+	for prop in result.data.properties:
+		if prop.name == "custom_aabb":
+			found_aabb = true
+			assert_eq(prop.type, "AABB")
+			assert_true(prop.value is Dictionary, "custom_aabb value must be structured, got: %s" % str(prop.value))
+			assert_has_key(prop.value, "position")
+			assert_has_key(prop.value, "size")
+			assert_eq(prop.value.position.x, 1.0)
+			assert_eq(prop.value.size.z, 6.0)
+			break
+	assert_true(found_aabb, "custom_aabb property not found on MeshInstance3D")
+
+
+# ----- rename_node -----
+
+func test_rename_node_basic() -> void:
+	var suffix := str(Time.get_ticks_usec())
+	var created := _handler.create_node({
+		"type": "Node3D",
+		"name": "_McpRenameSrc%s" % suffix,
+		"parent_path": "/Main",
+	})
+	assert_has_key(created, "data")
+	var created_path: String = created.data.path
+	var created_name: String = created.data.name
+	var target_name := "_McpRenameDst%s" % suffix
+	var result := _handler.rename_node({
+		"path": created_path,
+		"new_name": target_name,
+	})
+	assert_has_key(result, "data")
+	assert_eq(result.data.name, target_name)
+	assert_eq(result.data.old_name, created_name)
+	assert_true(result.data.undoable)
+	_undo_redo.undo()
+	_undo_redo.undo()
+
+
+func test_rename_node_scene_root_rejected() -> void:
+	## Issue #122 regression test. The tool docstring has always said
+	## "Cannot rename the scene root," but the handler silently allowed it
+	## until 1.2.3. The prior version of this test asserted the buggy
+	## behaviour (rename succeeds) — flipped to match the docstring.
+	##
+	## Renaming the scene root must be rejected because its name is baked
+	## into the .tscn serialization and into every NodePath that references
+	## `/<root>` (AnimationPlayer tracks, RemoteTransform3D targets,
+	## exported NodePath @vars, etc.). Silently renaming it breaks those
+	## references with no warning.
+	var scene_root := EditorInterface.get_edited_scene_root()
+	if scene_root == null:
+		skip("No scene root — is a scene open?")
+		return
+	var old_name := String(scene_root.name)
+
+	var result := _handler.rename_node({"path": "/" + old_name, "new_name": "RenamedTestRoot"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "scene root")
+
+	## Scene root must be unchanged.
+	assert_eq(String(scene_root.name), old_name, "scene root name must not have changed")
+
+
+func test_rename_node_missing_name() -> void:
+	var result := _handler.rename_node({"path": "/Main/Camera3D"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_rename_node_invalid_characters() -> void:
+	var result := _handler.rename_node({
+		"path": "/Main/Camera3D",
+		"new_name": "foo/bar",
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_rename_node_sibling_collision() -> void:
+	var result := _handler.rename_node({
+		"path": "/Main/Camera3D",
+		"new_name": "World",
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_rename_node_unchanged() -> void:
+	var result := _handler.rename_node({
+		"path": "/Main/Camera3D",
+		"new_name": "Camera3D",
+	})
+	assert_has_key(result, "data")
+	assert_true(result.data.unchanged, "Should flag unchanged rename")
+	assert_false(result.data.undoable)
+
+
+func test_rename_node_invalid_path() -> void:
+	var result := _handler.rename_node({
+		"path": "/Main/Nope",
+		"new_name": "NewName",
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+# ----- duplicate_node -----
+
+func test_duplicate_node_basic() -> void:
+	var result := _handler.duplicate_node({
+		"path": "/Main/Camera3D",
+		"name": "_McpTestDuplicate",
+	})
+	assert_has_key(result, "data")
+	assert_true(str(result.data.name).begins_with("_McpTestDuplicate"))
+	assert_eq(result.data.type, "Camera3D")
+	assert_true(result.data.undoable)
+	## Clean up via undo
+	_undo_redo.undo()
+
+
+func test_duplicate_scene_root() -> void:
+	var result := _handler.duplicate_node({"path": "/Main"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_duplicate_node_invalid_path() -> void:
+	var result := _handler.duplicate_node({"path": "/Main/NoSuchNode"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+# ----- move_node -----
+
+func test_move_node_scene_root() -> void:
+	var result := _handler.move_node({"path": "/Main", "index": 0})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_move_node_missing_index() -> void:
+	var result := _handler.move_node({"path": "/Main/Camera3D"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_move_node_out_of_range() -> void:
+	var result := _handler.move_node({"path": "/Main/Camera3D", "index": 999})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+# ----- add_to_group / remove_from_group -----
+
+func test_add_to_group() -> void:
+	## Ensure clean state: remove from group if left over from a previous run
+	var scene_root := EditorInterface.get_edited_scene_root()
+	var cam := McpScenePath.resolve("/Main/Camera3D", scene_root)
+	if cam and cam.is_in_group("_mcp_test_group"):
+		cam.remove_from_group("_mcp_test_group")
+
+	var result := _handler.add_to_group({
+		"path": "/Main/Camera3D",
+		"group": "_mcp_test_group",
+	})
+	assert_has_key(result, "data")
+	assert_eq(result.data.group, "_mcp_test_group")
+	assert_true(result.data.undoable)
+	## Clean up via undo
+	_undo_redo.undo()
+
+
+func test_add_to_group_missing_group() -> void:
+	var result := _handler.add_to_group({"path": "/Main/Camera3D"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_remove_from_group_not_member() -> void:
+	var result := _handler.remove_from_group({
+		"path": "/Main/Camera3D",
+		"group": "_mcp_nonexistent_group",
+	})
+	assert_has_key(result, "data")
+	assert_true(result.data.not_member, "Should indicate not a member")
+
+
+func test_remove_from_group_missing_group() -> void:
+	var result := _handler.remove_from_group({"path": "/Main/Camera3D"})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+
+
+func test_add_to_group_rejects_array_value() -> void:
+	## Repro for #210: the meta-tool layer JSON-decodes string-shaped values
+	## like `"[\"a\",\"b\"]"` into an Array before the handler sees them.
+	## Without input validation the typed assignment `var group: String =
+	## ...` would runtime-error and the dispatcher would only surface an
+	## opaque INTERNAL_ERROR. With validation, the agent gets an actionable
+	## INVALID_PARAMS instead.
+	var result := _handler.add_to_group({
+		"path": "/Main/Camera3D",
+		"group": ["a", "b"],
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "group")
+	assert_contains(result.error.message, "Array")
+
+
+func test_remove_from_group_rejects_array_value() -> void:
+	var result := _handler.remove_from_group({
+		"path": "/Main/Camera3D",
+		"group": ["a", "b"],
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "group")
+	assert_contains(result.error.message, "Array")
+
+
+func test_add_to_group_accepts_string_name_value() -> void:
+	## JSON only carries TYPE_STRING, but internal callers may pass a
+	## StringName. The validator accepts both; the handler converts via
+	## String() before the typed local so the assignment can't trip a
+	## StringName→String type-mismatch at runtime.
+	var scene_root := EditorInterface.get_edited_scene_root()
+	var cam := McpScenePath.resolve("/Main/Camera3D", scene_root)
+	if cam and cam.is_in_group("_mcp_test_sn_group"):
+		cam.remove_from_group("_mcp_test_sn_group")
+
+	var result := _handler.add_to_group({
+		"path": "/Main/Camera3D",
+		"group": &"_mcp_test_sn_group",
+	})
+	assert_has_key(result, "data")
+	assert_eq(result.data.group, "_mcp_test_sn_group")
+	assert_true(result.data.undoable)
+	_undo_redo.undo()
+
+
+# ----- set_selection -----
+
+func test_set_selection_basic() -> void:
+	var result := _handler.set_selection({
+		"paths": ["/Main/Camera3D", "/Main/World"],
+	})
+	assert_has_key(result, "data")
+	assert_eq(result.data.count, 2)
+	assert_contains(result.data.selected, "/Main/Camera3D")
+	assert_contains(result.data.selected, "/Main/World")
+
+
+func test_set_selection_with_invalid_path() -> void:
+	var result := _handler.set_selection({
+		"paths": ["/Main/Camera3D", "/Main/NotReal"],
+	})
+	assert_has_key(result, "data")
+	assert_eq(result.data.count, 1)
+	assert_contains(result.data.not_found, "/Main/NotReal")
+
+
+func test_set_selection_empty_clears() -> void:
+	var result := _handler.set_selection({"paths": []})
+	assert_has_key(result, "data")
+	assert_eq(result.data.count, 0)
+
+
+# ============================================================================
+# Friction fix: scene instancing via node_create
+# ============================================================================
+
+func test_create_node_from_scene_path() -> void:
+	# Use the test project's own main.tscn as the scene to instance.
+	var scene_root := EditorInterface.get_edited_scene_root()
+	if scene_root == null:
+		skip("No scene root — is a scene open?")
+		return
+	var before_count := scene_root.get_child_count()
+	var result := _handler.create_node({
+		"scene_path": "res://main.tscn",
+		"name": "InstancedMain",
+	})
+	assert_has_key(result, "data")
+	assert_has_key(result.data, "scene_path")
+	assert_eq(result.data.scene_path, "res://main.tscn")
+	assert_true(result.data.undoable)
+	# Clean up: remove the instanced node.
+	var instanced := scene_root.find_child("InstancedMain", false, false)
+	if instanced:
+		scene_root.remove_child(instanced)
+		instanced.queue_free()
+	assert_eq(scene_root.get_child_count(), before_count, "Cleanup should restore child count")
+
+
+func test_create_node_scene_path_preserves_instance_link() -> void:
+	# A scene instanced via GEN_EDIT_STATE_INSTANCE must carry scene_file_path
+	# so the editor treats it as a real instance (foldout icon, swappable, the
+	# .tscn stores a reference rather than an exploded subtree).
+	#
+	# We use a throwaway PackedScene to avoid self-instancing main.tscn.
+	var scene_root := EditorInterface.get_edited_scene_root()
+	if scene_root == null:
+		skip("No scene root — is a scene open?")
+		return
+	var tmp_root := Node2D.new()
+	tmp_root.name = "TmpInstanceRoot"
+	var tmp_child := Node2D.new()
+	tmp_child.name = "TmpChild"
+	tmp_root.add_child(tmp_child)
+	tmp_child.owner = tmp_root
+	var packed := PackedScene.new()
+	packed.pack(tmp_root)
+	var tmp_path := "res://tests/_mcp_test_instance.tscn"
+	ResourceSaver.save(packed, tmp_path)
+	tmp_root.queue_free()
+
+	var result := _handler.create_node({
+		"scene_path": tmp_path,
+		"name": "InstancedTmp",
+	})
+	assert_has_key(result, "data")
+	var instanced: Node = scene_root.find_child("InstancedTmp", false, false)
+	assert_true(instanced != null, "Instanced node exists")
+	# The root of an instanced scene carries scene_file_path pointing to the .tscn.
+	assert_eq(instanced.scene_file_path, tmp_path, "scene_file_path preserves instance link")
+	# Descendants of an instance are NOT owned by our scene_root — they're owned
+	# by the sub-scene, which is what makes Godot treat it as an instance.
+	var desc: Node = instanced.find_child("TmpChild", false, false)
+	assert_true(desc != null, "Descendant exists")
+	assert_true(desc.owner != scene_root, "Descendant owner stays with sub-scene, not our scene_root")
+	# Cleanup.
+	instanced.get_parent().remove_child(instanced)
+	instanced.queue_free()
+	DirAccess.remove_absolute(tmp_path)
+
+
+func test_create_node_scene_path_undo_redo() -> void:
+	# Undo removes the instance; redo restores it with the same scene link.
+	var scene_root := EditorInterface.get_edited_scene_root()
+	if scene_root == null:
+		skip("No scene root — is a scene open?")
+		return
+	var tmp_root := Node2D.new()
+	tmp_root.name = "UndoInstanceRoot"
+	var packed := PackedScene.new()
+	packed.pack(tmp_root)
+	var tmp_path := "res://tests/_mcp_test_undo_instance.tscn"
+	ResourceSaver.save(packed, tmp_path)
+	tmp_root.queue_free()
+
+	var before := scene_root.get_child_count()
+	_handler.create_node({"scene_path": tmp_path, "name": "UndoInstance"})
+	assert_eq(scene_root.get_child_count(), before + 1, "Instance added")
+
+	_undo_redo.undo()
+	assert_eq(scene_root.get_child_count(), before, "Undo removes the instance")
+	assert_true(scene_root.find_child("UndoInstance", false, false) == null, "No node after undo")
+
+	_undo_redo.redo()
+	assert_eq(scene_root.get_child_count(), before + 1, "Redo restores the instance")
+	var restored: Node = scene_root.find_child("UndoInstance", false, false)
+	assert_true(restored != null, "Instance back after redo")
+	assert_eq(restored.scene_file_path, tmp_path, "scene_file_path preserved through redo")
+	# Cleanup.
+	restored.get_parent().remove_child(restored)
+	restored.queue_free()
+	DirAccess.remove_absolute(tmp_path)
+
+
+func test_create_node_scene_path_not_found() -> void:
+	var result := _handler.create_node({
+		"scene_path": "res://nonexistent_scene.tscn",
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "not found")
+
+
+func test_create_node_scene_path_not_res() -> void:
+	var result := _handler.create_node({
+		"scene_path": "/tmp/scene.tscn",
+	})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "res://")
+
+
+func test_create_node_requires_type_or_scene_path() -> void:
+	var result := _handler.create_node({"parent_path": ""})
+	assert_is_error(result, McpErrorCodes.INVALID_PARAMS)
+	assert_contains(result.error.message, "type")
+
+
+# ----- scene_file guard (issue #74) -----
+# Every mutating node_handler entry point routes through either create_node
+# (which reads scene_file directly) or _resolve_node (which reads it via
+# params). Covering one of each is enough to show the wiring is live; the
+# helper's own behavior is covered in test_scene_path.
+
+func test_create_node_scene_file_mismatch_blocks_mutation() -> void:
+	var result := _handler.create_node({
+		"type": "Node",
+		"scene_file": "res://does/not/match.tscn",
+	})
+	assert_is_error(result, McpErrorCodes.EDITED_SCENE_MISMATCH)
+
+
+func test_resolve_node_scene_file_mismatch_blocks_mutation() -> void:
+	## rename_node routes through _resolve_node. If the guard fires early, the
+	## rename never reaches the node and no sibling-name validation happens.
+	var result := _handler.rename_node({
+		"path": "/Main/Camera3D",
+		"new_name": "ShouldNotRename",
+		"scene_file": "res://does/not/match.tscn",
+	})
+	assert_is_error(result, McpErrorCodes.EDITED_SCENE_MISMATCH)
+	## And it did NOT actually rename — the original node stays put.
+	var cam := EditorInterface.get_edited_scene_root().get_node_or_null("Camera3D")
+	assert_ne(cam, null, "Camera3D must still exist under the original name")
+
+
+func test_create_node_scene_file_matching_active_scene_passes() -> void:
+	var active := EditorInterface.get_edited_scene_root().scene_file_path
+	var result := _handler.create_node({
+		"type": "Node",
+		"name": "SceneFileGuardOK",
+		"scene_file": active,
+	})
+	assert_has_key(result, "data")
+	## Undo so we don't leak test state into downstream tests.
+	_undo_redo.undo()
+
+

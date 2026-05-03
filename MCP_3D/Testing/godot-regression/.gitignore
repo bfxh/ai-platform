@@ -1,0 +1,15 @@
+.DS_Store
+*~
+#.import/
+logs/
+.~lock.*#
+.mono/
+*.zip
+TEMP/
+#export_presets.cfg
+logs/
+.godot/
+.godot/imported/
+.godot/editor
+shader_cache/
+.import/

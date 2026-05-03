@@ -1,0 +1,22 @@
+{
+  "name": "blender_mcp",
+  "display_name": "Blender MCP",
+  "description": "Blender MCP - 通过自然语言控制Blender",
+  "version": "1.0.0",
+  "author": "GSTACK",
+  "category": "system",
+  "tags": ["blender", "3d", "modeling", "nlp"],
+  "dependencies": [],
+  "config": {
+    "blender_mcp_dir": "/python\\MCP\\JM\\blender_mcp",
+    "server_url": "http://localhost:8400",
+    "blender_path": "C:\\Program Files\\Blender Foundation\\Blender 4.0\\blender.exe"
+  },
+  "commands": {
+    "start": "启动Blender MCP服务",
+    "stop": "停止Blender MCP服务",
+    "status": "检查Blender MCP服务状态",
+    "restart": "重启Blender MCP服务"
+  },
+  "example_usage": "gstack blender start"
+}

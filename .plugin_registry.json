@@ -1,0 +1,486 @@
+{
+  "registry_version": "1.0.0",
+  "plugins": [
+    {
+      "name": "ai_3d_modeling_v3",
+      "path": "plugins.ai_3d_modeling_v3",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "ai_architecture_server",
+      "path": "plugins.ai_architecture_server",
+      "enabled": true,
+      "priority": 10
+    },
+    {
+      "name": "ai_software",
+      "path": "plugins.ai_software",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "ai_software_gpu",
+      "path": "plugins.ai_software_gpu",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "blender_automation",
+      "path": "plugins.blender_automation",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "blender_mcp",
+      "path": "plugins.blender_mcp",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "blender_mcp_server",
+      "path": "plugins.blender_mcp_server",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "blender_ue_pipeline",
+      "path": "plugins.blender_ue_pipeline",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "calamity_bug_fix_workflow",
+      "path": "plugins.calamity_bug_fix_workflow",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "calamity_bug_reporter",
+      "path": "plugins.calamity_bug_reporter",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "character_generator",
+      "path": "plugins.character_generator",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "claude_code_bridge",
+      "path": "plugins.claude_code_bridge",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "code_intelligence",
+      "path": "plugins.code_intelligence",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "code_quality",
+      "path": "plugins.code_quality",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "deep_search_workbench",
+      "path": "plugins.deep_search_workbench",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "dev_mgr",
+      "path": "plugins.dev_mgr",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "example_plugin",
+      "path": "plugins.example_plugin",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "final_check",
+      "path": "plugins.final_check",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "final_comprehensive_fix",
+      "path": "plugins.final_comprehensive_fix",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "find_all_ext",
+      "path": "plugins.find_all_ext",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "find_blockers",
+      "path": "plugins.find_blockers",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "find_prompt",
+      "path": "plugins.find_prompt",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "find_restriction",
+      "path": "plugins.find_restriction",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "find_risk_check",
+      "path": "plugins.find_risk_check",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "find_risk_cn",
+      "path": "plugins.find_risk_cn",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "find_solo_config",
+      "path": "plugins.find_solo_config",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "find_system_prompt",
+      "path": "plugins.find_system_prompt",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "find_trae",
+      "path": "plugins.find_trae",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "find_w_func",
+      "path": "plugins.find_w_func",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "fix_all_blocking",
+      "path": "plugins.fix_all_blocking",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "fix_all_prompts",
+      "path": "plugins.fix_all_prompts",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "fix_everything_final",
+      "path": "plugins.fix_everything_final",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "fix_v3_complete",
+      "path": "plugins.fix_v3_complete",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "full_access_fix",
+      "path": "plugins.full_access_fix",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "full_audit",
+      "path": "plugins.full_audit",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "game_ai_workflow",
+      "path": "plugins.game_ai_workflow",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "generate_characters_workflow",
+      "path": "plugins.generate_characters_workflow",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "github_accelerator",
+      "path": "plugins.github_accelerator",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "github_auto_commit",
+      "path": "plugins.github_auto_commit",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "github_auto_dl",
+      "path": "plugins.github_auto_dl",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "github_dl",
+      "path": "plugins.github_dl",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "github_project_manager",
+      "path": "plugins.github_project_manager",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "github_workflow",
+      "path": "plugins.github_workflow",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "godot_mcp",
+      "path": "plugins.godot_mcp",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "godot_mcp_server",
+      "path": "plugins.godot_mcp_server",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "godot_scene_assembler",
+      "path": "plugins.godot_scene_assembler",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "hallucination_detector",
+      "path": "plugins.hallucination_detector",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "mcp_workflow",
+      "path": "plugins.mcp_workflow",
+      "enabled": true,
+      "priority": 10
+    },
+    {
+      "name": "modeling_pipeline",
+      "path": "plugins.modeling_pipeline",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "patch_cline_access",
+      "path": "plugins.patch_cline_access",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "patch_cline_block",
+      "path": "plugins.patch_cline_block",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "patch_tool_descriptions",
+      "path": "plugins.patch_tool_descriptions",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "scene_generator",
+      "path": "plugins.scene_generator",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "search_all_settings",
+      "path": "plugins.search_all_settings",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "search_sandbox_config",
+      "path": "plugins.search_sandbox_config",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "search_trae_core",
+      "path": "plugins.search_trae_core",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "search_workbench",
+      "path": "plugins.search_workbench",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "smart_workflow",
+      "path": "plugins.smart_workflow",
+      "enabled": true,
+      "priority": 10
+    },
+    {
+      "name": "terraria_build_test",
+      "path": "plugins.terraria_build_test",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "terraria_gpu_optimization_workflow",
+      "path": "plugins.terraria_gpu_optimization_workflow",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "terraria_gpu_particle_optimizer",
+      "path": "plugins.terraria_gpu_particle_optimizer",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "terraria_mod_compatibility",
+      "path": "plugins.terraria_mod_compatibility",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "terraria_steam_uploader",
+      "path": "plugins.terraria_steam_uploader",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "terraria_sulphur_sea_knowledge",
+      "path": "plugins.terraria_sulphur_sea_knowledge",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "test_ai_3d_modeling_v3",
+      "path": "plugins.test_ai_3d_modeling_v3",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "test_ai_3d_v3_functional",
+      "path": "plugins.test_ai_3d_v3_functional",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "test_ai_3d_v3_structure",
+      "path": "plugins.test_ai_3d_v3_structure",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "ue5_manager",
+      "path": "plugins.ue5_manager",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "ue_import",
+      "path": "plugins.ue_import",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "ue_mcp",
+      "path": "plugins.ue_mcp",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "ultimate_diagnose",
+      "path": "plugins.ultimate_diagnose",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "unified_workflow",
+      "path": "plugins.unified_workflow",
+      "enabled": true,
+      "priority": 10
+    },
+    {
+      "name": "unity_mcp",
+      "path": "plugins.unity_mcp",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "verify_one",
+      "path": "plugins.verify_one",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "verify_patch",
+      "path": "plugins.verify_patch",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "video_processor_gpu",
+      "path": "plugins.video_processor_gpu",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "vision_pro",
+      "path": "plugins.vision_pro",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "vscode_ai",
+      "path": "plugins.vscode_ai",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "vs_mgr",
+      "path": "plugins.vs_mgr",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "name": "web_research",
+      "path": "plugins.web_research",
+      "enabled": true,
+      "priority": 5
+    }
+  ],
+  "last_updated": "2026-04-29T10:43:22.663741"
+}

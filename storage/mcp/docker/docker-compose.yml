@@ -1,0 +1,500 @@
+version: "3.8"
+
+# =============================================================================
+# AI MCP Docker Compose 配置
+# 为所有 MCP 服务提供容器编排
+# =============================================================================
+
+services:
+  # ===========================================================================
+  # JM 类服务 - 3D 建模与游戏引擎 MCP
+  # ===========================================================================
+
+  # Blender MCP 服务
+  blender-mcp:
+    build:
+      context: ..
+      dockerfile: docker/services/blender.Dockerfile
+    image: ai/mcp-jm-blender:${IMAGE_TAG:-latest}
+    container_name: mcp-blender
+    restart: unless-stopped
+    ports:
+      - "${BLENDER_PORT:-8001}:8001"
+    environment:
+      - SERVICE_NAME=blender_mcp
+      - SERVICE_PORT=8001
+      - SERVICE_TYPE=JM
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - MCP_NETWORK=${DOCKER_NETWORK:-ai-mcp-network}
+    volumes:
+      - blender-data:/app/data
+      - blender-logs:/app/logs
+      - ../JM/blender_mcp:/app/blender_mcp:ro
+      - ../blender_scripts:/app/blender_scripts:ro
+    networks:
+      - ai-mcp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: ${BLENDER_MEMORY_LIMIT:-4G}
+          cpus: ${BLENDER_CPU_LIMIT:-2.0}
+        reservations:
+          memory: ${BLENDER_MEMORY_RES:-1G}
+          cpus: ${BLENDER_CPU_RES:-0.5}
+
+  # Unity MCP 服务
+  unity-mcp:
+    build:
+      context: ..
+      dockerfile: docker/services/unity.Dockerfile
+    image: ai/mcp-jm-unity:${IMAGE_TAG:-latest}
+    container_name: mcp-unity
+    restart: unless-stopped
+    ports:
+      - "${UNITY_PORT:-8002}:8002"
+    environment:
+      - SERVICE_NAME=unity_mcp
+      - SERVICE_PORT=8002
+      - SERVICE_TYPE=JM
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - unity-data:/app/data
+      - unity-logs:/app/logs
+      - ../JM/unity_mcp.py:/app/unity_mcp.py:ro
+    networks:
+      - ai-mcp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: ${UNITY_MEMORY_LIMIT:-2G}
+          cpus: ${UNITY_CPU_LIMIT:-1.5}
+
+  # Unreal Engine MCP 服务
+  ue-mcp:
+    build:
+      context: ..
+      dockerfile: docker/services/ue.Dockerfile
+    image: ai/mcp-jm-ue:${IMAGE_TAG:-latest}
+    container_name: mcp-ue
+    restart: unless-stopped
+    ports:
+      - "${UE_PORT:-8003}:8003"
+    environment:
+      - SERVICE_NAME=ue_mcp
+      - SERVICE_PORT=8003
+      - SERVICE_TYPE=JM
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - ue-data:/app/data
+      - ue-logs:/app/logs
+      - ../JM/ue_mcp.py:/app/ue_mcp.py:ro
+      - ../JM/ue5_manager.py:/app/ue5_manager.py:ro
+    networks:
+      - ai-mcp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: ${UE_MEMORY_LIMIT:-4G}
+          cpus: ${UE_CPU_LIMIT:-2.0}
+
+  # Godot MCP 服务
+  godot-mcp:
+    build:
+      context: ..
+      dockerfile: docker/services/godot.Dockerfile
+    image: ai/mcp-jm-godot:${IMAGE_TAG:-latest}
+    container_name: mcp-godot
+    restart: unless-stopped
+    ports:
+      - "${GODOT_PORT:-8004}:8004"
+    environment:
+      - SERVICE_NAME=godot_mcp
+      - SERVICE_PORT=8004
+      - SERVICE_TYPE=JM
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - godot-data:/app/data
+      - godot-logs:/app/logs
+      - ../JM/godot_mcp.py:/app/godot_mcp.py:ro
+      - ../JM/godot_mcp_server.py:/app/godot_mcp_server.py:ro
+    networks:
+      - ai-mcp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8004/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: ${GODOT_MEMORY_LIMIT:-2G}
+          cpus: ${GODOT_CPU_LIMIT:-1.0}
+
+  # ===========================================================================
+  # BC 类服务 - 代码质量与开发管理
+  # ===========================================================================
+
+  # Code Quality 服务
+  code-quality:
+    build:
+      context: ..
+      dockerfile: docker/services/code-quality.Dockerfile
+    image: ai/mcp-bc-quality:${IMAGE_TAG:-latest}
+    container_name: mcp-code-quality
+    restart: unless-stopped
+    ports:
+      - "${QUALITY_PORT:-8005}:8005"
+    environment:
+      - SERVICE_NAME=code_quality
+      - SERVICE_PORT=8005
+      - SERVICE_TYPE=BC
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - quality-data:/app/data
+      - quality-logs:/app/logs
+      - ../BC/code_quality.py:/app/code_quality.py:ro
+      - ../BC:/app/bc:ro
+    networks:
+      - ai-mcp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: ${QUALITY_MEMORY_LIMIT:-2G}
+          cpus: ${QUALITY_CPU_LIMIT:-1.0}
+
+  # GitHub Download 服务
+  github-dl:
+    build:
+      context: ..
+      dockerfile: docker/services/github-dl.Dockerfile
+    image: ai/mcp-bc-github:${IMAGE_TAG:-latest}
+    container_name: mcp-github-dl
+    restart: unless-stopped
+    ports:
+      - "${GITHUB_PORT:-8006}:8006"
+    environment:
+      - SERVICE_NAME=github_dl
+      - SERVICE_PORT=8006
+      - SERVICE_TYPE=BC
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - GITHUB_TOKEN=${GITHUB_TOKEN:-}
+    volumes:
+      - github-data:/app/data
+      - github-logs:/app/logs
+      - ../BC/github_dl.py:/app/github_dl.py:ro
+      - ../BC/github_auto_dl.py:/app/github_auto_dl.py:ro
+    networks:
+      - ai-mcp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8006/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: ${GITHUB_MEMORY_LIMIT:-2G}
+          cpus: ${GITHUB_CPU_LIMIT:-1.0}
+
+  # VS Manager 服务
+  vs-mgr:
+    build:
+      context: ..
+      dockerfile: docker/services/vs-mgr.Dockerfile
+    image: ai/mcp-bc-vsmgr:${IMAGE_TAG:-latest}
+    container_name: mcp-vs-mgr
+    restart: unless-stopped
+    ports:
+      - "${VSMGR_PORT:-8007}:8007"
+    environment:
+      - SERVICE_NAME=vs_mgr
+      - SERVICE_PORT=8007
+      - SERVICE_TYPE=BC
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - vsmgr-data:/app/data
+      - vsmgr-logs:/app/logs
+      - ../BC/vs_mgr.py:/app/vs_mgr.py:ro
+      - ../BC/vscode_ai.py:/app/vscode_ai.py:ro
+    networks:
+      - ai-mcp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8007/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: ${VSMGR_MEMORY_LIMIT:-1G}
+          cpus: ${VSMGR_CPU_LIMIT:-0.5}
+
+  # Dev Manager 服务
+  dev-mgr:
+    build:
+      context: ..
+      dockerfile: docker/services/dev-mgr.Dockerfile
+    image: ai/mcp-bc-devmgr:${IMAGE_TAG:-latest}
+    container_name: mcp-dev-mgr
+    restart: unless-stopped
+    ports:
+      - "${DEVMGR_PORT:-8008}:8008"
+    environment:
+      - SERVICE_NAME=dev_mgr
+      - SERVICE_PORT=8008
+      - SERVICE_TYPE=BC
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - devmgr-data:/app/data
+      - devmgr-logs:/app/logs
+      - ../BC/dev_mgr.py:/app/dev_mgr.py:ro
+      - ../BC/mcp_workflow.py:/app/mcp_workflow.py:ro
+    networks:
+      - ai-mcp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: ${DEVMGR_MEMORY_LIMIT:-1G}
+          cpus: ${DEVMGR_CPU_LIMIT:-0.5}
+
+  # ===========================================================================
+  # Tools 类服务 - 系统工具与监控
+  # ===========================================================================
+
+  # Download Manager 服务
+  download-manager:
+    build:
+      context: ..
+      dockerfile: docker/services/download-manager.Dockerfile
+    image: ai/mcp-tools-download:${IMAGE_TAG:-latest}
+    container_name: mcp-download-manager
+    restart: unless-stopped
+    ports:
+      - "${DLMGR_PORT:-8009}:8009"
+    environment:
+      - SERVICE_NAME=download_manager
+      - SERVICE_PORT=8009
+      - SERVICE_TYPE=Tools
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - dlmgr-data:/app/data
+      - dlmgr-logs:/app/logs
+      - dlmgr-downloads:/app/downloads
+      - ../Tools/download_manager.py:/app/download_manager.py:ro
+      - ../Tools/aria2_mcp.py:/app/aria2_mcp.py:ro
+    networks:
+      - ai-mcp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8009/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: ${DLMGR_MEMORY_LIMIT:-2G}
+          cpus: ${DLMGR_CPU_LIMIT:-1.0}
+
+  # Network Optimizer 服务
+  network-optimizer:
+    build:
+      context: ..
+      dockerfile: docker/services/network-optimizer.Dockerfile
+    image: ai/mcp-tools-network:${IMAGE_TAG:-latest}
+    container_name: mcp-network-optimizer
+    restart: unless-stopped
+    ports:
+      - "${NETOPT_PORT:-8010}:8010"
+    environment:
+      - SERVICE_NAME=network_optimizer
+      - SERVICE_PORT=8010
+      - SERVICE_TYPE=Tools
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - netopt-data:/app/data
+      - netopt-logs:/app/logs
+      - ../Tools/network_optimizer.py:/app/network_optimizer.py:ro
+      - ../Tools/net_pro.py:/app/net_pro.py:ro
+    networks:
+      - ai-mcp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8010/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: ${NETOPT_MEMORY_LIMIT:-1G}
+          cpus: ${NETOPT_CPU_LIMIT:-0.5}
+
+  # Memory Monitor 服务
+  memory-monitor:
+    build:
+      context: ..
+      dockerfile: docker/services/memory-monitor.Dockerfile
+    image: ai/mcp-tools-memory:${IMAGE_TAG:-latest}
+    container_name: mcp-memory-monitor
+    restart: unless-stopped
+    ports:
+      - "${MEMMON_PORT:-8011}:8011"
+    environment:
+      - SERVICE_NAME=memory_monitor
+      - SERVICE_PORT=8011
+      - SERVICE_TYPE=Tools
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - memmon-data:/app/data
+      - memmon-logs:/app/logs
+      - ../Tools/memory_monitor.py:/app/memory_monitor.py:ro
+      - ../Tools/memory_mcp:/app/memory_mcp:ro
+    networks:
+      - ai-mcp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8011/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: ${MEMMON_MEMORY_LIMIT:-1G}
+          cpus: ${MEMMON_CPU_LIMIT:-0.5}
+
+  # ===========================================================================
+  # 共享服务
+  # ===========================================================================
+
+  # N8N 工作流服务 (可选)
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: mcp-n8n
+    restart: unless-stopped
+    ports:
+      - "${N8N_PORT:-5678}:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_USER:-admin}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD:?N8N_PASSWORD must be set in .env}
+      - N8N_HOST=${N8N_HOST:-localhost}
+      - N8N_PORT=5678
+      - WEBHOOK_URL=${N8N_WEBHOOK_URL:-http://localhost:5678/}
+    volumes:
+      - n8n-data:/home/node/.n8n
+      - ../Tools/n8n/workflows:/backup/workflows:ro
+    networks:
+      - ai-mcp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5678/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+# =============================================================================
+# 网络配置
+# =============================================================================
+networks:
+  ai-mcp-network:
+    driver: bridge
+    name: ${DOCKER_NETWORK:-ai-mcp-network}
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1
+
+# =============================================================================
+# 数据卷配置
+# =============================================================================
+volumes:
+  # JM 类服务数据卷
+  blender-data:
+    driver: local
+  blender-logs:
+    driver: local
+  unity-data:
+    driver: local
+  unity-logs:
+    driver: local
+  ue-data:
+    driver: local
+  ue-logs:
+    driver: local
+  godot-data:
+    driver: local
+  godot-logs:
+    driver: local
+
+  # BC 类服务数据卷
+  quality-data:
+    driver: local
+  quality-logs:
+    driver: local
+  github-data:
+    driver: local
+  github-logs:
+    driver: local
+  vsmgr-data:
+    driver: local
+  vsmgr-logs:
+    driver: local
+  devmgr-data:
+    driver: local
+  devmgr-logs:
+    driver: local
+
+  # Tools 类服务数据卷
+  dlmgr-data:
+    driver: local
+  dlmgr-logs:
+    driver: local
+  dlmgr-downloads:
+    driver: local
+  netopt-data:
+    driver: local
+  netopt-logs:
+    driver: local
+  memmon-data:
+    driver: local
+  memmon-logs:
+    driver: local
+
+  # 共享服务数据卷
+  n8n-data:
+    driver: local

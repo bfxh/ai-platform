@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-04-21T01:36:42.083071",
+  "tests": [
+    {
+      "name": "ASK Skill 模块加载",
+      "category": "ASK Skill",
+      "passed": false,
+      "error": "unexpected indent (skill.py, line 187)",
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_initialization",
+      "category": "Blender MCP",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_status_check",
+      "category": "Blender MCP",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "Narsil MCP 模块加载",
+      "category": "Narsil MCP",
+      "passed": false,
+      "error": "cannot import name 'NarsilMCP' from 'skill' (/python\\MCP_Core\\skills\\blender_mcp\\skill.py)",
+      "elapsed_time": 0
+    },
+    {
+      "name": "n8n Workflow 模块加载",
+      "category": "n8n Workflow",
+      "passed": false,
+      "error": "cannot import name 'N8nWorkflowSkill' from 'skill' (/python\\MCP_Core\\skills\\blender_mcp\\skill.py)",
+      "elapsed_time": 0
+    },
+    {
+      "name": "安全测试",
+      "category": "Security",
+      "passed": false,
+      "error": "cannot import name 'ArchitectEnforcer' from 'skill' (/python\\MCP_Core\\skills\\blender_mcp\\skill.py)",
+      "elapsed_time": 0
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "passed": 2,
+    "failed": 4,
+    "skipped": 0
+  }
+}

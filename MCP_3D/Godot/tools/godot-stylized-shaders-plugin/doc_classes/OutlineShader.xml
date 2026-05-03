@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="OutlineShader" inherits="BaseShader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Post-process effect that applies an outline to the meshes visible on the screen.
+	</brief_description>
+	<description>
+		Post-process effect that applies an outline to the meshes visible on the screen.
+		There are plenty of variables one could play with here to customize the effect.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="get_outline_color" qualifiers="const">
+			<return type="Color" />
+			<description>
+				Gets the outline color.
+			</description>
+		</method>
+		<method name="set_outline_color">
+			<return type="void" />
+			<param index="0" name="color" type="Color" />
+			<description>
+				Sets the outline color. Used in the color picker within the [b]GodotStylizedShadersPlugin[/b] editor UI.
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="m_outline_width" type="EncapsuledData<float>" setter="set" getter="get" default="0.002"></member>
+		<member name="m_outline_mul" type="EncapsuledData<float>" setter="set" getter="get" default="0.01"></member>
+		<member name="m_jitter_amp" type="EncapsuledData<float>" setter="set" getter="get" default="0.01"></member>
+		<member name="m_jitter_freq" type="EncapsuledData<float>" setter="set" getter="get" default="0.002"></member>
+		<member name="m_dt" type="EncapsuledData<float>" setter="set" getter="get" default="0.0"></member>
+		<member name="m_jitter_toggle" type="EncapsuledData<bool>" setter="set" getter="get" default="false"></member>
+	</members>
+</class>

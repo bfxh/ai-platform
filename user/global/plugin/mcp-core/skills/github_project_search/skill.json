@@ -1,0 +1,136 @@
+{
+  "name": "github_project_search",
+  "display_name": "GitHub项目搜索",
+  "description": "GitHub项目搜索 - 自动搜索、过滤和管理GitHub项目",
+  "version": "1.0.0",
+  "author": "MCP Core Team",
+  "requires": [],
+  "category": "development",
+  "entry_point": "github_project_search:GitHubProjectSearchSkill",
+  "config": {
+    "github_token": "",
+    "search_results_dir": "github_search_results",
+    "projects_dir": "github_projects",
+    "default_search_params": {
+      "sort": "stars",
+      "order": "desc",
+      "per_page": 30
+    }
+  },
+  "commands": [
+    {
+      "name": "search",
+      "description": "搜索GitHub项目",
+      "parameters": [
+        {
+          "name": "query",
+          "type": "string",
+          "required": true,
+          "description": "搜索查询"
+        },
+        {
+          "name": "sort",
+          "type": "string",
+          "required": false,
+          "description": "排序字段 (stars, forks, updated)"
+        },
+        {
+          "name": "order",
+          "type": "string",
+          "required": false,
+          "description": "排序顺序 (asc, desc)"
+        },
+        {
+          "name": "per_page",
+          "type": "integer",
+          "required": false,
+          "description": "每页结果数"
+        }
+      ]
+    },
+    {
+      "name": "clone",
+      "description": "克隆GitHub项目",
+      "parameters": [
+        {
+          "name": "repo_url",
+          "type": "string",
+          "required": true,
+          "description": "项目克隆URL"
+        },
+        {
+          "name": "target_dir",
+          "type": "string",
+          "required": false,
+          "description": "目标目录"
+        }
+      ]
+    },
+    {
+      "name": "batch-clone",
+      "description": "批量克隆GitHub项目",
+      "parameters": [
+        {
+          "name": "repos",
+          "type": "array",
+          "required": true,
+          "description": "项目克隆URL列表"
+        }
+      ]
+    },
+    {
+      "name": "filter",
+      "description": "过滤项目",
+      "parameters": [
+        {
+          "name": "projects",
+          "type": "array",
+          "required": true,
+          "description": "项目列表"
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "description": "编程语言"
+        },
+        {
+          "name": "min_stars",
+          "type": "integer",
+          "required": false,
+          "description": "最小星数"
+        },
+        {
+          "name": "min_forks",
+          "type": "integer",
+          "required": false,
+          "description": "最小Fork数"
+        },
+        {
+          "name": "keyword",
+          "type": "string",
+          "required": false,
+          "description": "关键词"
+        }
+      ]
+    },
+    {
+      "name": "generate-report",
+      "description": "生成项目报告",
+      "parameters": [
+        {
+          "name": "projects",
+          "type": "array",
+          "required": true,
+          "description": "项目列表"
+        },
+        {
+          "name": "output_file",
+          "type": "string",
+          "required": false,
+          "description": "输出文件路径"
+        }
+      ]
+    }
+  ]
+}

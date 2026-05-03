@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-21T01:39:17.737770",
+  "tests": [
+    {
+      "name": "test_initialization",
+      "category": "ASK Skill",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_skills_loaded",
+      "category": "ASK Skill",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_run_invalid_skill",
+      "category": "ASK Skill",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "Blender MCP 模块加载",
+      "category": "Blender MCP",
+      "passed": false,
+      "error": "cannot import name 'BlenderMCPSkill' from 'skill' (/python\\MCP_Core\\skills\\ask\\skill.py)",
+      "elapsed_time": 0
+    },
+    {
+      "name": "Narsil MCP 模块加载",
+      "category": "Narsil MCP",
+      "passed": false,
+      "error": "cannot import name 'NarsilMCP' from 'skill' (/python\\MCP_Core\\skills\\ask\\skill.py)",
+      "elapsed_time": 0
+    },
+    {
+      "name": "n8n Workflow 模块加载",
+      "category": "n8n Workflow",
+      "passed": false,
+      "error": "cannot import name 'N8nWorkflowSkill' from 'skill' (/python\\MCP_Core\\skills\\ask\\skill.py)",
+      "elapsed_time": 0
+    },
+    {
+      "name": "安全测试",
+      "category": "Security",
+      "passed": false,
+      "error": "cannot import name 'ArchitectEnforcer' from 'skill' (/python\\MCP_Core\\skills\\ask\\skill.py)",
+      "elapsed_time": 0
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "passed": 3,
+    "failed": 4,
+    "skipped": 0
+  }
+}

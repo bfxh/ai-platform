@@ -1,0 +1,164 @@
+{
+  "Curve": [
+    "^ Operators",
+    "_",
+    "Extend Curve - Extend curve endpoints along their tangent",
+    "Lathe Curve - Mesh from curve by rotating points around a fixed axis",
+    "Sweep Curve - Mesh from profile curve with even thickness",
+    "_",
+    "Align To Spline - Align geometry to spline with tangential orientation"
+  ],
+
+  "Curve Primitives": [
+    "Curve Ellipse - Elliptical curve",
+    "Logarithmic Spiral - Logarithmic spiral curve",
+    "Spirograph - Spirograph-like curve"
+  ],
+
+  "Deformers": [
+    "^ Geometry",
+    "_",
+    "Bend - Bend geometry along a specified axis",
+    "Bulge - Thicken or thin geometry at the center along a specified axis",
+    "Displacer - Displace geometry based on a texture",
+    "Shear - Slide geometry along a specified axis",
+    "Smooth Geometry - Average positions to smooth geometry",
+    "Stretch - Stretch or scale geometry in multiple axes",
+    "Taper - Thicken or thin geometry towards the edges",
+    "Twist - Twist geometry along a specified axis",
+    "_",
+    "^ Mesh",
+    "_",
+    "Spherify - Deform mesh into a sphere (similar to 'To Sphere' in edit mode)"
+  ],
+
+  "Easing": [
+    "easeSine - Easing In and Out",
+    "easeQuad - Easing In and Out",
+    "easeCubic - Easing In and Out",
+    "easeQuart - Easing In and Out",
+    "easeQuint - Easing In and Out",
+    "easeExpo - Easing In and Out",
+    "easeCirc - Easing In and Out",
+    "easeBack - Easing In and Out",
+    "easeElastic - Easing In and Out",
+    "easeBounce - Easing In and Out"
+  ],
+
+  "Fields": [
+    "Box Field - Cubical falloff ",
+    "Cylinder Field - Cylindrical falloff ",
+    "Linear Field - Linear gradient falloff",
+    "Prism Field - Triangular falloff ",
+    "Spherical Field - Spherical falloff ",
+    "Torus Field - Toroidal falloff "
+  ],
+
+  "Geometry": [
+    "Center Elements - Reset geometry to world space coordinates",
+    "Parent To Object - Parent geometry's location, rotation, and scale to another object",
+    "_",
+    "Set Geometry Size - Reset the geometry's bounding box size",
+    "Set Geometry Visibility - Control geometry visibility in viewport and render",
+    "_",
+    "Geometry To Spline - Convert geometry to spline"
+  ],
+
+  "Input": [
+    "^ Selection",
+    "_",
+    "Boundary Edge Selection - Select edges with one neighboring face",
+    "Component Selection - Select individual components (vertices, edges, faces)",
+    "Edge Angle Selection - Select edges with a specific angle between connected faces",
+    "Edge Path Selection - Select the shortest path of edges between two points",
+    "Face Sides Selection - Select faces with a specific number of edges",
+    "Loose Edge Selection - Select edges not connected to any faces",
+    "Non-Manifold Edge Selection - Select edges shared by more than two faces",
+    "_",
+    "Is Empty Geometry - Check if geometry is empty or has no points",
+    "Is Inside Volume - Check if geometry contains volume",
+    "_",
+    "^ Select by Similarity",
+    "_",
+    "Select Similar Vertices - Select vertices with similar properties",
+    "Select Similar Edges - Select edges with similar properties",
+    "Select Similar Faces - Select faces with similar properties",
+    "_",
+    "Geometry Size - Output geometry's size, center, and extent",
+    "Island Center - Output the center of individual mesh islands"
+  ],
+
+  "Instancers": [
+    "Grid Instancer - Instance objects along X, Y, and Z axes",
+    "Linear Instancer - Instance objects along a straight line",
+    "Radial Instancer - Instance objects along an arc or circular pattern",
+    "Spherical Instancer - Instance objects along a spherical spiral"
+  ],
+  "Matrix": [
+    "Diagonal Matrix - Converts to Diagonal Matrix",
+    "Scalar Matrix - Matrix with constant values in principal diagonal",
+    "Trace Matrix  - Compute the trace of a matrix (sum of the elements of principal diagonal)",
+    "Triangular Matrix - Converts to Triangular Matrix",
+    "_",
+    "Is Symmetric Matrix - Checks if the matrix is symmetric",
+    "_",
+    "Matrix Viewer - View element of matrix as Instances"
+  ],
+
+  "Mesh": [
+    "^ Mesh Island",
+    "_",
+    "Align Islands - Align mesh islands along a specific axis",
+    "Delete Islands - Delete mesh islands based on their size",
+    "_",
+    "^ Operators",
+    "_",
+    "Inset Faces - Inner extrusion of selected faces",
+    "Match Topology - Match mesh topology to another mesh",
+    "Poke Faces - Poke selected faces at their center with adjustable depth",
+    "_",
+    "^ Topology",
+    "_",
+    "Vertex of Edge - Output the vertex index where an edge is attached"
+  ],
+
+  "Point Primitives": [
+    "Point Grid - Grid of points distributed over XYZ axes",
+    "Point Honeycomb - Point grid in a honeycomb pattern",
+    "Phyllotaxis - Point pattern resembling leaf arrangement on a stem"
+  ],
+
+  "UV": [
+    "^ Deform Mesh with UV",
+    "_",
+    "UV Deform - Deform mesh using another mesh's UV mapping",
+    "UV To Mesh - Geometrical representation of UV coordinates",
+    "_",
+    "^ Modifiers",
+    "_",
+    "Flip UV - Flip UV coordinates along the X or Y axis",
+    "UV Displace - Displace UV coordinates based on a texture map",
+    "_",
+    "^ UV Projection",
+    "_",
+    "UV Project - Project UV coordinates based on specified rotation (defaulted to Z-axis)"
+  ],
+
+  "Vector": [
+    "^ Coordinates",
+    "_",
+    "Cartesian to Cylindrical - Convert Cartesian to cylindrical coordinates",
+    "Cartesian to Spherical - Convert Cartesian to spherical coordinates",
+    "Cylindrical to Cartesian - Convert cylindrical to Cartesian coordinates",
+    "Spherical to Cartesian - Convert spherical to Cartesian coordinates",
+    "_",
+    "^ Vector",
+    "_",
+    "Replace Vector - Replace specific X, Y, or Z components of a vector",
+    "Seamless Vector - Seamless 4D texture by adjusting vector coordinates",
+    "Vector Clamp - Clamp vector components to specified minimum and maximum values",
+    "Vector Mapping - Control location, rotation, and scale of a vector",
+    "_",
+    "Is Vector Coplanar - Check if vectors lie on the same plane"
+  ]
+}

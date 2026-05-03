@@ -1,0 +1,27 @@
+blender_path: D:/rj/KF/JM/blender/blender.exe
+godot_path: D:/rj/KF/JM/Godot_v4.6.1-stable_win64.exe/Godot_v4.6.1-stable_win64.exe
+godot_project: /python/Temp/VortexTest
+ue5_path: D:/rj/KF/JM/UE_5.6/Engine/Binaries/Win64/UnrealEditor.exe
+output_dir: /python/Temp/Converted
+material_preset: default_cyan_metallic
+bake_size: 512
+supported_formats:
+  - .fbx
+  - .obj
+  - .gltf
+  - .glb
+  - .dae
+  - .abc
+  - .usd
+  - .usda
+  - .usdc
+  - .blend
+  - .unity
+  - .prefab
+  - .mat
+  - .tscn
+  - .tres
+  - .gd
+  - .cs
+  - .uasset
+  - .umap

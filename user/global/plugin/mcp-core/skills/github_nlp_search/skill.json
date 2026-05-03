@@ -1,0 +1,62 @@
+{
+  "name": "github_nlp_search",
+  "version": "1.0.0",
+  "description": "GitHub API自然语言搜索与推荐 - 理解自然语言查询，智能推荐API，生成示例代码",
+  "author": "MCP Core Team",
+  "created": "2026-04-18",
+  "enabled": true,
+  "category": "development",
+  "tags": ["github", "api", "nlp", "search", "recommendation", "code-generation"],
+  "entry_point": "skill.py",
+  "class_name": "GitHubNLPSearch",
+  "actions": [
+    {
+      "name": "natural_language_search",
+      "description": "自然语言搜索API",
+      "params": {
+        "query": {"type": "string", "required": true, "description": "自然语言查询"
+      }
+    },
+    {
+      "name": "recommend_apis",
+      "description": "智能推荐API",
+      "params": {
+        "context": {"type": "string", "required": false, "description": "上下文信息"},
+        "user_history": {"type": "array", "required": false, "description": "用户历史记录"}
+      }
+    },
+    {
+      "name": "generate_code",
+      "description": "生成示例代码",
+      "params": {
+        "endpoint": {"type": "string", "required": true, "description": "API端点"},
+        "method": {"type": "string", "required": true, "description": "HTTP方法"},
+        "language": {"type": "string", "required": false, "default": "python", "description": "编程语言"},
+        "params": {"type": "object", "required": false, "description": "API参数"}
+      }
+    },
+    {
+      "name": "get_search_history",
+      "description": "获取搜索历史",
+      "params": {}
+    },
+    {
+      "name": "clear_history",
+      "description": "清除搜索历史",
+      "params": {}
+    }
+  ],
+  "features": [
+    "自然语言理解",
+    "智能API推荐",
+    "多语言代码生成",
+    "上下文感知",
+    "历史分析"
+  ],
+  "dependencies": [
+    "requests"
+  ],
+  "output": {
+    "type": "json"
+  }
+}

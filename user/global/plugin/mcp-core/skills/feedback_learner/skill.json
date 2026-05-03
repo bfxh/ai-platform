@@ -1,0 +1,30 @@
+{
+  "name": "feedback_learner",
+  "version": "1.0",
+  "description": "GSTACK 用户反馈学习系统 - 从用户反馈中学习规则并更新 user_rules.md",
+  "category": "system",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "feedback": "处理用户反馈",
+    "list": "列出已有规则",
+    "commit": "提交规则到 Git"
+  },
+  "rules": {
+    "rules_file": "/python/.trae/user_rules.md",
+    "auto_commit": false,
+    "learn_from_feedback": true
+  },
+  "feedback_patterns": [
+    "不要把 * 归为未使用",
+    "不要把 * 自动 *",
+    "应该把 * 存放在 *",
+    "保护 *",
+    "优先 *"
+  ],
+  "dependencies": [
+    "Python 3.6+",
+    "re",
+    "subprocess"
+  ]
+}

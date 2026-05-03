@@ -1,0 +1,47 @@
+{
+  "name": "architect_enforce",
+  "version": "1.0",
+  "description": "架构强制执行技能 - 确保所有操作符合 GSTACK 架构规则",
+  "category": "system",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "validate": "验证任务描述是否符合架构规则",
+    "check": "检查文件是否在正确位置",
+    "enforce": "强制执行架构规则"
+  },
+  "rules": {
+    "mandatory_architecture": true,
+    "allowed_mcp_categories": [
+      "JM",
+      "BC",
+      "Tools"
+    ],
+    "allowed_cc_categories": [
+      "1_Raw",
+      "2_Old",
+      "3_Unused"
+    ],
+    "forbidden_paths": [
+      "C:\\Desktop",
+      "C:\\Downloads",
+      "C:\\Users"
+    ],
+    "protected_files": [
+      "ai_architecture.json",
+      "index.json",
+      "mcp-config.json"
+    ]
+  },
+  "dependencies": [
+    "Python 3.6+",
+    "json",
+    "pathlib"
+  ],
+  "execution": {
+    "pre_hook": "validate_architecture",
+    "post_hook": "enforce_architecture",
+    "block_on_violation": true
+  },
+  "[强制执行]": "当前任务必须严格符合以下目录结构，如有违反任务直接标记为失败：\n- MCP: JM/BC/Tools\n- CC: 1_Raw/2_Old/3_Unused\n- 禁止使用绝对路径 /python 之外的任何位置"
+}

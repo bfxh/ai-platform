@@ -1,0 +1,119 @@
+{
+  "name": "CC 定时清理",
+  "description": "每周扫描 CC/3_Unused 目录，自动归档超期文件",
+  "nodes": [
+    {
+      "name": "定时触发",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 2,
+              "triggerAtMinute": 0,
+              "triggerAtWeekday": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "扫描未使用文件",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        450,
+        300
+      ],
+      "parameters": {
+        "filePath": "/python\\CC\\3_Unused"
+      }
+    },
+    {
+      "name": "检查文件年龄",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        650,
+        300
+      ],
+      "parameters": {
+        "functionCode": "const fs = require('fs');\nconst path = require('path');\n\nconst now = Date.now();\nconst sevenDaysAgo = now - (7 * 24 * 60 * 60 * 1000);\n\nconst items = [];\nconst folder = 'D:\\\\AI\\\\CC\\\\3_Unused';\n\ntry {\n  const files = fs.readdirSync(folder);\n  for (const file of files) {\n    const filePath = path.join(folder, file);\n    const stats = fs.statSync(filePath);\n    if (stats.isFile() && stats.mtimeMs < sevenDaysAgo) {\n      items.push({ json: { file, path: filePath, mtime: stats.mtime } });\n    }\n  }\n} catch (e) {\n  console.log('Error:', e.message);\n}\n\nreturn items;"
+      }
+    },
+    {
+      "name": "移动到归档",
+      "type": "n8n-nodes-base.moveBinaryData",
+      "typeVersion": 1,
+      "position": [
+        850,
+        300
+      ],
+      "parameters": {}
+    },
+    {
+      "name": "记录日志",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        1050,
+        300
+      ],
+      "parameters": {
+        "fileName": "/python\\logs\\cc_cleanup.log",
+        "dataPropertyName": "data"
+      }
+    }
+  ],
+  "connections": {
+    "定时触发": {
+      "main": [
+        [
+          {
+            "node": "扫描未使用文件",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "扫描未使用文件": {
+      "main": [
+        [
+          {
+            "node": "检查文件年龄",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "检查文件年龄": {
+      "main": [
+        [
+          {
+            "node": "移动到归档",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "移动到归档": {
+      "main": [
+        [
+          {
+            "node": "记录日志",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

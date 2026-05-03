@@ -1,0 +1,514 @@
+{
+  "name": "terraria-workflows",
+  "version": "1.0.0",
+  "description": "泰拉瑞亚模组工作流配 - 完整的模组理、反编译和分析流",
+  "author": "AI Assistant",
+  
+  "workflows": {
+    "complete_mod_analysis": {
+      "name": "完整模组分析工作",
+      "description": "分析有已安的模组，测配题，生成报告",
+      "steps": [
+        {
+          "step": 1,
+          "name": "读取模组列表",
+          "action": "read_enabled_json",
+          "input": "%USERPROFILE%/Documents/My Games/Terraria/tModLoader/Mods/enabled.json",
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 2,
+          "name": "描配文件",
+          "action": "scan_configs",
+          "input": "%USERPROFILE%/Documents/My Games/Terraria/tModLoader/ModConfigs/",
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 3,
+          "name": "分析配置",
+          "action": "analyze_configs",
+          "checks": [
+            "hyperMultiplier > 1.0",
+            "GrabDistance > 20",
+            "NPCCoinDropRate > 10"
+          ],
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 4,
+          "name": "生成分析报告",
+          "action": "generate_report",
+          "output": "D://泰拉瑞亚/模组分析报告.md",
+          "skill": "terraria-mod-manager"
+        }
+      ]
+    },
+    
+    "fix_hypermode_speed": {
+      "name": "复HyperMode速度工作",
+      "description": "复HyperMode模组速度过快的问",
+      "steps": [
+        {
+          "step": 1,
+          "name": "备份配置",
+          "action": "backup_config",
+          "file": "HyperMode_HyperConfig.json",
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 2,
+          "name": "读取配置",
+          "action": "read_config",
+          "file": "HyperMode_HyperConfig.json",
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 3,
+          "name": "改度倍率",
+          "action": "modify_config",
+          "key": "hyperMultiplier",
+          "value": 1.0,
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 4,
+          "name": "保存配置",
+          "action": "save_config",
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 5,
+          "name": "验证",
+          "action": "verify_config",
+          "skill": "terraria-mod-manager"
+        }
+      ]
+    },
+    
+    "decompile_single_mod": {
+      "name": "单个模组反编译工作流",
+      "description": "反编译指定的单个模组",
+      "steps": [
+        {
+          "step": 1,
+          "name": "选择反编译工",
+          "action": "select_tool",
+          "tool": "ilspy",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 2,
+          "name": "定位模组文件",
+          "action": "find_mod",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 3,
+          "name": "加载程序",
+          "action": "load_assembly",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 4,
+          "name": "反编译代",
+          "action": "decompile",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 5,
+          "name": "提取资源",
+          "action": "extract_resources",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 6,
+          "name": "保存代码",
+          "action": "save_code",
+          "output": "%SOFTWARE_DIR%/KF/FBY/Decompiled/",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 7,
+          "name": "组织资源",
+          "action": "organize_resources",
+          "output": "%SOFTWARE_DIR%/KF/JM/",
+          "skill": "terraria-decompiler"
+        }
+      ]
+    },
+    
+    "download_mod_sources": {
+      "name": "下载模组源码工作",
+      "description": "批量下载有模组的GitHub源码",
+      "steps": [
+        {
+          "step": 1,
+          "name": "读取模组列表",
+          "action": "read_enabled_json",
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 2,
+          "name": "搜索GitHub仓库",
+          "action": "search_github",
+          "mods": [
+            "CalamityMod",
+            "CalamityOverhaul",
+            "InfernumMode",
+            "FargowiltasSouls",
+            "ImproveGame",
+            "HyperMode"
+          ],
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 3,
+          "name": "克隆仓库",
+          "action": "git_clone",
+          "output": "D://泰拉瑞亚/模组源码/",
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 4,
+          "name": "生成源码清单",
+          "action": "generate_source_list",
+          "output": "D://泰拉瑞亚/源码清单.md",
+          "skill": "terraria-mod-manager"
+        }
+      ]
+    },
+    
+    "backup_all_configs": {
+      "name": "备份有配工作",
+      "description": "备份有模组的配置文件",
+      "steps": [
+        {
+          "step": 1,
+          "name": "描配",
+          "action": "scan_config_dir",
+          "path": "%USERPROFILE%/Documents/My Games/Terraria/tModLoader/ModConfigs/",
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 2,
+          "name": "创建备份",
+          "action": "create_backup_dir",
+          "path": "%SOFTWARE_DIR%/KF/FBY/Backups/",
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 3,
+          "name": "复制配置文件",
+          "action": "copy_configs",
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 4,
+          "name": "生成备份清单",
+          "action": "generate_backup_list",
+          "skill": "terraria-mod-manager"
+        }
+      ]
+    },
+    
+    "extract_all_resources": {
+      "name": "提取有资源工作流",
+      "description": "从所有模组中提取资源文件",
+      "steps": [
+        {
+          "step": 1,
+          "name": "获取模组列表",
+          "action": "get_mod_list",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 2,
+          "name": "逐个处理模组",
+          "action": "process_mods",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 3,
+          "name": "提取贴图",
+          "action": "extract_textures",
+          "output": "%SOFTWARE_DIR%/KF/JM/Textures/",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 4,
+          "name": "提取音效",
+          "action": "extract_sounds",
+          "output": "%SOFTWARE_DIR%/KF/JM/Sounds/",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 5,
+          "name": "提取音乐",
+          "action": "extract_music",
+          "output": "%SOFTWARE_DIR%/KF/JM/Music/",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 6,
+          "name": "生成资源清单",
+          "action": "generate_resource_list",
+          "skill": "terraria-decompiler"
+        }
+      ]
+    },
+    
+    "generate_all_docs": {
+      "name": "生成有文档工作流",
+      "description": "生成分析报告、开发指南API文档等所有文",
+      "steps": [
+        {
+          "step": 1,
+          "name": "生成模组分析报告",
+          "action": "generate_analysis_report",
+          "output": "D://泰拉瑞亚/模组分析报告.md",
+          "skill": "terraria-doc-generator"
+        },
+        {
+          "step": 2,
+          "name": "生成发工具指",
+          "action": "generate_dev_guide",
+          "output": "D://泰拉瑞亚/发工具指.md",
+          "skill": "terraria-doc-generator"
+        },
+        {
+          "step": 3,
+          "name": "生成源码清单",
+          "action": "generate_source_list",
+          "output": "D://泰拉瑞亚/源码清单.md",
+          "skill": "terraria-doc-generator"
+        },
+        {
+          "step": 4,
+          "name": "生成工作流报",
+          "action": "generate_workflow_report",
+          "output": "D://泰拉瑞亚/工作流执行报.md",
+          "skill": "terraria-doc-generator"
+        }
+      ]
+    },
+    
+    "setup_dev_environment": {
+      "name": "配置发环境工作流",
+      "description": "查和安所有必的开发工",
+      "steps": [
+        {
+          "step": 1,
+          "name": "查已安工",
+          "action": "check_installed_tools",
+          "skill": "terraria-dev-workflow"
+        },
+        {
+          "step": 2,
+          "name": "下载Visual Studio",
+          "action": "download_visual_studio",
+          "skill": "terraria-dev-workflow"
+        },
+        {
+          "step": 3,
+          "name": "下载.NET SDK",
+          "action": "download_dotnet_sdk",
+          "skill": "terraria-dev-workflow"
+        },
+        {
+          "step": 4,
+          "name": "配置发环",
+          "action": "configure_environment",
+          "skill": "terraria-dev-workflow"
+        },
+        {
+          "step": 5,
+          "name": "生成发指",
+          "action": "generate_dev_guide",
+          "output": "D://泰拉瑞亚/发工具指.md",
+          "skill": "terraria-doc-generator"
+        }
+      ]
+    },
+    
+    "analyze_mod_architecture": {
+      "name": "模组架构分析工作",
+      "description": "深度分析模组源码架构、模式和代码质量",
+      "steps": [
+        {
+          "step": 1,
+          "name": "描源码目",
+          "action": "scan_source_dir",
+          "path": "D://泰拉瑞亚/模组源码/",
+          "skill": "terraria-code-analyzer"
+        },
+        {
+          "step": 2,
+          "name": "分析录结",
+          "action": "analyze_directory_structure",
+          "skill": "terraria-code-analyzer"
+        },
+        {
+          "step": 3,
+          "name": "识别核心",
+          "action": "identify_core_classes",
+          "skill": "terraria-code-analyzer"
+        },
+        {
+          "step": 4,
+          "name": "分析设模",
+          "action": "analyze_design_patterns",
+          "patterns": [
+            "单例模式",
+            "工厂模式",
+            "观察者模",
+            "配置模式",
+            "全局改模"
+          ],
+          "skill": "terraria-code-analyzer"
+        },
+        {
+          "step": 5,
+          "name": "分析依赖关系",
+          "action": "analyze_dependencies",
+          "skill": "terraria-code-analyzer"
+        },
+        {
+          "step": 6,
+          "name": "评估代码质量",
+          "action": "evaluate_code_quality",
+          "metrics": [
+            "复杂",
+            "命名规范",
+            "代码组织",
+            "注释覆盖"
+          ],
+          "skill": "terraria-code-analyzer"
+        },
+        {
+          "step": 7,
+          "name": "生成架构报告",
+          "action": "generate_architecture_report",
+          "output": "D://泰拉瑞亚/架构分析报告.md",
+          "skill": "terraria-code-analyzer"
+        }
+      ]
+    },
+    
+    "batch_decompile_mods": {
+      "name": "批量反编译模组工作流",
+      "description": "批量反编译所有未获取源码的模",
+      "steps": [
+        {
+          "step": 1,
+          "name": "读取模组列表",
+          "action": "read_enabled_json",
+          "skill": "terraria-mod-manager"
+        },
+        {
+          "step": 2,
+          "name": "查已有源",
+          "action": "check_existing_sources",
+          "path": "D://泰拉瑞亚/模组源码/",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 3,
+          "name": "定需反编译模",
+          "action": "identify_mods_to_decompile",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 4,
+          "name": "准反编译工具",
+          "action": "prepare_decompiler",
+          "tool": "ilspy",
+          "path": "%SOFTWARE_DIR%/KF/FBY/ILSpy/ILSpy.exe",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 5,
+          "name": "批量反编",
+          "action": "batch_decompile",
+          "output": "%SOFTWARE_DIR%/KF/FBY/Decompiled/",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 6,
+          "name": "生成反编译报",
+          "action": "generate_decompile_report",
+          "output": "D://泰拉瑞亚/反编译报.md",
+          "skill": "terraria-decompiler"
+        }
+      ]
+    },
+    
+    "complete_code_analysis": {
+      "name": "完整代码分析工作",
+      "description": "完整的代码分析流程：反编译架构分析质量评",
+      "steps": [
+        {
+          "step": 1,
+          "name": "批量反编",
+          "action": "batch_decompile",
+          "workflow": "batch_decompile_mods",
+          "skill": "terraria-decompiler"
+        },
+        {
+          "step": 2,
+          "name": "架构分析",
+          "action": "analyze_architecture",
+          "workflow": "analyze_mod_architecture",
+          "skill": "terraria-code-analyzer"
+        },
+        {
+          "step": 3,
+          "name": "设模式识",
+          "action": "identify_patterns",
+          "skill": "terraria-code-analyzer"
+        },
+        {
+          "step": 4,
+          "name": "代码质量评估",
+          "action": "evaluate_quality",
+          "skill": "terraria-code-analyzer"
+        },
+        {
+          "step": 5,
+          "name": "性能分析",
+          "action": "analyze_performance",
+          "skill": "terraria-code-analyzer"
+        },
+        {
+          "step": 6,
+          "name": "生成综合报告",
+          "action": "generate_comprehensive_report",
+          "output": "D://泰拉瑞亚/完整代码分析报告.md",
+          "skill": "terraria-code-analyzer"
+        }
+      ]
+    }
+  },
+  
+  "quick_commands": {
+    "分析模组": "complete_mod_analysis",
+    "复度": "fix_hypermode_speed",
+    "反编": "decompile_single_mod",
+    "下载源码": "download_mod_sources",
+    "备份配置": "backup_all_configs",
+    "提取资源": "extract_all_resources",
+    "生成文档": "generate_all_docs",
+    "配置": "setup_dev_environment",
+    "架构分析": "analyze_mod_architecture",
+    "批量反编": "batch_decompile_mods",
+    "完整分析": "complete_code_analysis"
+  },
+  
+  "skills": {
+    "terraria-mod-manager": "/python/Skills/terraria-mod-manager/",
+    "terraria-decompiler": "/python/Skills/terraria-decompiler/",
+    "terraria-doc-generator": "/python/Skills/terraria-doc-generator/",
+    "terraria-dev-workflow": "/python/Skills/terraria-dev-workflow/",
+    "terraria-code-analyzer": "/python/Skills/terraria-code-analyzer/",
+    "mcp-workflow": "/python/Skills/mcp-workflow/"
+  }
+}

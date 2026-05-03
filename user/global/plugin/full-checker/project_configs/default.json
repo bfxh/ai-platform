@@ -1,0 +1,25 @@
+{
+  "name_patterns": {
+    "nodejs": ["package.json"],
+    "python": ["requirements.txt", "pyproject.toml", "setup.py"],
+    "java": ["pom.xml", "build.gradle"],
+    "rust": ["Cargo.toml"],
+    "go": ["go.mod"],
+    "csharp": ["*.csproj"]
+  },
+  "check_strategies": {
+    "nodejs": {
+      "required_files": ["package.json", "README.md"],
+      "test_commands": ["npm test", "npm run test"],
+      "lint_commands": ["npm run lint"],
+      "build_commands": ["npm run build"]
+    },
+    "python": {
+      "required_files": ["requirements.txt", "README.md"],
+      "test_commands": ["pytest", "python -m pytest"],
+      "lint_commands": ["pylint", "flake8"],
+      "build_commands": ["python setup.py build"]
+    }
+  },
+  "default_checks": ["code_quality", "testing", "documentation", "security", "dependencies"]
+}

@@ -1,0 +1,138 @@
+categories:
+  code_quality:
+    description: 代码质量规则 — 确保生成代码符合标准
+    priority_base: 50
+  file_protection:
+    description: 文件保护规则 — 防止误删核心文件
+    priority_base: 90
+  resource_limits:
+    description: 资源限制 — 防止过度消耗
+    priority_base: 40
+  security:
+    description: 安全相关规则 — 最高优先级
+    priority_base: 100
+  superpowers:
+    description: 强制工作流规则 — 保证 TDD/安全审计等不可跳过
+    priority_base: 85
+  system_access:
+    description: 系统访问规则 — 限制危险系统操作
+    priority_base: 80
+rules:
+- actions:
+  - delete_file
+  - move_file
+  - rm
+  - del
+  category: security
+  description: 禁止删除核心系统文件
+  effect: deny
+  id: SEC-001
+  patterns:
+  - core/**/*.py
+  - scripts/**/*.py
+  - storage/**/da.py
+  - user/global/plugin/mcp-core/**/*.py
+  priority: 100
+  reason: 核心系统文件不可删除。如需修改，请使用 safe_write 自动备份。
+- actions:
+  - execute_command
+  - trae_command
+  - run_command
+  category: security
+  description: 禁止执行危险系统命令
+  effect: deny
+  id: SEC-002
+  patterns:
+  - rm\s+-rf\s+/
+  - 'format\s+[cdefgh]:'
+  - del\s+/[fsq].*
+  - shutdown
+  - Restart-Computer
+  - Stop-Computer
+  priority: 100
+  reason: 禁止执行危险系统命令（格式化、强制删除、关机等）
+- actions:
+  - write_file
+  category: security
+  description: 禁止在生产环境写入 .env 或凭证文件
+  effect: warn
+  id: SEC-003
+  patterns:
+  - '*.env'
+  - '**/.env'
+  - '*credentials*'
+  - '*secret*'
+  - '*.pem'
+  - '*.key'
+  priority: 95
+  reason: 凭证文件应手动管理。如确需写入，请先备份。
+- actions:
+  - write_file
+  - edit_file
+  category: file_protection
+  description: 修改受保护文件前必须备份
+  effect: require_backup
+  id: FILE-001
+  patterns: []
+  priority: 90
+  reason: 受保护文件修改前必须自动备份到 CC/2_old
+- actions:
+  - write_file
+  - create_directory
+  category: file_protection
+  description: 禁止在非项目目录创建文件
+  effect: deny
+  id: FILE-002
+  patterns:
+  - C:/Windows/**
+  - C:/Program Files/**
+  - C:/Program Files (x86)/**
+  - /etc/**
+  - /usr/**
+  - /bin/**
+  priority: 90
+  reason: 禁止在系统目录创建文件
+- actions:
+  - execute_command
+  - trae_command
+  category: system_access
+  description: 限制高危注册表操作
+  effect: warn
+  id: SYS-001
+  patterns:
+  - HKEY_LOCAL_MACHINE
+  - 'HKLM:'
+  - reg\s+(add|delete)\s+HKLM
+  priority: 85
+  reason: 修改系统注册表可能影响系统稳定性
+- actions:
+  - write_file
+  category: code_quality
+  description: Python 文件不能有语法错误
+  effect: warn
+  id: CODE-001
+  patterns:
+  - '*.py'
+  priority: 55
+  reason: 写入前应确保代码语法正确
+- actions:
+  - write_file
+  category: resource_limits
+  condition: content_size > 10485760
+  description: 单次写入文件不能超过 10MB
+  effect: deny
+  id: RES-001
+  patterns: []
+  priority: 45
+  reason: 单次写入超过 10MB 可能触发 OOM
+- actions:
+  - execute_superpower
+  - skip_superpower
+  category: superpowers
+  description: 强制工作流不可跳过 — TDD/安全审计等必须执行
+  effect: deny
+  id: SUPER-001
+  patterns: []
+  priority: 85
+  reason: 检测到匹配的强制工作流 (TDD/安全审计等)，不可跳过。请先完成工作流。
+rules_version: 1.0.0

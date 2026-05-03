@@ -1,0 +1,17 @@
+[platform]
+version = "1.0.0"
+base_dir = "/python"
+
+[paths]
+ollama = "D:/rj/Ollama/ollama.exe"
+python = "C:/Users/888/AppData/Local/Programs/Python/Python312/python.exe"
+node = "node.EXE"
+git = "D:/rj/KF/Git/cmd/git.EXE"
+
+[sandbox]
+default_timeout = 600
+trash_dir = "storage/trash"
+
+[daily]
+enabled = true
+auto_commit = false

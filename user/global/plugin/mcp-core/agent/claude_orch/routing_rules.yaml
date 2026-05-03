@@ -1,0 +1,75 @@
+# 路由规则 — 意图到代理的映射
+# Claude 编排代理根据任务意图选择目标子代理
+
+rules:
+  # --- 代码生成 ---
+  - intent: code_generation
+    keywords: [创建, 新建, 生成, 写, 编写, 实现, create, new, generate, write, implement, make]
+    agent: trae_control
+    priority: 10
+    context: |
+      生成代码并写入 TRAE IDE。包含创建文件、编写函数、实现类等操作。
+      结果文件应直接出现在 IDE 编辑器中。
+
+  # --- 代码修改 ---
+  - intent: code_modification
+    keywords: [修改, 改, 更新, 重构, 优化, 修复, fix, update, modify, refactor, change]
+    agent: trae_control
+    priority: 10
+    context: |
+      修改现有代码。打开文件→定位要修改的位置→替换内容→保存。
+
+  # --- 代码分析 ---
+  - intent: code_analysis
+    keywords: [分析, 检查, 审查, 审计, 扫描, 评估, review, analyze, audit, scan, check]
+    agent: qoder
+    priority: 8
+    context: |
+      分析代码质量和安全性。不需要修改代码，只需提供分析报告。
+
+  # --- 文件操作 ---
+  - intent: file_operation
+    keywords: [读取, 打开, 查看, 读取文件, 列出, 目录, 新建目录, 创建目录, 新建文件, read, open, list, show, mkdir]
+    agent: trae_control
+    priority: 11
+    context: |
+      在 TRAE IDE 中执行文件操作：读取、列出目录、搜索文件等。
+
+  # --- 终端命令 ---
+  - intent: terminal_command
+    keywords: [执行, 运行, 命令, 终端, 安装, 构建, run, execute, install, build, test]
+    agent: trae_control
+    priority: 7
+    context: |
+      在 IDE 终端中执行命令。如 npm install、python script.py、git commit 等。
+
+  # --- 网络搜索 ---
+  - intent: web_research
+    keywords: [搜索, 查询, 查找, 网上, 百度, 谷歌, search, find, look up, research]
+    agent: trae_web_search
+    priority: 6
+    context: |
+      搜索网络获取技术信息、文档、解决方案。
+
+  # --- 桌面自动化 ---
+  - intent: desktop_automation
+    keywords: [点击, 输入, 截图, 窗口, 激活, click, screenshot, window, activate]
+    agent: trae_desktop_automation
+    priority: 5
+    context: |
+      执行桌面 GUI 操作：鼠标点击、键盘输入、窗口管理、截图等。
+
+  # --- 系统操作 ---
+  - intent: system_operation
+    keywords: [系统, 进程, 查看系统, 查看进程, 任务管理器, 关机, 重启, system, process, shutdown, restart]
+    agent: trae_desktop_automation
+    priority: 12
+    context: |
+      执行系统级操作：进程管理、系统控制等。
+
+# ============================================================
+# 默认规则
+# ============================================================
+default:
+  agent: trae_control
+  reason: "未匹配到特定意图，默认递到 TRAE IDE 控制代理处理代码相关任务"

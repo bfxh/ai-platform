@@ -1,0 +1,9 @@
+{
+  "name": "local-llm-engine",
+  "display_name": "本地LLM引擎",
+  "description": "集成Ollama/LocalAI/Jan等本地推理引擎",
+  "version": "1.0.0",
+  "category": "inference",
+  "engines": ["ollama", "localai", "jan", "gpt4all", "anythingllm", "privategpt"],
+  "ports": {"ollama": 11434, "vcp_api": 6005, "vcp_admin": 6006, "ws_bridge": 11436}
+}

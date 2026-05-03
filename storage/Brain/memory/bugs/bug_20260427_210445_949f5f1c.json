@@ -1,0 +1,20 @@
+{
+  "bug_id": "bug_20260427_210445_949f5f1c",
+  "timestamp": "2026-04-27T21:04:45.286467",
+  "agent_id": "Qoder",
+  "task_description": "初始化 shared context",
+  "error_message": "ModuleNotFoundError: No module named filelock. Install with: pip install filelock",
+  "error_type": "import",
+  "fix_description": "待分析",
+  "files_involved": [
+    "core/shared_context.py"
+  ],
+  "severity": "high",
+  "tags": [
+    "shared",
+    "context"
+  ],
+  "recurrence_count": 0,
+  "last_seen": "2026-04-27T21:04:45.286467",
+  "first_seen": "2026-04-27T21:04:45.286467"
+}

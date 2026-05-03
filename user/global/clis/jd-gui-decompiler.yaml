@@ -1,0 +1,21 @@
+name: "jd-gui-decompiler"
+description: "JD-GUI Java 反编译器 — JAR/CLASS → Java 源码"
+exec_path: "java"
+params:
+  - name: target
+    type: string
+    required: true
+    description: "目标 JAR/CLASS 文件路径"
+  - name: jar_path
+    type: string
+    default: "D:\\rj\\KF\\FBY\\JD-GUI\\jd-gui.jar"
+    description: "JD-GUI JAR 路径"
+  - name: output_dir
+    type: string
+    default: "output/jdgui_out"
+    description: "保存输出目录 (通过 File→Save All)"
+timeout: 120
+args: ["-jar", "{jar_path}", "{target}"]
+output:
+  type: "directory"
+  description: "Java 源码目录"

@@ -1,0 +1,22 @@
+{
+  "name": "skill_forker",
+  "version": "1.0",
+  "description": "Skills 跨项目模板克隆工具 - 将技能复制到项目本地并调整路径",
+  "category": "system",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "fork": "克隆技能到项目",
+    "list": "列出可用技能",
+    "check": "检查项目本地技能"
+  },
+  "rules": {
+    "target_dir": ".gstack/skills",
+    "auto_update_paths": true,
+    "priority_local": true
+  },
+  "dependencies": [
+    "Python 3.6+",
+    "shutil"
+  ]
+}

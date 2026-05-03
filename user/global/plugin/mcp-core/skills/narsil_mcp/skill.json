@@ -1,0 +1,21 @@
+{
+  "name": "narsil_mcp",
+  "display_name": "Narsil MCP",
+  "description": "Narsil MCP - 代码分析工具",
+  "version": "1.0.0",
+  "author": "GSTACK",
+  "category": "system",
+  "tags": ["code", "analysis", "python", "static"],
+  "dependencies": [],
+  "config": {
+    "narsil_dir": "/python\\MCP\\BC\\narsil_mcp",
+    "server_url": "http://localhost:8401"
+  },
+  "commands": {
+    "start": "启动Narsil MCP服务",
+    "stop": "停止Narsil MCP服务",
+    "status": "检查Narsil MCP服务状态",
+    "analyze": "分析代码"
+  },
+  "example_usage": "gstack narsil analyze /python\\gstack_core"
+}

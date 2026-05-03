@@ -1,0 +1,84 @@
+# Resource profiles for task routing and pre-execution checks.
+# Used by the dispatcher to match tasks to appropriate runtimes.
+
+profiles:
+  - task_type: "model_inference"
+    priority_tier: gpu
+    estimated_gpu_memory_mb: 4096
+    estimated_cpu_cores: 4
+    estimated_memory_mb: 8192
+    max_retries: 3
+    pre_check_rules: []
+    reroute_target: "cpu_fallback"
+
+  - task_type: "game_modeling"
+    priority_tier: gpu
+    estimated_gpu_memory_mb: 6144
+    estimated_cpu_cores: 8
+    estimated_memory_mb: 16384
+    max_retries: 2
+    pre_check_rules: ["format_validation"]
+    reroute_target: "local_modeling"
+
+  - task_type: "localization_check"
+    priority_tier: fast
+    estimated_gpu_memory_mb: 0
+    estimated_cpu_cores: 1
+    estimated_memory_mb: 256
+    max_retries: 3
+    pre_check_rules: ["hanization_check", "rule_compliance"]
+    reroute_target: null
+
+  - task_type: "rule_compliance"
+    priority_tier: fast
+    estimated_gpu_memory_mb: 0
+    estimated_cpu_cores: 1
+    estimated_memory_mb: 256
+    max_retries: 3
+    pre_check_rules: ["standards_check"]
+    reroute_target: null
+
+  - task_type: "crawler"
+    priority_tier: normal
+    estimated_gpu_memory_mb: 0
+    estimated_cpu_cores: 2
+    estimated_memory_mb: 1024
+    max_retries: 3
+    pre_check_rules: []
+    reroute_target: null
+
+  - task_type: "code_generation"
+    priority_tier: normal
+    estimated_gpu_memory_mb: 0
+    estimated_cpu_cores: 2
+    estimated_memory_mb: 2048
+    max_retries: 3
+    pre_check_rules: []
+    reroute_target: null
+
+  - task_type: "code_review"
+    priority_tier: fast
+    estimated_gpu_memory_mb: 0
+    estimated_cpu_cores: 1
+    estimated_memory_mb: 512
+    max_retries: 2
+    pre_check_rules: []
+    reroute_target: null
+
+  - task_type: "file_operation"
+    priority_tier: fast
+    estimated_gpu_memory_mb: 0
+    estimated_cpu_cores: 1
+    estimated_memory_mb: 256
+    max_retries: 5
+    pre_check_rules: ["deletion_review"]
+    reroute_target: null
+
+  - task_type: "default"
+    priority_tier: normal
+    estimated_gpu_memory_mb: 0
+    estimated_cpu_cores: 1
+    estimated_memory_mb: 512
+    max_retries: 3
+    pre_check_rules: []
+    reroute_target: null

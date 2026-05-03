@@ -1,0 +1,50 @@
+{
+  "name": "github_repo_manager",
+  "version": "1.0.0",
+  "description": "GitHub仓库管理器 - 克隆、批量下载、分析、同步",
+  "author": "AI Assistant",
+  "type": "mcp-skill",
+  "entry_point": "skill.py",
+  "actions": [
+    {
+      "name": "clone_repository",
+      "description": "克隆仓库",
+      "parameters": {
+        "repo_url": "仓库URL",
+        "target_dir": "目标目录 (可选)",
+        "depth": "克隆深度 (可选)"
+      }
+    },
+    {
+      "name": "batch_clone",
+      "description": "批量克隆",
+      "parameters": {
+        "repos_file": "仓库列表文件路径"
+      }
+    },
+    {
+      "name": "analyze_repository",
+      "description": "分析仓库",
+      "parameters": {
+        "repo_path": "仓库路径"
+      }
+    },
+    {
+      "name": "sync_repository",
+      "description": "同步仓库",
+      "parameters": {
+        "repo_path": "仓库路径"
+      }
+    },
+    {
+      "name": "list_repositories",
+      "description": "列出所有仓库",
+      "parameters": {}
+    }
+  ],
+  "dependencies": [],
+  "env_vars": {
+    "AI_PATH": "/python",
+    "GITHUB_REPOS_PATH": "/python/GitHub/repos"
+  }
+}

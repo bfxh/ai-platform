@@ -1,0 +1,244 @@
+{
+  "version": "1.0.0",
+  "skills": {
+    "godot": {
+      "name": "Godot Engine Skills",
+      "description": "Godot game engine integration skills",
+      "tools": [
+        {
+          "name": "import_asset",
+          "description": "Import 3D assets into Godot",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "filepath": {"type": "string"},
+              "import_settings": {"type": "object"},
+              "destination_path": {"type": "string"}
+            },
+            "required": ["filepath"]
+          }
+        },
+        {
+          "name": "export_scene",
+          "description": "Export Godot scene to external format",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "scene_path": {"type": "string"},
+              "format": {"type": "string", "enum": ["glb", "gltf", "obj", "fbx"]},
+              "export_settings": {"type": "object"}
+            },
+            "required": ["scene_path", "format"]
+          }
+        },
+        {
+          "name": "create_material",
+          "description": "Create PBR material in Godot",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "material_name": {"type": "string"},
+              "albedo_color": {"type": "array"},
+              "metallic": {"type": "number"},
+              "roughness": {"type": "number"},
+              "textures": {"type": "object"}
+            },
+            "required": ["material_name"]
+          }
+        },
+        {
+          "name": "setup_nanite",
+          "description": "Setup Nanite virtual geometry for mesh",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "mesh_instance_path": {"type": "string"},
+              "lod_count": {"type": "integer"},
+              "triangle_threshold": {"type": "integer"}
+            },
+            "required": ["mesh_instance_path"]
+          }
+        },
+        {
+          "name": "setup_lumen",
+          "description": "Setup Lumen global illumination",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "quality": {"type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "EPIC"]},
+              "gi_scale": {"type": "number"}
+            }
+          }
+        },
+        {
+          "name": "apply_post_process",
+          "description": "Apply post-processing effects",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "preset": {"type": "string", "enum": ["NATURAL", "CINEMATIC", "GAME", "PERFORMANCE"]},
+              "effects": {"type": "array"}
+            }
+          }
+        }
+      ]
+    },
+    "blender": {
+      "name": "Blender Skills",
+      "description": "Blender 3D software integration skills",
+      "tools": [
+        {
+          "name": "import_asset",
+          "description": "Import 3D assets into Blender",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "filepath": {"type": "string"},
+              "import_settings": {"type": "object"}
+            },
+            "required": ["filepath"]
+          }
+        },
+        {
+          "name": "export_asset",
+          "description": "Export Blender asset to external format",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "filepath": {"type": "string"},
+              "format": {"type": "string", "enum": ["glb", "gltf", "obj", "fbx", "usd"]},
+              "selected_only": {"type": "boolean"}
+            },
+            "required": ["filepath", "format"]
+          }
+        },
+        {
+          "name": "create_pbr_material",
+          "description": "Create advanced PBR material",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "material_name": {"type": "string"},
+              "use_subsurface": {"type": "boolean"},
+              "use_clearcoat": {"type": "boolean"},
+              "use_anisotropic": {"type": "boolean"},
+              "quality": {"type": "string", "enum": ["STANDARD", "HIGH", "CINEMATIC"]}
+            },
+            "required": ["material_name"]
+          }
+        },
+        {
+          "name": "create_nanite_proxy",
+          "description": "Create Nanite-style virtual geometry",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "object_name": {"type": "string"},
+              "triangle_threshold": {"type": "integer"},
+              "lod_count": {"type": "integer"}
+            },
+            "required": ["object_name"]
+          }
+        },
+        {
+          "name": "setup_lumen_lighting",
+          "description": "Setup Lumen-style lighting",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "quality": {"type": "string"},
+              "gi_scale": {"type": "number"}
+            }
+          }
+        },
+        {
+          "name": "bake_textures",
+          "description": "Bake PBR textures",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "resolution": {"type": "integer"},
+              "samples": {"type": "integer"},
+              "bake_types": {"type": "array"}
+            }
+          }
+        }
+      ]
+    },
+    "ue5": {
+      "name": "Unreal Engine 5 Skills",
+      "description": "Unreal Engine 5 integration skills",
+      "tools": [
+        {
+          "name": "import_to_godot",
+          "description": "Export UE5 asset and import to Godot",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "ue_asset_path": {"type": "string"},
+              "godot_project_path": {"type": "string"},
+              "conversion_settings": {"type": "object"}
+            },
+            "required": ["ue_asset_path", "godot_project_path"]
+          }
+        },
+        {
+          "name": "convert_nanite_to_godot",
+          "description": "Convert UE5 Nanite mesh to Godot LOD system",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "nanite_mesh_path": {"type": "string"},
+              "output_path": {"type": "string"}
+            },
+            "required": ["nanite_mesh_path"]
+          }
+        },
+        {
+          "name": "convert_lumen_to_godot",
+          "description": "Convert UE5 Lumen lighting to Godot lighting",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "level_path": {"type": "string"},
+              "export_lightmaps": {"type": "boolean"}
+            }
+          }
+        }
+      ]
+    },
+    "common": {
+      "name": "Common Skills",
+      "description": "Cross-software common skills",
+      "tools": [
+        {
+          "name": "sync_scene",
+          "description": "Synchronize scene between software",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "source_software": {"type": "string", "enum": ["godot", "blender", "ue5"]},
+              "target_software": {"type": "string", "enum": ["godot", "blender", "ue5"]},
+              "sync_settings": {"type": "object"}
+            },
+            "required": ["source_software", "target_software"]
+          }
+        },
+        {
+          "name": "batch_convert",
+          "description": "Batch convert assets",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "source_format": {"type": "string"},
+              "target_format": {"type": "string"},
+              "input_directory": {"type": "string"},
+              "output_directory": {"type": "string"}
+            },
+            "required": ["source_format", "target_format", "input_directory"]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+name: "git-commit"
+description: "Git 操作封装 — commit / status / diff / log"
+exec_path: "git"
+params:
+  - name: action
+    type: string
+    default: "status"
+    description: "git 操作: commit, status, diff, log, add, push"
+  - name: message
+    type: string
+    default: ""
+    description: "commit 消息"
+  - name: files
+    type: string
+    default: "."
+    description: "目标文件 (用于 add)"
+  - name: branch
+    type: string
+    default: ""
+    description: "目标分支 (用于 push)"
+timeout: 60

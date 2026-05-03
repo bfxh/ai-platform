@@ -1,0 +1,25 @@
+{
+  "name": "memory_mcp",
+  "version": "1.0",
+  "description": "记忆 MCP 服务器 - 提供 remember/recall API 维护会话记忆",
+  "category": "Tools",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "remember": "保存记忆",
+    "recall": "回忆记忆",
+    "forget": "删除记忆",
+    "clear": "清除所有记忆",
+    "session": "获取会话 ID"
+  },
+  "rules": {
+    "memory_file": "/python/gstack_core/state/memory.json",
+    "auto_save": true,
+    "session_persistence": true
+  },
+  "dependencies": [
+    "Python 3.6+",
+    "json",
+    "uuid"
+  ]
+}

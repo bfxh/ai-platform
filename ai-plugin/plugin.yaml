@@ -1,0 +1,85 @@
+# ============================================================
+# \python 集中化 AI 能力包 — plugin.yaml
+# 所有 AI Agent (TRAE, Qoder, 及未来 Agent) 的单一配置源
+# ============================================================
+
+name: ai-plugin
+version: "1.0.0"
+description: "/python 个人AI能力包 — 集中管理所有AI的行为、技能、模板和工作流"
+min_tool_version: "1.0.0"
+rules_priority: high
+
+# --- 仓库信息 (Git版本控制 + 自动更新) ---
+repository:
+  url: ""  # 待用户填入: https://github.com/<username>/ai-plugin.git
+  branch: main
+  auto_update: true
+  update_on_startup: true
+
+# --- Agent 默认配置 (继承自 TuriX-CUA 模式) ---
+agent:
+  default_model: qwen2.5-coder:7b
+  use_plan: true
+  use_skills: true
+  max_steps: 50
+
+llm:
+  provider: ollama
+  base_url: "http://localhost:11434/v1"
+
+logging:
+  level: DEBUG
+  dir: "/python/logs/"
+
+# --- 能力路径 ---
+paths:
+  install_dir: "/python/ai-plugin"
+  skills_dir: "/python/ai-plugin/skills/"
+  rules_dir: "/python/ai-plugin/rules/"
+  templates_dir: "/python/ai-plugin/templates/"
+  scripts_dir: "/python/ai-plugin/scripts/"
+
+# --- 关联的 AI 工具 ---
+integrations:
+  - name: TRAE
+    type: ide
+    config_dir: "/python/.trae/"
+    linked_files:
+      - source: "rules/trae-project-rules.md"
+        target: "/python/.trae/project_rules.md"
+  - name: Qoder
+    type: agent
+    config_dir: "/python/.qoder/"
+    linked_files:
+      - source: "rules/qoder-agent.md"
+        target: "/python/.qoder/agents/default.md"
+  - name: Brain
+    type: memory
+    config_dir: "/python/storage/Brain/"
+  - name: Cursor
+    type: ide
+    config_dir: ""
+    linked_files: []
+  - name: Copilot
+    type: assistant
+    config_dir: ""
+    linked_files: []
+
+# --- 硬性规则 (所有 AI 必须遵守) ---
+mandatory_rules:
+  - "每次任务前初始化 Brain 记忆系统"
+  - "每次任务前召回 Bug 记忆 (pre_task)"
+  - "每次任务后记录结果 (post_task)"
+  - "失败时自动记录 Bug 到 bug_memory"
+  - "修改架构文件前必须备份"
+  - "遵循 coding-style.md 的代码规范"
+
+# --- 自动加载顺序 ---
+autoload:
+  - plugin.yaml             # 1. 能力包元数据
+  - rules/workflow.md       # 2. 工作流规则
+  - rules/communication.md  # 3. 沟通规范
+  - rules/coding-style.md   # 4. 代码规范
+  - rules/security.md       # 5. 安全规则
+  - skills/                 # 6. 技能模块
+  - templates/              # 7. 任务模板

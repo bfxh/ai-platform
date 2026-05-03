@@ -1,0 +1,6 @@
+{
+  "command": "%USERPROFILE%/AppData/Local/Programs/Python/Python310/python.exe",
+  "args": ["/python/MCP/filesystem_server.py"],
+  "env": {},
+  "description": "Full Access Filesystem Server - ALL DRIVES C/D/E/F/G/H"
+}

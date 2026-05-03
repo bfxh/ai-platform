@@ -1,0 +1,19 @@
+- [x] topics/ 目录已从扁平结构迁移为分类子目录结构（8个分类目录）
+- [x] 所有 200+ stepfun_*.json 文件已按 tags 分类到对应子目录
+- [x] _index.json 已重构为分类树 + 标签云 + 统计信息格式
+- [x] Qoder 导入器能正确解析 .session.execution.jsonl 格式
+- [x] Qoder 导入器能提取用户消息、AI回复、工具调用、Todo列表
+- [x] Qoder 导入器能解析 subagents/ 目录下的子代理日志
+- [x] 4个 Quest 会话已成功导入知识库（实际导入了5个）
+- [x] TRAE 导入器能从 state.vscdb 提取聊天历史（2个vscdb文件，32条条目）
+- [x] 混合搜索引擎能跨 topics/knowledge/sessions/patterns 四源搜索
+- [x] 搜索结果按 TF-IDF + importance 混合排序
+- [x] 标签过滤搜索功能正常
+- [x] recall.py 已集成混合搜索引擎
+- [x] 自动索引器在知识写入后自动更新 _index.json
+- [x] rebuild_index() 能全量重建索引
+- [x] CLI 工具 query/import/stats/clean 子命令均可正常运行
+- [x] core/ai_new.py 在对话发起时自动调用 recall.py
+- [x] core/knowledge_manager.py 已添加 sync_with_brain() 和 import_conversation()
+- [x] MemoryEngine 已添加 migrate_topics/import_from_qoder/import_from_trae/search_all 方法
+- [x] 存储大小限制已从 50MB 提升到 500MB

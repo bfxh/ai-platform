@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-04-21T01:40:10.609981",
+  "tests": [
+    {
+      "name": "test_initialization",
+      "category": "ASK Skill",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_skills_loaded",
+      "category": "ASK Skill",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_run_invalid_skill",
+      "category": "ASK Skill",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_initialization",
+      "category": "Blender MCP",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_status_check",
+      "category": "Blender MCP",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "Narsil MCP 模块加载",
+      "category": "Narsil MCP",
+      "passed": false,
+      "error": "module 'narsil_skill' has no attribute 'NarsilMCP'",
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_initialization",
+      "category": "n8n Workflow",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_status_check",
+      "category": "n8n Workflow",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_path_safety",
+      "category": "Security",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "passed": 8,
+    "failed": 1,
+    "skipped": 0
+  }
+}

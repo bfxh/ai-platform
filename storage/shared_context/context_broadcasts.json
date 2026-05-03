@@ -1,0 +1,27 @@
+{
+  "format_version": "1.0",
+  "broadcasts": {
+    "Qoder_test": {
+      "broadcast_id": "ctx_Qoder_test_v4",
+      "agent_id": "Qoder_test",
+      "context_summary": "Testing cross-agent context sharing",
+      "key_files": [],
+      "key_decisions": [],
+      "timestamp": "2026-04-27T15:58:44.199535",
+      "update_count": 4
+    },
+    "Qoder": {
+      "broadcast_id": "ctx_Qoder_v5",
+      "agent_id": "Qoder",
+      "context_summary": "modify config.py",
+      "key_files": [
+        "config.py"
+      ],
+      "key_decisions": [
+        "Task started: modify config.py"
+      ],
+      "timestamp": "2026-04-27T21:06:15.968387",
+      "update_count": 5
+    }
+  }
+}

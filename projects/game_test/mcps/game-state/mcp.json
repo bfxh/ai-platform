@@ -1,0 +1,6 @@
+{
+  "command": "python",
+  "args": ["game_state_mcp.py"],
+  "env": {},
+  "description": "监听游戏状态（屏幕文字、角色坐标）"
+}

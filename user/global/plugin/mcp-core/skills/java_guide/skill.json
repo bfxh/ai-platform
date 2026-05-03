@@ -1,0 +1,39 @@
+{
+  "name": "java_guide",
+  "version": "1.0.0",
+  "description": "JavaGuide - 全面的 Java 学习指南和面试资料",
+  "author": "Snailclimb",
+  "type": "mcp-skill",
+  "entry_point": "skill.py",
+  "actions": [
+    {
+      "name": "search_topics",
+      "description": "搜索 Java 相关主题",
+      "parameters": {
+        "query": "搜索关键词"
+      }
+    },
+    {
+      "name": "get_interview_questions",
+      "description": "获取面试题",
+      "parameters": {
+        "topic": "主题"
+      }
+    },
+    {
+      "name": "get_learning_path",
+      "description": "获取学习路径",
+      "parameters": {
+        "level": "级别"
+      }
+    },
+    {
+      "name": "list_topics",
+      "description": "列出所有主题"
+    }
+  ],
+  "dependencies": [],
+  "env_vars": {
+    "JAVAGUIDE_PATH": "/python/downloads/all_skills/JavaGuide"
+  }
+}

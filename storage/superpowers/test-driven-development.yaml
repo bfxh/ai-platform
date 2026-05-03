@@ -1,0 +1,49 @@
+cross_agent:
+- trae
+- claude
+description: RED-GREEN-REFACTOR 强制循环 — 修改代码前必须先写测试
+enforce_mandatory: false
+name: test-driven-development
+skills:
+- description: 先写失败的测试
+  gate: none
+  skill: test-generator.run
+  step: write_test
+  timeout: 120
+- condition: previous_step.success == True
+  description: 确认测试失败 (RED)
+  gate: none
+  skill: test-runner.run
+  step: run_test_red
+  timeout: 60
+- condition: previous_step.success == False
+  description: 实现代码 (GREEN)
+  gate: none
+  skill: trae_control.write_file
+  step: implement
+  timeout: 300
+- condition: previous_step.success == True
+  description: 确认测试通过
+  gate: none
+  skill: test-runner.run
+  step: run_test_green
+  timeout: 60
+- description: 重构代码 (REFACTOR)
+  gate: human
+  skill: code-reviewer.review
+  step: refactor
+  timeout: 300
+tags:
+- testing
+- quality
+- tdd
+triggers:
+- field: command
+  patterns:
+  - implement
+  - fix bug
+  - add feature
+  - 创建
+  - 修复
+  - 添加功能
+version: '1.0'

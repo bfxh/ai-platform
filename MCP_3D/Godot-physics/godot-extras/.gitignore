@@ -1,0 +1,16 @@
+.godot/
+.vscode/
+*.exp
+*.lib
+*.pdb
+*.idb
+*.tmp
+
+# Ignore C++ build files
+.sconsign.dblite
+.vs/
+**/src/*.os
+**/src/*.obj
+**/bin/*/*.exp
+**/bin/*/*.lib
+**/bin/*/*.pdb

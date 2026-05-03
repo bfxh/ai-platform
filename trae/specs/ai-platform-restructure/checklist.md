@@ -1,0 +1,41 @@
+- [x] skill.yaml schema 定义完成
+- [x] mcp.json schema 定义完成
+- [x] cli.yaml schema 定义完成
+- [x] workflow.yaml schema 定义完成
+- [x] agent.yaml schema 定义完成
+- [x] plugin.toml schema 定义完成
+- [x] model.yaml schema 定义完成
+- [x] 规范文档写入 specifications/ 目录
+- [x] storage/ 子目录创建完成
+- [x] user/ 双区创建完成
+- [x] projects/ 目录创建完成
+- [x] 现有 MCP 服务迁移到 storage/mcps/，补写 mcp.json
+- [x] 现有 Skill 迁移到 storage/skills/，补写 skill.yaml
+- [x] Ollama WS 桥接迁移到 storage/plugins/ollama-bridge/，补写 plugin.toml
+- [x] AGENTS.md MCP 迁移到 storage/plugins/agents-md/，补写 plugin.toml
+- [x] scripts/ 散装脚本评估完成
+- [x] AGENTS.md 更新反映新目录结构
+- [x] core/sandbox.py 实现
+- [x] 沙盒删除拦截
+- [x] 沙盒超时监控
+- [x] 快照保存到 storage/trash/
+- [x] 快照文件名格式
+- [x] core/dispatcher.py 实现
+- [x] 安装向导
+- [x] 连接配置
+- [x] 每日摘要
+- [x] 架构同步
+- [x] 调度中枢注册为 MCP 服务
+- [x] 项目模板创建
+- [x] Bug 自动记录
+- [x] Bug 手动提交
+- [x] 现有项目补写规范文件
+- [x] .gitignore 更新
+- [x] Git LFS 配置
+- [x] 路径存根规则
+- [x] 每日摘要 Git 提交实现
+- [x] 游戏测试 Plugin 项目创建
+- [x] plugin.toml 编写
+- [x] workflow.yaml 编写
+- [x] README.md / INDEX.md / BUGS.md 编写
+- [x] 端到端测试：Dispatcher 扫描发现 skill:1, mcp:5, cli:1, plugin:4

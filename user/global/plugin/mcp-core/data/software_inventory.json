@@ -1,0 +1,1188 @@
+{
+  "scan_time": "2026-04-10T09:42:44.139902",
+  "exe_count": 99,
+  "project_count": 43,
+  "executables": [
+    {
+      "name": "QClaw",
+      "full_name": "QClaw.exe",
+      "path": "%SOFTWARE_DIR%\\AI\\QClaw\\QClaw.exe",
+      "size_mb": 195.08,
+      "category": "AI",
+      "parent": "QClaw"
+    },
+    {
+      "name": "elevate",
+      "full_name": "elevate.exe",
+      "path": "%SOFTWARE_DIR%\\AI\\QClaw\\resources\\elevate.exe",
+      "size_mb": 0.11,
+      "category": "Other",
+      "parent": "resources"
+    },
+    {
+      "name": "Uninstall QClaw",
+      "full_name": "Uninstall QClaw.exe",
+      "path": "%SOFTWARE_DIR%\\AI\\QClaw\\Uninstall QClaw.exe",
+      "size_mb": 0.21,
+      "category": "AI",
+      "parent": "QClaw"
+    },
+    {
+      "name": "StepFun",
+      "full_name": "StepFun.exe",
+      "path": "%SOFTWARE_DIR%\\AI\\StepFun\\StepFun.exe",
+      "size_mb": 196.45,
+      "category": "AI",
+      "parent": "StepFun"
+    },
+    {
+      "name": "StepFun",
+      "full_name": "StepFun.exe",
+      "path": "%SOFTWARE_DIR%\\AI\\StepFun.new\\StepFun.exe",
+      "size_mb": 196.45,
+      "category": "AI",
+      "parent": "StepFun.new"
+    },
+    {
+      "name": "inno_updater",
+      "full_name": "inno_updater.exe",
+      "path": "%SOFTWARE_DIR%\\AI\\WorkBuddy\\tools\\inno_updater.exe",
+      "size_mb": 0.84,
+      "category": "Other",
+      "parent": "tools"
+    },
+    {
+      "name": "unins000",
+      "full_name": "unins000.exe",
+      "path": "%SOFTWARE_DIR%\\AI\\WorkBuddy\\unins000.exe",
+      "size_mb": 4.49,
+      "category": "Other",
+      "parent": "WorkBuddy"
+    },
+    {
+      "name": "WorkBuddy",
+      "full_name": "WorkBuddy.exe",
+      "path": "%SOFTWARE_DIR%\\AI\\WorkBuddy\\WorkBuddy.exe",
+      "size_mb": 182.05,
+      "category": "AI",
+      "parent": "WorkBuddy"
+    },
+    {
+      "name": "7z",
+      "full_name": "7z.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\7-Zip\\7z.exe",
+      "size_mb": 0.55,
+      "category": "Other",
+      "parent": "7-Zip"
+    },
+    {
+      "name": "7zFM",
+      "full_name": "7zFM.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\7-Zip\\7zFM.exe",
+      "size_mb": 0.95,
+      "category": "Other",
+      "parent": "7-Zip"
+    },
+    {
+      "name": "7zG",
+      "full_name": "7zG.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\7-Zip\\7zG.exe",
+      "size_mb": 0.69,
+      "category": "Other",
+      "parent": "7-Zip"
+    },
+    {
+      "name": "aria2c",
+      "full_name": "aria2c.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\aria2-1.37.0-win-64bit-build1\\aria2-1.37.0-win-64bit-build1\\aria2c.exe",
+      "size_mb": 5.39,
+      "category": "Other",
+      "parent": "aria2-1.37.0-win-64bit-build1"
+    },
+    {
+      "name": "aria2c",
+      "full_name": "aria2c.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\aria2c.exe",
+      "size_mb": 5.39,
+      "category": "Other",
+      "parent": "GJ"
+    },
+    {
+      "name": "ContextMenuManager.NET.4.0",
+      "full_name": "ContextMenuManager.NET.4.0.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\ContextMenuManager.NET.4.0.exe",
+      "size_mb": 0.53,
+      "category": "Other",
+      "parent": "GJ"
+    },
+    {
+      "name": "DGFileViewer",
+      "full_name": "DGFileViewer.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DiskGenius\\DGFileViewer.exe",
+      "size_mb": 8.15,
+      "category": "Other",
+      "parent": "DiskGenius"
+    },
+    {
+      "name": "DiskGenius",
+      "full_name": "DiskGenius.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DiskGenius\\DiskGenius.exe",
+      "size_mb": 15.74,
+      "category": "Utility",
+      "parent": "DiskGenius"
+    },
+    {
+      "name": "OfflineReg",
+      "full_name": "OfflineReg.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DiskGenius\\OfflineReg.exe",
+      "size_mb": 2.02,
+      "category": "Other",
+      "parent": "DiskGenius"
+    },
+    {
+      "name": "doublecmd",
+      "full_name": "doublecmd.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\Double Commander\\doublecmd.exe",
+      "size_mb": 12.94,
+      "category": "Other",
+      "parent": "Double Commander"
+    },
+    {
+      "name": "unins000",
+      "full_name": "unins000.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\Double Commander\\unins000.exe",
+      "size_mb": 1.15,
+      "category": "Other",
+      "parent": "Double Commander"
+    },
+    {
+      "name": "winpty-agent",
+      "full_name": "winpty-agent.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\Double Commander\\winpty-agent.exe",
+      "size_mb": 0.69,
+      "category": "Other",
+      "parent": "Double Commander"
+    },
+    {
+      "name": "drv32",
+      "full_name": "drv32.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\Autosetup\\drv32.exe",
+      "size_mb": 0.16,
+      "category": "Other",
+      "parent": "Autosetup"
+    },
+    {
+      "name": "drv64",
+      "full_name": "drv64.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\Autosetup\\drv64.exe",
+      "size_mb": 0.2,
+      "category": "Other",
+      "parent": "Autosetup"
+    },
+    {
+      "name": "dtldevcon32",
+      "full_name": "dtldevcon32.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\Autosetup\\dtldevcon32.exe",
+      "size_mb": 0.43,
+      "category": "Other",
+      "parent": "Autosetup"
+    },
+    {
+      "name": "dtldevcon64",
+      "full_name": "dtldevcon64.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\Autosetup\\dtldevcon64.exe",
+      "size_mb": 0.53,
+      "category": "Other",
+      "parent": "Autosetup"
+    },
+    {
+      "name": "innoextract",
+      "full_name": "innoextract.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\Autosetup\\innoextract.exe",
+      "size_mb": 1.15,
+      "category": "Other",
+      "parent": "Autosetup"
+    },
+    {
+      "name": "TestDemo",
+      "full_name": "TestDemo.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\Autosetup\\TestDemo.exe",
+      "size_mb": 3.39,
+      "category": "Other",
+      "parent": "Autosetup"
+    },
+    {
+      "name": "DirectS32",
+      "full_name": "DirectS32.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\direct\\DirectS32.exe",
+      "size_mb": 0.19,
+      "category": "Other",
+      "parent": "direct"
+    },
+    {
+      "name": "DirectS64",
+      "full_name": "DirectS64.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\direct\\DirectS64.exe",
+      "size_mb": 0.23,
+      "category": "Other",
+      "parent": "direct"
+    },
+    {
+      "name": "DriverTalent",
+      "full_name": "DriverTalent.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\DriverTalent.exe",
+      "size_mb": 5.22,
+      "category": "Other",
+      "parent": "DriverTalent"
+    },
+    {
+      "name": "dev32",
+      "full_name": "dev32.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\drv64\\dev32.exe",
+      "size_mb": 0.14,
+      "category": "Other",
+      "parent": "drv64"
+    },
+    {
+      "name": "dev64",
+      "full_name": "dev64.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\drv64\\dev64.exe",
+      "size_mb": 0.14,
+      "category": "Other",
+      "parent": "drv64"
+    },
+    {
+      "name": "devcon32",
+      "full_name": "devcon32.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\drv64\\devcon32.exe",
+      "size_mb": 0.42,
+      "category": "Other",
+      "parent": "drv64"
+    },
+    {
+      "name": "devcon64",
+      "full_name": "devcon64.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\drv64\\devcon64.exe",
+      "size_mb": 0.52,
+      "category": "Other",
+      "parent": "drv64"
+    },
+    {
+      "name": "drv32",
+      "full_name": "drv32.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\drv64\\drv32.exe",
+      "size_mb": 0.16,
+      "category": "Other",
+      "parent": "drv64"
+    },
+    {
+      "name": "drv64",
+      "full_name": "drv64.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\drv64\\drv64.exe",
+      "size_mb": 0.2,
+      "category": "Other",
+      "parent": "drv64"
+    },
+    {
+      "name": "DrvSigner",
+      "full_name": "DrvSigner.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\drv64\\DrvSigner.exe",
+      "size_mb": 0.15,
+      "category": "IDE",
+      "parent": "drv64"
+    },
+    {
+      "name": "DrvSigner64",
+      "full_name": "DrvSigner64.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\drv64\\DrvSigner64.exe",
+      "size_mb": 0.17,
+      "category": "IDE",
+      "parent": "drv64"
+    },
+    {
+      "name": "SignFile",
+      "full_name": "SignFile.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\drv64\\SignFile.exe",
+      "size_mb": 0.17,
+      "category": "Other",
+      "parent": "drv64"
+    },
+    {
+      "name": "Dtl7z",
+      "full_name": "Dtl7z.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\Dtl7z.exe",
+      "size_mb": 0.65,
+      "category": "Other",
+      "parent": "DriverTalent"
+    },
+    {
+      "name": "DirectS32",
+      "full_name": "DirectS32.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\GameRepair\\DirectS32.exe",
+      "size_mb": 0.19,
+      "category": "Other",
+      "parent": "GameRepair"
+    },
+    {
+      "name": "DirectS64",
+      "full_name": "DirectS64.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\GameRepair\\DirectS64.exe",
+      "size_mb": 0.23,
+      "category": "Other",
+      "parent": "GameRepair"
+    },
+    {
+      "name": "GameRepair",
+      "full_name": "GameRepair.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\GameRepair.exe",
+      "size_mb": 2.23,
+      "category": "AI",
+      "parent": "DriverTalent"
+    },
+    {
+      "name": "SoundCardRepair",
+      "full_name": "SoundCardRepair.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\DriverTalent\\SoundCardRepair\\SoundCardRepair.exe",
+      "size_mb": 0.65,
+      "category": "AI",
+      "parent": "SoundCardRepair"
+    },
+    {
+      "name": "Everything",
+      "full_name": "Everything.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\Everything\\Everything.exe",
+      "size_mb": 1.7,
+      "category": "Utility",
+      "parent": "Everything"
+    },
+    {
+      "name": "Uninstall",
+      "full_name": "Uninstall.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\Everything\\Uninstall.exe",
+      "size_mb": 0.14,
+      "category": "Other",
+      "parent": "Everything"
+    },
+    {
+      "name": "HandBrake",
+      "full_name": "HandBrake.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\HandBrake\\HandBrake.exe",
+      "size_mb": 32.55,
+      "category": "Utility",
+      "parent": "HandBrake"
+    },
+    {
+      "name": "HandBrake.Worker",
+      "full_name": "HandBrake.Worker.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\HandBrake\\HandBrake.Worker.exe",
+      "size_mb": 0.72,
+      "category": "Utility",
+      "parent": "HandBrake"
+    },
+    {
+      "name": "uninst",
+      "full_name": "uninst.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\HandBrake\\uninst.exe",
+      "size_mb": 0.15,
+      "category": "Other",
+      "parent": "HandBrake"
+    },
+    {
+      "name": "localsend_app",
+      "full_name": "localsend_app.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\LocalSend-1.17.0-windows-x86-64\\localsend_app.exe",
+      "size_mb": 0.15,
+      "category": "Other",
+      "parent": "LocalSend-1.17.0-windows-x86-64"
+    },
+    {
+      "name": "Umi-OCR",
+      "full_name": "Umi-OCR.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\Umi-OCR_Paddle_v2.1.5\\Umi-OCR.exe",
+      "size_mb": 0.2,
+      "category": "Utility",
+      "parent": "Umi-OCR_Paddle_v2.1.5"
+    },
+    {
+      "name": "UniGetUI",
+      "full_name": "UniGetUI.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\UniGetUI.x64\\UniGetUI.exe",
+      "size_mb": 0.7,
+      "category": "Utility",
+      "parent": "UniGetUI.x64"
+    },
+    {
+      "name": "WingetUI",
+      "full_name": "WingetUI.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\UniGetUI.x64\\WingetUI.exe",
+      "size_mb": 0.7,
+      "category": "Other",
+      "parent": "UniGetUI.x64"
+    },
+    {
+      "name": "Startup",
+      "full_name": "Startup.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\VoiceXiaoai\\Startup.exe",
+      "size_mb": 0.65,
+      "category": "Other",
+      "parent": "VoiceXiaoai"
+    },
+    {
+      "name": "xiaoai",
+      "full_name": "xiaoai.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\VoiceXiaoai\\xiaoai.exe",
+      "size_mb": 0.8,
+      "category": "AI",
+      "parent": "VoiceXiaoai"
+    },
+    {
+      "name": "语音小爱设置器",
+      "full_name": "语音小爱设置器.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\VoiceXiaoai\\语音小爱设置器.exe",
+      "size_mb": 0.8,
+      "category": "Other",
+      "parent": "VoiceXiaoai"
+    },
+    {
+      "name": "图吧工具箱2025",
+      "full_name": "图吧工具箱2025.exe",
+      "path": "%SOFTWARE_DIR%\\GJ\\图吧工具箱202502\\图吧工具箱2025.exe",
+      "size_mb": 0.49,
+      "category": "Other",
+      "parent": "图吧工具箱202502"
+    },
+    {
+      "name": "Docker",
+      "full_name": "Docker.exe",
+      "path": "%SOFTWARE_DIR%\\GJ BZM\\Docker.exe",
+      "size_mb": 16.36,
+      "category": "Other",
+      "parent": "GJ BZM"
+    },
+    {
+      "name": "GitHubDesktopSetup",
+      "full_name": "GitHubDesktopSetup.exe",
+      "path": "%SOFTWARE_DIR%\\GJ BZM\\GitHubDesktopSetup.exe",
+      "size_mb": 4.29,
+      "category": "DevTool",
+      "parent": "GJ BZM"
+    },
+    {
+      "name": "glary_utilities",
+      "full_name": "glary_utilities.exe",
+      "path": "%SOFTWARE_DIR%\\GJ BZM\\glary_utilities.exe",
+      "size_mb": 20.86,
+      "category": "Other",
+      "parent": "GJ BZM"
+    },
+    {
+      "name": "Steam++",
+      "full_name": "Steam++.exe",
+      "path": "%SOFTWARE_DIR%\\JSQ\\Steam  _v3.1.0_win_x64\\Steam++.exe",
+      "size_mb": 0.2,
+      "category": "Game",
+      "parent": "Steam  _v3.1.0_win_x64"
+    },
+    {
+      "name": "Trae CN",
+      "full_name": "Trae CN.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\BC\\Trae CN\\Trae CN.exe",
+      "size_mb": 203.33,
+      "category": "IDE",
+      "parent": "Trae CN"
+    },
+    {
+      "name": "unins000",
+      "full_name": "unins000.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\BC\\Trae CN\\unins000.exe",
+      "size_mb": 3.38,
+      "category": "Other",
+      "parent": "Trae CN"
+    },
+    {
+      "name": "deveco-studio-3.1.0.501",
+      "full_name": "deveco-studio-3.1.0.501.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\DevEcoStudio\\devecostudio-windows-3.1.0.501\\deveco-studio-3.1.0.501.exe",
+      "size_mb": 845.38,
+      "category": "IDE",
+      "parent": "devecostudio-windows-3.1.0.501"
+    },
+    {
+      "name": "dnSpy.Console",
+      "full_name": "dnSpy.Console.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\dnSpy\\dnSpy.Console.exe",
+      "size_mb": 0.14,
+      "category": "Other",
+      "parent": "dnSpy"
+    },
+    {
+      "name": "dnSpy",
+      "full_name": "dnSpy.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\dnSpy\\dnSpy.exe",
+      "size_mb": 0.2,
+      "category": "Other",
+      "parent": "dnSpy"
+    },
+    {
+      "name": "dnSpy.Console",
+      "full_name": "dnSpy.Console.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\dnSpy-x86\\dnSpy.Console.exe",
+      "size_mb": 0.11,
+      "category": "Other",
+      "parent": "dnSpy-x86"
+    },
+    {
+      "name": "dnSpy",
+      "full_name": "dnSpy.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\dnSpy-x86\\dnSpy.exe",
+      "size_mb": 0.17,
+      "category": "Other",
+      "parent": "dnSpy-x86"
+    },
+    {
+      "name": "ILSpy",
+      "full_name": "ILSpy.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\ILSpy\\ILSpy.exe",
+      "size_mb": 0.21,
+      "category": "Other",
+      "parent": "ILSpy"
+    },
+    {
+      "name": "ResourceHacker",
+      "full_name": "ResourceHacker.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\ResourceHacker\\ResourceHacker.exe",
+      "size_mb": 5.92,
+      "category": "Other",
+      "parent": "ResourceHacker"
+    },
+    {
+      "name": "git-gui",
+      "full_name": "git-gui.exe",
+      "path": "%GIT_DIR%\\cmd\\git-gui.exe",
+      "size_mb": 0.13,
+      "category": "DevTool",
+      "parent": "cmd"
+    },
+    {
+      "name": "gitk",
+      "full_name": "gitk.exe",
+      "path": "%GIT_DIR%\\cmd\\gitk.exe",
+      "size_mb": 0.13,
+      "category": "DevTool",
+      "parent": "cmd"
+    },
+    {
+      "name": "git-bash",
+      "full_name": "git-bash.exe",
+      "path": "%GIT_DIR%\\git-bash.exe",
+      "size_mb": 0.13,
+      "category": "DevTool",
+      "parent": "Git"
+    },
+    {
+      "name": "git-cmd",
+      "full_name": "git-cmd.exe",
+      "path": "%GIT_DIR%\\git-cmd.exe",
+      "size_mb": 0.13,
+      "category": "DevTool",
+      "parent": "Git"
+    },
+    {
+      "name": "unins000",
+      "full_name": "unins000.exe",
+      "path": "%GIT_DIR%\\unins000.exe",
+      "size_mb": 4.24,
+      "category": "Other",
+      "parent": "Git"
+    },
+    {
+      "name": "deveco-studio-3.1.0.501",
+      "full_name": "deveco-studio-3.1.0.501.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\HUAWEI\\devecostudio-windows-3.1.0.501\\deveco-studio-3.1.0.501.exe",
+      "size_mb": 845.38,
+      "category": "IDE",
+      "parent": "devecostudio-windows-3.1.0.501"
+    },
+    {
+      "name": "blender-launcher",
+      "full_name": "blender-launcher.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\blender\\blender-launcher.exe",
+      "size_mb": 0.32,
+      "category": "3DTool",
+      "parent": "blender"
+    },
+    {
+      "name": "blender",
+      "full_name": "blender.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\blender\\blender.exe",
+      "size_mb": 103.44,
+      "category": "3DTool",
+      "parent": "blender"
+    },
+    {
+      "name": "Godot_v4.6.1-stable_win64",
+      "full_name": "Godot_v4.6.1-stable_win64.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\Godot_v4.6.1-stable_win64.exe\\Godot_v4.6.1-stable_win64.exe",
+      "size_mb": 164.33,
+      "category": "GameEngine",
+      "parent": "Godot_v4.6.1-stable_win64.exe"
+    },
+    {
+      "name": "Godot_v4.6.1-stable_win64_console",
+      "full_name": "Godot_v4.6.1-stable_win64_console.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\Godot_v4.6.1-stable_win64.exe\\Godot_v4.6.1-stable_win64_console.exe",
+      "size_mb": 0.19,
+      "category": "GameEngine",
+      "parent": "Godot_v4.6.1-stable_win64.exe"
+    },
+    {
+      "name": "UnitySetup-Windows-IL2CPP-Support-for-Editor-2018.4.13f1",
+      "full_name": "UnitySetup-Windows-IL2CPP-Support-for-Editor-2018.4.13f1.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\UnityDownloads\\UnitySetup-Windows-IL2CPP-Support-for-Editor-2018.4.13f1.exe",
+      "size_mb": 54.29,
+      "category": "GameEngine",
+      "parent": "UnityDownloads"
+    },
+    {
+      "name": "UnitySetup64-2018.4.13f1",
+      "full_name": "UnitySetup64-2018.4.13f1.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\UnityDownloads\\UnitySetup64-2018.4.13f1.exe",
+      "size_mb": 609.32,
+      "category": "GameEngine",
+      "parent": "UnityDownloads"
+    },
+    {
+      "name": "UnitySetup64-2021.3.45f2c1",
+      "full_name": "UnitySetup64-2021.3.45f2c1.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\UnityDownloads\\UnitySetup64-2021.3.45f2c1.exe",
+      "size_mb": 3049.04,
+      "category": "GameEngine",
+      "parent": "UnityDownloads"
+    },
+    {
+      "name": "UnitySetup64-2022.3.62f2c1",
+      "full_name": "UnitySetup64-2022.3.62f2c1.exe",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\UnityDownloads\\UnitySetup64-2022.3.62f2c1.exe",
+      "size_mb": 3580.48,
+      "category": "GameEngine",
+      "parent": "UnityDownloads"
+    },
+    {
+      "name": "eIsland",
+      "full_name": "eIsland.exe",
+      "path": "%SOFTWARE_DIR%\\LDD\\eIsland\\eIsland.exe",
+      "size_mb": 192.23,
+      "category": "Other",
+      "parent": "eIsland"
+    },
+    {
+      "name": "elevate",
+      "full_name": "elevate.exe",
+      "path": "%SOFTWARE_DIR%\\LDD\\eIsland\\resources\\elevate.exe",
+      "size_mb": 0.1,
+      "category": "Other",
+      "parent": "resources"
+    },
+    {
+      "name": "Uninstall eIsland",
+      "full_name": "Uninstall eIsland.exe",
+      "path": "%SOFTWARE_DIR%\\LDD\\eIsland\\Uninstall eIsland.exe",
+      "size_mb": 0.5,
+      "category": "Other",
+      "parent": "eIsland"
+    },
+    {
+      "name": "ccleaner_browser_setup",
+      "full_name": "ccleaner_browser_setup.exe",
+      "path": "%SOFTWARE_DIR%\\LLQ\\ccleaner_browser_setup.exe",
+      "size_mb": 6.84,
+      "category": "Browser",
+      "parent": "LLQ"
+    },
+    {
+      "name": "ATLauncher",
+      "full_name": "ATLauncher.exe",
+      "path": "%SOFTWARE_DIR%\\QDQ\\ATLauncher\\ATLauncher.exe",
+      "size_mb": 27.48,
+      "category": "Game",
+      "parent": "ATLauncher"
+    },
+    {
+      "name": "pcap2socks",
+      "full_name": "pcap2socks.exe",
+      "path": "%SOFTWARE_DIR%\\WL\\Netch\\bin\\pcap2socks.exe",
+      "size_mb": 2.71,
+      "category": "Other",
+      "parent": "bin"
+    },
+    {
+      "name": "v2ray-sn",
+      "full_name": "v2ray-sn.exe",
+      "path": "%SOFTWARE_DIR%\\WL\\Netch\\bin\\v2ray-sn.exe",
+      "size_mb": 25.09,
+      "category": "Other",
+      "parent": "bin"
+    },
+    {
+      "name": "Netch",
+      "full_name": "Netch.exe",
+      "path": "%SOFTWARE_DIR%\\WL\\Netch\\Netch.exe",
+      "size_mb": 163.54,
+      "category": "Game",
+      "parent": "Netch"
+    },
+    {
+      "name": "idman637build16",
+      "full_name": "idman637build16.exe",
+      "path": "F:\\rj\\QQ\\Inet Download Manager v6.37 Build 16 (1)\\idman637build16.exe",
+      "size_mb": 9.78,
+      "category": "Utility",
+      "parent": "Inet Download Manager v6.37 Build 16 (1)"
+    },
+    {
+      "name": "破解补丁",
+      "full_name": "破解补丁.exe",
+      "path": "F:\\rj\\QQ\\Inet Download Manager v6.37 Build 16 (1)\\破解补丁.exe",
+      "size_mb": 0.28,
+      "category": "Other",
+      "parent": "Inet Download Manager v6.37 Build 16 (1)"
+    },
+    {
+      "name": "HiBitUninstaller-setup-3.2.55",
+      "full_name": "HiBitUninstaller-setup-3.2.55.exe",
+      "path": "F:\\rj\\工具软件\\HiBitUninstaller-setup-3.2.55.exe",
+      "size_mb": 3.96,
+      "category": "Other",
+      "parent": "工具软件"
+    },
+    {
+      "name": "HiSuite_15.0.1.210",
+      "full_name": "HiSuite_15.0.1.210.exe",
+      "path": "F:\\rj\\工具软件\\HiSuite_15.0.1.210.exe",
+      "size_mb": 61.39,
+      "category": "Other",
+      "parent": "工具软件"
+    },
+    {
+      "name": "TreeSizeFreeSetup",
+      "full_name": "TreeSizeFreeSetup.exe",
+      "path": "F:\\rj\\工具软件\\wenjianruanjian\\TreeSizeFreeSetup.exe",
+      "size_mb": 13.19,
+      "category": "Other",
+      "parent": "wenjianruanjian"
+    },
+    {
+      "name": "Battle.net-Setup",
+      "full_name": "Battle.net-Setup.exe",
+      "path": "F:\\rj\\游戏相关\\Battle.net-Setup.exe",
+      "size_mb": 4.66,
+      "category": "Other",
+      "parent": "游戏相关"
+    },
+    {
+      "name": "RapidCRC",
+      "full_name": "RapidCRC.exe",
+      "path": "F:\\rj\\游戏相关\\Elden Ring\\RapidCRC.exe",
+      "size_mb": 1.04,
+      "category": "Other",
+      "parent": "Elden Ring"
+    },
+    {
+      "name": "WeChatWin",
+      "full_name": "WeChatWin.exe",
+      "path": "F:\\rj\\通讯应用\\wx\\WeChatWin.exe",
+      "size_mb": 192.86,
+      "category": "Other",
+      "parent": "wx"
+    }
+  ],
+  "projects": [
+    {
+      "name": "FolderFox",
+      "path": "%SOFTWARE_DIR%\\FolderFox",
+      "has_readme": true,
+      "has_code": true,
+      "category": "Other",
+      "parent": "rj",
+      "depth": 1
+    },
+    {
+      "name": "7-Zip",
+      "path": "%SOFTWARE_DIR%\\GJ\\7-Zip",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Utility",
+      "parent": "GJ",
+      "depth": 2
+    },
+    {
+      "name": "aria2-1.37.0-win-64bit-build1",
+      "path": "%SOFTWARE_DIR%\\GJ\\aria2-1.37.0-win-64bit-build1\\aria2-1.37.0-win-64bit-build1",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "aria2-1.37.0-win-64bit-build1",
+      "depth": 3
+    },
+    {
+      "name": "doc",
+      "path": "%SOFTWARE_DIR%\\GJ\\Double Commander\\doc",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "Double Commander",
+      "depth": 3
+    },
+    {
+      "name": "openwrt-packages-master",
+      "path": "%SOFTWARE_DIR%\\GJ\\openwrt-packages-master",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "GJ",
+      "depth": 2
+    },
+    {
+      "name": "luci-app-easyupdate",
+      "path": "%SOFTWARE_DIR%\\GJ\\openwrt-packages-master\\luci-app-easyupdate",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "openwrt-packages-master",
+      "depth": 3
+    },
+    {
+      "name": "luci-app-nginx-manager",
+      "path": "%SOFTWARE_DIR%\\GJ\\openwrt-packages-master\\luci-app-nginx-manager",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "openwrt-packages-master",
+      "depth": 3
+    },
+    {
+      "name": "luci-app-supervisord",
+      "path": "%SOFTWARE_DIR%\\GJ\\openwrt-packages-master\\luci-app-supervisord",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "openwrt-packages-master",
+      "depth": 3
+    },
+    {
+      "name": "luci-app-wolplus",
+      "path": "%SOFTWARE_DIR%\\GJ\\openwrt-packages-master\\luci-app-wolplus",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "openwrt-packages-master",
+      "depth": 3
+    },
+    {
+      "name": "organize-3.3.0",
+      "path": "%SOFTWARE_DIR%\\GJ\\organize-3.3.0",
+      "has_readme": true,
+      "has_code": true,
+      "category": "Other",
+      "parent": "GJ",
+      "depth": 2
+    },
+    {
+      "name": "docs",
+      "path": "%SOFTWARE_DIR%\\GJ\\organize-3.3.0\\docs",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "organize-3.3.0",
+      "depth": 3
+    },
+    {
+      "name": "organize",
+      "path": "%SOFTWARE_DIR%\\GJ\\organize-3.3.0\\organize",
+      "has_readme": false,
+      "has_code": true,
+      "category": "Other",
+      "parent": "organize-3.3.0",
+      "depth": 3
+    },
+    {
+      "name": "tests",
+      "path": "%SOFTWARE_DIR%\\GJ\\organize-3.3.0\\tests",
+      "has_readme": false,
+      "has_code": true,
+      "category": "Other",
+      "parent": "organize-3.3.0",
+      "depth": 3
+    },
+    {
+      "name": "UmiOCR-data",
+      "path": "%SOFTWARE_DIR%\\GJ\\Umi-OCR_Paddle_v2.1.5\\UmiOCR-data",
+      "has_readme": false,
+      "has_code": true,
+      "category": "Other",
+      "parent": "Umi-OCR_Paddle_v2.1.5",
+      "depth": 3
+    },
+    {
+      "name": "配置文档",
+      "path": "%SOFTWARE_DIR%\\KF\\BC\\配置文档",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "BC",
+      "depth": 3
+    },
+    {
+      "name": "FBY",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "KF",
+      "depth": 2
+    },
+    {
+      "name": "CalamityHunt",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\CalamityHunt",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "FBY",
+      "depth": 3
+    },
+    {
+      "name": "CalamityMod",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\CalamityMod",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "FBY",
+      "depth": 3
+    },
+    {
+      "name": "CalamityOverhaul",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\CalamityOverhaul",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "FBY",
+      "depth": 3
+    },
+    {
+      "name": "FargosSoulsMod",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\FargosSoulsMod",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "FBY",
+      "depth": 3
+    },
+    {
+      "name": "Hyper-Mod",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\Hyper-Mod",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "FBY",
+      "depth": 3
+    },
+    {
+      "name": "ImproveGame",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\ImproveGame",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "FBY",
+      "depth": 3
+    },
+    {
+      "name": "InfernumMode",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\InfernumMode",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "FBY",
+      "depth": 3
+    },
+    {
+      "name": "jadx",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\jadx",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "FBY",
+      "depth": 3
+    },
+    {
+      "name": "Luminance",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\Luminance",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "FBY",
+      "depth": 3
+    },
+    {
+      "name": "ResourceHacker",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\ResourceHacker",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "FBY",
+      "depth": 3
+    },
+    {
+      "name": "tModLoader",
+      "path": "%SOFTWARE_DIR%\\KF\\FBY\\tModLoader",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "FBY",
+      "depth": 3
+    },
+    {
+      "name": "HUAWEI",
+      "path": "%SOFTWARE_DIR%\\KF\\HUAWEI",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "KF",
+      "depth": 2
+    },
+    {
+      "name": "JM",
+      "path": "%SOFTWARE_DIR%\\KF\\JM",
+      "has_readme": false,
+      "has_code": true,
+      "category": "Other",
+      "parent": "KF",
+      "depth": 2
+    },
+    {
+      "name": "blender",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\blender",
+      "has_readme": true,
+      "has_code": true,
+      "category": "3DTool",
+      "parent": "JM",
+      "depth": 3
+    },
+    {
+      "name": "GodotBlenderBridge",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\GodotBlenderBridge",
+      "has_readme": true,
+      "has_code": false,
+      "category": "GameEngine",
+      "parent": "JM",
+      "depth": 3
+    },
+    {
+      "name": "jd-eclipse-2.0.0",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\jd-eclipse-2.0.0",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "JM",
+      "depth": 3
+    },
+    {
+      "name": "TerraTech_Modeling",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\TerraTech_Modeling",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "JM",
+      "depth": 3
+    },
+    {
+      "name": "UnityHubConfig",
+      "path": "%SOFTWARE_DIR%\\KF\\JM\\UnityHubConfig",
+      "has_readme": true,
+      "has_code": false,
+      "category": "GameEngine",
+      "parent": "JM",
+      "depth": 3
+    },
+    {
+      "name": "browser-main",
+      "path": "%SOFTWARE_DIR%\\LLQ\\browser-main",
+      "has_readme": true,
+      "has_code": false,
+      "category": "AI",
+      "parent": "LLQ",
+      "depth": 2
+    },
+    {
+      "name": "browser-use-main",
+      "path": "%SOFTWARE_DIR%\\LLQ\\browser-use-main",
+      "has_readme": true,
+      "has_code": false,
+      "category": "AI",
+      "parent": "LLQ",
+      "depth": 2
+    },
+    {
+      "name": "browser_use",
+      "path": "%SOFTWARE_DIR%\\LLQ\\browser-use-main\\browser_use",
+      "has_readme": true,
+      "has_code": true,
+      "category": "Browser",
+      "parent": "browser-use-main",
+      "depth": 3
+    },
+    {
+      "name": "docker",
+      "path": "%SOFTWARE_DIR%\\LLQ\\browser-use-main\\docker",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "browser-use-main",
+      "depth": 3
+    },
+    {
+      "name": "examples",
+      "path": "%SOFTWARE_DIR%\\LLQ\\browser-use-main\\examples",
+      "has_readme": false,
+      "has_code": true,
+      "category": "Other",
+      "parent": "browser-use-main",
+      "depth": 3
+    },
+    {
+      "name": "examples",
+      "path": "%SOFTWARE_DIR%\\LLQ\\examples",
+      "has_readme": false,
+      "has_code": true,
+      "category": "Other",
+      "parent": "LLQ",
+      "depth": 2
+    },
+    {
+      "name": "ATLauncher",
+      "path": "%SOFTWARE_DIR%\\QDQ\\ATLauncher",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Game",
+      "parent": "QDQ",
+      "depth": 2
+    },
+    {
+      "name": "101",
+      "path": "%SOFTWARE_DIR%\\WL\\101",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "WL",
+      "depth": 2
+    },
+    {
+      "name": "bin",
+      "path": "%SOFTWARE_DIR%\\WL\\Netch\\bin",
+      "has_readme": true,
+      "has_code": false,
+      "category": "Other",
+      "parent": "Netch",
+      "depth": 3
+    }
+  ]
+}

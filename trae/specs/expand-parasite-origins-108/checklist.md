@@ -1,0 +1,8 @@
+- [x] 108+虫族起源完整列表已设计（含ID、中文名、描述、图标、影响等级、能力组合）
+- [x] 所有起源的能力组合仅使用已注册的122个能力，无unregistered power
+- [x] Origins JAR的zh_cn.json已统一为虫族名称，无旧名残留
+- [x] swarm_origins JAR的zh_cn.json无乱码/错字
+- [x] swarm_origins JAR包含108个origin JSON文件
+- [x] origin layer配置支持108+起源选择
+- [x] 游戏启动后108+起源全部加载，0个ERROR
+- [x] 游戏内起源选择界面显示正确中文名称和描述

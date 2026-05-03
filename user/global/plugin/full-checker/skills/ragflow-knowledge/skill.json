@@ -1,0 +1,9 @@
+{
+  "name": "ragflow-knowledge",
+  "display_name": "RAGFlow知识库",
+  "description": "基于RAG引擎的专业文档问答和知识检索",
+  "version": "1.0.0",
+  "category": "knowledge",
+  "platforms": ["ragflow", "dify", "langchain-chatchat", "anythingllm", "privategpt"],
+  "features": ["document_parsing", "vector_embedding", "semantic_search", "rag_qa"]
+}

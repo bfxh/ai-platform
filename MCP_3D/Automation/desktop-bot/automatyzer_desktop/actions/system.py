@@ -1,0 +1,5 @@
+# Akcje systemowe
+"""
+system.py
+"""
+

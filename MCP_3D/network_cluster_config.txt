@@ -1,0 +1,74 @@
+# ============================================================
+# EXO Distributed AI Cluster - Final Configuration
+# ============================================================
+# Generated: 2026-05-02
+# 
+# CLUSTER TOPOLOGY:
+#   [Desktop] 192.168.1.6  <--WiFi LAN-->  [Laptop] 192.168.1.14
+#        |                                       |
+#        +----------> [Phone] (WiFi) <-----------+
+# 
+# Desktop: orchestrator + Godot CI + ComfyUI host
+# Laptop:  worker node + additional compute
+# Phone:   worker node (lightweight)
+# ============================================================
+
+# === DEVICE ROLES ===
+#
+# DESKTOP (192.168.1.6) - ORCHESTRATOR:
+#   - Godot game development + automated testing
+#   - ComfyUI AI 3D generation host
+#   - Blender/UE5 DCC tools
+#   - Central SMB file share: \\192.168.1.6\MCP3D_Cluster
+#   - RDP: 192.168.1.6:3389
+#
+# LAPTOP (192.168.1.14) - WORKER:
+#   - EXO compute node joins desktop cluster
+#   - Can run ComfyUI for distributed 3D generation
+#   - Mounts desktop share: Z: -> \\192.168.1.6\MCP3D_Cluster
+#   - Setup script: Network\laptop_bootstrap.ps1
+#
+# HUAWEI PHONE - WORKER:
+#   - Install Termux + Python + exo
+#   - Auto-joins cluster via WiFi discovery
+
+# === QUICK START COMMANDS ===
+
+# [Desktop] Start orchestrator:
+#   task exo-desktop-full
+#   OR: python -m exo --node-id desktop-orchestrator --listen-host 192.168.1.6 --port 52415
+
+# [Laptop] Join cluster:
+#   1. Copy \MCP_3D\Network\ to laptop
+#   2. Run: powershell -File laptop_bootstrap.ps1
+#   3. OR manual: exo --discovery-address 192.168.1.6 --listen-host 192.168.1.14 --port 52415
+
+# [Phone] Join cluster:
+#   1. Termux: pkg install python git
+#   2. pip install exo
+#   3. exo --discovery-address 192.168.1.6
+
+# === FILE SHARING ===
+# Share: \\192.168.1.6\MCP3D_Cluster
+# Path:  \MCP_3D\Shared
+#   projects/  - shared project files
+#   models/    - AI model weights
+#   datasets/  - training datasets
+#   outputs/   - generated results
+
+# === TASKRUNNER (Desktop) ===
+#   task cluster-status    - Check all devices online
+#   task check-laptop      - Ping laptop
+#   task exo-desktop-full  - Start orchestrator
+#   task run-all-tests     - All Godot tests
+#   task dev-all           - Start Godot + ComfyUI
+
+# === GODOT CI (Headless) ===
+#   D:\rj\KF\JM\Godot_v4.6.1-stable_win64.exe --headless --path D:\rj\KF\JM\GodotProject -s addons/gut/gut_cmdln.gd -gexit
+
+# === FIREWALL RULES (Desktop) ===
+#   TCP 445  (SMB)
+#   TCP 3389 (RDP)
+#   TCP 52415 (exo API)
+#   TCP 5985 (WinRM)
+#   ICMPv4   (Ping)

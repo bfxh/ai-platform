@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="EncapsuledData" inherits="Object" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Helper class that [b]GodotStylizedShadersPlugin[/b] uses to encapsulate data while also updating labels in the editor UI.
+	</brief_description>
+	<description>
+		Helper class that [b]GodotStylizedShadersPlugin[/b] uses to encapsulate data while also updating labels in the editor UI. "Encapsuled" is a typo, should've been "Encapsulated".
+		Only supports: [b]int[/b], [b]float[/b] and [b]bool[/b].
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="get">
+			<return type="float"/>
+			<description>
+				Getter for the encapsulated data.
+			</description>
+		</method>
+		<method name="set">
+			<return type="void"/>
+			<param index="0" name="value" type="float"/>
+			<description>
+				Setter for the encapsulated data. This also calls [b]set_label_value[/b] if a [b]SliderContainer[/b] is connected to it through UI.
+			</description>
+		</method>
+		<method name="connect_slider">
+			<return type="void"/>
+			<param index="0" name="slider" type="SliderContainer*"/>
+			<description>
+				Connects a [b]SliderContainer[/b] UI container to the [b]EncapsuledData[/b], which allows it to call [b]set_label_value[/b] in the setter. 
+			</description>
+		</method>
+	</methods>
+</class>

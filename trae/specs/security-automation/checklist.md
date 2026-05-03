@@ -1,0 +1,18 @@
+- [ ] Bandit 安装成功且可运行 `bandit -r /python/core -ll`
+- [ ] Ruff 安装成功且 S 规则生效 `ruff check --select S /python/core`
+- [ ] detect-secrets 安装成功且可扫描 `detect-secrets scan /python/core`
+- [ ] Semgrep 安装成功且可运行 `semgrep --config p/python /python/core`
+- [ ] pip-audit 安装成功且可审计 `pip-audit`
+- [ ] pyproject.toml 存在且包含 [tool.bandit] [tool.ruff] [tool.mypy] 配置段
+- [ ] .pre-commit-config.yaml 包含 bandit/ruff/detect-secrets/pre-commit-hooks
+- [ ] .secrets.baseline 文件已生成
+- [ ] pre-commit install 已执行且钩子注册成功
+- [ ] .semgrep.yml 自定义规则文件存在且包含5条以上规则
+- [ ] Semgrep 自定义规则运行无语法错误
+- [ ] scripts/check/security_scan.py 存在且支持 --quick/--full/--fix 参数
+- [ ] security_scan.py --quick 在30秒内完成
+- [ ] security_scan.py --full 正常输出 JSON 报告到 logs/security/
+- [ ] security_scan.py --fix 可自动修复裸 except 问题
+- [ ] requirements.txt 包含 bandit/detect-secrets/pip-audit/safety 依赖
+- [ ] 全量安全扫描完成，17个已知残留问题已加入忽略列表
+- [ ] 扫描结果中无未知的严重/高危问题

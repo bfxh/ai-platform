@@ -1,0 +1,80 @@
+{
+  "version": "2.1",
+  "updated": "2026-04-21",
+  "description": "/python 目录索引文件",
+  "base_path": "/python",
+  "structure": {
+    "MCP": {
+      "path": "/python\\MCP",
+      "categories": {
+        "JM": {
+          "path": "/python\\MCP\\JM",
+          "description": "建模类 MCP - Blender、3D建模、场景生成等",
+          "file_count": 24
+        },
+        "BC": {
+          "path": "/python\\MCP\\BC",
+          "description": "代码类 MCP - 编程、开发、代码分析等",
+          "file_count": 46
+        },
+        "Tools": {
+          "path": "/python\\MCP\\Tools",
+          "description": "工具类 MCP - 桌面自动化、下载管理等",
+          "file_count": 32
+        }
+      }
+    },
+    "CLL_Projects": {
+      "path": "/python\\CLL_Projects",
+      "category": "开源LLM项目",
+      "description": "包含 44 个 LLM/AI 开源项目（Qwen, vllm, llama.cpp, DeepSpeed, AutoGPTQ 等），涵盖大语言模型、推理引擎、训练框架、量化工具、向量数据库等",
+      "index_file": "/python\\CLL_Projects\\INDEX.md",
+      "project_count": 44,
+      "subcategories": [
+        "大语言模型 (6)",
+        "推理引擎 (5)",
+        "训练框架 (5)",
+        "量化工具 (3)",
+        "微调工具 (5)",
+        "向量数据库 (3)",
+        "RLHF/RLAF (3)",
+        "移动端/边缘计算 (2)",
+        "NLP 库 (5)",
+        "教育/研究 (5)",
+        "优化/加速 (1)",
+        "自定义项目 (1)"
+      ]
+    },
+    "Skills": {
+      "path": "/python\\Skills",
+      "description": "工作流和技能目录"
+    },
+    "gstack_core": {
+      "path": "/python\\gstack_core",
+      "description": "GSTACK 核心模块"
+    },
+    "MCP_Core": {
+      "path": "/python\\MCP_Core",
+      "description": "MCP 核心系统"
+    },
+    ".qoder": {
+      "path": "D:////AI CLAUDE////CLAUSE////python////.qoder",
+      "description": "Qoder AI 助手项目配置和代理定义",
+      "files": [
+        "project.md",
+        "agents/default.md"
+      ]
+    },
+    "AGENTS.md": {
+      "path": "D:////AI CLAUDE////CLAUSE////python////AGENTS.md",
+      "description": "AI 操作指南和项目目录结构"
+    }
+  },
+  "gstack_priority": true,
+  "mcp_rules": {
+    "modeling": "/python\\MCP\\JM",
+    "coding": "/python\\MCP\\BC",
+    "tools": "/python\\MCP\\Tools"
+  },
+  "architecture_config": "/python\\ai_architecture.json"
+}

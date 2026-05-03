@@ -1,0 +1,11 @@
+{
+  "manifest": {
+    "name": "Basic Workflow",
+    "version": "1.0.0",
+    "description": "Basic workflow plugin",
+    "author": "AI System",
+    "dependencies": [
+      "core.skills.text_generation"
+    ]
+  }
+}

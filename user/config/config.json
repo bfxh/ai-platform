@@ -1,0 +1,19 @@
+{
+  "system": {
+    "name": "AI System",
+    "version": "1.0.0",
+    "data_dir": "storage/data",
+    "model_dir": "storage/models",
+    "cache_dir": "storage/cache",
+    "log_dir": "logs"
+  },
+  "services": {
+    "api": {
+      "host": "localhost",
+      "port": 8000
+    },
+    "scheduler": {
+      "max_workers": 4
+    }
+  }
+}

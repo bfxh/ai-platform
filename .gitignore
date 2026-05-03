@@ -1,0 +1,103 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Node.js
+node_modules/
+*.tsbuildinfo
+.next/
+
+# Go
+*.exe~
+server.exe
+/bin/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 系统文件
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# 环境配置
+.env
+.env.local
+.env.production.local
+
+# 日志
+*.log
+logs/
+
+# 数据库
+*.db
+*.sqlite
+
+# 缓存
+*.pickle
+*cache*
+
+# 备份
+*backup*
+*backups*
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# 压缩包
+*.7z
+*.zip
+*.tar.gz
+*.rar
+
+# 密钥/证书
+*.pem
+*.key
+*.p12
+*.pfx
+
+# 大文件
+*.exe
+*.jar
+*.dll
+*.bin
+*.safetensors
+*.gguf
+*.pt
+*.pth
+
+# 个人数据
+user/knowledge/raw/
+user/memory/
+user/personal/
+user/notes/
+__MACOSX/
+
+# 编译产物
+*.o
+*.obj
+*.out
+pnpm-lock.yaml
+package-lock.json
+uv.lock
+
+# trae
+.trae/
+
+# venv
+.venv/
+
+# 图像资源(超大)
+*.exr
+*.hdr
+*.psd
+*.pdb

@@ -1,0 +1,181 @@
+{
+  "version": "1.0.0",
+  "name": "Universal AI Adapter",
+  "description": "Universal adapter for multiple AI models including Claude, GPT, StepFun, LongXia AI, and more",
+  
+  "supported_providers": {
+    "anthropic": {
+      "name": "Anthropic Claude",
+      "models": ["claude-3-opus", "claude-3-sonnet", "claude-3-haiku"],
+      "api_endpoint": "https://api.anthropic.com/v1",
+      "auth_type": "api_key",
+      "features": ["code_generation", "code_analysis", "bug_fixing", "chat"]
+    },
+    
+    "openai": {
+      "name": "OpenAI GPT",
+      "models": ["gpt-4", "gpt-4-turbo", "gpt-3.5-turbo"],
+      "api_endpoint": "https://api.openai.com/v1",
+      "auth_type": "api_key",
+      "features": ["code_generation", "code_analysis", "bug_fixing", "chat", "embeddings"]
+    },
+    
+    "stepfun": {
+      "name": "StepFun (阶跃AI)",
+      "models": ["step-1v", "step-1", "step-2"],
+      "api_endpoint": "https://api.stepfun.com/v1",
+      "auth_type": "api_key",
+      "features": ["code_generation", "code_analysis", "bug_fixing", "chat", "vision"]
+    },
+    
+    "longxia": {
+      "name": "LongXia AI (龙虾AI)",
+      "models": ["longxia-v1", "longxia-v2", "longxia-code"],
+      "api_endpoint": "https://api.longxia.ai/v1",
+      "auth_type": "api_key",
+      "features": ["code_generation", "code_analysis", "bug_fixing", "chat"]
+    },
+    
+    "baidu": {
+      "name": "Baidu ERNIE",
+      "models": ["ernie-4.0", "ernie-3.5", "ernie-speed"],
+      "api_endpoint": "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop",
+      "auth_type": "oauth2",
+      "features": ["code_generation", "code_analysis", "chat"]
+    },
+    
+    "alibaba": {
+      "name": "Alibaba Qwen",
+      "models": ["qwen-max", "qwen-plus", "qwen-turbo"],
+      "api_endpoint": "https://dashscope.aliyuncs.com/api/v1",
+      "auth_type": "api_key",
+      "features": ["code_generation", "code_analysis", "bug_fixing", "chat", "vision"]
+    },
+    
+    "zhipu": {
+      "name": "Zhipu AI (智谱AI)",
+      "models": ["glm-4", "glm-4v", "glm-3-turbo"],
+      "api_endpoint": "https://open.bigmodel.cn/api/paas/v4",
+      "auth_type": "api_key",
+      "features": ["code_generation", "code_analysis", "bug_fixing", "chat", "vision"]
+    },
+    
+    "moonshot": {
+      "name": "Moonshot AI",
+      "models": ["moonshot-v1-8k", "moonshot-v1-32k", "moonshot-v1-128k"],
+      "api_endpoint": "https://api.moonshot.cn/v1",
+      "auth_type": "api_key",
+      "features": ["code_generation", "code_analysis", "chat"]
+    },
+    
+    "local": {
+      "name": "Local LLM",
+      "models": ["llama-2", "codellama", "deepseek-coder"],
+      "api_endpoint": "http://localhost:8000/v1",
+      "auth_type": "none",
+      "features": ["code_generation", "code_analysis", "chat"]
+    }
+  },
+  
+  "adapter_config": {
+    "default_provider": "stepfun",
+    "fallback_chain": ["stepfun", "longxia", "anthropic", "openai"],
+    "timeout": 30,
+    "max_retries": 3,
+    "retry_delay": 1.0
+  },
+  
+  "unified_api": {
+    "chat": {
+      "endpoint": "/chat/completions",
+      "method": "POST",
+      "parameters": {
+        "model": "string",
+        "messages": "array",
+        "temperature": "float",
+        "max_tokens": "integer",
+        "stream": "boolean"
+      }
+    },
+    
+    "code_generation": {
+      "endpoint": "/code/generate",
+      "method": "POST",
+      "parameters": {
+        "prompt": "string",
+        "language": "string",
+        "context": "string",
+        "max_tokens": "integer"
+      }
+    },
+    
+    "code_analysis": {
+      "endpoint": "/code/analyze",
+      "method": "POST",
+      "parameters": {
+        "code": "string",
+        "language": "string",
+        "analysis_type": "array"
+      }
+    },
+    
+    "bug_fix": {
+      "endpoint": "/code/fix",
+      "method": "POST",
+      "parameters": {
+        "code": "string",
+        "error_message": "string",
+        "language": "string"
+      }
+    }
+  },
+  
+  "provider_specific_adapters": {
+    "anthropic": {
+      "request_transform": {
+        "messages_to_prompts": true,
+        "system_message_handling": "separate"
+      },
+      "response_transform": {
+        "extract_content": "content.0.text",
+        "handle_stop_reason": true
+      }
+    },
+    
+    "stepfun": {
+      "request_transform": {
+        "messages_format": "openai_compatible",
+        "add_model_prefix": false
+      },
+      "response_transform": {
+        "extract_content": "choices.0.message.content",
+        "handle_usage": true
+      }
+    },
+    
+    "longxia": {
+      "request_transform": {
+        "messages_format": "openai_compatible",
+        "add_extra_params": {
+          "source": "godot_mcp"
+        }
+      },
+      "response_transform": {
+        "extract_content": "choices.0.message.content",
+        "handle_streaming": true
+      }
+    },
+    
+    "baidu": {
+      "request_transform": {
+        "oauth_token_required": true,
+        "messages_format": "baidu_specific",
+        "system_message_as_first_user": true
+      },
+      "response_transform": {
+        "extract_content": "result",
+        "handle_error_code": true
+      }
+    }
+  }
+}

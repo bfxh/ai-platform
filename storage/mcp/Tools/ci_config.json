@@ -1,0 +1,40 @@
+{
+  "ci_config": "ci_config.json",
+  "build_dir": "build",
+  "artifacts_dir": "artifacts",
+  "steps": [
+    "install",
+    "build",
+    "test",
+    "deploy"
+  ],
+  "commands": {
+    "install": [
+      "pip",
+      "install",
+      "-r",
+      "requirements.txt"
+    ],
+    "build": [
+      "python",
+      "-m",
+      "build"
+    ],
+    "test": [
+      "python",
+      "-m",
+      "pytest"
+    ],
+    "deploy": [
+      "twine",
+      "upload",
+      "dist/*"
+    ]
+  },
+  "environments": {
+    "default": {
+      "python_version": "3.10",
+      "requirements": "requirements.txt"
+    }
+  }
+}

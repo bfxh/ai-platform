@@ -1,0 +1,30 @@
+{
+  "name": "mcp_reactor",
+  "version": "1.0",
+  "description": "MCP 反应堆模式 - 支持 Pipe 语法连接多个 MCP 形成自动化流水线",
+  "category": "workflow",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "run": "执行管道命令",
+    "list": "列出可用 MCP",
+    "test": "测试管道语法"
+  },
+  "rules": {
+    "pipe_syntax": "step1 -> step2 -> step3",
+    "context_passing": true,
+    "max_steps": 10
+  },
+  "supported_mcps": [
+    "blender_mcp",
+    "code_intelligence",
+    "desktop_automation",
+    "github_dl",
+    "download_manager",
+    "vision_pro"
+  ],
+  "dependencies": [
+    "Python 3.6+",
+    "json"
+  ]
+}

@@ -1,0 +1,39 @@
+============================================================
+GSTACK 深度测试报告
+============================================================
+生成时间: 2026-04-21T01:39:17.737770
+
+测试摘要:
+  总测试数: 7
+  通过: 3
+  失败: 4
+  通过率: 42.9%
+
+------------------------------------------------------------
+详细结果:
+------------------------------------------------------------
+
+[ASK Skill]
+  ✅ test_initialization 
+  ✅ test_skills_loaded 
+  ✅ test_run_invalid_skill 
+
+[Blender MCP]
+  ❌ Blender MCP 模块加载 
+     错误: cannot import name 'BlenderMCPSkill' from 'skill' (\python\MCP_Core\skills\ask\skill.py)
+
+[Narsil MCP]
+  ❌ Narsil MCP 模块加载 
+     错误: cannot import name 'NarsilMCP' from 'skill' (\python\MCP_Core\skills\ask\skill.py)
+
+[n8n Workflow]
+  ❌ n8n Workflow 模块加载 
+     错误: cannot import name 'N8nWorkflowSkill' from 'skill' (\python\MCP_Core\skills\ask\skill.py)
+
+[Security]
+  ❌ 安全测试 
+     错误: cannot import name 'ArchitectEnforcer' from 'skill' (\python\MCP_Core\skills\ask\skill.py)
+
+============================================================
+报告结束
+============================================================

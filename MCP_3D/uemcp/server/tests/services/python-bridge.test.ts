@@ -1,0 +1,302 @@
+import { PythonBridge, PythonCommand } from '../../src/services/python-bridge.js';
+
+// Mock logger to avoid console output during tests
+jest.mock('../../src/utils/logger.js', () => ({
+  logger: {
+    info: jest.fn(),
+    warn: jest.fn(),
+    error: jest.fn(),
+    debug: jest.fn(),
+  },
+}));
+
+describe('PythonBridge', () => {
+  let pythonBridge: PythonBridge;
+  let originalEnv: NodeJS.ProcessEnv;
+  let originalFetch: typeof global.fetch;
+  let mockFetch: jest.Mock;
+
+  beforeEach(() => {
+    originalEnv = { ...process.env };
+    originalFetch = global.fetch;
+    jest.clearAllMocks();
+    mockFetch = jest.fn();
+    global.fetch = mockFetch;
+    pythonBridge = new PythonBridge();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+    process.env = originalEnv;
+    global.fetch = originalFetch;
+  });
+
+  describe('constructor', () => {
+    it('should use default port 8765', () => {
+      delete process.env.UEMCP_LISTENER_PORT;
+      const bridge = new PythonBridge();
+      // Port is private, so we can't directly test it, but we can test the behavior
+      expect(bridge).toBeInstanceOf(PythonBridge);
+    });
+
+    it('should use environment port when set', () => {
+      process.env.UEMCP_LISTENER_PORT = '9000';
+      const bridge = new PythonBridge();
+      expect(bridge).toBeInstanceOf(PythonBridge);
+    });
+
+    it('should use explicit port when passed as argument', () => {
+      const bridge = new PythonBridge(9876);
+      expect(bridge).toBeInstanceOf(PythonBridge);
+    });
+  });
+
+  describe('executeCommand', () => {
+    const mockCommand: PythonCommand = {
+      type: 'test.command',
+      params: { testParam: 'value' }
+    };
+
+    it('should make HTTP POST request to Python listener', async () => {
+      const mockResponse = {
+        ok: true,
+        json: jest.fn().mockResolvedValue({ success: true, result: 'test' })
+      };
+      mockFetch.mockResolvedValue(mockResponse);
+
+      await pythonBridge.executeCommand(mockCommand);
+
+      expect(mockFetch).toHaveBeenCalledWith('http://localhost:8765', expect.objectContaining({
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(mockCommand),
+      }));
+    });
+
+    it('should return successful response', async () => {
+      const mockPythonResponse = { success: true, result: 'test data' };
+      const mockResponse = {
+        ok: true,
+        json: jest.fn().mockResolvedValue(mockPythonResponse)
+      };
+      mockFetch.mockResolvedValue(mockResponse);
+
+      const result = await pythonBridge.executeCommand(mockCommand);
+
+      expect(result).toEqual(mockPythonResponse);
+    });
+
+    it('should propagate network errors to caller', async () => {
+      mockFetch.mockRejectedValue(new Error('ECONNREFUSED'));
+
+      await expect(pythonBridge.executeCommand(mockCommand)).rejects.toThrow('ECONNREFUSED');
+    });
+
+    it('should throw on non-ok HTTP response', async () => {
+      const mockResponse = {
+        ok: false,
+        status: 500,
+        statusText: 'Internal Server Error',
+        text: jest.fn().mockResolvedValue('Server error details'),
+      };
+      mockFetch.mockResolvedValue(mockResponse);
+
+      await expect(pythonBridge.executeCommand(mockCommand)).rejects.toThrow('Python listener HTTP 500');
+    });
+
+    it('should use custom timeout when provided', async () => {
+      jest.useFakeTimers();
+
+      const commandWithTimeout: PythonCommand = { type: 'test', params: {}, timeout: 30 };
+
+      mockFetch.mockImplementation((_url: string, options: RequestInit) => {
+        return new Promise((_resolve, reject) => {
+          options.signal?.addEventListener('abort', () => {
+            const err = new Error('The operation was aborted.');
+            err.name = 'AbortError';
+            reject(err);
+          });
+        });
+      });
+
+      const executePromise = pythonBridge.executeCommand(commandWithTimeout);
+
+      // Should NOT abort at 10s
+      jest.advanceTimersByTime(10001);
+      // Should abort at 30s
+      jest.advanceTimersByTime(20000);
+
+      await expect(executePromise).rejects.toThrow('The operation was aborted.');
+    });
+
+    it('should clamp timeout exceeding MAX_BRIDGE_TIMEOUT_S to 120s', async () => {
+      jest.useFakeTimers();
+
+      const commandWithHugeTimeout: PythonCommand = { type: 'test', params: {}, timeout: 999 };
+
+      mockFetch.mockImplementation((_url: string, options: RequestInit) => {
+        return new Promise((_resolve, reject) => {
+          options.signal?.addEventListener('abort', () => {
+            const err = new Error('The operation was aborted.');
+            err.name = 'AbortError';
+            reject(err);
+          });
+        });
+      });
+
+      const executePromise = pythonBridge.executeCommand(commandWithHugeTimeout);
+
+      // Should abort at 120s (clamped), not 999s
+      jest.advanceTimersByTime(120001);
+
+      await expect(executePromise).rejects.toThrow('The operation was aborted.');
+    });
+
+    it('should fall back to default timeout for invalid values', async () => {
+      jest.useFakeTimers();
+
+      const commandWithNaN: PythonCommand = { type: 'test', params: {}, timeout: NaN };
+
+      mockFetch.mockImplementation((_url: string, options: RequestInit) => {
+        return new Promise((_resolve, reject) => {
+          options.signal?.addEventListener('abort', () => {
+            const err = new Error('The operation was aborted.');
+            err.name = 'AbortError';
+            reject(err);
+          });
+        });
+      });
+
+      const executePromise = pythonBridge.executeCommand(commandWithNaN);
+
+      // Should fall back to default 10s
+      jest.advanceTimersByTime(10001);
+
+      await expect(executePromise).rejects.toThrow('The operation was aborted.');
+    });
+
+    it('should fall back to default timeout for zero', async () => {
+      jest.useFakeTimers();
+
+      const commandWithZero: PythonCommand = { type: 'test', params: {}, timeout: 0 };
+
+      mockFetch.mockImplementation((_url: string, options: RequestInit) => {
+        return new Promise((_resolve, reject) => {
+          options.signal?.addEventListener('abort', () => {
+            const err = new Error('The operation was aborted.');
+            err.name = 'AbortError';
+            reject(err);
+          });
+        });
+      });
+
+      const executePromise = pythonBridge.executeCommand(commandWithZero);
+
+      // Should fall back to default 10s
+      jest.advanceTimersByTime(10001);
+
+      await expect(executePromise).rejects.toThrow('The operation was aborted.');
+    });
+
+    it('should abort the request after 10 seconds', async () => {
+      jest.useFakeTimers();
+
+      // fetch never resolves — simulates a hung connection
+      mockFetch.mockImplementation((_url: string, options: RequestInit) => {
+        return new Promise((_resolve, reject) => {
+          options.signal?.addEventListener('abort', () => {
+            // Use plain Error with AbortError name for portability across Node/Jest versions
+            const err = new Error('The operation was aborted.');
+            err.name = 'AbortError';
+            reject(err);
+          });
+        });
+      });
+
+      const executePromise = pythonBridge.executeCommand(mockCommand);
+
+      // Advance past the 10-second AbortController timeout
+      jest.advanceTimersByTime(10001);
+
+      await expect(executePromise).rejects.toThrow('The operation was aborted.');
+
+      jest.useRealTimers();
+    });
+
+    it('should clear the timer even when response.json() throws', async () => {
+      jest.useFakeTimers();
+      const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout');
+
+      // fetch resolves ok:true, but json() throws (e.g., invalid JSON body)
+      const mockResponse = {
+        ok: true,
+        json: jest.fn().mockRejectedValue(new SyntaxError('Unexpected token')),
+      };
+      mockFetch.mockResolvedValue(mockResponse);
+
+      const executePromise = pythonBridge.executeCommand(mockCommand);
+      await expect(executePromise).rejects.toThrow('Unexpected token');
+
+      // Timer must have been cleared even though json() threw
+      expect(clearTimeoutSpy).toHaveBeenCalled();
+
+      clearTimeoutSpy.mockRestore();
+      jest.useRealTimers();
+    });
+  });
+
+  describe('isUnrealEngineAvailable', () => {
+    it('should return true when health check succeeds', async () => {
+      const mockResponse = {
+        ok: true,
+        json: jest.fn().mockResolvedValue({ ready: true })
+      };
+      mockFetch.mockResolvedValue(mockResponse);
+
+      const result = await pythonBridge.isUnrealEngineAvailable();
+
+      expect(result).toBe(true);
+      expect(mockFetch).toHaveBeenCalledWith('http://localhost:8765/', expect.objectContaining({
+        method: 'GET',
+      }));
+    });
+
+    it('should return false when health check fails', async () => {
+      mockFetch.mockRejectedValue(new Error('Connection failed'));
+
+      const result = await pythonBridge.isUnrealEngineAvailable();
+
+      expect(result).toBe(false);
+    });
+
+    it('should use fallback command with remaining budget when health check returns non-OK', async () => {
+      // First fetch (health check) returns non-OK; second fetch (command) returns success
+      const healthResponse = {
+        ok: false,
+        status: 503,
+        statusText: 'Service Unavailable',
+        text: jest.fn().mockResolvedValue(''),
+      };
+      const cmdResponse = {
+        ok: true,
+        json: jest.fn().mockResolvedValue({ success: true }),
+      };
+      mockFetch
+        .mockResolvedValueOnce(healthResponse)
+        .mockResolvedValueOnce(cmdResponse);
+
+      const result = await pythonBridge.isUnrealEngineAvailable();
+
+      expect(result).toBe(true);
+      // Second call must be the fallback command (POST to base endpoint, not /)
+      const secondCall = mockFetch.mock.calls[1];
+      expect(secondCall[0]).toBe('http://localhost:8765');
+      // Verify the command body includes project.info with a positive timeout (remaining budget)
+      const parsedBody = JSON.parse(secondCall[1].body as string);
+      expect(parsedBody).toMatchObject({ type: 'project.info', params: {} });
+      expect(parsedBody.timeout).toBeGreaterThan(0);
+    });
+  });
+});

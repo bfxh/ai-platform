@@ -1,0 +1,17 @@
+name: "Feature Request"
+description: "Suggest a new feature or improvement"
+labels: ["feature"]
+body:
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: "Description (if applicable) & Acceptance Criteria"
+      description: "Provide a description of the feature and list the acceptance criteria."
+      value: |
+        **Description:**  
+        _Provide a brief overview of the feature request._  
+
+        **Acceptance Criteria:**  
+        - [ ] Criterion 1  
+        - [ ] Criterion 2  
+        - [ ] Criterion 3

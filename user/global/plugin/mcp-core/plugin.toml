@@ -1,0 +1,76 @@
+name = "mcp-core"
+version = "1.0.0"
+description = "MCP Core - Skill system, agent framework, workflow engine, knowledge base"
+
+[workspace]
+external_path = "."
+
+[workspace.ai_tools]
+python = { version = "3.12", path = "%USERPROFILE%/AppData/Local/Programs/Python/Python312/python.exe", role = "runtime" }
+node = { version = "18", role = "runtime" }
+ollama = { version = "0.21", path = "%OLLAMA_DIR%/ollama.exe", role = "model_server" }
+
+[workspace.skills]
+software_scanner = { type = "skill", ref = "software_scanner", description = "Scan local software installations" }
+auto_tester = { type = "skill", ref = "auto_tester", description = "Automated testing framework" }
+project_doc = { type = "skill", ref = "project_doc_generator", description = "Generate project documentation" }
+github_api = { type = "skill", ref = "github_api_manager", description = "GitHub API management" }
+network_bypass = { type = "skill", ref = "network_bypass", description = "Network restriction bypass" }
+skill_doctor = { type = "skill", ref = "skill_doctor", description = "Skill health diagnosis and repair" }
+
+[environment]
+  [[environment.items]]
+  name = "MCP_CORE_DIR"
+  description = "MCP Core 根目"
+  example = "/python/user/global/plugin/mcp-core"
+
+[software]
+  [[software.items]]
+  name = "python"
+  path = "%USERPROFILE%/AppData/Local/Programs/Python/Python312/python.exe"
+  version = "3.12"
+
+  [[software.items]]
+  name = "node"
+  path = "node"
+  version = "18"
+
+[[abilities]]
+  type = "skill"
+  name = "software-scanner"
+  path = "skills/software_scanner/skill.py"
+
+[[abilities]]
+  type = "skill"
+  name = "auto-tester"
+  path = "skills/auto_tester/skill.py"
+
+[[abilities]]
+  type = "skill"
+  name = "project-doc-generator"
+  path = "skills/project_doc_generator/skill.py"
+
+[[abilities]]
+  type = "skill"
+  name = "github-api-manager"
+  path = "skills/github_api_manager/skill.py"
+
+[[abilities]]
+  type = "skill"
+  name = "network-bypass"
+  path = "skills/network_bypass/skill.py"
+
+[[abilities]]
+  type = "skill"
+  name = "skill-doctor"
+  path = "skills/skill_doctor/skill.py"
+
+[[abilities]]
+  type = "mcp"
+  name = "mcp-skill-server"
+  path = "mcp_skill_server.py"
+
+[[abilities]]
+  type = "workflow"
+  name = "workflow-engine"
+  path = "workflow/engine.py"

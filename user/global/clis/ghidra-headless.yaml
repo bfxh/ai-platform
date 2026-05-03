@@ -1,0 +1,24 @@
+name: "ghidra-headless"
+description: "Ghidra 无头模式分析 — 多架构二进制反编译 (x86/ARM/MIPS/JVM/Dalvik 等)"
+exec_path: "D:\\rj\\KF\\FBY\\Ghidra\\ghidra_11.3.1_PUBLIC\\support\\analyzeHeadless.bat"
+params:
+  - name: target
+    type: string
+    required: true
+    description: "目标二进制文件 (exe/dll/so/elf/bin)"
+  - name: output_dir
+    type: string
+    default: "output/ghidra_out"
+    description: "分析输出目录"
+  - name: project_name
+    type: string
+    default: "analysis"
+    description: "Ghidra 项目名称"
+  - name: post_script
+    type: string
+    default: ""
+    description: "后处理脚本路径 (可选, 用于自动导出反编译结果)"
+timeout: 900
+output:
+  type: "project"
+  description: "Ghidra 项目文件 (.gpr)"

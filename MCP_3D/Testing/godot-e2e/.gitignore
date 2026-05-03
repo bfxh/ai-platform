@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Godot
+.godot/
+*.import
+
+# Addon copies in test/example projects (auto-copied by conftest.py)
+tests/godot_project/addons/
+examples/*/godot_project/addons/
+
+# Test output
+test_output/
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+credentials.json
+
+# IDE and editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Internal-only docs (ADRs, design notes, lessons) — kept locally, not published
+docs/internal/

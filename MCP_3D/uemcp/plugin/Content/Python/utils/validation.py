@@ -1,0 +1,276 @@
+"""
+UEMCP Validation Framework - Validates operations succeeded by checking actual state
+"""
+
+import unreal
+
+from .general import find_actor_by_name, get_actor_subsystem, normalize_angle
+
+# import time
+# import math
+
+
+class ValidationResult:
+    """Result of a validation check"""
+
+    def __init__(self, success=True, errors=None, warnings=None):
+        self.success = success
+        self.errors = errors or []
+        self.warnings = warnings or []
+
+    def add_error(self, error):
+        self.success = False
+        self.errors.append(error)
+
+    def add_warning(self, warning):
+        self.warnings.append(warning)
+
+    def to_dict(self):
+        return {"success": self.success, "errors": self.errors, "warnings": self.warnings}
+
+
+def validate_actor_location(actor, expected_location, tolerance=0.1):
+    """Validate actor location matches expected values"""
+    result = ValidationResult()
+
+    try:
+        actual_location = actor.get_actor_location()
+
+        # Check each axis
+        for axis, expected, actual in [
+            ("X", expected_location[0], actual_location.x),
+            ("Y", expected_location[1], actual_location.y),
+            ("Z", expected_location[2], actual_location.z),
+        ]:
+            diff = abs(expected - actual)
+            if diff > tolerance:
+                result.add_error(
+                    f"Location {axis} mismatch: expected {expected:.2f}, got {actual:.2f} (diff: {diff:.2f})"
+                )
+    except (AttributeError, IndexError, RuntimeError, TypeError) as e:
+        result.add_error(f"Failed to validate location: {str(e)}")
+
+    return result
+
+
+def validate_actor_rotation(actor, expected_rotation, tolerance=0.1):
+    """Validate actor rotation matches expected values"""
+    result = ValidationResult()
+
+    try:
+        actual_rotation = actor.get_actor_rotation()
+
+        # Check each rotation component
+        for component, expected, actual in [
+            ("Roll", expected_rotation[0], actual_rotation.roll),
+            ("Pitch", expected_rotation[1], actual_rotation.pitch),
+            ("Yaw", expected_rotation[2], actual_rotation.yaw),
+        ]:
+            # Normalize both angles
+            expected_norm = normalize_angle(expected)
+            actual_norm = normalize_angle(actual)
+
+            # Calculate angular difference
+            diff = abs(expected_norm - actual_norm)
+            # Handle wrap-around at 180/-180
+            if diff > 180:
+                diff = 360 - diff
+
+            if diff > tolerance:
+                result.add_error(
+                    f"Rotation {component} mismatch: expected {expected:.2f}°, got {actual:.2f}° (diff: {diff:.2f}°)"
+                )
+    except (AttributeError, IndexError, RuntimeError, TypeError) as e:
+        result.add_error(f"Failed to validate rotation: {str(e)}")
+
+    return result
+
+
+def validate_actor_scale(actor, expected_scale, tolerance=0.001):
+    """Validate actor scale matches expected values"""
+    result = ValidationResult()
+
+    try:
+        actual_scale = actor.get_actor_scale3d()
+
+        # Check each axis
+        for axis, expected, actual in [
+            ("X", expected_scale[0], actual_scale.x),
+            ("Y", expected_scale[1], actual_scale.y),
+            ("Z", expected_scale[2], actual_scale.z),
+        ]:
+            diff = abs(expected - actual)
+            if diff > tolerance:
+                result.add_error(f"Scale {axis} mismatch: expected {expected:.3f}, got {actual:.3f} (diff: {diff:.3f})")
+    except (AttributeError, IndexError, RuntimeError, TypeError) as e:
+        result.add_error(f"Failed to validate scale: {str(e)}")
+
+    return result
+
+
+def validate_actor_folder(actor, expected_folder):
+    """Validate actor folder path matches expected value"""
+    result = ValidationResult()
+
+    try:
+        actual_folder = actor.get_folder_path()
+        # Convert Name to string if necessary
+        if hasattr(actual_folder, "to_string"):
+            actual_folder = actual_folder.to_string()
+        else:
+            actual_folder = str(actual_folder) if actual_folder else ""
+
+        if actual_folder != expected_folder:
+            result.add_error(f"Folder mismatch: expected '{expected_folder}', got '{actual_folder}'")
+    except (AttributeError, RuntimeError, TypeError) as e:
+        result.add_error(f"Failed to validate folder: {str(e)}")
+
+    return result
+
+
+def validate_actor_mesh(actor, expected_mesh_path):
+    """Validate actor has the expected static mesh"""
+    result = ValidationResult()
+
+    try:
+        # Get mesh component
+        mesh_component = actor.get_component_by_class(unreal.StaticMeshComponent)
+        if not mesh_component:
+            result.add_error("Actor does not have a StaticMeshComponent")
+            return result
+
+        # Get current mesh
+        current_mesh = mesh_component.static_mesh
+        if not current_mesh:
+            result.add_error("Actor has no static mesh assigned")
+            return result
+
+        # Get mesh path (handle paths with or without ':')
+        full_path = current_mesh.get_path_name()
+        current_path = full_path.split(":")[0] if ":" in full_path else full_path
+
+        # Compare paths
+        if current_path != expected_mesh_path:
+            result.add_error(f"Mesh mismatch: expected '{expected_mesh_path}', got '{current_path}'")
+    except (AttributeError, RuntimeError, TypeError) as e:
+        result.add_error(f"Failed to validate mesh: {str(e)}")
+
+    return result
+
+
+def validate_actor_exists(actor_name):
+    """Validate that an actor with the given name exists"""
+    result = ValidationResult()
+
+    try:
+        all_actors = get_actor_subsystem().get_all_level_actors()
+
+        for actor in all_actors:
+            try:
+                if actor and hasattr(actor, "get_actor_label") and actor.get_actor_label() == actor_name:
+                    return result  # Success
+            except Exception:
+                continue
+
+        result.add_error(f"Actor '{actor_name}' not found in level")
+    except (AttributeError, RuntimeError, TypeError) as e:
+        result.add_error(f"Failed to check actor existence: {str(e)}")
+
+    return result
+
+
+def validate_actor_deleted(actor_name):
+    """Validate that an actor with the given name does NOT exist (for delete validation)"""
+    result = ValidationResult()
+
+    try:
+        all_actors = get_actor_subsystem().get_all_level_actors()
+
+        for actor in all_actors:
+            try:
+                if actor and hasattr(actor, "get_actor_label") and actor.get_actor_label() == actor_name:
+                    result.add_error(f"Actor '{actor_name}' still exists in level")
+                    return result
+            except Exception:
+                continue
+
+        # Success - actor not found
+        return result
+    except (AttributeError, RuntimeError, TypeError) as e:
+        result.add_error(f"Failed to validate actor deletion: {str(e)}")
+
+    return result
+
+
+def validate_actor_spawn(
+    actor_name,
+    expected_location=None,
+    expected_rotation=None,
+    expected_scale=None,
+    expected_mesh_path=None,
+    expected_folder=None,
+):
+    """Comprehensive validation for spawned actors"""
+    result = ValidationResult()
+
+    # First check if actor exists
+    actor = find_actor_by_name(actor_name)
+    if not actor:
+        result.add_error(f"Spawned actor '{actor_name}' not found in level")
+        return result
+
+    # Build validation map
+    validations = [
+        (expected_location, validate_actor_location, actor),
+        (expected_rotation, validate_actor_rotation, actor),
+        (expected_scale, validate_actor_scale, actor),
+        (expected_mesh_path, lambda a, p: validate_actor_mesh(a, p), actor),
+        (expected_folder, lambda a, f: validate_actor_folder(a, f), actor),
+    ]
+
+    # Run validations
+    for expected_value, validator, actor_obj in validations:
+        if expected_value is not None:
+            validation_result = validator(actor_obj, expected_value)
+            _merge_validation_errors(result, validation_result)
+
+    return result
+
+
+def _merge_validation_errors(target_result, source_result):
+    """Merge errors from source result into target result.
+
+    Args:
+        target_result: ValidationResult to add errors to
+        source_result: ValidationResult to get errors from
+    """
+    if not source_result.success:
+        for error in source_result.errors:
+            target_result.add_error(error)
+
+
+def validate_actor_modifications(actor, modifications):
+    """Validate multiple modifications to an actor"""
+    result = ValidationResult()
+
+    if not actor:
+        result.add_error("Actor is None")
+        return result
+
+    # Define validation mappings
+    validation_map = {
+        "location": validate_actor_location,
+        "rotation": validate_actor_rotation,
+        "scale": validate_actor_scale,
+        "folder": validate_actor_folder,
+        "mesh": validate_actor_mesh,
+    }
+
+    # Check each modification
+    for key, expected_value in modifications.items():
+        if key in validation_map:
+            validator = validation_map[key]
+            validation_result = validator(actor, expected_value)
+            _merge_validation_errors(result, validation_result)
+
+    return result

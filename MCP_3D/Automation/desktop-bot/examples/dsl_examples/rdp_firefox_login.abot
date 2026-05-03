@@ -1,0 +1,129 @@
+# RDP Firefox Login Script
+# Automatyczne łączenie się przez RDP do Windows i logowanie do serwisu przez Firefox
+
+# Definicja parametrów RDP
+rdp_host = env.RDP_HOST;  # Adres serwera RDP
+rdp_username = env.RDP_USERNAME;  # Nazwa użytkownika
+rdp_password = env.RDP_PASSWORD;  # Hasło
+rdp_port = env.RDP_PORT;  # Port (domyślnie 3389)
+website_url = "https://example.com";  # URL strony do otwarcia
+login_username = env.WEBSITE_USERNAME;  # Nazwa użytkownika na stronie
+login_password = env.WEBSITE_PASSWORD;  # Hasło na stronie
+
+# Nawiązanie połączenia RDP
+print(text="Nawiązywanie połączenia RDP z hostem " + rdp_host + "...");
+connect_rdp(
+    host=rdp_host,
+    username=rdp_username,
+    password=rdp_password,
+    port=rdp_port,
+    resolution="1920x1080"
+);
+
+# Czekanie na nawiązanie połączenia i załadowanie pulpitu
+wait(seconds=10);
+
+# Sprawdzenie czy połączenie zostało nawiązane
+if screen_contains(image="windows_desktop.png", confidence=0.7) {
+    print(text="Połączenie RDP nawiązane. System Windows załadowany pomyślnie.");
+
+    # Otwarcie przeglądarki Firefox (za pomocą menu Start)
+    print(text="Uruchamianie przeglądarki Firefox...");
+
+    # Kliknięcie przycisku Start
+    click(image="windows_start_button.png");
+    wait(seconds=1);
+
+    # Wpisanie "firefox" w wyszukiwarce menu Start
+    type_text(text="firefox");
+    wait(seconds=1);
+
+    # Naciśnięcie Enter
+    press_key(key="enter");
+    wait(seconds=5);
+
+    # Sprawdzenie czy Firefox został uruchomiony
+    if screen_contains(image="firefox_window.png", confidence=0.7) {
+        print(text="Firefox uruchomiony pomyślnie.");
+
+        # Nawigacja do strony
+        print(text="Nawigacja do " + website_url);
+
+        # Kliknięcie w pasek adresu
+        click(image="firefox_address_bar.png");
+
+        # Czyszczenie paska adresu
+        hotkey(keys=["ctrl", "a"]);
+        press_key(key="delete");
+
+        # Wpisanie adresu
+        type_text(text=website_url);
+        press_key(key="enter");
+        wait(seconds=5);
+
+        # Sprawdzenie czy strona się załadowała
+        if screen_contains(image="login_form.png", confidence=0.7) {
+            print(text="Strona logowania załadowana pomyślnie.");
+
+            # Wypełnienie formularza logowania
+            print(text="Wypełnianie formularza logowania...");
+
+            # Kliknięcie w pole nazwy użytkownika
+            click(image="username_field.png");
+            wait(seconds=0.5);
+
+            # Wpisanie nazwy użytkownika
+            type_text(text=login_username);
+
+            # Kliknięcie w pole hasła
+            click(image="password_field.png");
+            wait(seconds=0.5);
+
+            # Wpisanie hasła
+            type_text(text=login_password);
+
+            # Kliknięcie przycisku logowania
+            click(image="login_button.png");
+            wait(seconds=5);
+
+            # Sprawdzenie czy logowanie się powiodło
+            if screen_contains(image="login_success.png", confidence=0.7) {
+                print(text="Logowanie zakończone sukcesem!");
+
+                # Opcjonalnie: wykonaj dodatkowe działania po zalogowaniu
+                # ...
+
+            } else {
+                print(text="Nie udało się potwierdzić pomyślnego logowania.");
+
+                # Opcjonalnie: sprawdź błędy logowania
+                if screen_contains(image="login_error.png") {
+                    print(text="Wystąpił błąd logowania. Sprawdź dane uwierzytelniające.");
+                }
+            }
+        } else {
+            print(text="Nie udało się załadować strony logowania.");
+        }
+    } else {
+        print(text="Nie udało się uruchomić przeglądarki Firefox.");
+
+        # Alternatywna metoda uruchomienia Firefox
+        print(text="Próba alternatywnej metody uruchomienia Firefox...");
+        execute_shell_command(command="start firefox");
+        wait(seconds=5);
+    }
+} else {
+    print(text="Nie udało się nawiązać połączenia RDP lub załadować pulpitu Windows.");
+}
+
+# Dodanie prostej pętli oczekiwania dla podtrzymania sesji RDP
+print(text="Zadanie wykonane. Naciśnij 'q' aby zakończyć sesję RDP.");
+
+# Oczekiwanie na klawisz 'q' do zakończenia sesji
+while not keyboard_state(key="q") {
+    wait(seconds=1);
+}
+
+# Zamknięcie połączenia RDP
+disconnect_rdp();
+print(text="Sesja RDP zakończona.");

@@ -1,0 +1,10 @@
+{
+  "name": "mcp-marketplace",
+  "display_name": "MCP市场",
+  "description": "集成68+原子MCP模块和400+MCP服务器",
+  "version": "1.0.0",
+  "category": "integration",
+  "sources": ["focusmcp", "activepieces", "mcp_official"],
+  "mcp_brick_count": 68,
+  "mcp_server_count": 400
+}

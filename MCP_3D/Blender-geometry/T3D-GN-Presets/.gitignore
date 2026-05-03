@@ -1,0 +1,10 @@
+# Files to ignore
+*.txt~
+*.txt
+*.code-workspace
+*.blend
+*.blend1
+
+# Exception
+!t3d_nodes.blend
+!LICENSE.txt

@@ -1,0 +1,43 @@
+name: "test-before-commit"
+description: "Git 提交前自动运行测试和代码检查"
+version: "1.0"
+trigger: "git commit"
+
+nodes:
+  - id: detect-changes
+    type: skill
+    ref: code-analyzer
+    action: detect_changed_files
+    description: "检测变更文件"
+
+  - id: run-unit-tests
+    type: cli
+    ref: pytest-runner
+    params:
+      test_dir: "tests/"
+      flags: "-x --tb=short"
+    condition: "previous_step.has_py_changes"
+    description: "运行单元测试"
+
+  - id: run-lint
+    type: cli
+    ref: flake8-runner
+    params:
+      target: "core/"
+      max_line_length: 120
+    condition: "previous_step.has_py_changes"
+    description: "运行代码风格检查"
+
+  - id: commit
+    type: cli
+    ref: git-commit
+    action: proceed
+    description: "通过检查后允许提交"
+
+edges:
+  - from: detect-changes
+    to: run-unit-tests
+  - from: run-unit-tests
+    to: run-lint
+  - from: run-lint
+    to: commit

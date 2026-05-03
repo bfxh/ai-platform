@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "description": "AI成长系统 - 从每次任务中学习、改进、进化",
+  
+  "growth_dimensions": {
+    "accuracy": {
+      "name": "准确性",
+      "description": "执行结果与用户预期的匹配度",
+      "metric": "任务成功率",
+      "target": ">95%"
+    },
+    "efficiency": {
+      "name": "效率",
+      "description": "完成任务的步骤数和时间",
+      "metric": "平均步骤数",
+      "target": "逐步减少不必要的步骤"
+    },
+    "compliance": {
+      "name": "合规性",
+      "description": "是否严格按用户要求执行",
+      "metric": "违规次数",
+      "target": "0"
+    },
+    "knowledge": {
+      "name": "知识积累",
+      "description": "掌握的领域知识和工具用法",
+      "metric": "知识条目数",
+      "target": "持续增长"
+    },
+    "adaptability": {
+      "name": "适应性",
+      "description": "面对新问题的处理能力",
+      "metric": "新问题首次解决率",
+      "target": ">80%"
+    }
+  },
+  
+  "learning_triggers": [
+    {
+      "event": "任务完成",
+      "action": "记录：什么任务、怎么做的、结果如何、有什么经验"
+    },
+    {
+      "event": "遇到错误并解决",
+      "action": "记录：什么错误、根因是什么、怎么修的、以后怎么避免"
+    },
+    {
+      "event": "用户纠正",
+      "action": "记录：我做错了什么、用户期望是什么、差距在哪、怎么改进"
+    },
+    {
+      "event": "发现新模式",
+      "action": "记录：什么场景、什么方法有效、可以复用到哪些场景"
+    }
+  ],
+  
+  "review_schedule": {
+    "per_session": "会话结束时自动生成摘要",
+    "daily": "每天汇总：完成了什么、学到了什么、哪里需要改进",
+    "weekly": "每周回顾：成长趋势、薄弱环节、下周重点"
+  },
+  
+  "evolution_log_format": {
+    "timestamp": "ISO 8601",
+    "event_type": "task_complete | error_resolved | user_correction | new_pattern",
+    "description": "发生了什么",
+    "lesson": "学到了什么",
+    "action_item": "以后怎么做",
+    "category": "accuracy | efficiency | compliance | knowledge | adaptability"
+  }
+}

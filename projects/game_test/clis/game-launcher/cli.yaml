@@ -1,0 +1,21 @@
+name: game-launcher
+exec_path: python
+params:
+  - name: script
+    type: string
+    default: "/python/launch_1204.py"
+    description: 启动脚本路径
+  - name: window_title
+    type: string
+    default: "Minecraft"
+    description: 游戏窗口标题关键词
+  - name: launcher_title
+    type: string
+    default: "HMCL"
+    description: 启动器窗口标题（如有）
+  - name: action
+    type: string
+    default: "start"
+    description: "start 或 stop"
+description: 启动/停止游戏（支持启动器/直接/脚本启动）
+timeout: 180

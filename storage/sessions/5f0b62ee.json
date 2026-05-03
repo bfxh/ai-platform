@@ -1,0 +1,37 @@
+{
+  "session_id": "5f0b62ee",
+  "created_at": "2026-05-01T18:38:03.713161",
+  "updated_at": "2026-05-01T18:38:04.926993",
+  "agent": "orchestrator",
+  "task": "",
+  "status": "active",
+  "messages": [
+    {
+      "role": "user",
+      "content": "integrated test - list dir",
+      "timestamp": "2026-05-01T18:38:03.723603",
+      "metadata": {}
+    }
+  ],
+  "results": [
+    {
+      "success": false,
+      "summary": "TRAE IDE 未运行 (not_found)，请先启动 TRAE IDE",
+      "detail": {
+        "status": "blocked",
+        "result": {
+          "bridge_status": {
+            "status": "not_found",
+            "window": false,
+            "process": false,
+            "details": "TRAE IDE 未运行"
+          }
+        }
+      },
+      "timestamp": "2026-05-01T18:38:04.926993"
+    }
+  ],
+  "metadata": {},
+  "message_count": 1,
+  "result_count": 1
+}

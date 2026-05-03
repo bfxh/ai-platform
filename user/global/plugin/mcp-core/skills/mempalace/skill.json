@@ -1,0 +1,118 @@
+{
+  "name": "mempalace",
+  "version": "1.0.0",
+  "description": "AI记忆宫殿系统 - 基于古希腊记忆术的长期记忆管理",
+  "author": "Milla Jovovich & Ben Sigman",
+  "created": "2026-04-09",
+  "enabled": true,
+  "category": "memory",
+  "tags": ["memory", "knowledge", "ai", "storage", "search", "knowledge-graph"],
+  "entry_point": "skill.py",
+  "class_name": "MemPalaceSkill",
+  "actions": [
+    {
+      "name": "create_wing",
+      "description": "创建记忆宫殿侧厅",
+      "params": {
+        "wing_name": {"type": "string", "required": true, "description": "侧厅名称"},
+        "wing_type": {"type": "string", "required": true, "description": "侧厅类型 (project/person/topic)"}
+      }
+    },
+    {
+      "name": "create_room",
+      "description": "在侧厅中创建房间",
+      "params": {
+        "wing_name": {"type": "string", "required": true, "description": "侧厅名称"},
+        "room_name": {"type": "string", "required": true, "description": "房间名称"}
+      }
+    },
+    {
+      "name": "store_memory",
+      "description": "存储记忆到指定房间",
+      "params": {
+        "wing_name": {"type": "string", "required": true, "description": "侧厅名称"},
+        "room_name": {"type": "string", "required": true, "description": "房间名称"},
+        "memory_text": {"type": "string", "required": true, "description": "记忆文本"},
+        "metadata": {"type": "object", "required": false, "description": "元数据"}
+      }
+    },
+    {
+      "name": "retrieve_memory",
+      "description": "从指定位置检索记忆",
+      "params": {
+        "wing_name": {"type": "string", "required": false, "description": "侧厅名称"},
+        "room_name": {"type": "string", "required": false, "description": "房间名称"},
+        "limit": {"type": "integer", "required": false, "default": 10, "description": "结果数量限制"}
+      }
+    },
+    {
+      "name": "search",
+      "description": "搜索记忆",
+      "params": {
+        "query": {"type": "string", "required": true, "description": "搜索查询"},
+        "limit": {"type": "integer", "required": false, "default": 10, "description": "结果数量限制"}
+      }
+    },
+    {
+      "name": "add_knowledge",
+      "description": "添加知识三元组到知识图谱",
+      "params": {
+        "subject": {"type": "string", "required": true, "description": "知识三元组主体"},
+        "predicate": {"type": "string", "required": true, "description": "知识三元组谓词"},
+        "object": {"type": "string", "required": true, "description": "知识三元组客体"},
+        "valid_until": {"type": "string", "required": false, "description": "有效期"},
+        "confidence": {"type": "float", "required": false, "default": 1.0, "description": "置信度 (0.0-1.0)"}
+      }
+    },
+    {
+      "name": "query_knowledge",
+      "description": "查询知识图谱",
+      "params": {
+        "subject": {"type": "string", "required": false, "description": "知识三元组主体"},
+        "predicate": {"type": "string", "required": false, "description": "知识三元组谓词"},
+        "object": {"type": "string", "required": false, "description": "知识三元组客体"}
+      }
+    },
+    {
+      "name": "detect_conflicts",
+      "description": "检测知识图谱中的冲突",
+      "params": {}
+    },
+    {
+      "name": "get_stats",
+      "description": "获取记忆系统统计信息",
+      "params": {}
+    },
+    {
+      "name": "export_data",
+      "description": "导出记忆数据",
+      "params": {
+        "file_path": {"type": "string", "required": true, "description": "导出文件路径"}
+      }
+    },
+    {
+      "name": "import_data",
+      "description": "导入记忆数据",
+      "params": {
+        "file_path": {"type": "string", "required": true, "description": "导入文件路径"}
+      }
+    }
+  ],
+  "wing_types": ["project", "person", "topic"],
+  "features": [
+    "记忆宫殿管理",
+    "长期记忆存储",
+    "AAAK压缩格式",
+    "知识图谱",
+    "向量搜索",
+    "冲突检测",
+    "数据导入导出"
+  ],
+  "dependencies": [
+    "sqlite3",
+    "chromadb (optional)"
+  ],
+  "output": {
+    "type": "json"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "skill_doctor",
+  "version": "1.0",
+  "description": "Skills 自检与回滚工具 - 检查 Skills 依赖并在失败时回滚",
+  "category": "system",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "diagnose": "运行 Skills 诊断",
+    "doctor": "完整诊断并提供修复建议",
+    "rollback": "回滚指定技能到 CC/2_Old"
+  },
+  "rules": {
+    "backup_on_rollback": true,
+    "auto_update_config": false
+  },
+  "dependencies": [
+    "Python 3.6+",
+    "/python/ai_architecture.json"
+  ]
+}

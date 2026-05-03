@@ -1,0 +1,25 @@
+{
+  "id": "stepfun_220173390104",
+  "date": "2026/3/10 13:36:00",
+  "title": "阶跃AI对话 [对话]",
+  "summary": "会话220173390104，18次工具调用，使用工具: file_system_read,terminal_execute,file_system_write,file_system_edit",
+  "tags": [
+    "对话"
+  ],
+  "source": "stepfun_log",
+  "session_id": "220173390104293376",
+  "user_instructions": [],
+  "results": [],
+  "score": 5,
+  "tools_used": [
+    "file_system_read",
+    "terminal_execute",
+    "file_system_write",
+    "file_system_edit"
+  ],
+  "files_touched": [],
+  "commands": [],
+  "first_time": "2026/3/10 13:36:00",
+  "last_time": "2026/3/10 14:03:10",
+  "task_count": 18
+}

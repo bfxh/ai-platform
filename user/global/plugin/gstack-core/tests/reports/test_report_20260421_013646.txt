@@ -1,0 +1,38 @@
+============================================================
+GSTACK 深度测试报告
+============================================================
+生成时间: 2026-04-21T01:36:42.083071
+
+测试摘要:
+  总测试数: 6
+  通过: 2
+  失败: 4
+  通过率: 33.3%
+
+------------------------------------------------------------
+详细结果:
+------------------------------------------------------------
+
+[ASK Skill]
+  ❌ ASK Skill 模块加载 
+     错误: unexpected indent (skill.py, line 187)
+
+[Blender MCP]
+  ✅ test_initialization 
+  ✅ test_status_check 
+
+[Narsil MCP]
+  ❌ Narsil MCP 模块加载 
+     错误: cannot import name 'NarsilMCP' from 'skill' (\python\MCP_Core\skills\blender_mcp\skill.py)
+
+[n8n Workflow]
+  ❌ n8n Workflow 模块加载 
+     错误: cannot import name 'N8nWorkflowSkill' from 'skill' (\python\MCP_Core\skills\blender_mcp\skill.py)
+
+[Security]
+  ❌ 安全测试 
+     错误: cannot import name 'ArchitectEnforcer' from 'skill' (\python\MCP_Core\skills\blender_mcp\skill.py)
+
+============================================================
+报告结束
+============================================================

@@ -1,0 +1,64 @@
+# LinkedIn Login Script
+# Automatyczne logowanie do portalu LinkedIn i pobieranie kodu uwierzytelniającego z emaila
+
+# Otwarcie przeglądarki Firefox
+open_application(name="firefox");
+
+# Czekanie na pełne uruchomienie przeglądarki
+wait(seconds=3);
+
+# Nawigacja do strony LinkedIn
+navigate_to(url="linkedin.com");
+
+# Czekanie na załadowanie strony
+wait(seconds=2);
+
+# Sprawdzenie czy jesteśmy na stronie logowania
+if screen_contains(image="linkedin_login_page.png", confidence=0.7) {
+    # Wpisanie loginu
+    click(selector="#username");
+    wait(seconds=0.5);
+    type_text(text=env.LINKEDIN_USERNAME);
+
+    # Wpisanie hasła
+    click(selector="#password");
+    wait(seconds=0.5);
+    type_text(text=env.LINKEDIN_PASSWORD);
+
+    # Kliknięcie przycisku logowania
+    click(selector="#login-submit-button");
+
+    # Czekanie na zalogowanie
+    wait(seconds=5);
+
+    # Sprawdzenie czy wymagana weryfikacja dwuetapowa
+    if screen_contains(image="2fa_input.png", confidence=0.7) {
+        # Pobieranie ostatniego emaila od LinkedIn
+        emails = get_emails(from="security-noreply@linkedin.com", max_count=1);
+
+        # Wyciągnięcie kodu weryfikacyjnego z treści emaila
+        if emails {
+            auth_code = extract_code(text=emails[0].body, regex="\\b\\d{6}\\b");
+
+            # Wpisanie kodu weryfikacyjnego
+            type_text(text=auth_code);
+            wait(seconds=0.5);
+
+            # Kliknięcie przycisku weryfikacji
+            click(selector="#verification-submit-button");
+            wait(seconds=3);
+        } else {
+            # Jeśli nie udało się pobrać emaila, wypisz komunikat
+            print(text="Nie znaleziono emaila z kodem weryfikacyjnym.");
+        }
+    }
+
+    # Sprawdzenie czy udało się zalogować
+    if screen_contains(image="linkedin_feed.png", confidence=0.7) {
+        print(text="Zalogowano pomyślnie do LinkedIn!");
+    } else {
+        print(text="Nie udało się zalogować do LinkedIn.");
+    }
+} else {
+    print(text="Nie znaleziono strony logowania LinkedIn.");
+}

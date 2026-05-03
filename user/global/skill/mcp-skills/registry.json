@@ -1,0 +1,178 @@
+{
+  "registry_version": "1.0.0",
+  "registry_name": "Terraria Mod Optimization Skills Registry",
+  "description": "泰拉瑞亚模组优化技能注册表",
+  "author": "AI Assistant",
+  "created": "2026-04-05",
+  
+  "skills": [
+    {
+      "id": "terraria-gpu-particle-optimizer",
+      "name": "GPU粒子优化器",
+      "version": "2.0.0",
+      "description": "为泰拉瑞亚模组添加GPU加速粒子系统",
+      "category": "optimization",
+      "priority": 1,
+      "file": "terraria-gpu-particle-optimizer.json",
+      "dependencies": [],
+      "tags": ["gpu", "particles", "performance", "calamitymod"]
+    },
+    {
+      "id": "terraria-mod-compatibility",
+      "name": "模组兼容性系统",
+      "version": "1.0.0",
+      "description": "为GPU粒子系统添加多模组兼容支持",
+      "category": "compatibility",
+      "priority": 2,
+      "file": "terraria-mod-compatibility.json",
+      "dependencies": ["terraria-gpu-particle-optimizer"],
+      "tags": ["compatibility", "mods", "integration"]
+    },
+    {
+      "id": "terraria-build-test",
+      "name": "编译测试系统",
+      "version": "1.0.0",
+      "description": "自动化编译、测试和部署流程",
+      "category": "build",
+      "priority": 3,
+      "file": "terraria-build-test.json",
+      "dependencies": ["terraria-gpu-particle-optimizer", "terraria-mod-compatibility"],
+      "tags": ["build", "test", "automation", "deployment"]
+    },
+    {
+      "id": "terraria-steam-uploader",
+      "name": "Steam上传系统",
+      "version": "1.0.0",
+      "description": "泰拉瑞亚模组Steam上传技能 - 自动化模组打包和Steam Workshop上传",
+      "category": "upload",
+      "priority": 4,
+      "file": "terraria-steam-uploader.json",
+      "dependencies": ["terraria-build-test"],
+      "tags": ["steam", "workshop", "upload", "deployment", "publishing"]
+    },
+    {
+      "id": "terraria-sulphur-sea-knowledge",
+      "name": "沉沦之海知识修复",
+      "version": "1.0.0",
+      "description": "解决灾厄模组中已获得沉沦之海材料但显示没有沉沦之海知识的问题",
+      "category": "tools",
+      "priority": 5,
+      "file": "terraria-sulphur-sea-knowledge.json",
+      "dependencies": [],
+      "tags": ["calamitymod", "sulphursea", "knowledge", "fix"]
+    },
+    {
+      "id": "calamity-bug-reporter",
+      "name": "灾厄模组Bug报告提交器",
+      "version": "1.0.0",
+      "description": "自动化提交bug报告到灾厄模组官方GitHub仓库",
+      "category": "automation",
+      "priority": 6,
+      "file": "calamity-bug-reporter.json",
+      "dependencies": [],
+      "tags": ["calamitymod", "bug", "github", "automation", "reporting"]
+    }
+  ],
+  
+  "workflows": [
+    {
+      "id": "terraria-gpu-optimization-workflow",
+      "name": "GPU优化完整工作流",
+      "version": "2.0.0",
+      "description": "从分析到部署的全自动化GPU优化流程",
+      "file": "terraria-gpu-optimization-workflow.json",
+      "required_skills": [
+        "terraria-gpu-particle-optimizer",
+        "terraria-mod-compatibility",
+        "terraria-build-test"
+      ],
+      "estimated_duration": "15-30分钟"
+    },
+    {
+      "id": "calamity-bug-fix-workflow",
+      "name": "灾厄模组Bug修复完整工作流",
+      "version": "1.0.0",
+      "description": "从诊断到提交的完整bug修复流程",
+      "file": "calamity-bug-fix-workflow.json",
+      "required_skills": [
+        "calamity-bug-reporter"
+      ],
+      "estimated_duration": "5-10分钟"
+    }
+  ],
+  
+  "categories": {
+    "optimization": {
+      "name": "性能优化",
+      "description": "提升模组性能的技能",
+      "skills": ["terraria-gpu-particle-optimizer"]
+    },
+    "compatibility": {
+      "name": "兼容性",
+      "description": "模组兼容性相关技能",
+      "skills": ["terraria-mod-compatibility"]
+    },
+    "build": {
+      "name": "编译构建",
+      "description": "编译、测试和部署技能",
+      "skills": ["terraria-build-test"]
+    },
+    "upload": {
+      "name": "上传发布",
+      "description": "模组上传和发布技能",
+      "skills": ["terraria-steam-uploader"]
+    },
+    "tools": {
+      "name": "工具",
+      "description": "游戏工具和修复技能",
+      "skills": ["terraria-sulphur-sea-knowledge"]
+    },
+    "automation": {
+      "name": "自动化",
+      "description": "自动化任务和报告技能",
+      "skills": ["calamity-bug-reporter"]
+    }
+  },
+  
+  "installation": {
+    "requirements": [
+      "Python 3.8+",
+      "MCP Framework",
+      "tModLoader"
+    ],
+    "install_command": "python install_mcp_skills.py",
+    "verify_command": "python verify_mcp_skills.py"
+  },
+  
+  "usage": {
+    "list_skills": "python mcp_skills.py list",
+    "execute_skill": "python mcp_skills.py execute <skill_id>",
+    "run_workflow": "python mcp_workflows.py run <workflow_id>",
+    "get_help": "python mcp_skills.py help <skill_id>"
+  },
+  
+  "examples": [
+    {
+      "name": "优化CalamityMod",
+      "description": "为CalamityMod添加GPU粒子系统",
+      "command": "python mcp_workflows.py run terraria-gpu-optimization-workflow --mod_name CalamityMod"
+    },
+    {
+      "name": "测试模组兼容性",
+      "description": "测试多个模组的兼容性",
+      "command": "python mcp_skills.py execute terraria-mod-compatibility --target_mods CalamityMod,ThoriumMod"
+    },
+    {
+      "name": "编译并测试",
+      "description": "编译项目并运行所有测试",
+      "command": "python mcp_skills.py execute terraria-build-test --project_path %DEV_DIR%\\泰拉瑞亚\\模组源码\\CalamityMod"
+    }
+  ],
+  
+  "metadata": {
+    "total_skills": 6,
+    "total_workflows": 2,
+    "last_updated": "2026-04-05",
+    "registry_path": "/python\\MCP_Skills\\registry.json"
+  }
+}

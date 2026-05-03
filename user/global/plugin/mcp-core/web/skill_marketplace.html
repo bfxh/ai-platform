@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Skill市场</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .search-section {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .category-tag {
+            padding: 8px 16px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .category-tag:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-size: 1.5em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .skill-language {
+            padding: 5px 10px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .skill-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .skill-stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .skill-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .topic {
+            padding: 4px 12px;
+            background: #e7f3ff;
+            color: #0066cc;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        .skill-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .btn-install {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+
+        .btn-install:hover {
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: white;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background: #28a745;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: slideIn 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.error {
+            background: #dc3545;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .stats-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 GitHub Skill市场</h1>
+            <p>发现、下载和安装来自GitHub的精彩Skill项目</p>
+
+            <div class="search-section">
+                <input type="text" class="search-input" id="searchInput" placeholder="搜索skill...">
+                <button class="btn" onclick="searchSkills()">搜索</button>
+                <button class="btn btn-secondary" onclick="updateMarketplace()">更新市场</button>
+            </div>
+
+            <div class="categories" id="categoriesContainer">
+                <span class="category-tag" onclick="filterByCategory('all')">全部</span>
+                <span class="category-tag" onclick="filterByCategory('mcp')">MCP</span>
+                <span class="category-tag" onclick="filterByCategory('skill')">Skill</span>
+                <span class="category-tag" onclick="filterByCategory('tool')">工具</span>
+                <span class="category-tag" onclick="filterByCategory('automation')">自动化</span>
+                <span class="category-tag" onclick="filterByCategory('api')">API</span>
+            </div>
+        </div>
+
+        <div class="stats-overview" id="statsOverview">
+            <div class="stat-card">
+                <div class="stat-number" id="totalSkills">0</div>
+                <div class="stat-label">总Skills</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalCategories">0</div>
+                <div class="stat-label">分类</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="installedSkills">0</div>
+                <div class="stat-label">已安装</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="lastUpdated">-</div>
+                <div class="stat-label">最后更新</div>
+            </div>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>正在加载Skill市场...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let marketplaceData = {
+            skills: [],
+            categories: {},
+            last_updated: null
+        };
+
+        let currentFilter = 'all';
+
+        function loadMarketplace() {
+            fetch('/api/marketplace')
+                .then(response => response.json())
+                .then(data => {
+                    marketplaceData = data;
+                    updateStats();
+                    displaySkills(marketplaceData.skills || []);
+                })
+                .catch(error => {
+                    console.error('加载市场数据失败:', error);
+                    document.getElementById('skillsGrid').innerHTML = '<div class="loading"><p>加载失败，请刷新页面重试</p></div>';
+                });
+        }
+
+        function updateStats() {
+            document.getElementById('totalSkills').textContent = marketplaceData.skills?.length || 0;
+            document.getElementById('totalCategories').textContent = Object.keys(marketplaceData.categories || {}).length;
+            document.getElementById('installedSkills').textContent = (marketplaceData.skills || []).filter(s => s.status === 'installed').length;
+
+            if (marketplaceData.last_updated) {
+                const date = new Date(marketplaceData.last_updated);
+                document.getElementById('lastUpdated').textContent = date.toLocaleDateString('zh-CN');
+            }
+
+            updateCategories();
+        }
+
+        function updateCategories() {
+            const container = document.getElementById('categoriesContainer');
+            const categories = Object.keys(marketplaceData.categories || {});
+
+            let html = '<span class="category-tag" onclick="filterByCategory(\'all\')">全部</span>';
+            categories.slice(0, 10).forEach(cat => {
+                html += `<span class="category-tag" onclick="filterByCategory('${cat}')">${cat}</span>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function displaySkills(skills) {
+            const grid = document.getElementById('skillsGrid');
+
+            if (!skills || skills.length === 0) {
+                grid.innerHTML = '<div class="loading"><p>暂无Skill，试试点击"更新市场"按钮</p></div>';
+                return;
+            }
+
+            let html = '';
+            skills.forEach(skill => {
+                html += `
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div class="skill-name">${skill.name || skill.full_name}</div>
+                            ${skill.language ? `<span class="skill-language">${skill.language}</span>` : ''}
+                        </div>
+                        <div class="skill-description">${skill.description || '暂无描述'}</div>
+                        <div class="skill-stats">
+                            <div class="stat">⭐ ${skill.stars || 0}</div>
+                            <div class="stat">🍴 ${skill.forks || 0}</div>
+                            ${skill.downloads ? `<div class="stat">📥 ${skill.downloads}</div>` : ''}
+                        </div>
+                        ${skill.topics && skill.topics.length > 0 ? `
+                            <div class="skill-topics">
+                                ${skill.topics.slice(0, 5).map(t => `<span class="topic">${t}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                        <div class="skill-actions">
+                            <button class="btn btn-small" onclick="viewSkill('${skill.full_name}')">查看详情</button>
+                            ${skill.status === 'installed' ?
+                                '<button class="btn btn-small btn-install" disabled>已安装</button>' :
+                                `<button class="btn btn-small btn-install" onclick="installSkill('${skill.full_name}')">安装</button>`
+                            }
+                        </div>
+                    </div>
+                `;
+            });
+
+            grid.innerHTML = html;
+        }
+
+        function filterByCategory(category) {
+            currentFilter = category;
+
+            let filteredSkills = marketplaceData.skills || [];
+
+            if (category !== 'all') {
+                filteredSkills = filteredSkills.filter(skill =>
+                    (skill.topics && skill.topics.includes(category)) ||
+                    (skill.categories && skill.categories.includes(category))
+                );
+            }
+
+            displaySkills(filteredSkills);
+        }
+
+        function searchSkills() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+
+            if (!query) {
+                displaySkills(marketplaceData.skills || []);
+                return;
+            }
+
+            const filteredSkills = (marketplaceData.skills || []).filter(skill =>
+                (skill.name && skill.name.toLowerCase().includes(query)) ||
+                (skill.full_name && skill.full_name.toLowerCase().includes(query)) ||
+                (skill.description && skill.description.toLowerCase().includes(query))
+            );
+
+            displaySkills(filteredSkills);
+        }
+
+        function viewSkill(fullName) {
+            window.open(`https://github.com/${fullName}`, '_blank');
+        }
+
+        function installSkill(fullName) {
+            fetch('/api/install', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({repo_full_name: fullName})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showToast(`成功安装: ${fullName}`);
+                    loadMarketplace();
+                } else {
+                    showToast(`安装失败: ${data.error}`, true);
+                }
+            })
+            .catch(error => {
+                showToast('安装失败: ' + error.message, true);
+            });
+        }
+
+        function updateMarketplace() {
+            document.getElementById('skillsGrid').innerHTML = '<div class="loading"><div class="loading-spinner"></div><p>正在更新市场数据...</p></div>';
+
+            fetch('/api/marketplace/update', {method: 'POST'})
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        showToast('市场更新成功！');
+                        loadMarketplace();
+                    } else {
+                        showToast('更新失败: ' + data.error, true);
+                    }
+                })
+                .catch(error => {
+                    showToast('更新失败: ' + error.message, true);
+                });
+        }
+
+        function showToast(message, isError = false) {
+            const toast = document.createElement('div');
+            toast.className = 'toast' + (isError ? ' error' : '');
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchSkills();
+            }
+        });
+
+        window.onload = loadMarketplace;
+    </script>
+</body>
+</html>

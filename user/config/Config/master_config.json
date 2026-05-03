@@ -1,0 +1,180 @@
+{
+  "version": "2.0.0",
+  "name": "AI Unified Configuration",
+  "last_updated": "2026-04-04T09:18:23.401776",
+  "config_sources": [
+    "/python\\MCP\\mcp-config.json",
+    "/python\\MCP_Core\\unified_config.json",
+    "/python\\stepfun-config.json",
+    "/python\\claude-mcp-config.json",
+    "/python\\langfuse-mcp-config.json"
+  ],
+  "server": {
+    "host": "localhost",
+    "port": 8766,
+    "protocol": "websocket",
+    "max_connections": 10,
+    "log_level": "INFO",
+    "auth": {
+      "enabled": true,
+      "mode": "token",
+      "token": "PLACEHOLDER_TOKEN_SET_VIA_ENV"
+    }
+  },
+  "models": {
+    "provider": "stepfun",
+    "api_endpoint": "https://api.stepfun.com/v1",
+    "base_url": "http://127.0.0.1:3199/v1",
+    "api_key": "stepfun-model-proxy",
+    "default_model": "step-1v",
+    "models": {
+      "step-alpha": {
+        "context_window": 128000,
+        "capabilities": [
+          "text",
+          "code",
+          "analysis"
+        ]
+      },
+      "vision-model": {
+        "context_window": 32000,
+        "capabilities": [
+          "vision",
+          "text"
+        ]
+      }
+    }
+  },
+  "skills": {
+    "network_transfer": {
+      "enabled": true,
+      "transfer_port": 50000,
+      "buffer_size": 65536,
+      "chunk_size": 1048576,
+      "max_retries": 3,
+      "timeout": 300
+    },
+    "exo_cluster": {
+      "enabled": true,
+      "exo_port": 50051,
+      "api_port": 52415,
+      "auto_discover": true,
+      "node_timeout": 30
+    },
+    "notification": {
+      "enabled": true,
+      "notification_port": 50001,
+      "toast_enabled": true,
+      "sound_enabled": true
+    },
+    "system_config": {
+      "enabled": true,
+      "firewall_auto": true,
+      "backup_before_change": true
+    },
+    "file_backup": {
+      "enabled": true
+    },
+    "path": "/python/Skills",
+    "available": [
+      "3d-modeling",
+      "code-generation",
+      "code-quality",
+      "database-design",
+      "document-writing",
+      "download-manager",
+      "video-processor",
+      "ue5-manager",
+      "download-accelerator",
+      "network-optimizer",
+      "ai-software",
+      "vscode-ai-integration",
+      "ai-3d-modeling",
+      "blender-ue-pipeline",
+      "blender-mcp",
+      "ai-3d-modeling-gpu",
+      "video-processor-gpu",
+      "ai-software-gpu",
+      "scene-generator",
+      "character-generator",
+      "modeling-pipeline",
+      "pua-supervisor",
+      "financial-modeling",
+      "machine-learning",
+      "marketing-strategy",
+      "math-modeling",
+      "model-extraction",
+      "product-design",
+      "project-management",
+      "security-audit",
+      "system-architecture",
+      "testing-qa",
+      "translation",
+      "ui-ux-design",
+      "unity-dev"
+    ]
+  },
+  "workflows": {
+    "templates_dir": "/python/MCP_Core/workflow/templates",
+    "state_dir": "/python/MCP_Core/.workflow_state",
+    "auto_backup": true,
+    "max_parallel_steps": 5,
+    "default_timeout": 600,
+    "hot_reload": true,
+    "path": "/python/Workflows/templates",
+    "available": [
+      "3d-modeling-pipeline",
+      "auto-categorize-download",
+      "batch-download",
+      "code-development",
+      "code-quality-pipeline",
+      "content-creation",
+      "data-analysis-report",
+      "financial-analysis",
+      "game-design-pipeline",
+      "github-auto-update",
+      "ml-project",
+      "model-extraction-pipeline",
+      "multi-language-translation",
+      "product-launch",
+      "video-download-pipeline",
+      "batch-transcode",
+      "smart-video-edit",
+      "video-compression",
+      "youtube-channel-sync",
+      "video-to-podcast",
+      "video-highlight-reel",
+      "video-subtitle-generator",
+      "ue5-project-init",
+      "ue5-asset-import",
+      "ue5-build-package",
+      "intelligent-accelerated-download",
+      "network-connection-optimize",
+      "ai-content-creation",
+      "ai-assisted-coding-vscode",
+      "auto-3d-asset-generation",
+      "ai-blender-ue-pipeline",
+      "blender-ai-assisted-modeling",
+      "pua-debug-workflow",
+      "intelligent-content-creation",
+      "intelligent-document-processing",
+      "unity-dev-pipeline",
+      "unity-mod-pipeline"
+    ]
+  },
+  "paths": {
+    "ai_path": "/python",
+    "mcp_core": "/python/MCP_Core",
+    "skills": "/python/MCP_Core/skills",
+    "workflows": "/python/MCP_Core/workflow/templates",
+    "logs": "/python/MCP_Core/logs",
+    "temp": "/python/MCP_Core/temp",
+    "memory": "/python/MCP_Core/memory",
+    "cache": "/python/MCP_Core/cache",
+    "shared_assets": "/python/SharedAssets",
+    "godot_projects": "D:/Projects/Godot",
+    "blender_projects": "D:/Projects/Blender",
+    "ue5_projects": "D:/Projects/UE5",
+    "workspace": "/python\\.stepclaw\\workspace"
+  }
+}

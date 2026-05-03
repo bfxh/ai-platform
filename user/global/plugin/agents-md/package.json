@@ -1,0 +1,13 @@
+{
+  "name": "agents-md-discovery",
+  "version": "1.0.0",
+  "description": "AGENTS.md auto-discovery MCP server for TRAE",
+  "main": "server.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  }
+}

@@ -1,0 +1,22 @@
+[02:03:16] SKIP: Coding-Solo/godot-mcp (already cloned)
+[02:03:16] CLONE: af009/fuku ...
+[02:03:18] OK: af009/fuku
+[02:03:18] CLONE: AI Coding Assistant ...
+[02:04:21] OK: AI Coding Assistant
+[02:04:21] CLONE: AI Assistant Hub ...
+[02:04:37] OK: AI Assistant Hub
+[02:04:37] SKIP: godot-llm (already cloned)
+[02:04:37] SKIP: GDLlama (already cloned)
+[02:04:37] CLONE: voronoishatter ...
+[02:05:16] OK: voronoishatter
+[02:05:16] SKIP: Destruct3D (already cloned)
+[02:05:16] CLONE: AI Context Generator ...
+[02:05:19] FAIL: AI Context Generator code=128
+[02:05:19] === Installing npm deps ===
+[02:05:19] npm install: \MCP_3D\Godot\godot-mcp-vollkorn
+[02:07:10] npm done: \MCP_3D\Godot\godot-mcp-vollkorn
+[02:07:10] npm install: \MCP_3D\Godot\godot-mcp-coding-solo
+[02:07:34] npm done: \MCP_3D\Godot\godot-mcp-coding-solo
+[02:07:34] === Installing Python deps ===
+[02:07:39] fastmcp installed
+[02:07:39] === ALL DONE ===

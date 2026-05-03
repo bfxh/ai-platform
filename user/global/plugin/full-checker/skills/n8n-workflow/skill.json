@@ -1,0 +1,9 @@
+{
+  "name": "n8n-workflow",
+  "display_name": "n8n工作流自动化",
+  "description": "开源自动化平台工作流集成",
+  "version": "1.0.0",
+  "category": "workflow",
+  "platforms": ["n8n", "activepieces", "dify", "flowise"],
+  "features": ["workflow_automation", "api_integration", "task_scheduling", "mcp_servers"]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Blender MCP",
+  "version": "1.0.0",
+  "description": "Blender MCP for natural language Blender control",
+  "category": "JM",
+  "entry_point": "src/server.py",
+  "port": 8400,
+  "blender_path": "C:\\Program Files\\Blender Foundation\\Blender 4.0\\blender.exe",
+  "auto_restart": true,
+  "heartbeat_interval": 30
+}

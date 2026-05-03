@@ -1,0 +1,98 @@
+[2026-05-01 21:58:07] [INFO] MCP 3D Modeling Workflow - Setup Script Starting
+[2026-05-01 21:58:07] [INFO] Install directory: \MCP_3D
+[2026-05-01 21:58:07] [INFO] === Checking prerequisites ===
+[2026-05-01 21:58:07] [INFO] Git: OK
+[2026-05-01 21:58:07] [WARN] uv not found, installing...
+[2026-05-01 22:02:16] [INFO] Node.js: OK
+[2026-05-01 22:02:16] [WARN] Python not found, installing...
+[2026-05-01 22:02:16] [INFO] Prerequisites check complete
+[2026-05-01 22:02:16] [INFO] === Setting up Blender MCP ===
+[2026-05-01 22:02:16] [INFO] Blender found: D:\rj\KF\JM\blender\blender.exe
+[2026-05-01 22:02:16] [INFO] Cloning blender-mcp repo...
+[2026-05-01 22:02:50] [INFO] Blender MCP addon copied to \MCP_3D\blender_addon\addon.py
+[2026-05-01 22:02:50] [INFO] >>> MANUAL: In Blender -> Edit > Preferences > Add-ons > Install > select \MCP_3D\blender_addon\addon.py
+[2026-05-01 22:02:50] [INFO] Blender MCP setup complete (MCP server starts via: uvx blender-mcp)
+[2026-05-01 22:02:50] [INFO] === Setting up UE5 MCP ===
+[2026-05-01 22:02:50] [INFO] UE5 found: D:\rj\KF\JM\UE_5.6\Engine\Binaries\Win64\UnrealEditor.exe
+[2026-05-01 22:02:50] [INFO] Cloning unreal-mcp repo (uses Python Remote Execution, no plugin needed)...
+[2026-05-01 22:08:53] [INFO] Cloning uemcp repo (mature UE5 MCP solution, v3.8.0)...
+[2026-05-01 22:11:29] [INFO] Installing uemcp Node.js dependencies...
+[2026-05-01 22:11:46] [INFO] UE5 MCP setup complete
+[2026-05-01 22:11:46] [INFO] >>> Method 1 (unreal-mcp): Enable Python plugin in UE5, then run unreal-mcp
+[2026-05-01 22:11:46] [INFO] >>> Method 2 (uemcp): Install UE5 Python plugin, run uemcp MCP server
+[2026-05-01 22:11:46] [INFO] === Setting up Unity MCP ===
+[2026-05-01 22:11:46] [INFO] Unity found: D:\rj\KF\JM\Unity\Editor
+[2026-05-01 22:11:46] [INFO] Cloning Unity-MCP repo...
+[2026-05-01 22:23:20] [INFO] Unity MCP setup complete
+[2026-05-01 22:23:20] [INFO] >>> MANUAL: Copy Unity-MCP C# plugin to Unity project Packages folder
+[2026-05-01 22:23:20] [INFO] === Setting up Houdini MCP ===
+[2026-05-01 22:23:20] [WARN] Houdini not installed, downloading MCP server code only
+[2026-05-01 22:23:20] [INFO] Cloning houdini-mcp repo...
+[2026-05-01 22:23:22] [INFO] Houdini MCP setup complete (awaiting Houdini installation)
+[2026-05-01 22:23:22] [INFO] === Setting up Maya MCP ===
+[2026-05-01 22:23:22] [WARN] Maya not installed, downloading MCP server code only
+[2026-05-01 22:23:22] [INFO] Cloning MayaMCP repo (zero-install philosophy, uses command port)...
+[2026-05-01 22:23:28] [INFO] Installing MayaMCP Python dependencies...
+[2026-05-01 22:23:28] [INFO] Maya MCP setup complete (awaiting Maya installation)
+[2026-05-01 22:23:28] [INFO] === Setting up Rhino MCP ===
+[2026-05-01 22:23:28] [WARN] Rhino not installed, downloading MCP server code only
+[2026-05-01 22:23:28] [INFO] Cloning rhino3d-mcp repo (135+ tools)...
+[2026-05-01 22:23:45] [INFO] Installing rhino3d-mcp Python dependencies...
+[2026-05-01 22:23:46] [INFO] Cloning rhino_gh_mcp repo (Grasshopper integration)...
+[2026-05-01 22:25:19] [INFO] Rhino MCP setup complete (awaiting Rhino installation)
+[2026-05-01 22:25:19] [INFO] === Building unified MCP configuration ===
+[2026-05-01 22:25:19] [INFO] Unified MCP config saved to \MCP_3D\mcp_3d_unified.json
+[2026-05-01 22:25:19] [INFO] 
+[2026-05-01 22:25:19] [INFO] === Config file locations ===
+[2026-05-01 22:25:19] [INFO] Unified config: \MCP_3D\mcp_3d_unified.json
+[2026-05-01 22:25:19] [INFO] Trae CN: Copy config to %APPDATA%\Trae CN\User\mcp.json
+[2026-05-01 22:25:19] [INFO] Claude:  Copy config to %APPDATA%\Claude\claude_desktop_config.json
+[2026-05-01 22:25:19] [INFO] 
+[2026-05-01 22:25:19] [INFO] NOTE: MCP server startup commands may need adjustment based on actual repo structure
+[2026-05-01 22:25:19] [INFO] Check each repo's README.md for accurate startup instructions
+[2026-05-01 22:25:19] [INFO] 
+[2026-05-01 22:25:19] [INFO] ============================================
+[2026-05-01 22:25:19] [INFO]    MCP 3D Modeling Workflow - Setup Summary
+[2026-05-01 22:25:19] [INFO] ============================================
+[2026-05-01 22:25:19] [INFO] 
+[2026-05-01 22:25:19] [INFO] Installed DCC software:
+[2026-05-01 22:25:19] [INFO]   [OK] Blender 5.1.0  -> D:\rj\KF\JM\blender\blender.exe
+[2026-05-01 22:25:19] [INFO]   [OK] UE5 5.6        -> D:\rj\KF\JM\UE_5.6\Engine\Binaries\Win64\UnrealEditor.exe
+[2026-05-01 22:25:19] [INFO]   [OK] Unity          -> D:\rj\KF\JM\Unity\Editor
+[2026-05-01 22:25:19] [INFO]   [OK] Godot 4.6.1    -> D:\rj\KF\JM\Godot_v4.6.1-stable_win64.exe
+[2026-05-01 22:25:19] [INFO] 
+[2026-05-01 22:25:19] [INFO] Not installed (commercial license required):
+[2026-05-01 22:25:19] [INFO]   [--] Maya           -> MCP code downloaded, awaiting Maya install
+[2026-05-01 22:25:19] [INFO]   [--] Houdini        -> MCP code downloaded, awaiting Houdini install
+[2026-05-01 22:25:19] [INFO]   [--] Rhino          -> MCP code downloaded, awaiting Rhino install
+[2026-05-01 22:25:19] [INFO] 
+[2026-05-01 22:25:19] [INFO] MCP server code location: \MCP_3D
+[2026-05-01 22:25:19] [INFO] Unified config file: \MCP_3D\mcp_3d_unified.json
+[2026-05-01 22:25:19] [INFO] 
+[2026-05-01 22:25:19] [INFO] === Next Steps ===
+[2026-05-01 22:25:19] [INFO] 
+[2026-05-01 22:25:19] [INFO] 1. Blender MCP:
+[2026-05-01 22:25:19] [INFO]    - Open Blender -> Edit > Preferences > Add-ons > Install
+[2026-05-01 22:25:19] [INFO]    - Select: \MCP_3D\blender_addon\addon.py
+[2026-05-01 22:25:19] [INFO]    - Enable addon, then find BlenderMCP tab in 3D viewport sidebar (N key)
+[2026-05-01 22:25:19] [INFO]    - Click 'Connect to Claude' to start connection
+[2026-05-01 22:25:19] [INFO] 
+[2026-05-01 22:25:19] [INFO] 2. UE5 MCP (two options):
+[2026-05-01 22:25:19] [INFO]    Option A (unreal-mcp, no plugin needed):
+[2026-05-01 22:25:19] [INFO]    - Enable Python Editor Script Plugin in UE5
+[2026-05-01 22:25:19] [INFO]    - Run: python \MCP_3D\unreal-mcp\src\unreal_mcp\server.py
+[2026-05-01 22:25:19] [INFO]    Option B (uemcp, more mature):
+[2026-05-01 22:25:19] [INFO]    - Install UE5 Python plugin + uemcp UE5 plugin
+[2026-05-01 22:25:19] [INFO]    - Run: node \MCP_3D\uemcp\dist\index.js
+[2026-05-01 22:25:19] [INFO] 
+[2026-05-01 22:25:19] [INFO] 3. Unity MCP:
+[2026-05-01 22:25:19] [INFO]    - Copy Unity-MCP C# plugin to Unity project Packages folder
+[2026-05-01 22:25:19] [INFO]    - Run MCP server: node \MCP_3D\Unity-MCP\dist\index.js
+[2026-05-01 22:25:19] [INFO] 
+[2026-05-01 22:25:19] [INFO] 4. Configure in Trae CN:
+[2026-05-01 22:25:19] [INFO]    - Merge \MCP_3D\mcp_3d_unified.json content
+[2026-05-01 22:25:19] [INFO]    - Into %APPDATA%\Trae CN\User\mcp.json
+[2026-05-01 22:25:19] [INFO] 
+[2026-05-01 22:25:19] [INFO] Setup log: \MCP_3D\setup_log.txt
+[2026-05-01 22:25:19] [INFO] ============================================
+[2026-05-01 22:25:19] [INFO] Script execution complete!

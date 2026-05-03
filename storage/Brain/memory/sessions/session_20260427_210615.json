@@ -1,0 +1,15 @@
+{
+  "session_id": "session_20260427_210615",
+  "timestamp": "2026-04-27T21:06:15.972389",
+  "summary": "会话结束: 共1个任务",
+  "key_decisions": [
+    "预防: 记录失败信息供后续参考"
+  ],
+  "user_preferences": {},
+  "lessons_learned": [
+    "预防: 记录失败信息供后续参考"
+  ],
+  "files_touched": [],
+  "tools_used": [],
+  "duration_minutes": 0
+}

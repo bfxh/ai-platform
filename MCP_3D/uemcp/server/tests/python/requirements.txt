@@ -1,0 +1,8 @@
+# Python testing requirements
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+coverage>=7.0.0
+
+# Development utilities
+mypy>=1.0.0    # Type checking

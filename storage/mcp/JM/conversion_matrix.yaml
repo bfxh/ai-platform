@@ -1,0 +1,2093 @@
+game_engines_3d:
+  unity:
+    targets:
+    - godot
+    - ue5
+    - blender
+    - defold
+    - cocos_creator
+    - cryengine
+    - flax
+    - stride
+    - o3de
+    - unigine
+    - evergine
+    - neoaxis
+    - armory3d
+    - bevy
+    - fyrox
+    - torque3d
+    - leadwerks
+    - panda3d
+    - ogre
+    - irrlicht
+    - coppercube
+    - spring
+    - nau
+    - dagon
+    - gamebryo
+    - id_tech
+    - source2
+    - frostbite
+    - snowdrop
+    - decima
+    - fox_engine
+    - rage
+    - creation_engine
+    - lumberyard
+    bridge: fbx
+  ue5:
+    targets:
+    - godot
+    - unity
+    - blender
+    - defold
+    - cocos_creator
+    - cryengine
+    - flax
+    - stride
+    - o3de
+    - unigine
+    - evergine
+    - neoaxis
+    - armory3d
+    - bevy
+    - fyrox
+    - torque3d
+    - leadwerks
+    - panda3d
+    - ogre
+    - irrlicht
+    - coppercube
+    - spring
+    - nau
+    - dagon
+    - gamebryo
+    - id_tech
+    - source2
+    - frostbite
+    - snowdrop
+    - decima
+    - fox_engine
+    - rage
+    - creation_engine
+    - lumberyard
+    bridge: fbx
+  godot:
+    targets:
+    - unity
+    - ue5
+    - blender
+    - defold
+    - cocos_creator
+    - flax
+    - stride
+    - o3de
+    - unigine
+    - evergine
+    - neoaxis
+    - armory3d
+    - bevy
+    - fyrox
+    - torque3d
+    - panda3d
+    - ogre
+    - irrlicht
+    - spring
+    - nau
+    - dagon
+    bridge: gltf
+  blender:
+    targets:
+    - godot
+    - unity
+    - ue5
+    - defold
+    - cocos_creator
+    - cryengine
+    - flax
+    - stride
+    - o3de
+    - unigine
+    - evergine
+    - neoaxis
+    - armory3d
+    - bevy
+    - fyrox
+    - torque3d
+    - leadwerks
+    - panda3d
+    - ogre
+    - irrlicht
+    - coppercube
+    - spring
+    - nau
+    - dagon
+    bridge: gltf/fbx
+  cryengine:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - o3de
+    - lumberyard
+    bridge: fbx
+  flax:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - stride
+    - evergine
+    - neoaxis
+    - bevy
+    bridge: fbx/gltf
+  stride:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - flax
+    - evergine
+    - neoaxis
+    - bevy
+    bridge: fbx/gltf
+  o3de:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - cryengine
+    - unigine
+    - lumberyard
+    bridge: fbx
+  unigine:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - o3de
+    - cryengine
+    bridge: fbx
+  evergine:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - flax
+    - stride
+    - neoaxis
+    - bevy
+    bridge: gltf/fbx
+  neoaxis:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - flax
+    - stride
+    - evergine
+    bridge: gltf/fbx
+  armory3d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - bevy
+    - fyrox
+    bridge: gltf
+  bevy:
+    targets:
+    - godot
+    - unity
+    - ue5
+    - armory3d
+    - fyrox
+    bridge: gltf
+  fyrox:
+    targets:
+    - godot
+    - unity
+    - ue5
+    - armory3d
+    - bevy
+    bridge: gltf/fbx
+  torque3d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - torque2d
+    bridge: dae/fbx
+  leadwerks:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: fbx
+  panda3d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: fbx/egg
+  ogre:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: fbx/dae
+  irrlicht:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: dae
+  coppercube:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: fbx
+  spring:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: fbx/dae
+  nau:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: gltf/fbx
+  dagon:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: gltf/obj
+  gamebryo:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - creation_engine
+    bridge: fbx/nif
+  id_tech:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - source2
+    bridge: fbx/obj/md5
+  source2:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - id_tech
+    bridge: fbx/vmdl
+  frostbite:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: fbx
+  snowdrop:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: fbx
+  decima:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: fbx
+  fox_engine:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: fbx
+  rage:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: fbx
+  creation_engine:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - gamebryo
+    bridge: fbx/nif
+  lumberyard:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - cryengine
+    - o3de
+    bridge: fbx
+game_engines_2d:
+  defold:
+    targets:
+    - godot
+    - cocos_creator
+    - unity
+    - love2d
+    - solar2d
+    - phaser
+    - flame
+    - gdevelop
+    - construct
+    - rpg_maker
+    - libgdx
+    - cocos2dx
+    - axmol
+    - pixijs
+    - egret
+    - heaps
+    - openfl
+    - corona
+    - dome
+    - nme
+    bridge: gltf+png
+  cocos_creator:
+    targets:
+    - godot
+    - defold
+    - unity
+    - phaser
+    - flame
+    - cocos2dx
+    - axmol
+    - egret
+    - pixijs
+    bridge: gltf+json
+  construct:
+    targets:
+    - defold
+    - gdevelop
+    - phaser
+    - flame
+    - pixijs
+    bridge: png+json
+  rpg_maker:
+    targets:
+    - defold
+    - gdevelop
+    - construct
+    - cocos_creator
+    - love2d
+    bridge: png+json
+  love2d:
+    targets:
+    - defold
+    - solar2d
+    - flame
+    - corona
+    - dome
+    bridge: png+ogg+lua
+  solar2d:
+    targets:
+    - defold
+    - love2d
+    - flame
+    - corona
+    bridge: png+json+lua
+  gdevelop:
+    targets:
+    - defold
+    - construct
+    - phaser
+    - cocos_creator
+    - pixijs
+    bridge: gltf+png
+  flame:
+    targets:
+    - defold
+    - love2d
+    - solar2d
+    - phaser
+    bridge: png+json
+  phaser:
+    targets:
+    - defold
+    - cocos_creator
+    - gdevelop
+    - flame
+    - pixijs
+    bridge: png+json
+  libgdx:
+    targets:
+    - defold
+    - cocos_creator
+    - unity
+    - phaser
+    - love2d
+    bridge: obj+png
+  cocos2dx:
+    targets:
+    - cocos_creator
+    - defold
+    - unity
+    - axmol
+    bridge: png+json+csb
+  axmol:
+    targets:
+    - cocos2dx
+    - cocos_creator
+    - defold
+    - unity
+    bridge: png+json
+  pixijs:
+    targets:
+    - phaser
+    - defold
+    - cocos_creator
+    - gdevelop
+    - construct
+    bridge: png+json
+  egret:
+    targets:
+    - cocos_creator
+    - phaser
+    - pixijs
+    - defold
+    bridge: png+json
+  heaps:
+    targets:
+    - unity
+    - godot
+    - defold
+    - love2d
+    bridge: fbx+png
+  openfl:
+    targets:
+    - pixijs
+    - phaser
+    - defold
+    - cocos_creator
+    bridge: png+json
+  corona:
+    targets:
+    - solar2d
+    - defold
+    - love2d
+    - flame
+    bridge: png+lua
+  dome:
+    targets:
+    - love2d
+    - defold
+    - solar2d
+    bridge: png+wren
+  nme:
+    targets:
+    - openfl
+    - pixijs
+    - phaser
+    - defold
+    bridge: png+haxe
+  gamemaker:
+    targets:
+    - godot
+    - defold
+    - construct
+    - gdevelop
+    - unity
+    bridge: png+json
+  torque2d:
+    targets:
+    - torque3d
+    - defold
+    - construct
+    - gdevelop
+    - love2d
+    bridge: png+json
+web_engines:
+  playcanvas:
+    targets:
+    - godot
+    - unity
+    - threejs
+    - babylonjs
+    - aframe
+    - decentraland
+    - croquet
+    bridge: gltf
+  babylonjs:
+    targets:
+    - godot
+    - unity
+    - threejs
+    - playcanvas
+    - aframe
+    - decentraland
+    - croquet
+    bridge: gltf
+  threejs:
+    targets:
+    - godot
+    - unity
+    - babylonjs
+    - playcanvas
+    - aframe
+    - decentraland
+    - croquet
+    bridge: gltf
+  aframe:
+    targets:
+    - godot
+    - threejs
+    - babylonjs
+    - playcanvas
+    - decentraland
+    bridge: gltf
+  decentraland:
+    targets:
+    - godot
+    - threejs
+    - babylonjs
+    - playcanvas
+    bridge: gltf
+  croquet:
+    targets:
+    - godot
+    - threejs
+    - babylonjs
+    - playcanvas
+    bridge: gltf
+  pixijs:
+    targets:
+    - phaser
+    - defold
+    - cocos_creator
+    - construct
+    bridge: png+json
+  spline_web:
+    targets:
+    - threejs
+    - babylonjs
+    - playcanvas
+    - godot
+    - unity
+    bridge: gltf
+  react_three_fiber:
+    targets:
+    - threejs
+    - babylonjs
+    - playcanvas
+    - godot
+    bridge: gltf
+  p5js:
+    targets:
+    - phaser
+    - pixijs
+    - processing
+    bridge: png+json
+  cesiumjs:
+    targets:
+    - threejs
+    - babylonjs
+    - godot
+    - ue5
+    bridge: gltf/3dtiles
+  mapbox_gl:
+    targets:
+    - cesiumjs
+    - threejs
+    - godot
+    - ue5
+    bridge: gltf/geojson
+dcc_tools:
+  maya:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - defold
+    - cocos_creator
+    - cryengine
+    - blender
+    - o3de
+    - unigine
+    - flax
+    - stride
+    - bevy
+    - fyrox
+    - armory3d
+    bridge: fbx/gltf/usd
+  houdini:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - defold
+    - cocos_creator
+    - blender
+    - o3de
+    - unigine
+    - bevy
+    - fyrox
+    bridge: fbx/usd/gltf/vdb
+  substance:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - cryengine
+    - cocos_creator
+    - blender
+    - flax
+    - stride
+    bridge: png+sbsar
+  3dsmax:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - cryengine
+    - o3de
+    - unigine
+    - flax
+    bridge: fbx
+  cinema4d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - o3de
+    - unigine
+    bridge: fbx/abc/usd
+  zbrush:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - 3dcoat
+    - maya
+    - 3dsmax
+    bridge: obj/fbx
+  modo:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - maya
+    bridge: fbx/abc/usd
+  daz3d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - maya
+    - character_creator
+    bridge: fbx
+  mixamo:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - maya
+    bridge: fbx
+  character_creator:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - daz3d
+    - maya
+    bridge: fbx/gltf
+  cascadeur:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - maya
+    bridge: fbx/usd
+  3dcoat:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - zbrush
+    - maya
+    bridge: fbx/obj/gltf
+  mudbox:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - zbrush
+    - maya
+    bridge: obj/fbx
+  nomad_sculpt:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - zbrush
+    bridge: obj/gltf/fbx
+  forger:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - maya
+    bridge: obj/fbx
+  vr_modeling:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: obj/gltf
+  lightwave:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - maya
+    bridge: fbx/obj
+  shade3d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: fbx/obj
+  silo:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: obj/fbx
+  wings3d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: obj
+cad_bim:
+  sketchup:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - twinmotion
+    - lumion
+    - d5_render
+    bridge: datasmith/fbx/dae
+  revit:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - twinmotion
+    - lumion
+    - d5_render
+    - archicad
+    bridge: datasmith/ifc/fbx
+  autocad:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - twinmotion
+    bridge: datasmith/fbx/obj
+  archicad:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - twinmotion
+    - lumion
+    - d5_render
+    - revit
+    bridge: ifc/fbx/usd
+  rhino:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - twinmotion
+    - grasshopper
+    bridge: fbx/usd/gltf/rhino.inside
+  navisworks:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - twinmotion
+    bridge: fbx/ifc
+  vectorworks:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - twinmotion
+    - lumion
+    bridge: ifc/fbx/gltf
+  tekla:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - twinmotion
+    bridge: ifc/fbx
+  bricscad:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    bridge: ifc/fbx/dwg
+  allplan:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - twinmotion
+    bridge: ifc/fbx
+  bentley:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - twinmotion
+    bridge: ifc/fbx/dgn
+  chief_architect:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - twinmotion
+    bridge: fbx/obj
+  solidworks:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    bridge: step/fbx/usd
+  catia:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    bridge: step/iges/fbx
+  inventor:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    bridge: step/fbx/ipt
+  fusion360:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    bridge: step/fbx/usd
+  freecad:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    bridge: step/ifc/fbx
+  openscad:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    bridge: stl/obj
+archviz:
+  twinmotion:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    bridge: direct_link/fbx/usd
+  lumion:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    bridge: fbx/obj
+  enscape:
+    targets:
+    - ue5
+    - unity
+    - godot
+    bridge: fbx
+  d5_render:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    bridge: fbx/obj
+  vray:
+    targets:
+    - ue5
+    - unity
+    - blender
+    - maya
+    - 3dsmax
+    - sketchup
+    - rhino
+    bridge: vrscene
+rendering_engines:
+  octane:
+    targets:
+    - unity
+    - ue5
+    - blender
+    - maya
+    - 3dsmax
+    - cinema4d
+    - daz3d
+    - houdini
+    bridge: orb/abc/usd
+  redshift:
+    targets:
+    - maya
+    - 3dsmax
+    - cinema4d
+    - houdini
+    - blender
+    bridge: rs/abc/usd
+  vray:
+    targets:
+    - maya
+    - 3dsmax
+    - cinema4d
+    - blender
+    - sketchup
+    - rhino
+    - houdini
+    bridge: vrscene/fbx
+  arnold:
+    targets:
+    - maya
+    - 3dsmax
+    - cinema4d
+    - houdini
+    - blender
+    bridge: ass/usd
+  renderman:
+    targets:
+    - maya
+    - houdini
+    - blender
+    bridge: rib/usd
+  cycles:
+    targets:
+    - blender
+    - maya
+    - 3dsmax
+    bridge: usd/fbx
+  eevee:
+    targets:
+    - blender
+    bridge: gltf/fbx
+  karma:
+    targets:
+    - houdini
+    - usd_pipeline
+    bridge: usd
+  unreal_lumen:
+    targets:
+    - ue5
+    bridge: fbx/usd
+  mental_ray:
+    targets:
+    - maya
+    - 3dsmax
+    bridge: mi/fbx
+terrain_procedural:
+  world_machine:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - houdini
+    - o3de
+    - unigine
+    bridge: heightmap/exr/obj
+  gaea:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - houdini
+    - o3de
+    - unigine
+    bridge: heightmap/mesh/gltf
+  world_creator:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - houdini
+    - o3de
+    - unigine
+    bridge: heightmap/mesh/fbx
+  vue:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    - maya
+    - 3dsmax
+    - cinema4d
+    bridge: fbx/obj/vob
+  infinigen:
+    targets:
+    - blender
+    - ue5
+    - unity
+    - godot
+    bridge: obj/fbx/gltf
+  geocontrol:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    bridge: heightmap/obj
+  instant_terrain:
+    targets:
+    - unity
+    - ue5
+    - godot
+    bridge: heightmap/obj
+animation_frameworks:
+  spine:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - cocos_creator
+    - defold
+    - phaser
+    - pixijs
+    - cocos2dx
+    - axmol
+    - heaps
+    - openfl
+    - flame
+    - gamemaker
+    - love2d
+    bridge: json+atlas+png
+  dragonbones:
+    targets:
+    - unity
+    - cocos_creator
+    - cocos2dx
+    - egret
+    bridge: json+tex.json+png
+  lottie:
+    targets:
+    - unity
+    - web
+    - react_native
+    - flutter
+    - ios
+    - android
+    - skia
+    bridge: json
+  live2d:
+    targets:
+    - unity
+    - web
+    - ios
+    - android
+    - cocos_creator
+    bridge: moc3+model3.json+png
+  mixamo:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - maya
+    - 3dsmax
+    - motionbuilder
+    bridge: fbx
+  motionbuilder:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - maya
+    - 3dsmax
+    - houdini
+    bridge: fbx/bvh/c3d
+  iclone:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - maya
+    - character_creator
+    bridge: fbx/bvh
+  rokoko:
+    targets:
+    - unity
+    - ue5
+    - blender
+    - maya
+    - motionbuilder
+    bridge: fbx/bvh
+  xsens:
+    targets:
+    - unity
+    - ue5
+    - blender
+    - maya
+    - motionbuilder
+    bridge: fbx/bvh/c3d
+  optitrack:
+    targets:
+    - unity
+    - ue5
+    - blender
+    - maya
+    - motionbuilder
+    bridge: fbx/bvh/c3d
+  vicon:
+    targets:
+    - unity
+    - ue5
+    - blender
+    - maya
+    - motionbuilder
+    bridge: fbx/c3d
+  perception_neuron:
+    targets:
+    - unity
+    - ue5
+    - blender
+    - maya
+    bridge: fbx/bvh
+  faceware:
+    targets:
+    - unity
+    - ue5
+    - maya
+    - blender
+    bridge: fbx/bvh
+  lipsync_pro:
+    targets:
+    - unity
+    - ue5
+    - godot
+    bridge: fbx/phonemes
+  salsa_lipsync:
+    targets:
+    - unity
+    bridge: phonemes
+  ovrlipsync:
+    targets:
+    - unity
+    - ue5
+    bridge: phonemes
+vfx_particle_systems:
+  popcornfx:
+    targets:
+    - ue5
+    - unity
+    - o3de
+    - godot
+    - cryengine
+    bridge: pkfx+textures
+  niagara:
+    targets:
+    - ue5
+    bridge: ue5_native
+  vfx_graph:
+    targets:
+    - unity
+    bridge: unity_native
+  cascade:
+    targets:
+    - ue5
+    bridge: ue5_legacy
+  shuriken:
+    targets:
+    - unity
+    bridge: unity_legacy
+  gpu_particles:
+    targets:
+    - godot
+    bridge: godot_native
+digital_twin_metaverse:
+  omniverse:
+    targets:
+    - ue5
+    - unity
+    - maya
+    - 3dsmax
+    - blender
+    - houdini
+    - rhino
+    - revit
+    bridge: usd
+  unity_reflect:
+    targets:
+    - revit
+    - sketchup
+    - rhino
+    - autocad
+    - archicad
+    - navisworks
+    bridge: ifc/fbx
+  matterport:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - blender
+    bridge: obj/e57/ply
+  cintoo:
+    targets:
+    - ue5
+    - unity
+    bridge: e57/ply/obj
+  pointcloud_tools:
+    targets:
+    - ue5
+    - unity
+    - blender
+    - cloudcompare
+    bridge: e57/ply/las/laz
+xr_platforms:
+  openxr:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - flax
+    - evergine
+    - unigine
+    - o3de
+    - bevy
+    - monado
+  meta_xr:
+    targets:
+    - unity
+    - ue5
+    - evergine
+    - unigine
+  steamvr:
+    targets:
+    - unity
+    - ue5
+    - unigine
+    - o3de
+  psvr2:
+    targets:
+    - unity
+    - ue5
+  visionpro:
+    targets:
+    - unity
+  webxr:
+    targets:
+    - godot
+    - playcanvas
+    - babylonjs
+    - threejs
+    - aframe
+    - spline_web
+  varjo_xr:
+    targets:
+    - unity
+    - ue5
+    - unigine
+  magic_leap:
+    targets:
+    - unity
+    - ue5
+  pico:
+    targets:
+    - unity
+    - ue5
+  htc_vive:
+    targets:
+    - unity
+    - ue5
+    - unigine
+  snapdragon_spaces:
+    targets:
+    - unity
+    - ue5
+  arcore:
+    targets:
+    - unity
+    - ue5
+    - web
+    - godot
+  arkit:
+    targets:
+    - unity
+    - godot
+  xreal:
+    targets:
+    - unity
+    - ue5
+  android_xr:
+    targets:
+    - unity
+    - ue5
+  viture:
+    targets:
+    - unity
+  lenovo_xr:
+    targets:
+    - unity
+    - ue5
+  nreal:
+    targets:
+    - unity
+    - ue5
+  wave_xr:
+    targets:
+    - unity
+    - ue5
+  osvr:
+    targets:
+    - unity
+    status: deprecated
+  google_cardboard:
+    targets:
+    - unity
+    - ue5
+    - godot
+  apple_visionpro_native:
+    targets:
+    - unity
+    bridge: polyspatial
+  alvr:
+    targets:
+    - steamvr
+    - quest
+    bridge: streaming
+  vrbridge:
+    targets:
+    - steamvr
+    bridge: streaming
+audio_middleware:
+  wwise:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - o3de
+    - cryengine
+    bridge: wem+bnk+wproj
+  fmod:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - cryengine
+    - o3de
+    bridge: fsb+fspro
+  criware:
+    targets:
+    - unity
+    - ue5
+    - cocos_creator
+    - cocos2dx
+    bridge: acb+awb+usm
+  steam_audio:
+    targets:
+    - unity
+    - ue5
+    - fmod
+    - wwise
+    bridge: phononscene+sofa
+  resonance_audio:
+    targets:
+    - unity
+    - web
+    - godot
+    bridge: api
+  meta_spatial_audio:
+    targets:
+    - unity
+    - ue5
+    bridge: api
+  miles_sound:
+    targets:
+    - unity
+    - ue5
+    bridge: mss
+  fabric:
+    targets:
+    - unity
+    bridge: unity_native
+  elias:
+    targets:
+    - unity
+    - ue5
+    bridge: elias_sdk
+  pure_data:
+    targets:
+    - libpd_embedded
+    - unity
+    - web
+    bridge: pd_patch
+  game_coda:
+    targets:
+    - ue5
+    - unity
+    bridge: sdk
+  miniaudio:
+    targets:
+    - c_cpp_engines
+    bridge: c_library
+  soloud:
+    targets:
+    - c_cpp_engines
+    - defold
+    bridge: c_library
+  openal:
+    targets:
+    - c_cpp_engines
+    - panda3d
+    - ogre
+    bridge: c_api
+physics_engines:
+  physx:
+    targets:
+    - ue5
+    - unity
+    - godot
+    - omniverse
+    bridge: api/repx
+  havok:
+    targets:
+    - unity
+    - ue5
+    - babylonjs
+    bridge: api/hkt
+  jolt:
+    targets:
+    - godot
+    - ue5
+    - horizon
+    bridge: api
+  bullet:
+    targets:
+    - godot
+    - blender
+    - threejs
+    - panda3d
+    - irrlicht
+    - ogre
+    bridge: bullet_file/urdf
+  box2d:
+    targets:
+    - cocos_creator
+    - defold
+    - love2d
+    - godot
+    bridge: api
+  mujoco:
+    targets:
+    - unity
+    - omniverse
+    - isaac_sim
+    bridge: mjcf/urdf
+  ode:
+    targets:
+    - ogre
+    - irrlicht
+    - panda3d
+    bridge: api
+  chipmunk:
+    targets:
+    - love2d
+    - cocos2dx
+    - defold
+    bridge: api
+  rapier:
+    targets:
+    - bevy
+    - fyrox
+    - web
+    bridge: wasm/api
+  reactphysics3d:
+    targets:
+    - c_cpp_engines
+    bridge: api
+  newton_dynamics:
+    targets:
+    - ogre
+    - irrlicht
+    bridge: api
+  chaos_physics:
+    targets:
+    - ue5
+    bridge: ue5_native
+  havok_physics_unity:
+    targets:
+    - unity
+    bridge: unity_package
+  physx_5:
+    targets:
+    - ue5
+    - omniverse
+    bridge: api
+  isaac_sim:
+    targets:
+    - omniverse
+    - unity
+    bridge: usd/urdf
+ai_tools:
+  meshy:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    - maya
+    bridge: glb/fbx/obj+png
+  leonardo_ai:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: glb+png
+  luma_ai:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: glb/obj/usdz+png
+  csm_ai:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: glb/fbx/obj/usdz+png
+  kaedim:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: fbx/obj/glb+png
+  rodin:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: glb/fbx/obj+png
+  inworld_ai:
+    targets:
+    - unity
+    - ue5
+    bridge: sdk/api
+  convai:
+    targets:
+    - unity
+    - ue5
+    bridge: sdk/api
+  spline_ai:
+    targets:
+    - threejs
+    - babylonjs
+    - playcanvas
+    - godot
+    - unity
+    bridge: gltf
+  open3d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: glb/obj+png
+  tripo3d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: glb/fbx/obj+png
+  masterpiece_studio:
+    targets:
+    - unity
+    - ue5
+    - blender
+    bridge: glb/fbx+png
+  dreamfusion:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: obj/glb+png
+  sam_3d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: obj/ply+png
+  stable_3d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: glb/obj+png
+  point_e:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: ply/obj+png
+  shap_e:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: glb/obj+png
+  wonder3d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: obj/glb+png
+  instant_mesh:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: obj/glb+png
+  unique3d:
+    targets:
+    - unity
+    - ue5
+    - godot
+    - blender
+    bridge: obj/glb+png
+  character_ai:
+    targets:
+    - unity
+    - ue5
+    bridge: sdk/api
+  npc_ai:
+    targets:
+    - unity
+    - ue5
+    - godot
+    bridge: sdk/api
+  scenario_gg:
+    targets:
+    - unity
+    - ue5
+    - godot
+    bridge: png+json
+  layer_ai:
+    targets:
+    - unity
+    - ue5
+    - godot
+    bridge: png+json
+interchange_formats:
+  fbx:
+    type: proprietary
+    owner: Autodesk
+    engines: universal
+    content: mesh+skeleton+animation+material_ref
+  gltf:
+    type: open_standard
+    owner: Khronos
+    engines: godot/defold/cocos/web/bevy/fyrox
+    content: mesh+skeleton+animation+material+texture+pbr
+  glb:
+    type: open_standard
+    owner: Khronos
+    engines: same_as_gltf
+    content: binary_gltf
+  usd:
+    type: open_standard
+    owner: Pixar/OpenUSD
+    engines: ue5/unity/omniverse/houdini/maya
+    content: full_scene+composition+layers
+  usdz:
+    type: open_standard
+    owner: Apple/Pixar
+    engines: ios/visionpro/quicklook
+    content: packaged_usd
+  obj:
+    type: open
+    owner: Wavefront
+    engines: universal_static
+    content: mesh+UV+material_ref
+  abc:
+    type: open_standard
+    owner: Sony/ILM
+    engines: maya/houdini/ue5/unity/blender
+    content: vertex_animation_cache+curves+points
+  dae:
+    type: open_standard
+    owner: Khronos
+    engines: godot/cryengine/blender
+    content: mesh+skeleton+animation+material
+  step:
+    type: iso_standard
+    owner: ISO 10303
+    engines: cad_bim
+    content: precise_brep_nurbs
+  iges:
+    type: us_standard
+    owner: NBS
+    engines: cad_bim
+    content: precise_curve_surface
+  ifc:
+    type: iso_standard
+    owner: buildingSMART
+    engines: bim_archviz
+    content: building_data+geometry
+  stl:
+    type: open
+    owner: 3D Systems
+    engines: 3d_print/cad
+    content: triangle_mesh_only
+  3mf:
+    type: open_standard
+    owner: 3MF Consortium
+    engines: 3d_print/cad
+    content: mesh+material+color
+  ply:
+    type: open
+    owner: Stanford
+    engines: pointcloud/scanning
+    content: point_cloud+mesh
+  e57:
+    type: astm_standard
+    owner: ASTM
+    engines: lidar/scanning
+    content: point_cloud+image
+  vrscene:
+    type: proprietary
+    owner: Chaos
+    engines: vray
+    content: full_vray_scene
+  3dtiles:
+    type: ogc_standard
+    owner: OGC
+    engines: cesium/gis
+    content: massive_3d_geospatial
+  geojson:
+    type: open_standard
+    owner: IETF
+    engines: gis/web
+    content: geographic_data
+  urdf:
+    type: open
+    owner: ROS
+    engines: robotics/mujoco/isaac_sim
+    content: robot_description
+  mjcf:
+    type: open
+    owner: DeepMind
+    engines: mujoco
+    content: robot_description_physics
+  bvh:
+    type: open
+    owner: Biovision
+    engines: mocap/animation
+    content: skeleton_animation
+  c3d:
+    type: open
+    owner: C3D.org
+    engines: mocap
+    content: motion_capture_data
+  vdb:
+    type: open_standard
+    owner: DreamWorks
+    engines: houdini/ue5/blender
+    content: volume_data
+  exr:
+    type: open_standard
+    owner: ILM
+    engines: vfx/rendering
+    content: hdr_image+layers
+  sbsar:
+    type: proprietary
+    owner: Adobe
+    engines: ue5/unity/substance
+    content: parametric_material
+  datasmith:
+    type: proprietary
+    owner: Epic
+    engines: ue5/twinmotion
+    content: cad_bim_scene
+  rhino_inside:
+    type: proprietary
+    owner: McNeel
+    engines: unity/revit
+    content: live_rhino_link
+visual_scripting:
+  ue5_blueprints:
+    targets:
+    - unity_visual_scripting
+    - godot_visual_script
+    - playmaker
+    - bolt
+    bridge: logic_translation
+  unity_visual_scripting:
+    targets:
+    - ue5_blueprints
+    - playmaker
+    - bolt
+    - godot_visual_script
+    bridge: logic_translation
+  playmaker:
+    targets:
+    - unity_visual_scripting
+    - ue5_blueprints
+    bridge: logic_translation
+  bolt:
+    targets:
+    - unity_visual_scripting
+    - ue5_blueprints
+    bridge: logic_translation
+  godot_visual_script:
+    targets:
+    - ue5_blueprints
+    - unity_visual_scripting
+    bridge: logic_translation
+target_platforms:
+  android:
+    engines:
+    - unity
+    - ue5
+    - godot
+    - defold
+    - cocos_creator
+    - flax
+    - stride
+    - flame
+    - solar2d
+    - love2d
+    - gamemaker
+    - cocos2dx
+    - axmol
+    - egret
+  ios:
+    engines:
+    - unity
+    - ue5
+    - godot
+    - defold
+    - cocos_creator
+    - flax
+    - stride
+    - gamemaker
+  webgl:
+    engines:
+    - unity
+    - godot
+    - defold
+    - cocos_creator
+    - construct
+    - playcanvas
+    - babylonjs
+    - threejs
+    - aframe
+    - phaser
+    - pixijs
+    - gdevelop
+    - egret
+    - openfl
+  webxr:
+    engines:
+    - unity
+    - godot
+    - playcanvas
+    - babylonjs
+    - threejs
+    - aframe
+    - spline_web
+  windows:
+    engines:
+    - unity
+    - ue5
+    - godot
+    - flax
+    - stride
+    - o3de
+    - unigine
+    - cryengine
+    - evergine
+    - neoaxis
+    - armory3d
+    - bevy
+    - fyrox
+    - gamemaker
+    - rpg_maker
+  macos:
+    engines:
+    - unity
+    - ue5
+    - godot
+    - flax
+    - stride
+    - armory3d
+    - bevy
+    - gamemaker
+  linux:
+    engines:
+    - unity
+    - ue5
+    - godot
+    - bevy
+    - o3de
+    - armory3d
+    - fyrox
+    - spring
+  quest:
+    engines:
+    - unity
+    - ue5
+    - godot
+  visionos:
+    engines:
+    - unity
+  ps5:
+    engines:
+    - unity
+    - ue5
+  ps4:
+    engines:
+    - unity
+    - ue5
+  xbox:
+    engines:
+    - unity
+    - ue5
+  xbox_series:
+    engines:
+    - unity
+    - ue5
+  switch:
+    engines:
+    - unity
+    - ue5
+    - godot
+  steam_deck:
+    engines:
+    - unity
+    - ue5
+    - godot
+    - flax
+    - stride
+    - bevy
+  android_xr:
+    engines:
+    - unity
+    - ue5
+  embedded:
+    engines:
+    - defold
+    - love2d
+    - panda3d
+    - godot
+total_conversion_paths: '1610'
+total_3d_engines: 34
+total_2d_engines: 20
+total_web_engines: 12
+total_dcc_tools: 20
+total_cad_bim: 18
+total_archviz: 5
+total_rendering_engines: 10
+total_terrain_procedural: 7
+total_animation_frameworks: 16
+total_vfx_systems: 6
+total_digital_twin: 5
+total_xr_platforms: 23
+total_audio_middleware: 14
+total_physics_engines: 15
+total_ai_tools: 24
+total_interchange_formats: 28
+total_visual_scripting: 5
+total_target_platforms: 18

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="BloomShader" inherits="BaseShader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Post-process effect class that implements HDR Bloom based on the [url=https://learnopengl.com/Guest-Articles/2022/Phys.-Based-Bloom]LearnOpenGL article[/url]
+	</brief_description>
+	<description>
+		Post-process effect class that implements HDR Bloom based on the [url=https://learnopengl.com/Guest-Articles/2022/Phys.-Based-Bloom]LearnOpenGL article[/url]
+		It is a multi-pass effect: Downsample Pass, Upsample Pass, Composite Pass.
+		The effect is controlled by the 3 member variables: [b]Threshold[/b], [b]Radius[/b] and [b]Strength[/b].
+	</description>
+	<tutorials>
+	</tutorials>
+	<members>
+		<member name="m_threshold" type="EncapsuledData<float>" setter="set" getter="get" default="1.0">
+			Controls the threshold variable of the effect.
+		</member>
+		<member name="m_radius" type="EncapsuledData<float>" setter="set" getter="get" default="2.5">
+			Controls the radius variable of the effect.
+		</member>
+		<member name="m_strength" type="EncapsuledData<float>" setter="set" getter="get" default="0.5">
+			Controls the strength variable of the effect.
+		</member>
+	</members>
+</class>

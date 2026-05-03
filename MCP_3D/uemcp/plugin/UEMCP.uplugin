@@ -1,0 +1,28 @@
+{
+  "FileVersion": 3,
+  "Version": 3,
+  "VersionName": "3.8.0",
+  "FriendlyName": "Unreal Engine Model Context Protocol",
+  "Description": "MCP integration for AI-assisted Unreal Engine development",
+  "Category": "Developer Tools",
+  "CreatedBy": "atomantic",
+  "CreatedByURL": "https://github.com/atomantic/UEMCP",
+  "DocsURL": "https://github.com/atomantic/UEMCP/wiki",
+  "MarketplaceURL": "",
+  "SupportURL": "https://github.com/atomantic/UEMCP/issues",
+  "CanContainContent": true,
+  "IsBetaVersion": false,
+  "IsExperimentalVersion": false,
+  "Installed": false,
+  "Modules": [],
+  "Plugins": [
+    {
+      "Name": "PythonScriptPlugin",
+      "Enabled": true
+    },
+    {
+      "Name": "EditorScriptingUtilities",
+      "Enabled": true
+    }
+  ]
+}

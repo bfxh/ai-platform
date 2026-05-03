@@ -1,0 +1,69 @@
+[03:41:25] ============================================
+[03:41:25]   MEGA OPEN-SOURCE 3D ECOSYSTEM SETUP
+[03:41:25] ============================================
+[03:41:25] 
+[03:41:25] === PART 1: Clone new open-source repos ===
+[03:41:25] CLONE: CHORD (Ubisoft PBR)...
+[03:41:40] FAIL: CHORD (Ubisoft PBR)
+[03:41:40] CLONE: TextureAlchemy (38 nodes)...
+[03:41:41] OK: TextureAlchemy (38 nodes)
+[03:41:41] CLONE: Awesome ComfyUI...
+[03:41:43] OK: Awesome ComfyUI
+[03:41:43] CLONE: MusicGen (Meta)...
+[03:41:58] FAIL: MusicGen (Meta)
+[03:41:58] CLONE: Stable Audio Tools...
+[03:41:59] OK: Stable Audio Tools
+[03:41:59] CLONE: Rag-MusicPrompt...
+[03:42:14] FAIL: Rag-MusicPrompt
+[03:42:14] CLONE: Awesome CC0...
+[03:42:17] OK: Awesome CC0
+[03:42:17] CLONE: GameDev Resources...
+[03:42:19] OK: GameDev Resources
+[03:42:19] CLONE: Godot Rapier Physics (Fluids!)...
+[03:42:25] OK: Godot Rapier Physics (Fluids!)
+[03:42:25] CLONE: Godot QuarkPhysics (SoftBody)...
+[03:42:28] OK: Godot QuarkPhysics (SoftBody)
+[03:42:28] CLONE: TMG Action Jackson (Retarget)...
+[03:42:42] FAIL: TMG Action Jackson (Retarget)
+[03:42:42] 
+[03:42:42] === PART 2: Install ComfyUI nodes ===
+[03:42:42] TextureAlchemy installed to ComfyUI!
+[03:42:42] Cloning NVIDIA GenAI Creator Toolkit...
+[03:42:52] NVIDIA GenAI Toolkit installed!
+[03:42:52] 
+[03:42:52] === PART 3: Enable Godot plugins ===
+[03:42:52]   Enabled: fuku
+[03:42:52]   Enabled: godot_ai
+[03:42:52]   Enabled: ai_context_generator
+[03:42:52]   Enabled: voronoishatter
+[03:42:52]   Enabled: godot_mcp_vollkorn
+[03:42:52]   Enabled: godot-jolt
+[03:42:52]   Enabled: mesh-slicing-gdextension
+[03:42:52]   Enabled: godot-concave-mesh-slicer
+[03:42:52]   Enabled: fragment_weapon_system
+[03:42:53] Godot plugins enabled!
+[03:42:53] 
+[03:42:53] === PART 4: Install Godot physics addons ===
+[03:42:53] 
+[03:42:53] ============================================
+[03:42:53]   MEGA SETUP COMPLETE
+[03:42:53] ============================================
+[03:43:00] Total open-source repos: 35
+[03:43:00] Total size: 0.89 GB
+[03:43:00] ============================================
+[03:43:00] 
+[03:43:00] NEWLY ADDED:
+[03:43:00]   ComfyUI: CHORD (Ubisoft PBR) + TextureAlchemy (38 nodes) + NVIDIA GenAI Toolkit
+[03:43:00]   Audio: MusicGen (Meta) + Stable Audio Tools + Rag-MusicPrompt
+[03:43:00]   Godot: Rapier Physics (Fluids!) + QuarkPhysics (SoftBody)
+[03:43:00]   Blender: TMG Action Jackson (Retarget)
+[03:43:00]   Resources: Awesome CC0 + GameDev Resources list
+[03:43:00]   Godot Project: All plugins enabled + new physics addons
+[03:43:00] 
+[03:43:00] FREE ASSET WEBSITES (documented):
+[03:43:00]   Polyhaven (CC0 textures/HDRI/models)
+[03:43:00]   Kenney.nl (fully free assets)
+[03:43:00]   OpenGameArt.org
+[03:43:00]   opensource3dassets.com (991+ GLB)
+[03:43:00]   itch.io (free game asset packs)
+[03:43:00] ============================================

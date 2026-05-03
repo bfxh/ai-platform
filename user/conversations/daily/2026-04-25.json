@@ -1,0 +1,36 @@
+[
+  {
+    "session_id": "20260425_095236_测试会话",
+    "start_time": "2026-04-25T09:52:36.724180",
+    "messages": [
+      {
+        "role": "user",
+        "content": "帮我写一个Python代码",
+        "timestamp": "2026-04-25T09:52:36.724180"
+      },
+      {
+        "role": "assistant",
+        "content": "好的，我来帮你写一个Python代码。",
+        "timestamp": "2026-04-25T09:52:36.724180"
+      },
+      {
+        "role": "user",
+        "content": "谢谢",
+        "timestamp": "2026-04-25T09:52:36.724180"
+      }
+    ],
+    "tasks": [
+      {
+        "task": "写一个Python代码",
+        "status": "pending",
+        "created_at": "2026-04-25T09:52:36.724180"
+      },
+      {
+        "task": "测试代码",
+        "status": "pending",
+        "created_at": "2026-04-25T09:52:36.724180"
+      }
+    ],
+    "end_time": "2026-04-25T09:52:36.724180"
+  }
+]

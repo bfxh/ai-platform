@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="ToolPanel" inherits="VBoxContainer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		[b]GodotStylizedShadersPlugin[/b] editor UI god class.
+	</brief_description>
+	<description>
+		[b]GodotStylizedShadersPlugin[/b] editor UI god class.
+		The implementation of this is not relevant to external scripting or coding.
+		Although, this could've easily been divided into multiple classes (beginner's mistake.. oops)
+	</description>
+	<tutorials>
+	</tutorials>
+</class>

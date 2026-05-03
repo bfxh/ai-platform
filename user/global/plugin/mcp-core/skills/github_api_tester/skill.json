@@ -1,0 +1,101 @@
+{
+  "name": "github_api_tester",
+  "version": "1.0.0",
+  "description": "高级GitHub API测试工具 - 批量测试、实时调试、性能测试",
+  "author": "MCP Core Team",
+  "created": "2026-04-18",
+  "enabled": true,
+  "category": "development",
+  "tags": ["github", "api", "testing", "performance", "debug", "batch", "concurrent"],
+  "entry_point": "skill.py",
+  "class_name": "GitHubAPITester",
+  "actions": [
+    {
+      "name": "test_api",
+      "description": "测试单个API",
+      "params": {
+        "endpoint": {"type": "string", "required": true, "description": "API端点"},
+        "method": {"type": "string", "required": false, "default": "GET", "description": "HTTP方法"},
+        "headers": {"type": "object", "required": false, "description": "HTTP头"},
+        "params": {"type": "object", "required": false, "description": "API参数"},
+        "data": {"type": "object", "required": false, "description": "请求数据"}
+      }
+    },
+    {
+      "name": "batch_test",
+      "description": "批量测试API",
+      "params": {
+        "endpoints": {"type": "array", "required": false, "description": "API端点列表"},
+        "concurrency": {"type": "number", "required": false, "default": 5, "description": "并发数"}
+      }
+    },
+    {
+      "name": "performance_test",
+      "description": "性能测试",
+      "params": {
+        "endpoint": {"type": "string", "required": false, "default": "/users/octocat", "description": "API端点"},
+        "method": {"type": "string", "required": false, "default": "GET", "description": "HTTP方法"},
+        "iterations": {"type": "number", "required": false, "default": 100, "description": "测试次数"},
+        "concurrency": {"type": "number", "required": false, "default": 10, "description": "并发数"}
+      }
+    },
+    {
+      "name": "concurrent_test",
+      "description": "并发测试",
+      "params": {
+        "endpoint": {"type": "string", "required": false, "default": "/users/octocat", "description": "API端点"},
+        "method": {"type": "string", "required": false, "default": "GET", "description": "HTTP方法"},
+        "concurrent_users": {"type": "number", "required": false, "default": 50, "description": "并发用户数"},
+        "duration": {"type": "number", "required": false, "default": 60, "description": "测试持续时间（秒）"}
+      }
+    },
+    {
+      "name": "rate_limit_test",
+      "description": "速率限制测试",
+      "params": {
+        "endpoint": {"type": "string", "required": false, "default": "/rate_limit", "description": "API端点"},
+        "method": {"type": "string", "required": false, "default": "GET", "description": "HTTP方法"},
+        "requests_per_minute": {"type": "number", "required": false, "default": 60, "description": "每分钟请求数"},
+        "duration": {"type": "number", "required": false, "default": 120, "description": "测试持续时间（秒）"}
+      }
+    },
+    {
+      "name": "auth_test",
+      "description": "认证测试",
+      "params": {
+        "endpoint": {"type": "string", "required": false, "default": "/user", "description": "API端点"},
+        "method": {"type": "string", "required": false, "default": "GET", "description": "HTTP方法"},
+        "token": {"type": "string", "required": false, "description": "GitHub API令牌"}
+      }
+    },
+    {
+      "name": "get_test_history",
+      "description": "获取测试历史",
+      "params": {}
+    },
+    {
+      "name": "generate_report",
+      "description": "生成测试报告",
+      "params": {
+        "test_files": {"type": "array", "required": false, "description": "测试结果文件列表"},
+        "output_file": {"type": "string", "required": false, "description": "输出报告文件路径"}
+      }
+    }
+  ],
+  "features": [
+    "批量API测试",
+    "实时调试",
+    "性能测试",
+    "并发测试",
+    "错误处理测试",
+    "速率限制测试",
+    "认证测试",
+    "测试报告生成"
+  ],
+  "dependencies": [
+    "requests"
+  ],
+  "output": {
+    "type": "json"
+  }
+}

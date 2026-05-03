@@ -1,0 +1,19 @@
+name: "pytest-runner"
+description: "pytest 测试运行器 — 可配置测试目录和参数"
+exec_path: "pytest"
+params:
+  - name: test_dir
+    type: string
+    default: "tests/"
+    description: "测试文件目录"
+  - name: flags
+    type: string
+    default: "-xvs"
+    description: "pytest 命令行参数"
+  - name: filter
+    type: string
+    default: ""
+    description: "过滤特定测试 (如 'test_auth')"
+timeout: 300
+env:
+  PYTHONPATH: "."

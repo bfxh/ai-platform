@@ -1,0 +1,23 @@
+{
+  "name": "audit_logger",
+  "version": "1.0",
+  "description": "AI 任务审计日志系统 - 记录 GSTACK 工作流的所有操作",
+  "category": "system",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "log": "记录操作日志",
+    "report": "生成审计报告",
+    "export": "导出审计日志"
+  },
+  "rules": {
+    "log_file": "/python/logs/gstack_audit.jsonl",
+    "max_log_size": "100MB",
+    "auto_rotate": true
+  },
+  "dependencies": [
+    "Python 3.6+",
+    "json",
+    "uuid"
+  ]
+}

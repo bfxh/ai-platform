@@ -1,0 +1,17 @@
+{
+  "test_config": "test_config.json",
+  "test_reports_dir": "test_reports",
+  "test_frameworks": [
+    "pytest",
+    "unittest",
+    "nose"
+  ],
+  "test_paths": [
+    "tests",
+    "test"
+  ],
+  "test_patterns": [
+    "test_*.py",
+    "*_test.py"
+  ]
+}

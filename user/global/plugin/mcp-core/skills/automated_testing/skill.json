@@ -1,0 +1,65 @@
+{
+  "name": "automated_testing",
+  "display_name": "自动化测试",
+  "description": "自动化运行测试并生成测试报告",
+  "version": "1.0.0",
+  "author": "MCP Core Team",
+  "requires": [],
+  "category": "development",
+  "entry_point": "automated_testing:AutomatedTestingSkill",
+  "config": {
+    "test_config": "test_config.json",
+    "test_reports_dir": "test_reports",
+    "test_frameworks": ["pytest", "unittest", "nose"],
+    "test_paths": ["tests", "test"],
+    "test_patterns": ["test_*.py", "*_test.py"]
+  },
+  "commands": [
+    {
+      "name": "run",
+      "description": "运行指定路径的测试",
+      "parameters": [
+        {
+          "name": "test_path",
+          "type": "string",
+          "required": false,
+          "description": "测试文件或目录路径"
+        },
+        {
+          "name": "framework",
+          "type": "string",
+          "required": false,
+          "description": "测试框架 (pytest, unittest, nose)"
+        }
+      ]
+    },
+    {
+      "name": "run-all",
+      "description": "运行所有测试"
+    },
+    {
+      "name": "generate-report",
+      "description": "生成测试报告",
+      "parameters": [
+        {
+          "name": "report_file",
+          "type": "string",
+          "required": true,
+          "description": "测试报告JSON文件路径"
+        }
+      ]
+    },
+    {
+      "name": "list-tests",
+      "description": "列出测试文件",
+      "parameters": [
+        {
+          "name": "test_path",
+          "type": "string",
+          "required": false,
+          "description": "测试目录路径"
+        }
+      ]
+    }
+  ]
+}

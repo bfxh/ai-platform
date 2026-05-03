@@ -1,0 +1,27 @@
+{
+  "name": "qa-fullstack-testing",
+  "display_name": "QA全栈测试",
+  "description": "全栈QA自动化测试框架 - Playwright+Cucumber",
+  "version": "1.0.0",
+  "source": "https://github.com/tiagonline/kit-qa-outsera",
+  "category": "testing",
+  "project_path": "/python\\kit-qa-outsera",
+  "commands": [
+    {
+      "name": "test:all",
+      "description": "运行所有测试"
+    },
+    {
+      "name": "test:api",
+      "description": "运行API测试"
+    },
+    {
+      "name": "test:e2e",
+      "description": "运行E2E测试"
+    },
+    {
+      "name": "test:mobile",
+      "description": "运行移动测试"
+    }
+  ]
+}

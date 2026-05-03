@@ -1,0 +1,19 @@
+{
+  "name": "ask",
+  "display_name": "Agent Skill Kit",
+  "description": "Agent Skill Kit - 本地执行的AI技能系统，支持多种AI技能",
+  "version": "1.0.0",
+  "author": "GSTACK",
+  "category": "system",
+  "tags": ["ai", "skill", "tool", "local"],
+  "dependencies": [],
+  "config": {
+    "ask_dir": "/python\\MCP\\Tools\\ask",
+    "skills_dir": "/python\\MCP\\Tools\\ask\\skills"
+  },
+  "commands": {
+    "dashboard": "查看可用技能",
+    "run": "运行指定技能"
+  },
+  "example_usage": "gstack ask run tech_pulse"
+}

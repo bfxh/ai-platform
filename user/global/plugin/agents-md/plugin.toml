@@ -1,0 +1,32 @@
+name = "agents-md"
+version = "2.0.0"
+description = "AGENTS.md Auto-Discovery - Scan project docs, detect tech stack, inject context"
+
+[workspace]
+external_path = "."
+
+[workspace.ai_tools]
+node = { version = "18", role = "runtime" }
+mcp_sdk = { version = "1.x", package = "@modelcontextprotocol/sdk", role = "protocol" }
+
+[workspace.skills]
+discover = { type = "tool", ref = "discover_agents_md", description = "Scan project for AGENTS.md/CLAUDE.md/TRAE rules" }
+inject = { type = "tool", ref = "auto_inject_context", description = "Auto-inject project context into AI conversation" }
+tech_detect = { type = "tool", ref = "detect_tech_stack", description = "Detect project tech stack and recommend rules" }
+
+[environment]
+  [[environment.items]]
+  name = "PROJECT_ROOT"
+  description = "项目根目录"
+  example = "/python"
+
+[software]
+  [[software.items]]
+  name = "node"
+  path = "node"
+  version = "18"
+
+[[abilities]]
+  type = "mcp"
+  name = "agents-md-discovery"
+  path = "server.mjs"

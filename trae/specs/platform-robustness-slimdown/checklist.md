@@ -1,0 +1,18 @@
+- [ ] B1: queue_server.py 绑定 0.0.0.0:52416，局域网可访问
+- [ ] B2: start.bat 使用 Python310 正确路径
+- [ ] B3: remote_control_server.py 包含 import secrets
+- [ ] B4: 所有 8 个服务文件入口处有 UTF-8 编码保护
+- [ ] B5: code_reviewer 后端不可达时自动跳过，不报错不卡顿
+- [ ] B6: orchestrator.py 支持 --redis 和 -i 参数
+- [ ] 冗余文件已移至 storage/CC/2_Old/，原位只保留最新版
+- [ ] service_manager.py start all 可一键启动全部 6 个服务
+- [ ] service_manager.py status 输出所有服务运行状态表
+- [ ] service_manager.py stop 可停止指定或全部服务
+- [ ] 端口冲突时自动终止旧进程并重启
+- [ ] Ollama 启动自动设置 OLLAMA_HOST=0.0.0.0
+- [ ] CODE_REVIEW 任务类型可在 queue_server 中提交和执行
+- [ ] debug_diagnose.py --fix 可自动修复已知问题
+- [ ] debug_diagnose.py --json 输出 JSON 格式
+- [ ] start_all_services.py 已删除
+- [ ] start.bat 调用 service_manager.py start all
+- [ ] 清理后所有保留文件可正常导入运行

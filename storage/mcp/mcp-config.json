@@ -1,0 +1,918 @@
+{
+  "mcpServers": {
+    "ai_3d_modeling_v3": {
+      "name": "ai_3d_modeling_v3",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\ai_3d_modeling_v3.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\ai_3d_modeling_v3.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "ai_3d_modeling_v3 (自动注册)"
+    },
+    "ai_software": {
+      "name": "ai_software",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\ai_software.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\ai_software.py",
+      "category": "unknown",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "ai_software (自动注册)"
+    },
+    "ai_software_gpu": {
+      "name": "ai_software_gpu",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\ai_software_gpu.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\ai_software_gpu.py",
+      "category": "unknown",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "ai_software_gpu (自动注册)"
+    },
+    "blender_automation": {
+      "name": "blender_automation",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\blender_automation.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\blender_automation.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "blender_automation (自动注册)"
+    },
+    "blender_mcp": {
+      "name": "blender_mcp",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\blender_mcp.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\blender_mcp.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "blender_mcp (自动注册)"
+    },
+    "blender_mcp_server": {
+      "name": "blender_mcp_server",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\blender_mcp_server.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\blender_mcp_server.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "blender_mcp_server (自动注册)"
+    },
+    "blender_ue_pipeline": {
+      "name": "blender_ue_pipeline",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\blender_ue_pipeline.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\blender_ue_pipeline.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "blender_ue_pipeline (自动注册)"
+    },
+    "character_generator": {
+      "name": "character_generator",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\character_generator.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\character_generator.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "character_generator (自动注册)"
+    },
+    "drag_convert": {
+      "name": "drag_convert",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\drag_convert.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\drag_convert.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "drag_convert (自动注册)"
+    },
+    "engine_converter": {
+      "name": "engine_converter",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\engine_converter.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\engine_converter.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "engine_converter (自动注册)"
+    },
+    "engine_converter_extended": {
+      "name": "engine_converter_extended",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\engine_converter_extended.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\engine_converter_extended.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "engine_converter_extended (自动注册)"
+    },
+    "engine_converter_ui": {
+      "name": "engine_converter_ui",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\engine_converter_ui.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\engine_converter_ui.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "engine_converter_ui (自动注册)"
+    },
+    "generate_characters_workflow": {
+      "name": "generate_characters_workflow",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\generate_characters_workflow.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\generate_characters_workflow.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "generate_characters_workflow (自动注册)"
+    },
+    "godot_mcp": {
+      "name": "godot_mcp",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\godot_mcp.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\godot_mcp.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "godot_mcp (自动注册)"
+    },
+    "godot_mcp_server": {
+      "name": "godot_mcp_server",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\godot_mcp_server.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\godot_mcp_server.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "godot_mcp_server (自动注册)"
+    },
+    "godot_scene_assembler": {
+      "name": "godot_scene_assembler",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\godot_scene_assembler.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\godot_scene_assembler.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "godot_scene_assembler (自动注册)"
+    },
+    "modeling_pipeline": {
+      "name": "modeling_pipeline",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\modeling_pipeline.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\modeling_pipeline.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "modeling_pipeline (自动注册)"
+    },
+    "scene_generator": {
+      "name": "scene_generator",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\scene_generator.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\scene_generator.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "scene_generator (自动注册)"
+    },
+    "test_ai_3d_modeling_v3": {
+      "name": "test_ai_3d_modeling_v3",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\test_ai_3d_modeling_v3.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\test_ai_3d_modeling_v3.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "test_ai_3d_modeling_v3 (自动注册)"
+    },
+    "test_ai_3d_v3_functional": {
+      "name": "test_ai_3d_v3_functional",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\test_ai_3d_v3_functional.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\test_ai_3d_v3_functional.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "test_ai_3d_v3_functional (自动注册)"
+    },
+    "test_ai_3d_v3_structure": {
+      "name": "test_ai_3d_v3_structure",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\test_ai_3d_v3_structure.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\test_ai_3d_v3_structure.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "test_ai_3d_v3_structure (自动注册)"
+    },
+    "ue5_manager": {
+      "name": "ue5_manager",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\ue5_manager.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\ue5_manager.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "ue5_manager (自动注册)"
+    },
+    "ue_import": {
+      "name": "ue_import",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\ue_import.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\ue_import.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "ue_import (自动注册)"
+    },
+    "ue_mcp": {
+      "name": "ue_mcp",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\ue_mcp.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\ue_mcp.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "ue_mcp (自动注册)"
+    },
+    "unity_mcp": {
+      "name": "unity_mcp",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\unity_mcp.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\unity_mcp.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "unity_mcp (自动注册)"
+    },
+    "video_processor_gpu": {
+      "name": "video_processor_gpu",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\video_processor_gpu.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\video_processor_gpu.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "video_processor_gpu (自动注册)"
+    },
+    "vision_pro": {
+      "name": "vision_pro",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\vision_pro.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\JM\\vision_pro.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "vision_pro (自动注册)"
+    },
+    "ai_architecture_server": {
+      "name": "ai_architecture_server",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\ai_architecture_server.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\ai_architecture_server.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "ai_architecture_server (自动注册)"
+    },
+    "claude_code_bridge": {
+      "name": "claude_code_bridge",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\claude_code_bridge.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\claude_code_bridge.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "claude_code_bridge (自动注册)"
+    },
+    "code_intelligence": {
+      "name": "code_intelligence",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\code_intelligence.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\code_intelligence.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "code_intelligence (自动注册)"
+    },
+    "code_quality": {
+      "name": "code_quality",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\code_quality.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\code_quality.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "code_quality (自动注册)"
+    },
+    "dev_mgr": {
+      "name": "dev_mgr",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\dev_mgr.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\dev_mgr.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "dev_mgr (自动注册)"
+    },
+    "game_ai_workflow": {
+      "name": "game_ai_workflow",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\game_ai_workflow.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\game_ai_workflow.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "game_ai_workflow (自动注册)"
+    },
+    "github_accelerator": {
+      "name": "github_accelerator",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\github_accelerator.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\github_accelerator.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "github_accelerator (自动注册)"
+    },
+    "github_auto_commit": {
+      "name": "github_auto_commit",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\github_auto_commit.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\github_auto_commit.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "github_auto_commit (自动注册)"
+    },
+    "github_auto_dl": {
+      "name": "github_auto_dl",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\github_auto_dl.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\github_auto_dl.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "github_auto_dl (自动注册)"
+    },
+    "github_dl": {
+      "name": "github_dl",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\github_dl.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\github_dl.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "github_dl (自动注册)"
+    },
+    "github_project_manager": {
+      "name": "github_project_manager",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\github_project_manager.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\github_project_manager.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "github_project_manager (自动注册)"
+    },
+    "github_workflow": {
+      "name": "github_workflow",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\github_workflow.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\github_workflow.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "github_workflow (自动注册)"
+    },
+    "mcp_workflow": {
+      "name": "mcp_workflow",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\mcp_workflow.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\mcp_workflow.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "mcp_workflow (自动注册)"
+    },
+    "smart_workflow": {
+      "name": "smart_workflow",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\smart_workflow.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\smart_workflow.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "smart_workflow (自动注册)"
+    },
+    "unified_workflow": {
+      "name": "unified_workflow",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\unified_workflow.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\unified_workflow.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "unified_workflow (自动注册)"
+    },
+    "vs_mgr": {
+      "name": "vs_mgr",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\vs_mgr.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\vs_mgr.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "vs_mgr (自动注册)"
+    },
+    "vscode_ai": {
+      "name": "vscode_ai",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\vscode_ai.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\vscode_ai.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "vscode_ai (自动注册)"
+    },
+    "web_research": {
+      "name": "web_research",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\web_research.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\BC\\web_research.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "web_research (自动注册)"
+    },
+    "aes_memory": {
+      "name": "aes_memory",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\aes_memory.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\aes_memory.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "aes_memory (自动注册)"
+    },
+    "aes_scan": {
+      "name": "aes_scan",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\aes_scan.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\aes_scan.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "aes_scan (自动注册)"
+    },
+    "ai_memory": {
+      "name": "ai_memory",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\ai_memory.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\ai_memory.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "ai_memory (自动注册)"
+    },
+    "aria2_mcp": {
+      "name": "aria2_mcp",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\aria2_mcp.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\aria2_mcp.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "aria2_mcp (自动注册)"
+    },
+    "auto_translate": {
+      "name": "auto_translate",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\auto_translate.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\auto_translate.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "auto_translate (自动注册)"
+    },
+    "browser_download_interceptor": {
+      "name": "browser_download_interceptor",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\browser_download_interceptor.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\browser_download_interceptor.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "browser_download_interceptor (自动注册)"
+    },
+    "config_center": {
+      "name": "config_center",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\config_center.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\config_center.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "config_center (自动注册)"
+    },
+    "da": {
+      "name": "da",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\da.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\da.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "da (自动注册)"
+    },
+    "disk_query": {
+      "name": "disk_query",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\disk_query.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\disk_query.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "disk_query (自动注册)"
+    },
+    "disk_scanner": {
+      "name": "disk_scanner",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\disk_scanner.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\disk_scanner.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "disk_scanner (自动注册)"
+    },
+    "download_accelerator": {
+      "name": "download_accelerator",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\download_accelerator.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\download_accelerator.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "download_accelerator (自动注册)"
+    },
+    "download_manager": {
+      "name": "download_manager",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\download_manager.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\download_manager.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "download_manager (自动注册)"
+    },
+    "extract": {
+      "name": "extract",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\extract.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\extract.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "extract (自动注册)"
+    },
+    "filesystem_server": {
+      "name": "filesystem_server",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\filesystem_server.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\filesystem_server.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "filesystem_server (自动注册)"
+    },
+    "gpu_config": {
+      "name": "gpu_config",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\gpu_config.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\gpu_config.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "gpu_config (自动注册)"
+    },
+    "hybrid_cache": {
+      "name": "hybrid_cache",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\hybrid_cache.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\hybrid_cache.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "hybrid_cache (自动注册)"
+    },
+    "lazy_service_manager": {
+      "name": "lazy_service_manager",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\lazy_service_manager.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\lazy_service_manager.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "lazy_service_manager (自动注册)"
+    },
+    "local_software": {
+      "name": "local_software",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\local_software.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\local_software.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "local_software (自动注册)"
+    },
+    "logging_config": {
+      "name": "logging_config",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\logging_config.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\logging_config.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "logging_config (自动注册)"
+    },
+    "mcp_vision_tools": {
+      "name": "mcp_vision_tools",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\mcp_vision_tools.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\mcp_vision_tools.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "mcp_vision_tools (自动注册)"
+    },
+    "memory_monitor": {
+      "name": "memory_monitor",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\memory_monitor.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\memory_monitor.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "memory_monitor (自动注册)"
+    },
+    "net_pro": {
+      "name": "net_pro",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\net_pro.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\net_pro.py",
+      "category": "unknown",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "net_pro (自动注册)"
+    },
+    "network_optimizer": {
+      "name": "network_optimizer",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\network_optimizer.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\network_optimizer.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "network_optimizer (自动注册)"
+    },
+    "pua_supervisor": {
+      "name": "pua_supervisor",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\pua_supervisor.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\pua_supervisor.py",
+      "category": "unknown",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "pua_supervisor (自动注册)"
+    },
+    "screen_eye": {
+      "name": "screen_eye",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\screen_eye.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\screen_eye.py",
+      "category": "JM",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "screen_eye (自动注册)"
+    },
+    "software_monitor": {
+      "name": "software_monitor",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\software_monitor.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\software_monitor.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "software_monitor (自动注册)"
+    },
+    "software_upgrade_manager": {
+      "name": "software_upgrade_manager",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\software_upgrade_manager.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\software_upgrade_manager.py",
+      "category": "unknown",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "software_upgrade_manager (自动注册)"
+    },
+    "system_monitor": {
+      "name": "system_monitor",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\system_monitor.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\system_monitor.py",
+      "category": "Tools",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "system_monitor (自动注册)"
+    },
+    "tencent_docs": {
+      "name": "tencent_docs",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\tencent_docs.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\tencent_docs.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "tencent_docs (自动注册)"
+    },
+    "tencent_mcp": {
+      "name": "tencent_mcp",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\tencent_mcp.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\tencent_mcp.py",
+      "category": "BC",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "tencent_mcp (自动注册)"
+    },
+    "test_upgrade_manager": {
+      "name": "test_upgrade_manager",
+      "command": "python",
+      "args": [
+        "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\test_upgrade_manager.py"
+      ],
+      "path": "D:\\AI CLAUDE\\CLAUSE\\python\\storage\\mcp\\Tools\\test_upgrade_manager.py",
+      "category": "unknown",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "description": "test_upgrade_manager (自动注册)"
+    }
+  },
+  "_optimized": true,
+  "_optimized_at": "2026-05-01"
+}

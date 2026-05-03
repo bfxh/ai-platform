@@ -1,0 +1,49 @@
+{
+  "name": "监控与优化",
+  "version": "1.0",
+  "description": "监控系统状态并自动优化",
+  "steps": [
+    {
+      "id": 1,
+      "name": "启动系统监控",
+      "command": "python system_monitor.py --daemon",
+      "background": true
+    },
+    {
+      "id": 2,
+      "name": "网络性能测试",
+      "command": "python network_speed_test.py --full",
+      "depends_on": [1]
+    },
+    {
+      "id": 3,
+      "name": "分析传输日志",
+      "command": "python analyze_logs.py",
+      "depends_on": [2]
+    },
+    {
+      "id": 4,
+      "name": "优化网络设置",
+      "command": "python optimize_network.py",
+      "depends_on": [3],
+      "condition": "analysis.show_optimization_needed"
+    },
+    {
+      "id": 5,
+      "name": "生成性能报告",
+      "command": "python generate_report.py --output /python\\reports\\performance.html",
+      "depends_on": [4]
+    },
+    {
+      "id": 6,
+      "name": "发送优化完成通知",
+      "command": "python send_notification.py --type optimization_complete",
+      "depends_on": [5]
+    }
+  ],
+  "schedule": {
+    "enabled": true,
+    "interval": "daily",
+    "time": "02:00"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "command": "%USERPROFILE%/AppData/Local/Programs/Python/Python310/python.exe",
+  "args": ["/python/MCP_Core/mcp_skill_server.py"],
+  "env": {
+    "AI_ROOT": "/python",
+    "MCP_CORE": "/python/MCP_Core",
+    "WB_SKILLS": "%USERPROFILE%/.workbuddy/skills",
+    "MEMORY_DIR": "%USERPROFILE%/WorkBuddy/20260412070640/.workbuddy/memory",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONPATH": "/python/MCP_Core"
+  },
+  "description": "AI工作区核心技能服务器 v3.0 � nl_route/kb_add/kb_search/skill_list/skill_run/github_search/memory_read/memory_write/system_check"
+}

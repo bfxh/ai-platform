@@ -1,0 +1,55 @@
+cross_agent:
+- claude
+- qoder
+description: 安全审计工作流 — 修改安全敏感代码前必须审计
+enforce_mandatory: true
+name: security-audit
+skills:
+- description: 扫描已知漏洞
+  skill: security-scanner.scan
+  step: scan_vulnerabilities
+  timeout: 120
+- description: 检查依赖安全性
+  skill: dependency-checker.check
+  step: review_dependencies
+  timeout: 60
+- condition: context.has_binary_files == True
+  description: 反编译二进制目标 — APK/JAR/DLL/Native → 源代码审计
+  skill: vuln-hunter.decompile_audit
+  step: decompile_target
+  timeout: 900
+  params:
+    tools: [jadx, dnspy, ghidra, ilspy, jd-gui]
+- condition: previous_step.success == True
+  description: 审计权限控制
+  skill: code-reviewer.review
+  step: audit_access_control
+  timeout: 120
+- description: 生成审计报告——等待人工审核
+  gate: human
+  skill: report-generator.generate
+  step: human_review
+  timeout: 600
+tags:
+- security
+- audit
+- mandatory
+triggers:
+- field: command
+  patterns:
+  - auth
+  - login
+  - password
+  - token
+  - credential
+  - 安全
+  - 认证
+  - 密码
+  - 凭证
+- field: file_modified
+  patterns:
+  - '**/auth*'
+  - '**/login*'
+  - '**/credential*'
+  - '*.env'
+version: '1.0'

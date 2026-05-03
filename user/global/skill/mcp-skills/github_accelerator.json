@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "auto_apply": true,
+  "test_timeout": 5,
+  "preferred_method": "hosts",
+  "custom_ips": {},
+  "last_apply": null,
+  "speed_results": {}
+}

@@ -1,0 +1,35 @@
+{
+  "name": "full-checker",
+  "version": "1.0.0",
+  "description": "全项目最终检查插件 - 项目结束前必须执行的全面检查",
+  "skills": [
+    {
+      "name": "qa-fullstack-testing",
+      "display_name": "QA全栈测试",
+      "path": "skills/qa-fullstack-testing",
+      "enabled": true,
+      "project_types": ["nodejs", "generic"],
+      "priority": 1
+    },
+    {
+      "name": "cypress-qa-testing",
+      "display_name": "Cypress QA测试",
+      "path": "skills/cypress-qa-testing",
+      "enabled": true,
+      "project_types": ["nodejs", "generic"],
+      "priority": 2
+    },
+    {
+      "name": "project-final-check",
+      "display_name": "项目最终检查",
+      "path": "skills/project-final-check",
+      "enabled": true,
+      "project_types": ["all"],
+      "priority": 0
+    }
+  ],
+  "trigger_conditions": {
+    "auto_invoke_on_project_end": true,
+    "auto_invoke_threshold": 0.8
+  }
+}

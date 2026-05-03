@@ -1,0 +1,15 @@
+{
+  "id": "trae_globalStorage_1777514973_aicoding_aicoding-completion_0",
+  "title": "[metadata] aicoding.aicoding-completion",
+  "content": "{\"nes.systemDisabledLanguages\": {\"markdown\": true, \"plaintext\": true, \"gitcommit\": true, \"svg\": true, \"prefab\": true, \"go.sum\": true}, \"nes.systemDisabledLanguagesVersion\": \"1.0.0\"}",
+  "tags": [
+    "trae",
+    "conversation",
+    "metadata",
+    "aicoding"
+  ],
+  "importance": 4,
+  "created_at": "2026-04-30T10:09:33.581022",
+  "updated_at": "2026-04-30T10:09:33.581022",
+  "access_count": 0
+}

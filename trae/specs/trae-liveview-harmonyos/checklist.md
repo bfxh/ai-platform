@@ -1,0 +1,20 @@
+- [ ] DevEco Studio 已升级到 5.0+ 版本
+- [ ] TRAE MCP 配置中 DEVECO_PATH 指向新版 DevEco Studio 安装路径
+- [ ] HarmonyOS NEXT 项目已创建并可同步编译
+- [x] LiveViewService.ets 代码已验证，使用 @kit.LiveViewKit 的 liveViewManager API（code_v2预验证通过）
+- [x] LiveViewExtension.ets 代码已验证，继承 LiveViewExtensionAbility（code_v2预验证通过）
+- [x] EntryAbility.ets 代码已验证，使用 @kit.AbilityKit 的 UIAbility（code_v2预验证通过）
+- [x] Index.ets 代码已验证，包含场景选择器、自定义输入、4个操作按钮、进度条、通知历史（code_v2预验证通过）
+- [x] module.json5 代码已验证，声明 LiveViewExtension 扩展（type: liveView）（code_v2预验证通过）
+- [x] module.json5 代码已验证，包含通知权限和网络权限（code_v2预验证通过）
+- [ ] 代码已注入到 DevEco Studio 创建的项目中
+- [ ] 项目编译成功，无编译错误
+- [ ] 应用可部署到华为手机并运行
+- [ ] 启动灵动岛功能正常，状态栏显示胶囊态
+- [ ] 更新进度功能正常，胶囊和卡片内容实时更新
+- [ ] 结束灵动岛功能正常，实况窗正确移除
+- [ ] 普通通知发送功能正常
+- [ ] 实况窗启动失败时自动降级为普通通知
+- [ ] 通知权限请求流程正常
+- [ ] 进度自动模拟功能正常（3秒/次，5%递增）
+- [ ] 通知历史记录功能正常（添加/删除/清除）

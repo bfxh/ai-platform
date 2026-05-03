@@ -1,0 +1,97 @@
+{
+  "skills": {
+    "smart_github_api_manager": {
+      "name": "smart_github_api_manager",
+      "version": "2.0.0",
+      "description": "智能GitHub API管理 - 实时同步、智能分类、版本管理",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/smart_github_api_manager/skill.py",
+      "dependencies": [
+        "requests",
+        "beautifulsoup4",
+        "lxml"
+      ]
+    },
+    "github_nlp_search": {
+      "name": "github_nlp_search",
+      "version": "1.0.0",
+      "description": "GitHub API自然语言搜索与推荐 - 理解自然语言查询，智能推荐API，生成示例代码",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/github_nlp_search/skill.py",
+      "dependencies": [
+        "requests"
+      ]
+    },
+    "github_api_tester": {
+      "name": "github_api_tester",
+      "version": "1.0.0",
+      "description": "高级GitHub API测试工具 - 批量测试、实时调试、性能测试",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/github_api_tester/skill.py",
+      "dependencies": [
+        "requests"
+      ]
+    },
+    "github_extended": {
+      "name": "github_extended",
+      "version": "1.1.0",
+      "description": "GitHub扩展功能系统 - 速率限制管理、批量操作、数据处理、分析工具",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/github_extended/skill.py",
+      "dependencies": [
+        "requests"
+      ]
+    },
+    "github_issue_manager": {
+      "name": "github_issue_manager",
+      "version": "1.0.0",
+      "description": "GitHub Issue管理 - 创建、更新、关闭、评论Issue，标签和里程碑管理",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/github_issue_manager/skill.py",
+      "dependencies": [
+        "requests"
+      ]
+    },
+    "github_pr_manager": {
+      "name": "github_pr_manager",
+      "version": "1.0.0",
+      "description": "GitHub PR管理 - 创建、更新、合并、关闭PR，审查和评论管理",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/github_pr_manager/skill.py",
+      "dependencies": [
+        "requests"
+      ]
+    },
+    "github_actions_manager": {
+      "name": "github_actions_manager",
+      "version": "1.0.0",
+      "description": "GitHub Actions工作流管理 - 列出、触发、取消工作流，查看运行历史和日志",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/github_actions_manager/skill.py",
+      "dependencies": [
+        "requests"
+      ]
+    },
+    "github_repo_sync": {
+      "name": "github_repo_sync",
+      "version": "1.0.0",
+      "description": "GitHub仓库同步 - 克隆、拉取、推送、同步分支和标签，备份仓库",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/github_repo_sync/skill.py",
+      "dependencies": [
+        "requests"
+      ]
+    },
+    "github_data_analytics": {
+      "name": "github_data_analytics",
+      "version": "1.0.0",
+      "description": "GitHub数据分析可视化 - 仓库活动、贡献者、Issue、PR等数据分析与可视化",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/github_data_analytics/skill.py",
+      "dependencies": [
+        "requests"
+      ]
+    }
+  },
+  "last_updated": "2026-04-18T17:39:00.772084"
+}

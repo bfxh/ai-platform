@@ -1,0 +1,287 @@
+{
+  "version": "2.0.0",
+  "name": "MCP Unified Configuration",
+  "description": "统一配置管理中心",
+  "last_updated": "2026-04-03T11:55:03.086637",
+  "sources": [
+    "mcp_core",
+    "openclaw",
+    "mcp_legacy",
+    "mcp_skills",
+    "stepfun_mcp",
+    "general",
+    "unified"
+  ],
+  "server": {
+    "host": "localhost",
+    "port": 8766,
+    "protocol": "websocket",
+    "max_connections": 10,
+    "log_level": "INFO",
+    "auth": {
+      "enabled": true,
+      "mode": "token",
+      "token": ""
+    }
+  },
+  "models": {
+    "provider": "stepfun",
+    "api_endpoint": "https://api.stepfun.com/v1",
+    "base_url": "http://127.0.0.1:3199/v1",
+    "api_key": "stepfun-model-proxy",
+    "default_model": "step-1v",
+    "models": {
+      "step-alpha": {
+        "context_window": 128000,
+        "capabilities": [
+          "text",
+          "code",
+          "analysis"
+        ]
+      },
+      "vision-model": {
+        "context_window": 32000,
+        "capabilities": [
+          "vision",
+          "text"
+        ]
+      }
+    }
+  },
+  "skills": {
+    "network_transfer": {
+      "enabled": true,
+      "transfer_port": 50000,
+      "buffer_size": 65536,
+      "chunk_size": 1048576,
+      "max_retries": 3,
+      "timeout": 300
+    },
+    "exo_cluster": {
+      "enabled": true,
+      "exo_port": 50051,
+      "api_port": 52415,
+      "auto_discover": true,
+      "node_timeout": 30
+    },
+    "notification": {
+      "enabled": true,
+      "notification_port": 50001,
+      "toast_enabled": true,
+      "sound_enabled": true
+    },
+    "system_config": {
+      "enabled": true,
+      "firewall_auto": true,
+      "backup_before_change": true
+    },
+    "file_backup": {
+      "enabled": true
+    }
+  },
+  "workflows": {
+    "templates_dir": "/python/MCP_Core/workflow/templates",
+    "state_dir": "/python/MCP_Core/.workflow_state",
+    "auto_backup": true,
+    "max_parallel_steps": 5,
+    "default_timeout": 600,
+    "hot_reload": true
+  },
+  "clients": {
+    "godot": {
+      "enabled": true,
+      "auto_connect": true,
+      "reconnect_interval": 5.0,
+      "default_project_path": "",
+      "plugin_path": "res://addons/stepfun_mcp/"
+    },
+    "blender": {
+      "enabled": true,
+      "auto_connect": false,
+      "reconnect_interval": 5.0,
+      "default_project_path": "D:/Projects/Blender"
+    },
+    "ue5": {
+      "enabled": true,
+      "auto_connect": false,
+      "reconnect_interval": 5.0,
+      "default_project_path": "D:/Projects/UE5"
+    },
+    "unity": {
+      "enabled": true,
+      "auto_connect": false,
+      "reconnect_interval": 5.0
+    }
+  },
+  "paths": {
+    "ai_path": "/python",
+    "mcp_core": "/python/MCP_Core",
+    "skills": "/python/MCP_Core/skills",
+    "workflows": "/python/MCP_Core/workflow/templates",
+    "logs": "/python/MCP_Core/logs",
+    "temp": "/python/MCP_Core/temp",
+    "memory": "/python/MCP_Core/memory",
+    "cache": "/python/MCP_Core/cache",
+    "shared_assets": "/python/SharedAssets",
+    "godot_projects": "D:/Projects/Godot",
+    "blender_projects": "D:/Projects/Blender",
+    "ue5_projects": "D:/Projects/UE5",
+    "workspace": "/python\\.stepclaw\\workspace"
+  },
+  "event_bus": {
+    "async_mode": true,
+    "max_queue_size": 1000,
+    "workers": 4,
+    "persist_events": false
+  },
+  "retry": {
+    "max_retries": 3,
+    "base_delay": 1.0,
+    "max_delay": 60.0,
+    "exponential_base": 2.0
+  },
+  "monitoring": {
+    "enabled": true,
+    "metrics_interval": 60,
+    "log_level": "DEBUG",
+    "log_file": "/python/MCP_Core/logs/mcp.log",
+    "max_log_size": "10MB",
+    "max_log_files": 5
+  },
+  "optimization": {
+    "cache_enabled": true,
+    "cache_ttl": 3600,
+    "token_limit": 4000,
+    "auto_route": true,
+    "batch_operations": true,
+    "compression": true
+  },
+  "security": {
+    "token_encryption": false,
+    "allowed_paths": [
+      "/python",
+      "%DEVTOOLS_DIR%",
+      "D:/Projects"
+    ],
+    "blocked_commands": [
+      "rm -rf",
+      "del /f /s",
+      "format"
+    ]
+  },
+  "channels": {
+    "dingtalk": {
+      "enabled": false,
+      "webhook": "",
+      "secret": ""
+    },
+    "feishu": {
+      "enabled": false,
+      "webhook": "",
+      "secret": ""
+    },
+    "weixin": {
+      "enabled": false,
+      "webhook": ""
+    },
+    "qq": {
+      "enabled": false,
+      "bot_qq": "",
+      "auth_key": ""
+    },
+    "wecom": {
+      "enabled": false,
+      "corp_id": "",
+      "corp_secret": "",
+      "agent_id": ""
+    }
+  },
+  "github": {
+    "auto_commit_message": "Auto commit at {timestamp}",
+    "default_branch": "main",
+    "create_readme": true,
+    "create_gitignore": true,
+    "auto_detect_language": true,
+    "token": ""
+  },
+  "legacy_tools": {
+    "ai_toolkit": {
+      "enabled": true,
+      "path": "/python/ai.py",
+      "env": {
+        "AI_PATH": "/python",
+        "MCP_PATH": "/python/MCP",
+        "DEV_PATH": "%DEVTOOLS_DIR%"
+      }
+    },
+    "desktop_automation": {
+      "enabled": true,
+      "path": "/python/MCP/da.py"
+    },
+    "screen_eye": {
+      "enabled": true,
+      "path": "/python/MCP/screen_eye.py"
+    },
+    "vision_pro": {
+      "enabled": true,
+      "path": "/python/MCP/vision_pro.py"
+    },
+    "net_pro": {
+      "enabled": true,
+      "path": "/python/MCP/net_pro.py"
+    },
+    "github_dl": {
+      "enabled": true,
+      "path": "/python/MCP/github_dl.py"
+    }
+  },
+  "custom_workflows": {
+    "ue5_to_godot": {
+      "enabled": true,
+      "auto_execute": false,
+      "default_settings": {
+        "convert_nanite": true,
+        "convert_lumen": true,
+        "bake_lightmaps": true,
+        "texture_resolution": 2048
+      }
+    },
+    "blender_to_godot": {
+      "enabled": true,
+      "auto_execute": false,
+      "default_settings": {
+        "export_format": "glb",
+        "include_materials": true,
+        "include_animations": true
+      }
+    },
+    "scene_sync": {
+      "enabled": true,
+      "auto_sync": false,
+      "sync_interval": 1.0
+    }
+  },
+  "features": {
+    "nanite_conversion": {
+      "enabled": true,
+      "triangle_threshold": 2000,
+      "lod_count": 5,
+      "reduction_ratio": 0.5
+    },
+    "lumen_conversion": {
+      "enabled": true,
+      "quality": "HIGH",
+      "gi_scale": 1.0,
+      "max_bounces": 4
+    },
+    "post_process": {
+      "enabled": true,
+      "default_preset": "CINEMATIC",
+      "effects": [
+        "Bloom",
+        "SSAO",
+        "SSR"
+      ]
+    }
+  }
+}

@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Core - 技能管理面板</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .stat-card h3 {
+            color: #666;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .skill-list {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .skill-info p {
+            font-size: 0.875rem;
+            color: #666;
+        }
+        
+        .skill-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a6fd6;
+        }
+        
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-inactive {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .log-container {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .log-entry {
+            margin-bottom: 0.5rem;
+            padding: 0.25rem 0;
+        }
+        
+        .log-time {
+            color: #858585;
+        }
+        
+        .log-level-info {
+            color: #4fc1ff;
+        }
+        
+        .log-level-error {
+            color: #f48771;
+        }
+        
+        .refresh-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            font-size: 1.5rem;
+            transition: all 0.2s;
+        }
+        
+        .refresh-btn:hover {
+            transform: scale(1.1);
+            background: #5a6fd6;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🚀 MCP Core 技能管理面板</h1>
+    </header>
+    
+    <div class="container">
+        <!-- 统计卡片 -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>总技能数</h3>
+                <div class="value" id="total-skills">{{ total_skills }}</div>
+            </div>
+            <div class="stat-card">
+                <h3>活跃技能</h3>
+                <div class="value" id="active-skills">{{ active_skills }}</div>
+            </div>
+            <div class="stat-card">
+                <h3>今日执行</h3>
+                <div class="value" id="today-executions">{{ today_executions }}</div>
+            </div>
+            <div class="stat-card">
+                <h3>成功率</h3>
+                <div class="value" id="success-rate">{{ success_rate }}%</div>
+            </div>
+        </div>
+        
+        <!-- 技能列表 -->
+        <div class="section">
+            <h2>📦 技能列表</h2>
+            <div class="skill-list" id="skill-list">
+                {% for skill in skills %}
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <h4>{{ skill.name }}</h4>
+                        <p>{{ skill.description }}</p>
+                        <span class="status-badge status-active">{{ skill.version }}</span>
+                    </div>
+                    <div class="skill-actions">
+                        <button class="btn btn-secondary" onclick="viewSkill('{{ skill.name }}')">查看</button>
+                        <button class="btn btn-primary" onclick="executeSkill('{{ skill.name }}')">执行</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- 系统日志 -->
+        <div class="section">
+            <h2>📋 系统日志</h2>
+            <div class="log-container" id="log-container">
+                {% for log in logs %}
+                <div class="log-entry">
+                    <span class="log-time">{{ log.time }}</span>
+                    <span class="log-level-{{ log.level }}">[{{ log.level.upper() }}]</span>
+                    {{ log.message }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <button class="refresh-btn" onclick="refreshData()">🔄</button>
+    
+    <script>
+        function refreshData() {
+            location.reload();
+        }
+        
+        function viewSkill(skillName) {
+            alert('查看技能: ' + skillName);
+        }
+        
+        function executeSkill(skillName) {
+            fetch('/api/skills/' + skillName + '/execute', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({action: 'default'})
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('执行结果: ' + JSON.stringify(data, null, 2));
+            })
+            .catch(error => {
+                alert('执行失败: ' + error);
+            });
+        }
+        
+        // 自动刷新（每30秒）
+        setInterval(refreshData, 30000);
+    </script>
+</body>
+</html>

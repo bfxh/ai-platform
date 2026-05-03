@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ap_bug_20260427_210400_b4966cde",
+    "pattern": "ModuleNotFoundError: No module named filelock",
+    "description": "复发 3 次的错误: ModuleNotFoundError: No module named filelock",
+    "fix": "pip install filelock",
+    "error_type": "import",
+    "severity": "medium",
+    "first_seen": "2026-04-27T21:04:00.363138",
+    "last_seen": "2026-04-27T21:04:00.364139",
+    "recurrence_count": 3,
+    "tags": [
+      "import",
+      "dependency"
+    ]
+  }
+]

@@ -1,0 +1,82 @@
+{"name": "FragmentWeaponSystem",
+ "version": "1.0.0",
+ "description": "Godot 3D游戏碎片武器系统MCP技能",
+ "commands": {
+    "start_game": {
+      "description": "启动Godot游戏",
+      "parameters": {
+        "project_path": {
+          "type": "string",
+          "required": true,
+          "description": "Godot项目路径"
+        }
+      },
+      "response": {
+        "success": "boolean",
+        "message": "string"
+      }
+    },
+    "stop_game": {
+      "description": "停止Godot游戏",
+      "parameters": {},
+      "response": {
+        "success": "boolean",
+        "message": "string"
+      }
+    },
+    "collect_fragment": {
+      "description": "收集碎片",
+      "parameters": {
+        "fragment_type": {
+          "type": "string",
+          "required": true,
+          "description": "碎片类型"
+        },
+        "quantity": {
+          "type": "integer",
+          "required": true,
+          "description": "碎片数量"
+        }
+      },
+      "response": {
+        "success": "boolean",
+        "message": "string",
+        "total_fragments": "object"
+      }
+    },
+    "craft_weapon": {
+      "description": "制造武器",
+      "parameters": {
+        "weapon_type": {
+          "type": "string",
+          "required": true,
+          "description": "武器类型 (sword, axe, bow)"
+        }
+      },
+      "response": {
+        "success": "boolean",
+        "message": "string",
+        "weapon": "object"
+      }
+    },
+    "get_inventory": {
+      "description": "获取背包信息",
+      "parameters": {},
+      "response": {
+        "success": "boolean",
+        "message": "string",
+        "fragments": "object",
+        "weapons": "array"
+      }
+    },
+    "test_system": {
+      "description": "测试碎片武器系统",
+      "parameters": {},
+      "response": {
+        "success": "boolean",
+        "message": "string",
+        "test_results": "object"
+      }
+    }
+  }
+}

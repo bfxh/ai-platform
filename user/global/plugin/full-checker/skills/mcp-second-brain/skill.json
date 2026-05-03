@@ -1,0 +1,24 @@
+{
+  "name": "mcp-second-brain",
+  "display_name": "MCP第二大脑",
+  "description": "基于SurrealDB图数据库的AI持久化记忆系统",
+  "version": "1.0.0",
+  "category": "knowledge",
+  "sources": [
+    "https://github.com/malekjakub69/mcp-second-brain",
+    "https://github.com/thekitchencoder/second-brain"
+  ],
+  "project_paths": [
+    "/python\\mcp-second-brain",
+    "/python\\second-brain"
+  ],
+  "database": "SurrealDB",
+  "features": [
+    "entity_extraction",
+    "deduplication",
+    "auto_linking",
+    "voice_transcription",
+    "graph_connections",
+    "mcp_integration"
+  ]
+}

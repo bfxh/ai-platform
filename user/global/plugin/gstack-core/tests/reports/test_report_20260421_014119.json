@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-04-21T01:41:11.010430",
+  "tests": [
+    {
+      "name": "test_initialization",
+      "category": "ASK Skill",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_skills_loaded",
+      "category": "ASK Skill",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_run_invalid_skill",
+      "category": "ASK Skill",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_initialization",
+      "category": "Blender MCP",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_status_check",
+      "category": "Blender MCP",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_initialization",
+      "category": "Narsil MCP",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_analyze_nonexistent",
+      "category": "Narsil MCP",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_initialization",
+      "category": "n8n Workflow",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_status_check",
+      "category": "n8n Workflow",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    },
+    {
+      "name": "test_path_safety",
+      "category": "Security",
+      "passed": true,
+      "error": null,
+      "elapsed_time": 0
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0
+  }
+}

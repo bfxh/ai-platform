@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="BaseShader" inherits="CompositorEffect" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Abstract class that includes basic setup and boilerplate functions for creating a post-process effect.
+	</brief_description>
+	<description>
+		This class is used as the base class for all of the post-process shaders within GodotStylizedShadersPlugin. 
+		It includes basic setup functions and boilerplate functions, which made it easier to create post-process effects.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="construct">
+			<return type="void"/>
+			<description>
+				Boilerplate setup function that initializes the derived [b]CompositorEffect[/b] instance (e.g. setting the effect callback type and the enabled status) and initializes the shader member variables.
+			</description>
+		</method>
+		<method name="init_compute">
+			<return type="void"/>
+			<param index="0" name="shader_filename" type="String"/>
+			<description>
+				Initializes the [b]CompositorEffect[/b] pipeline (which uses compute shaders) by giving it a ".glsl" shader path, and if it is valid the basic setup for the creation/initialization of the shader is queued on Godot's render thread.
+			</description>
+		</method>
+		<method name="get_addon_path">
+			<return type="String"/>
+			<description>
+				Returns the Godot resource path to the [b]{GodotStylizedShadersPlugin}[/b] directory.
+			</description>
+		</method>
+		<method name="create_shader">
+			<return type="void"/>
+			<param index="0" name="shader_path" type="String"/>
+			<param index="1" name="shader" type="RID"/>
+			<param index="2" name="pipeline" type="RID"/>
+			<description>
+				Boilerplate function that once given the correct path and a pair of RIDs (which one needs for a shader with a [b]CompositorEffect[/b]), creates and initializes a shader based on the given shader file. This method is mostly used in classes derived from [b]{BaseShader}[/b] that have to skip most of the boilerplate setup (e.g. using [b]init_compute[/b], etc.), as they require multiple passes for instance.
+			</description>
+		</method>
+		<method name="free_shader">
+			<return type="void"/>
+			<description>
+				Boilerplate function that correctly deallocates the default shader stored in the BaseShader class (used for single pass effects).
+			</description>
+		</method>
+		<method name="free_rid">
+			<return type="void"/>
+			<param index="0" name="rid" type="RID"/>
+			<description>
+				Boilerplate function that correctly deallocates the given RID.
+			</description>
+		</method>
+		<method name="get_sampler_uniform">
+			<return type="Ref<RDUniform>"/>
+			<param index="0" name="image" type="RID"/>
+			<param index="1" name="sampler" type="RID"/>
+			<param index="2" name="binding" type="int"/>
+			<description>
+				Boilerplate function that returns the sampler ([b]sampler2D[/b] in GLSL) uniform from a shader with the given parameters.
+			</description>
+		</method>
+		<method name="get_image_uniform">
+			<return type="Ref<RDUniform>"/>
+			<param index="0" name="image" type="RID"/>
+			<param index="1" name="binding" type="int"/>
+			<description>
+				Boilerplate function that returns the image ([b]image2D[/b] in GLSL) uniform from a shader with the given parameters.
+			</description>
+		</method>
+		<method name="get_buffer_uniform">
+			<return type="Ref<RDUniform>"/>
+			<param index="0" name="buffer" type="RID"/>
+			<param index="1" name="binding" type="int"/>
+			<description>
+				Boilerplate function that returns the buffer uniform (storage buffer) from a shader with the given parameters.
+			</description>
+		</method>
+		<method name="queue_callable_on_render_thread">
+			<return type="void"/>
+			<param index="0" name="c" type="Callable"/>
+			<description>
+				Boilerplate function that queues the given [b]Callable[/b] on Godot's render thread.
+			</description>
+		</method>
+		<method name="push_back_callable">
+			<return type="void"/>
+			<param index="0" name="c" type="Callable"/>
+			<description>
+				Function that attaches the provided [b]Callable[/b] to a container of [b]Callable[/b]s, which can be executed (if the container is not empty) during the render loop in [b]base_compute_update[/b].
+			</description>
+		</method>
+		<method name="base_compute_update">
+			<return type="void"/>
+			<param index="0" name="p_effect_callback_type" type="int"/>
+			<param index="1" name="p_render_data" type="RenderData*"/>
+			<param index="2" name="buffers" type="Ref<RenderSceneBuffersRD>"/>
+			<param index="3" name="push_constant" type="PackedFloat32Array"/>
+			<param index="4" name="size" type="Vector2i"/>
+			<description>
+				Boilerplate function that is used with the provided arguments in [b]_render_callback[/b], a function that needs to be overriden in any [b]CompositorEffect[/b]-derived class.
+			</description>
+		</method>
+		<method name="get_buffers_internal_size">
+			<return type="Vector2i"/>
+			<param index="0" name="p_render_data" type="RenderData*"/>
+			<param index="1" name="render_scene_buffers" type="Ref<RenderSceneBuffersRD>"/>
+			<description>
+				Boilerplate function that returns the internal size of the provided buffers. To execute this, you also need to provide the pointer to [b]RenderData[/b].
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="m_device" type="RenderingDevice*" default="nullptr">
+			RenderingDevice fetched from Godot's RenderingServer, as this is needed everywhere within the CompositorEffect pipeline. Since this is a protected member variable, it can be used in all derived classes.
+		</member>
+		<member name="m_shader" type="RID">
+			Protected member variable of type RID that is used in single-pass effects throughout GodotStylizedShadersPlugin as the main shader.
+		</member>
+		<member name="m_pipeline" type="RID">
+			Protected member variable of type RID that is used in single-pass effects throughout GodotStylizedShadersPlugin as the main pipeline. Pipelines get freed together with their shader (in this case, m_shader).
+		</member>
+	</members>
+</class>

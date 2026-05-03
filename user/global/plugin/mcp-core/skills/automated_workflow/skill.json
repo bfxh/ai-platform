@@ -1,0 +1,99 @@
+{
+  "name": "automated_workflow",
+  "display_name": "自动化工作流",
+  "description": "自动化工作流 - 自动执行一系列任务，如搜索GitHub项目、克隆项目、运行测试等",
+  "version": "1.0.0",
+  "author": "MCP Core Team",
+  "requires": [],
+  "category": "development",
+  "entry_point": "automated_workflow:AutomatedWorkflowSkill",
+  "config": {
+    "workflows_dir": "workflows",
+    "logs_dir": "workflow_logs",
+    "default_workflow": "github_project_search"
+  },
+  "commands": [
+    {
+      "name": "run",
+      "description": "执行工作流",
+      "parameters": [
+        {
+          "name": "workflow",
+          "type": "string",
+          "required": false,
+          "description": "工作流名称"
+        },
+        {
+          "name": "context",
+          "type": "object",
+          "required": false,
+          "description": "工作流上下文"
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "description": "创建工作流",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "description": "工作流名称"
+        },
+        {
+          "name": "steps",
+          "type": "array",
+          "required": true,
+          "description": "工作流步骤"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false,
+          "description": "工作流描述"
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "description": "列出所有工作流"
+    },
+    {
+      "name": "create-github-search-workflow",
+      "description": "创建GitHub项目搜索工作流",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string",
+          "required": false,
+          "description": "工作流名称"
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "required": false,
+          "description": "搜索查询"
+        },
+        {
+          "name": "sort",
+          "type": "string",
+          "required": false,
+          "description": "排序字段"
+        },
+        {
+          "name": "per_page",
+          "type": "integer",
+          "required": false,
+          "description": "每页结果数"
+        },
+        {
+          "name": "min_stars",
+          "type": "integer",
+          "required": false,
+          "description": "最小星数"
+        }
+      ]
+    }
+  ]
+}

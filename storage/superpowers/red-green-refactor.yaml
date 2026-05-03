@@ -1,0 +1,49 @@
+cross_agent:
+- trae
+- claude
+- qoder
+description: 严格的 RED-GREEN-REFACTOR 循环 — 每个修改必须经过测试→实现→重构
+enforce_mandatory: false
+name: red-green-refactor
+skills:
+- description: 分析影响范围
+  skill: code-analyzer.run
+  step: analyze_impact
+  timeout: 60
+- description: 编写失败测试
+  skill: test-generator.run
+  step: write_test
+  timeout: 120
+- condition: previous_step.success == True
+  description: 确认测试失败
+  skill: test-runner.run
+  step: verify_red
+  timeout: 60
+- description: 实现变更
+  skill: trae_control.write_file
+  step: implement_change
+  timeout: 300
+- condition: previous_step.success == True
+  description: 确认测试通过
+  skill: test-runner.run
+  step: verify_green
+  timeout: 60
+- description: 重构清理
+  gate: human
+  skill: code-reviewer.review
+  step: refactor_cleanup
+  timeout: 300
+tags:
+- testing
+- quality
+- discipline
+triggers:
+- field: command
+  patterns:
+  - modify core
+  - change dispatcher
+  - 修改核心
+- field: file_modified
+  patterns:
+  - core/*.py
+version: '1.0'

@@ -1,0 +1,204 @@
+{
+  "name": "terraria-steam-uploader",
+  "version": "1.0.0",
+  "description": "泰拉瑞亚模组Steam上传技能 - 自动化模组打包和Steam Workshop上传",
+  "categories": ["upload", "steam", "workshop", "deployment"],
+  "tags": ["steam", "workshop", "upload", "deployment", "publishing"],
+  "capabilities": [
+    "Steam Workshop上传",
+    "模组打包",
+    "元数据管理",
+    "版本控制",
+    "发布管理"
+  ],
+  "supported_mods": [
+    {
+      "name": "CalamityMod",
+      "status": "full",
+      "features": ["steam_upload", "metadata_generation", "version_management"]
+    },
+    {
+      "name": "ThoriumMod",
+      "status": "full",
+      "features": ["steam_upload", "metadata_generation"]
+    },
+    {
+      "name": "FargoSouls",
+      "status": "full",
+      "features": ["steam_upload", "metadata_generation"]
+    },
+    {
+      "name": "SpiritMod",
+      "status": "full",
+      "features": ["steam_upload", "metadata_generation"]
+    },
+    {
+      "name": "StarsAbove",
+      "status": "full",
+      "features": ["steam_upload", "metadata_generation"]
+    }
+  ],
+  "inputs": {
+    "mod_name": {
+      "type": "string",
+      "required": true,
+      "description": "模组名称",
+      "default": "CalamityMod"
+    },
+    "mod_path": {
+      "type": "string",
+      "required": true,
+      "description": "模组路径",
+      "default": "%DEV_DIR%\\泰拉瑞亚\\模组源码\\CalamityMod"
+    },
+    "output_path": {
+      "type": "string",
+      "required": false,
+      "description": "输出路径",
+      "default": "%DEV_DIR%\\泰拉瑞亚\\发布"
+    },
+    "steam_workshop_id": {
+      "type": "string",
+      "required": false,
+      "description": "Steam Workshop ID",
+      "default": ""
+    },
+    "mod_version": {
+      "type": "string",
+      "required": false,
+      "description": "模组版本",
+      "default": "1.0.0"
+    },
+    "changelog": {
+      "type": "string",
+      "required": false,
+      "description": "更新日志",
+      "default": "GPU粒子系统优化"
+    },
+    "preview_image": {
+      "type": "string",
+      "required": false,
+      "description": "预览图片路径",
+      "default": ""
+    },
+    "tags": {
+      "type": "array",
+      "required": false,
+      "description": "Steam Workshop标签",
+      "default": ["Terraria", "Mod", "Performance", "GPU", "Optimization"]
+    },
+    "visibility": {
+      "type": "string",
+      "required": false,
+      "description": "可见性",
+      "default": "public"
+    }
+  },
+  "outputs": {
+    "workshop_item_id": {
+      "type": "string",
+      "description": "Steam Workshop项目ID"
+    },
+    "upload_status": {
+      "type": "string",
+      "description": "上传状态"
+    },
+    "upload_url": {
+      "type": "string",
+      "description": "Steam Workshop项目URL"
+    },
+    "upload_report": {
+      "type": "report",
+      "description": "上传报告"
+    }
+  },
+  "workflow": {
+    "steps": [
+      {
+        "id": "prepare_mod",
+        "name": "准备模组",
+        "description": "准备模组文件和元数据",
+        "action": "prepare_mod"
+      },
+      {
+        "id": "build_mod",
+        "name": "编译模组",
+        "description": "编译模组项目",
+        "action": "build_mod"
+      },
+      {
+        "id": "package_mod",
+        "name": "打包模组",
+        "description": "打包模组文件",
+        "action": "package_mod"
+      },
+      {
+        "id": "generate_metadata",
+        "name": "生成元数据",
+        "description": "生成Steam Workshop元数据",
+        "action": "generate_metadata"
+      },
+      {
+        "id": "upload_to_steam",
+        "name": "上传到Steam",
+        "description": "上传到Steam Workshop",
+        "action": "upload_to_steam"
+      },
+      {
+        "id": "verify_upload",
+        "name": "验证上传",
+        "description": "验证Steam Workshop上传",
+        "action": "verify_upload"
+      },
+      {
+        "id": "generate_report",
+        "name": "生成报告",
+        "description": "生成上传报告",
+        "action": "generate_upload_report"
+      }
+    ]
+  },
+  "commands": {
+    "prepare": {
+      "description": "准备模组上传",
+      "usage": "terraria-steam-uploader prepare --mod_name CalamityMod --mod_path %DEV_DIR%\\泰拉瑞亚\\模组源码\\CalamityMod"
+    },
+    "build": {
+      "description": "编译模组",
+      "usage": "terraria-steam-uploader build --mod_name CalamityMod"
+    },
+    "package": {
+      "description": "打包模组",
+      "usage": "terraria-steam-uploader package --mod_name CalamityMod --output_path %DEV_DIR%\\泰拉瑞亚\\发布"
+    },
+    "upload": {
+      "description": "上传到Steam Workshop",
+      "usage": "terraria-steam-uploader upload --mod_name CalamityMod --changelog \"GPU粒子系统优化\""
+    },
+    "verify": {
+      "description": "验证上传",
+      "usage": "terraria-steam-uploader verify --workshop_item_id 123456789"
+    },
+    "report": {
+      "description": "生成上传报告",
+      "usage": "terraria-steam-uploader report --output %DEV_DIR%\\泰拉瑞亚\\上传报告.md"
+    }
+  },
+  "config": {
+    "steamcmd_path": "D:\\SteamCMD\\steamcmd.exe",
+    "tmodloader_path": "D:\\Steam\\steamapps\\common\\Terraria\\tModLoader",
+    "workshop_folder": "D:\\Steam\\steamapps\\workshop\\content\\1281930",
+    "max_upload_size": 104857600,
+    "timeout": 300
+  },
+  "dependencies": {
+    "tools": [
+      "steamcmd",
+      "tModLoader",
+      "dotnet"
+    ],
+    "modules": [
+      "terraria-build-test"
+    ]
+  }
+}

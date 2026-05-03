@@ -1,0 +1,123 @@
+{
+  "mcpServers": {
+    "blender": {
+      "command": "uvx",
+      "args": ["blender-mcp"]
+    },
+    "blender-geo": {
+      "command": "C:\\Users\\888\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": ["D:\\AI\\MCP_3D\\Blender-geometry\\geometry_nodes_mcp.py"]
+    },
+    "blender-rig": {
+      "command": "C:\\Users\\888\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": ["D:\\AI\\MCP_3D\\Blender-rigging\\mcp_server.py"]
+    },
+    "godot-mcp": {
+      "command": "node",
+      "args": ["D:\\AI\\MCP_3D\\Godot\\godot-mcp-vollkorn\\build\\index.js"],
+      "env": {
+        "GODOT_PATH": "D:\\rj\\KF\\JM\\Godot_v4.6.1-stable_win64.exe"
+      }
+    },
+    "godot-ai": {
+      "command": "C:\\Users\\888\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": ["-m", "godot_ai"],
+      "cwd": "D:\\AI\\MCP_3D\\Godot\\godot-ai-higodot"
+    },
+    "godot-bridge-mcp": {
+      "command": "npx",
+      "args": ["tsx", "D:\\AI\\MCP_3D\\Godot\\godot-bridge-mcp\\mcp-server\\index.ts"]
+    },
+    "godot-mcp-cn": {
+      "command": "node",
+      "args": ["D:\\AI\\MCP_3D\\Godot\\godot-mcp-cn\\server\\dist\\index.js"]
+    },
+    "godot-mcp-coding-solo": {
+      "command": "node",
+      "args": ["D:\\AI\\MCP_3D\\Godot\\godot-mcp-coding-solo\\build\\index.js"],
+      "env": {
+        "GODOT_PATH": "D:\\rj\\KF\\JM\\Godot_v4.6.1-stable_win64.exe"
+      }
+    },
+    "unreal-mcp": {
+      "command": "node",
+      "args": ["D:\\AI\\MCP_3D\\unreal-mcp\\dist\\bin.js"]
+    },
+    "uemcp": {
+      "command": "node",
+      "args": ["D:\\AI\\MCP_3D\\uemcp\\server\\dist\\index.js"]
+    },
+    "unity-mcp": {
+      "command": "node",
+      "args": ["D:\\AI\\MCP_3D\\Unity-tools\\unity-mcp-coplay\\Server\\dist\\index.js"]
+    },
+    "houdini-mcp": {
+      "command": "C:\\Users\\888\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": ["D:\\AI\\MCP_3D\\houdini-mcp\\main.py"]
+    },
+    "maya-mcp": {
+      "command": "C:\\Users\\888\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": ["D:\\AI\\MCP_3D\\MayaMCP\\src\\maya_mcp_server.py"]
+    },
+    "rhino-mcp": {
+      "command": "C:\\Users\\888\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": ["D:\\AI\\MCP_3D\\rhino3d-mcp\\main.py"]
+    },
+    "rhino-gh-mcp": {
+      "command": "C:\\Users\\888\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": ["D:\\AI\\MCP_3D\\rhino_gh_mcp\\main.py"]
+    },
+    "figma": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-figma"]
+    },
+    "comfyui": {
+      "command": "C:\\Users\\888\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": ["D:\\AI\\MCP_3D\\ComfyUI-nodes\\comfyui_mcp_server.py"],
+      "env": {
+        "COMFYUI_URL": "http://127.0.0.1:8188"
+      }
+    },
+    "elevenlabs": {
+      "command": "npx",
+      "args": ["-y", "@elevenlabs/mcp"]
+    },
+    "ffmpeg-video-editor": {
+      "command": "npx",
+      "args": ["-y", "video-editor-mcp"]
+    },
+    "imagegen": {
+      "command": "npx",
+      "args": ["-y", "imagegen-mcp-server"]
+    },
+    "ffmpeg-mcp": {
+      "command": "npx",
+      "args": ["-y", "ffmpeg-mcp-server"]
+    },
+    "musicgpt": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-musicgpt"]
+    },
+    "minimax": {
+      "command": "npx",
+      "args": ["-y", "minimax-mcp-js"]
+    },
+    "flyworks-lipsync": {
+      "command": "uvx",
+      "args": ["flyworks-mcp", "-y"],
+      "env": {
+        "FLYWORKS_API_TOKEN": "2aeda3bcefac46a3",
+        "FLYWORKS_API_BASE_URL": "https://hfw-api.hifly.cc/api/v2/hifly",
+        "FLYWORKS_MCP_BASE_PATH": "D:\\AI\\MCP_3D\\Shared\\outputs"
+      }
+    },
+    "ai-image-gen": {
+      "command": "npx",
+      "args": ["-y", "ai-image-gen-mcp"]
+    },
+    "painter": {
+      "command": "npx",
+      "args": ["-y", "mcp-painter"]
+    }
+  }
+}

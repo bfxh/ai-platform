@@ -1,0 +1,76 @@
+{
+  "name": "background_process_manager",
+  "display_name": "后台进程管理",
+  "description": "管理和关闭不需要的后台进程，特别是WPC等不在任务栏显示的程序",
+  "version": "1.0.0",
+  "author": "MCP Core Team",
+  "requires": [],
+  "category": "system",
+  "entry_point": "background_process_manager:BackgroundProcessManagerSkill",
+  "config": {
+    "config_file": "background_process_config.json",
+    "log_file": "background_process_log.txt"
+  },
+  "commands": [
+    {
+      "name": "clean",
+      "description": "清理后台进程"
+    },
+    {
+      "name": "list",
+      "description": "列出当前运行的进程"
+    },
+    {
+      "name": "config",
+      "description": "显示当前配置"
+    },
+    {
+      "name": "add-excluded",
+      "description": "添加进程到排除列表",
+      "parameters": [
+        {
+          "name": "process",
+          "type": "string",
+          "required": true,
+          "description": "进程名称"
+        }
+      ]
+    },
+    {
+      "name": "add-target",
+      "description": "添加进程到目标列表",
+      "parameters": [
+        {
+          "name": "process",
+          "type": "string",
+          "required": true,
+          "description": "进程名称"
+        }
+      ]
+    },
+    {
+      "name": "remove-excluded",
+      "description": "从排除列表中移除进程",
+      "parameters": [
+        {
+          "name": "process",
+          "type": "string",
+          "required": true,
+          "description": "进程名称"
+        }
+      ]
+    },
+    {
+      "name": "remove-target",
+      "description": "从目标列表中移除进程",
+      "parameters": [
+        {
+          "name": "process",
+          "type": "string",
+          "required": true,
+          "description": "进程名称"
+        }
+      ]
+    }
+  ]
+}

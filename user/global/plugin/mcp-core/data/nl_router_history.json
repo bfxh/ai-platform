@@ -1,0 +1,98 @@
+[
+  {
+    "query": "帮我搜索GitHub上好用的AI代理框架",
+    "skill": "github_project_search",
+    "type": "mcp_core",
+    "confidence": 0.8999999999999999
+  },
+  {
+    "query": "搜索 GitHub 上好用的 AI 代理框架",
+    "skill": "github_project_search",
+    "type": "mcp_core",
+    "confidence": 0.8999999999999999
+  },
+  {
+    "query": "帮我备份D盘的AI文件夹",
+    "skill": "file_backup",
+    "type": "mcp_core",
+    "confidence": 0.5
+  },
+  {
+    "query": "天气怎么样",
+    "skill": "天气查询",
+    "type": "workbuddy",
+    "confidence": 0.5
+  },
+  {
+    "query": "记住：我的项目在D:/Projects/MyApp",
+    "skill": "mempalace",
+    "type": "mcp_core",
+    "confidence": 0.5
+  },
+  {
+    "query": "搜索GitHub上有没有向量数据库项目",
+    "skill": "github_project_search",
+    "type": "mcp_core",
+    "confidence": 0.8999999999999999
+  },
+  {
+    "query": "a股最新行情",
+    "skill": "a-stock-analysis",
+    "type": "workbuddy",
+    "confidence": 0.5
+  },
+  {
+    "query": "帮我备份D盘的AI文件夹",
+    "skill": "file_backup",
+    "type": "mcp_core",
+    "confidence": 0.5
+  },
+  {
+    "query": "天气怎么样",
+    "skill": "天气查询",
+    "type": "workbuddy",
+    "confidence": 0.5
+  },
+  {
+    "query": "记住：我的项目在D:/Projects/MyApp",
+    "skill": "mempalace",
+    "type": "mcp_core",
+    "confidence": 0.5
+  },
+  {
+    "query": "优化一下系统内存",
+    "skill": "system_optimizer",
+    "type": "mcp_core",
+    "confidence": 0.7
+  },
+  {
+    "query": "搜索GitHub上有没有向量数据库项目",
+    "skill": "github_project_search",
+    "type": "mcp_core",
+    "confidence": 0.8999999999999999
+  },
+  {
+    "query": "生成一张科技感的壁纸",
+    "skill": "AI绘图",
+    "type": "workbuddy",
+    "confidence": 0.7
+  },
+  {
+    "query": "把文件发到另一台电脑",
+    "skill": "network_transfer",
+    "type": "mcp_core",
+    "confidence": 0.8
+  },
+  {
+    "query": "a股最新行情",
+    "skill": "a-stock-analysis",
+    "type": "workbuddy",
+    "confidence": 0.5
+  },
+  {
+    "query": "搜索 GitHub 上好用的 AI 代理框架",
+    "skill": "github_project_search",
+    "type": "mcp_core",
+    "confidence": 0.8999999999999999
+  }
+]

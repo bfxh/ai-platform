@@ -1,0 +1,25 @@
+{
+  "id": "stepfun_221039261253",
+  "date": "2026/3/12 22:52:18",
+  "title": "阶跃AI对话 [MCP,收集]",
+  "summary": "会话221039261253，1次工具调用，使用工具: terminal_execute",
+  "tags": [
+    "MCP",
+    "收集"
+  ],
+  "source": "stepfun_log",
+  "session_id": "221039261253349376",
+  "user_instructions": [],
+  "results": [],
+  "score": 5,
+  "tools_used": [
+    "terminal_execute"
+  ],
+  "files_touched": [
+    "D://AI//MCP//15-Collector//scan_stepfun.py//"
+  ],
+  "commands": [],
+  "first_time": "2026/3/12 22:52:18",
+  "last_time": "2026/3/12 22:52:18",
+  "task_count": 1
+}

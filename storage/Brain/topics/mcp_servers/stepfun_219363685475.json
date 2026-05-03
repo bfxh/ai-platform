@@ -1,0 +1,35 @@
+{
+  "id": "stepfun_219363685475",
+  "date": "2026/3/8 08:28:22",
+  "title": "阶跃AI对话 [开发,MCP,游戏]",
+  "summary": "会话219363685475，12次工具调用，使用工具: terminal_execute",
+  "tags": [
+    "开发",
+    "MCP",
+    "游戏"
+  ],
+  "source": "stepfun_log",
+  "session_id": "219363685475737600",
+  "user_instructions": [],
+  "results": [],
+  "score": 5,
+  "tools_used": [
+    "terminal_execute"
+  ],
+  "files_touched": [
+    "D:/MCP/workspace//",
+    "D:/MCP/02-Windows/windows_mcp_server.py//",
+    "D:/MCP/03-GameDev/godot_mcp_server.py//",
+    "D:/MCP/03-GameDev/unity_mcp_server.py//",
+    "D:/MCP/03-GameDev/unreal_mcp_server.py//",
+    "D:/MCP/03-GameDev/steam_mcp_server.py//",
+    "D:/MCP/08-AI/ai_core_mcp_server.py//",
+    "D:/MCP/08-AI/ai_agent_mcp_server.py//",
+    "D:/MCP/08-AI/ai_workflow_mcp_server.py//",
+    "D:/MCP/08-AI/ai_knowledge_mcp_server.py//"
+  ],
+  "commands": [],
+  "first_time": "2026/3/8 08:28:22",
+  "last_time": "2026/3/8 08:28:30",
+  "task_count": 12
+}

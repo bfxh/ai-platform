@@ -1,0 +1,43 @@
+{
+  "name": "ai_toolkit_manager",
+  "version": "1.0.0",
+  "description": "多AI工具兼容管理器 - 兼容性检测、配置管理、适配器生成",
+  "author": "AI Assistant",
+  "created": "2026-04-04",
+  "enabled": true,
+  "category": "ai_tools",
+  "tags": ["ai", "toolkit", "compatibility", "configuration"],
+  "entry_point": "skill.py",
+  "class_name": "AIToolkitManager",
+  "actions": [
+    {
+      "name": "check_compatibility",
+      "description": "检查AI工具兼容性",
+      "params": {}
+    },
+    {
+      "name": "list_tools",
+      "description": "列出支持的AI工具",
+      "params": {}
+    },
+    {
+      "name": "configure_tool",
+      "description": "配置指定AI工具",
+      "params": {
+        "tool_id": {"type": "string", "required": true},
+        "config": {"type": "object", "default": {}}
+      }
+    },
+    {
+      "name": "generate_adapter",
+      "description": "生成统一适配器代码",
+      "params": {
+        "output_dir": {"type": "string", "default": "/python/MCP_Core/adapters"}
+      }
+    }
+  ],
+  "supported_tools": ["openai", "anthropic", "google", "ollama", "azure", "huggingface", "cohere", "mistral"],
+  "output": {
+    "type": "json"
+  }
+}

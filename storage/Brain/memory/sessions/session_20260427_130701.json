@@ -1,0 +1,15 @@
+{
+  "session_id": "session_20260427_130701",
+  "timestamp": "2026-04-27T13:07:01.481674",
+  "summary": "会话结束: 共1个任务",
+  "key_decisions": [
+    "数据导出应支持csv和json格式"
+  ],
+  "user_preferences": {},
+  "lessons_learned": [
+    "数据导出应支持csv和json格式"
+  ],
+  "files_touched": [],
+  "tools_used": [],
+  "duration_minutes": 0
+}

@@ -1,0 +1,28 @@
+{
+  "name": "context_memory",
+  "version": "1.0",
+  "description": "AI 记忆晶体机制 - 维护任务上下文，支持会话恢复和错误追踪",
+  "category": "system",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "status": "显示当前状态",
+    "start": "启动新会话",
+    "task": "设置当前任务",
+    "pause": "暂停任务",
+    "complete": "完成任务",
+    "recover": "恢复任务",
+    "check": "检查未完成任务",
+    "feedback": "添加用户反馈"
+  },
+  "rules": {
+    "state_file": "/python/gstack_core/state/context.json",
+    "auto_save": true,
+    "check_on_startup": true
+  },
+  "dependencies": [
+    "Python 3.6+",
+    "json",
+    "uuid"
+  ]
+}

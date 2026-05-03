@@ -1,0 +1,10 @@
+auto_start: false
+bridge_mode: sync
+direction: bidirectional
+interval_seconds: 300
+max_retries: 3
+retry_on_failure: true
+scope:
+- conversations
+- insights
+- skills

@@ -1,0 +1,1 @@
+print('HELLO_FROM_BLENDER'); print('ADDONS_TEST_SUCCESS')

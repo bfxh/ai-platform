@@ -1,0 +1,84 @@
+{
+  "skills": {
+    "smart_github_api_manager": {
+      "name": "smart_github_api_manager",
+      "version": "2.0.0",
+      "description": "智能GitHub API管理 - 实时同步、智能分类、版本管理",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/smart_github_api_manager/skill.py",
+      "dependencies": [
+        "requests",
+        "beautifulsoup4",
+        "lxml"
+      ]
+    },
+    "github_nlp_search": {
+      "name": "github_nlp_search",
+      "version": "1.0.0",
+      "description": "GitHub API自然语言搜索与推荐 - 理解自然语言查询，智能推荐API，生成示例代码",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/github_nlp_search/skill.py",
+      "dependencies": [
+        "requests"
+      ]
+    },
+    "github_api_tester": {
+      "name": "github_api_tester",
+      "version": "1.0.0",
+      "description": "高级GitHub API测试工具 - 批量测试、实时调试、性能测试",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/github_api_tester/skill.py",
+      "dependencies": [
+        "requests",
+        "concurrent.futures"
+      ]
+    },
+    "github_extended": {
+      "name": "github_extended",
+      "version": "1.0.0",
+      "description": "GitHub扩展功能系统 - 速率限制管理、批量操作、数据处理、分析工具",
+      "author": "MCP Core Team",
+      "path": "/python/MCP_Core/skills/github_extended/skill.py",
+      "dependencies": [
+        "requests",
+        "matplotlib",
+        "pandas"
+      ]
+    }
+  },
+  "registry": {
+    "smart_github_api_manager": {
+      "name": "smart_github_api_manager",
+      "version": "2.0.0",
+      "description": "智能GitHub API管理 - 实时同步、智能分类、版本管理",
+      "author": "MCP Core Team",
+      "registered_at": "2026-04-18T17:24:12.760024",
+      "last_updated": "2026-04-18T17:24:12.760024"
+    },
+    "github_nlp_search": {
+      "name": "github_nlp_search",
+      "version": "1.0.0",
+      "description": "GitHub API自然语言搜索与推荐 - 理解自然语言查询，智能推荐API，生成示例代码",
+      "author": "MCP Core Team",
+      "registered_at": "2026-04-18T17:24:12.761024",
+      "last_updated": "2026-04-18T17:24:12.761024"
+    },
+    "github_api_tester": {
+      "name": "github_api_tester",
+      "version": "1.0.0",
+      "description": "高级GitHub API测试工具 - 批量测试、实时调试、性能测试",
+      "author": "MCP Core Team",
+      "registered_at": "2026-04-18T17:24:12.762025",
+      "last_updated": "2026-04-18T17:24:12.762025"
+    },
+    "github_extended": {
+      "name": "github_extended",
+      "version": "1.0.0",
+      "description": "GitHub扩展功能系统 - 速率限制管理、批量操作、数据处理、分析工具",
+      "author": "MCP Core Team",
+      "registered_at": "2026-04-18T17:24:12.762025",
+      "last_updated": "2026-04-18T17:24:12.762025"
+    }
+  },
+  "exported_at": "2026-04-18T17:24:12.946886"
+}

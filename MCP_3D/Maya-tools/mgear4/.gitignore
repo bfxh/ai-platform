@@ -1,0 +1,86 @@
+
+# Editors files
+*.code-workspace
+.vscode
+.project
+.pydevproject
+
+# File extension
+*.py[co]
+
+# Unit tests & coverage reports
+.pytest_cache
+.coverage
+.tox
+nosetests.xml
+tests/logs/*
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# Installer logs
+pip-log.txt
+
+# Mr Developer
+.mr.developer.cfg
+
+*.dblite
+excons.cache
+/.build/
+/debug/
+/mgear.env.tmp
+/mgear.config
+/mGear_cmd.cmd
+/mgear.status
+/mGear.mod
+.idea
+/excons/
+/.vs/slnx.sqlite
+/.vs/ProjectSettings.json
+/.vs/mgear4_node/v16/Browse.VC.opendb
+/.vs/mgear4_node/v16/Browse.VC.db-wal
+/.vs/mgear4_node/v16/Browse.VC.db-shm
+/.vs/mgear4_node/v16/Browse.VC.db
+/.vs/mgear4_node/v16
+/.vs
+/.claude
+CLAUDE.md
+openspec/
+pyproject.toml
+
+# CMake build artifacts
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+**/build/
+**/build_*/
+
+# Compiled objects and libraries (local builds)
+*.obj
+*.o
+*.lib
+*.exp
+*.ilk
+*.pdb
+
+# Visual Studio
+*.suo
+*.user
+*.sdf
+*.opensdf
+*.opendb
+
+# mac os
+.DS_Store

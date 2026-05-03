@@ -1,0 +1,60 @@
+[tool.bandit]
+severity_level = "medium"
+confidence_level = "medium"
+exclude_dirs = [
+    "tests",
+    "storage/cll",
+    "UFO",
+    "turix-cua",
+    ".trae",
+    "user/knowledge",
+]
+skips = ["B101"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+exclude = [
+    "storage/cll",
+    "UFO",
+    "turix-cua",
+    ".trae",
+    "user/knowledge",
+]
+
+[tool.ruff.lint]
+select = ["S", "E", "W", "F", "I"]
+ignore = ["E501", "S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/**" = ["S603", "S607"]
+"storage/mcp/**" = ["S603", "S607"]
+"remote-control/**" = ["S104"]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "parents"
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+exclude = [
+    "storage/cll/",
+    "UFO/",
+    "turix-cua/",
+]
+
+[tool.bandit.assert_used]
+skips = ["*/test_*.py", "*/tests/*"]
+
+[tool.security]
+secure_utils_module = "core.secure_utils"
+allowed_commands = [
+    "git", "python", "python3", "pip", "node", "npm", "npx",
+    "cargo", "rustc", "java", "javac", "go",
+    "curl", "wget", "echo", "ls", "dir", "cat", "head", "tail",
+    "find", "grep", "mkdir", "cp", "mv", "touch", "chmod",
+    "docker", "podman", "explorer", "notepad", "code",
+    "tasklist", "taskkill", "powershell", "cmd", "bash", "sh",
+    "ollama", "blender", "unreal", "unity", "7z", "tar", "zip", "unzip",
+]
+ssl_dev_mode_config = "config/ssl_dev_mode.json"

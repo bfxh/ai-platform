@@ -1,0 +1,16 @@
+{
+  "date": "2026-04-27",
+  "total_events": 7,
+  "event_types": {
+    "task_complete": 4,
+    "error_resolved": 3
+  },
+  "top_lessons": [
+    "登录页面测试覆盖正常/异常/边界三种场景",
+    "预防: 记录失败信息供后续参考",
+    "所有模块正常",
+    "任务完成: OK",
+    "数据导出应支持csv和json格式"
+  ],
+  "growth_score": 81.8
+}

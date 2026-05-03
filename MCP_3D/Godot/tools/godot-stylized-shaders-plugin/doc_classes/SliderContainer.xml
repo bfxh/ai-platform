@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="SliderContainer" inherits="VBoxContainer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		UI container class that has a [b]text label[/b] and a [b]slider[/b].
+	</brief_description>
+	<description>
+		UI container class that has a [b]text label[/b] and a [b]slider[/b].
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="set_label_text">
+			<return type="void" />
+			<param index="0" name="text" type="String" />
+			<description>
+				Sets the label text.
+			</description>
+		</method>
+		<method name="set_label_value">
+			<return type="void" />
+			<param index="0" name="value" type="double" />
+			<description>
+				Sets the label value, which will be displayed next to the label text.
+			</description>
+		</method>
+		<method name="connect_to_slider">
+			<return type="void" />
+			<param index="0" name="c" type="Callable" />
+			<description>
+				Connects a Callable to the slider.
+			</description>
+		</method>
+		<method name="set_slider_value">
+			<return type="void" />
+			<param index="0" name="value" type="double" />
+		</method>
+		<method name="set_slider_step">
+			<return type="void" />
+			<param index="0" name="step" type="double" />
+		</method>
+		<method name="set_slider_min">
+			<return type="void" />
+			<param index="0" name="min" type="double" />
+		</method>
+		<method name="set_slider_max">
+			<return type="void" />
+			<param index="0" name="max" type="double" />
+		</method>
+	</methods>
+</class>

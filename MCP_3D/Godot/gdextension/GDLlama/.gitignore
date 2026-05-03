@@ -1,0 +1,38 @@
+# Editor & IDE specific files
+.vscode/
+
+# Build directories
+build/
+bin/
+build_release/
+install/
+out/
+
+# Compiled objects and libraries
+*.o
+*.obj
+*.lo
+*.slo
+*.a
+*.lib
+*.la
+*.lai
+*.so
+*.dylib
+*.dll
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Intermediate and language-specific files
+*.d
+*.gch
+*.pch
+*.mod
+*.smod
+
+# Project-specific ignores
+/tests/models/
+/demo/

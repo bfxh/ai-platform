@@ -1,0 +1,23 @@
+{
+  "name": "cc_housekeeper",
+  "version": "1.0",
+  "description": "CC 目录冷热分层管理 - 自动归档和清理过期文件",
+  "category": "system",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "housekeep": "执行清理操作",
+    "dry-run": "预览清理计划",
+    "report": "生成清理报告"
+  },
+  "rules": {
+    "unused_threshold_days": 90,
+    "old_threshold_days": 60,
+    "archive_path": "/python/Archive",
+    "auto_update_index": true
+  },
+  "dependencies": [
+    "Python 3.6+",
+    "/python/ai_architecture.json"
+  ]
+}

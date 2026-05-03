@@ -1,0 +1,5 @@
+# Narzędzia OCR
+"""
+ocr.py
+"""
+

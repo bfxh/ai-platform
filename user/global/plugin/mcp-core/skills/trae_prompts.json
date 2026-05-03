@@ -1,0 +1,162 @@
+{
+  "version": "1.0",
+  "description": "TRAE 智能提示库 - 常用任务提示模板",
+  "categories": {
+    "system_operations": {
+      "description": "系统操作提示",
+      "prompts": [
+        {
+          "name": "system_overview",
+          "template": "请简要说明 /python 的系统架构，包括核心目录、主要组件和工作流系统。重点说明 GSTACK 工作流引擎的作用。",
+          "variables": []
+        },
+        {
+          "name": "check_system_status",
+          "template": "检查 /python 系统状态：\n1. 检查 GSTACK 是否可用 (gstack_core.py)\n2. 检查 MCP 目录结构 (JM/BC/Tools)\n3. 检查 CC 缓存系统\n4. 检查核心配置文件\n请报告每个检查点的状态。",
+          "variables": []
+        },
+        {
+          "name": "classify_file",
+          "template": "根据以下信息判断文件应该分类到哪个目录：\n文件名: {filename}\n文件描述: {description}\n\n分类规则：\n- JM: Blender, 3D建模, UE5, Unity, Godot, 视觉相关\n- BC: GitHub, 代码, 搜索, 修复, 验证, 工作流\n- Tools: 下载, 监控, 配置, 网络, 安全\n\n请输出：分类结果、理由、目标路径",
+          "variables": ["filename", "description"]
+        },
+        {
+          "name": "backup_decision",
+          "template": "对于以下操作，请判断是否需要备份：\n操作: {operation}\n文件路径: {filepath}\n\n备份规则：\n- 受保护文件 (AGENTS.md, index.json, .gstack_protected) 修改前必须备份\n- 核心配置文件修改前建议备份\n- 普通文件按需备份\n\n请输出：是否需要备份、备份位置 (CC/2_Old/)、备份原因",
+          "variables": ["operation", "filepath"]
+        }
+      ]
+    },
+    "code_generation": {
+      "description": "代码生成提示",
+      "prompts": [
+        {
+          "name": "create_mcp_tool",
+          "template": "在 /python\\MCP\\{category}\\ 目录下创建一个 MCP 工具：\n\n工具名称: {tool_name}\n工具描述: {description}\n工具类型: {category}\n\n要求：\n1. 遵循 /python 的命名规范 (snake_case.py)\n2. 包含错误处理\n3. 包含文档字符串\n4. 符合 JM/BC/Tools 分类规则\n5. 不要硬编码敏感信息\n\n请生成完整的 Python 代码。",
+          "variables": ["category", "tool_name", "description"]
+        },
+        {
+          "name": "create_skill",
+          "template": "在 /python\\MCP_Core\\skills\\ 目录下创建一个技能：\n\n技能名称: {skill_name}\n技能描述: {description}\n版本: {version}\n\n要求：\n1. 继承 Skill 基类\n2. 实现 execute 方法\n3. 包含参数验证\n4. 返回标准化结果 (success, data, error)\n5. 创建对应的 skill.json\n\n请生成完整的技能代码和配置文件。",
+          "variables": ["skill_name", "description", "version"]
+        },
+        {
+          "name": "workflow_template",
+          "template": "创建一个 GSTACK 工作流定义：\n\n工作流名称: {workflow_name}\n工作流描述: {description}\n主要步骤: {steps}\n\n要求：\n1. 遵循 GSTACK 工作流格式\n2. 包含前置检查\n3. 包含错误处理\n4. 记录操作日志\n\n请生成工作流 JSON 定义。",
+          "variables": ["workflow_name", "description", "steps"]
+        }
+      ]
+    },
+    "debugging": {
+      "description": "调试提示",
+      "prompts": [
+        {
+          "name": "analyze_error",
+          "template": "分析以下错误并提供解决方案：\n\n错误类型: {error_type}\n错误信息: {error_message}\n错误位置: {error_location}\n堆栈跟踪:\n{traceback}\n\n请分析：\n1. 错误根本原因\n2. 可能的解决方案\n3. 预防措施\n4. 相关文档参考",
+          "variables": ["error_type", "error_message", "error_location", "traceback"]
+        },
+        {
+          "name": "investigate_issue",
+          "template": "调查以下问题：\n\n问题描述: {issue}\n发生时间: {time}\n影响范围: {impact}\n\n调查步骤：\n1. 复现问题\n2. 收集日志\n3. 分析根因\n4. 提出解决方案\n\n请提供完整的调查报告。",
+          "variables": ["issue", "time", "impact"]
+        },
+        {
+          "name": "fix_blocking",
+          "template": "识别并修复以下阻塞问题：\n\n阻塞类型: {blocker_type}\n阻塞位置: {location}\n阻塞原因: {reason}\n\n请：\n1. 识别所有相关的阻塞因素\n2. 提供修复代码\n3. 说明修复步骤\n4. 验证修复效果",
+          "variables": ["blocker_type", "location", "reason"]
+        }
+      ]
+    },
+    "project_operations": {
+      "description": "项目操作提示",
+      "prompts": [
+        {
+          "name": "analyze_cll_project",
+          "template": "分析 /python\\CLL_Projects\\{project_name}\\ 项目：\n\n请提供：\n1. 项目简介和用途\n2. 主要文件结构\n3. 依赖关系\n4. 如何运行\n5. 使用建议\n6. 注意事项\n\n使用 python scripts/trae_project_analyzer.py -p {project_name} 获取更多信息。",
+          "variables": ["project_name"]
+        },
+        {
+          "name": "recommend_projects",
+          "template": "根据任务推荐合适的 CLL_Projects：\n\n任务类型: {task_type}\n任务描述: {task_description}\n\n请推荐：\n1. 最合适的项目 (最多3个)\n2. 每个项目的优缺点\n3. 使用建议\n4. 相关链接",
+          "variables": ["task_type", "task_description"]
+        },
+        {
+          "name": "setup_project",
+          "template": "为 /python\\CLL_Projects\\{project_name}\\ 项目设置环境：\n\n项目路径: /python\\CLL_Projects\\{project_name}\n\n请提供：\n1. 环境要求\n2. 安装步骤\n3. 验证方法\n4. 常见问题",
+          "variables": ["project_name"]
+        }
+      ]
+    },
+    "git_operations": {
+      "description": "Git 操作提示",
+      "prompts": [
+        {
+          "name": "github_workflow",
+          "template": "为以下 GitHub 操作提供工作流：\n\n操作类型: {operation}\n目标仓库: {repo}\n分支: {branch}\n\n请提供：\n1. 操作步骤\n2. 需要的权限\n3. 风险评估\n4. 回滚方案\n\n使用 /python\\MCP\\BC\\github_workflow.py 作为参考。",
+          "variables": ["operation", "repo", "branch"]
+        },
+        {
+          "name": "git_status_check",
+          "template": "检查 /python 的 Git 状态：\n\n请执行：\n1. 检查所有子模块的 git status\n2. 识别未提交的更改\n3. 检查是否有冲突\n4. 提供状态报告\n\n使用 gstack git:status 命令获取统一状态。",
+          "variables": []
+        }
+      ]
+    },
+    "workflow_execution": {
+      "description": "工作流执行提示",
+      "prompts": [
+        {
+          "name": "execute_gstack_command",
+          "template": "执行 GSTACK 命令：\n\n命令: {command}\n参数: {params}\n\n请：\n1. 确认命令是否存在\n2. 检查参数是否正确\n3. 执行命令\n4. 报告结果\n\nGSTACK 位于 /python\\gstack_core\\",
+          "variables": ["command", "params"]
+        },
+        {
+          "name": "review_code",
+          "template": "对以下文件进行代码审查：\n\n文件路径: {filepath}\n审查重点: {focus}\n\n请检查：\n1. 代码质量\n2. 潜在 bug\n3. 安全问题\n4. 性能问题\n5. 是否符合 /python 规范\n\n使用 gstack review 命令进行审查。",
+          "variables": ["filepath", "focus"]
+        },
+        {
+          "name": "deploy_code",
+          "template": "部署代码：\n\n目标环境: {environment}\n部署方式: {method}\n回滚策略: {rollback}\n\n请提供：\n1. 部署步骤\n2. 验证方法\n3. 回滚步骤\n4. 风险评估\n\n使用 gstack ship 命令进行部署。",
+          "variables": ["environment", "method", "rollback"]
+        }
+      ]
+    },
+    "documentation": {
+      "description": "文档生成提示",
+      "prompts": [
+        {
+          "name": "generate_readme",
+          "template": "为以下项目生成 README.md：\n\n项目路径: {project_path}\n项目类型: {project_type}\n主要功能: {features}\n\n要求：\n1. 包含项目简介\n2. 安装说明\n3. 使用示例\n4. 目录结构\n5. 注意事项\n\n请生成完整的 README.md。",
+          "variables": ["project_path", "project_type", "features"]
+        },
+        {
+          "name": "document_skill",
+          "template": "为技能生成文档：\n\n技能名称: {skill_name}\n技能路径: {skill_path}\n功能列表: {features}\n\n请生成 SKILL.md，包含：\n1. 技能简介\n2. 功能列表\n3. 使用方法\n4. 示例代码\n5. 注意事项",
+          "variables": ["skill_name", "skill_path", "features"]
+        }
+      ]
+    },
+    "security": {
+      "description": "安全相关提示",
+      "prompts": [
+        {
+          "name": "security_check",
+          "template": "对以下内容进行安全检查：\n\n检查目标: {target}\n检查类型: {check_type}\n\n请检查：\n1. 敏感信息泄露 (API密钥, 密码)\n2. 权限问题\n3. 潜在攻击向量\n4. 合规性问题\n\n使用 /python\\MCP\\Tools\\aes_scan.py 检查敏感信息。",
+          "variables": ["target", "check_type"]
+        },
+        {
+          "name": "audit_access",
+          "template": "审计以下操作的访问权限：\n\n操作: {operation}\n涉及文件: {files}\n涉及目录: {directories}\n\n请检查：\n1. 访问权限是否合理\n2. 是否有过度授权\n3. 审计日志是否完整\n4. 改进建议",
+          "variables": ["operation", "files", "directories"]
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "author": "TRAE System",
+    "version": "1.0",
+    "last_updated": "2026-04-23",
+    "total_prompts": 24
+  }
+}

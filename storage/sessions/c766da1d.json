@@ -1,0 +1,20 @@
+{
+  "session_id": "c766da1d",
+  "created_at": "2026-05-01T20:01:44.360501",
+  "updated_at": "2026-05-01T20:01:44.474997",
+  "agent": "infra_adapter",
+  "task": "基础设施适配器会话",
+  "status": "completed",
+  "messages": [
+    {
+      "role": "system",
+      "content": "[Test] Integration test running",
+      "timestamp": "2026-05-01T20:01:44.363502",
+      "metadata": {}
+    }
+  ],
+  "results": [],
+  "metadata": {},
+  "message_count": 1,
+  "result_count": 0
+}

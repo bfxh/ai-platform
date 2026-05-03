@@ -1,0 +1,58 @@
+{
+  "name": "ai_toolkit_ecosystem",
+  "version": "1.0.0",
+  "description": "多AI工具生态系统 - 工具市场、插件系统、推荐引擎",
+  "author": "AI Assistant",
+  "created": "2026-04-04",
+  "enabled": true,
+  "category": "ai_tools",
+  "tags": ["ai", "toolkit", "ecosystem", "marketplace", "plugins"],
+  "entry_point": "skill.py",
+  "class_name": "AIToolkitEcosystem",
+  "actions": [
+    {
+      "name": "list_market",
+      "description": "列出工具市场",
+      "params": {
+        "category": {"type": "string", "default": null}
+      }
+    },
+    {
+      "name": "install_tool",
+      "description": "安装AI工具",
+      "params": {
+        "tool_id": {"type": "string", "required": true}
+      }
+    },
+    {
+      "name": "get_stats",
+      "description": "获取生态统计",
+      "params": {}
+    },
+    {
+      "name": "recommend_tools",
+      "description": "根据任务推荐工具",
+      "params": {
+        "task_description": {"type": "string", "required": true}
+      }
+    },
+    {
+      "name": "search_tools",
+      "description": "搜索工具",
+      "params": {
+        "query": {"type": "string", "required": true}
+      }
+    },
+    {
+      "name": "create_plugin_template",
+      "description": "创建插件模板",
+      "params": {
+        "plugin_name": {"type": "string", "required": true}
+      }
+    }
+  ],
+  "market_categories": ["core", "local", "specialized"],
+  "output": {
+    "type": "json"
+  }
+}

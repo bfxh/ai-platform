@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "server": {
+    "host": "localhost",
+    "port": 8766,
+    "max_clients": 10,
+    "log_level": "INFO"
+  },
+  "clients": {
+    "godot": {
+      "enabled": true,
+      "auto_connect": true,
+      "reconnect_interval": 5.0,
+      "default_project_path": ""
+    },
+    "blender": {
+      "enabled": true,
+      "auto_connect": false,
+      "reconnect_interval": 5.0
+    },
+    "ue5": {
+      "enabled": true,
+      "auto_connect": false,
+      "reconnect_interval": 5.0
+    }
+  },
+  "workflows": {
+    "ue5_to_godot": {
+      "enabled": true,
+      "auto_execute": false,
+      "default_settings": {
+        "convert_nanite": true,
+        "convert_lumen": true,
+        "bake_lightmaps": true,
+        "texture_resolution": 2048
+      }
+    },
+    "blender_to_godot": {
+      "enabled": true,
+      "auto_execute": false,
+      "default_settings": {
+        "export_format": "glb",
+        "include_materials": true,
+        "include_animations": true
+      }
+    },
+    "scene_sync": {
+      "enabled": true,
+      "auto_sync": false,
+      "sync_interval": 1.0
+    }
+  },
+  "features": {
+    "nanite_conversion": {
+      "enabled": true,
+      "triangle_threshold": 2000,
+      "lod_count": 5,
+      "reduction_ratio": 0.5
+    },
+    "lumen_conversion": {
+      "enabled": true,
+      "quality": "HIGH",
+      "gi_scale": 1.0,
+      "max_bounces": 4
+    },
+    "post_process": {
+      "enabled": true,
+      "default_preset": "CINEMATIC",
+      "effects": ["Bloom", "SSAO", "SSR"]
+    }
+  },
+  "paths": {
+    "godot_projects": "D:/Projects/Godot",
+    "blender_projects": "D:/Projects/Blender",
+    "ue5_projects": "D:/Projects/UE5",
+    "shared_assets": "/python/SharedAssets"
+  }
+}

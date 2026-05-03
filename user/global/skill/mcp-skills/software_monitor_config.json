@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "name": "Software Monitor",
+  "description": "软件目录监控与自动整理服务",
+  
+  "monitor_paths": [
+    "D:/rj",
+    "F:/rj"
+  ],
+  
+  "idle_detection": {
+    "enabled": true,
+    "check_interval": 60,
+    "idle_threshold": 300,
+    "cpu_threshold": 10,
+    "memory_threshold": 80,
+    "run_once_per_day": true
+  },
+  
+  "notification": {
+    "console": true,
+    "log_file": true,
+    "system_tray": false,
+    "sound": false
+  },
+  
+  "auto_integration": {
+    "enabled": true,
+    "generate_adapter": true,
+    "update_mcp_config": false
+  },
+  
+  "schedule": {
+    "auto_start": false,
+    "run_on_login": false,
+    "preferred_time": "idle"
+  },
+  
+  "paths": {
+    "state_file": "/python/MCP_Skills/software_monitor_state.json",
+    "pid_file": "/python/MCP_Skills/software_monitor.pid",
+    "log_dir": "/python/logs",
+    "report_file": "/python/logs/software_monitor_report.json"
+  }
+}

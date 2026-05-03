@@ -1,0 +1,33 @@
+{
+  "id": "stepfun_220331422637",
+  "date": "2026/3/10 23:59:02",
+  "title": "阶跃AI对话 [游戏]",
+  "summary": "会话220331422637，51次工具调用，使用工具: terminal_execute",
+  "tags": [
+    "游戏"
+  ],
+  "source": "stepfun_log",
+  "session_id": "220331422637473792",
+  "user_instructions": [],
+  "results": [],
+  "score": 5,
+  "tools_used": [
+    "terminal_execute"
+  ],
+  "files_touched": [
+    "C://Users//abc//AppData//LocalLow//Payload//TerraTe",
+    "D://SteamLibrary//steamapps//common//TerraTech//BepIn",
+    "D://SteamLibrary//steamapps//common//TerraTech//QMods",
+    "D://SteamLibrary//steamapps//common//TerraTech//TTMod",
+    "D://SteamLibrary//steamapps//common//TerraTech//",
+    "D://SteamLibrary//steamapps//common//TerraTech//Terra",
+    "D://SteamLibrary//steamapps//workshop//content//28592",
+    "D://SteamLibrary//steamapps//workshop//",
+    "D:////",
+    "D://泰拉科技//285920//"
+  ],
+  "commands": [],
+  "first_time": "2026/3/10 23:59:02",
+  "last_time": "2026/3/11 00:22:49",
+  "task_count": 51
+}

@@ -1,0 +1,175 @@
+{
+  "project": "BlockWeaponArena",
+  "version": "1.0",
+  "created": "2026-03-31",
+  "skills": [
+    {
+      "name": "SceneBuildingImporter",
+      "enabled": true,
+      "version": "1.0",
+      "config": {
+        "source_path": "%SOFTWARE_DIR%/KF/JM/UE_5.6/BlockWeaponArena/Content/Assets/BlenderExports",
+        "target_path": "/Game/Meshes/SceneBuildings",
+        "supported_formats": [".fbx", ".obj"],
+        "auto_collision": true,
+        "auto_material": true,
+        "nanite_enabled": true
+      }
+    },
+    {
+      "name": "LevelBuilder",
+      "enabled": true,
+      "version": "1.0",
+      "file": "/python/MCP_Skills/level_builder_skill.py",
+      "config": {
+        "template_path": "/Game/LevelTemplates",
+        "scene_configs": "%SOFTWARE_DIR%/KF/JM/UE_5.6/BlockWeaponArena/scene_configs.json",
+        "levels": ["OpenPlains", "NarrowDungeon", "MountainForest", "Ruins", "WeaponWorkshop", "TrajectoryTest", "TrainingGround"]
+      }
+    },
+    {
+      "name": "MaterialConfigurator",
+      "enabled": true,
+      "version": "1.0",
+      "file": "/python/MCP_Skills/material_configurator_skill.py",
+      "config": {
+        "material_library": "/Game/Materials",
+        "auto_detect": true,
+        "supported_types": ["Iron", "Steel", "Wood", "Stone", "Crystal", "Fire", "Ice", "Metal", "Concrete", "Brick"]
+      }
+    },
+    {
+      "name": "NamingValidator",
+      "enabled": true,
+      "version": "1.0",
+      "file": "/python/MCP_Skills/naming_validator_skill.py",
+      "config": {
+        "strict_mode": true,
+        "auto_fix": true,
+        "supported_types": ["scene_building", "block_piece", "weapon_part", "material", "texture", "blueprint"]
+      }
+    },
+    {
+      "name": "ProjectMonitor",
+      "enabled": true,
+      "version": "1.0",
+      "file": "/python/MCP_Skills/project_monitor_skill.py",
+      "config": {
+        "check_interval": 3600,
+        "generate_reports": true,
+        "milestones": ["Phase 1: 核心方块系统", "Phase 2: 武器系统", "Phase 3: 轨迹系统", "Phase 4: 动作联动+战斗", "Phase 5: 场景+UI+网络"]
+      }
+    },
+    {
+      "name": "DownloadManager",
+      "enabled": true,
+      "version": "1.0.0",
+      "file": "/python/MCP_Core/skills/download_manager/skill.py",
+      "config": {
+        "default_download_dir": "D:/Downloads",
+        "max_concurrent_downloads": 3,
+        "chunk_size": 8192,
+        "timeout": 300,
+        "retry_count": 3,
+        "auto_extract": true,
+        "auto_categorize": true
+      }
+    },
+    {
+      "name": "GitHubDownload",
+      "enabled": true,
+      "version": "1.0.0",
+      "file": "/python/MCP_Core/skills/github_download/skill.py",
+      "config": {
+        "default_download_dir": "%DEVTOOLS_DIR%/GitHub",
+        "use_mirror": true,
+        "auto_extract": true,
+        "mirrors": [
+          "https://mirror.ghproxy.com/",
+          "https://gh-proxy.com/",
+          "https://ghproxy.net/",
+          "https://github.moeyy.xyz/"
+        ]
+      }
+    },
+    {
+      "name": "GitHubAPIManager",
+      "enabled": true,
+      "version": "1.0.0",
+      "file": "/python/MCP_Core/skills/github_api_manager/skill.py",
+      "config": {
+        "api_cache_file": "/python/GitHub/github_api_cache.pickle",
+        "cache_expiry": 24
+      }
+    },
+    {
+      "name": "GitHubRepoManager",
+      "enabled": true,
+      "version": "1.0.0",
+      "file": "/python/MCP_Core/skills/github_repo_manager/skill.py",
+      "config": {
+        "default_repo_dir": "/python/GitHub/repos",
+        "max_concurrent_clones": 3
+      }
+    },
+    {
+      "name": "PluginManager",
+      "enabled": true,
+      "version": "1.0.0",
+      "file": "/python/MCP_Core/skills/plugin_manager/skill.py",
+      "config": {
+        "default_plugin_dir": "F:/插件",
+        "target_base": "%SOFTWARE_DIR%/KF/JM",
+        "auto_categorize": true,
+        "auto_extract": true
+      }
+    },
+    {
+      "name": "PluginAdapter",
+      "enabled": true,
+      "version": "1.0.0",
+      "file": "/python/MCP_Core/skills/plugin_adapter/skill.py",
+      "config": {
+        "target_base": "%SOFTWARE_DIR%/KF/JM",
+        "backup_dir": "%SOFTWARE_DIR%/KF/JM/Backups",
+        "auto_backup": true
+      }
+    },
+    {
+      "name": "Notification",
+      "enabled": true,
+      "version": "1.0.0",
+      "file": "/python/MCP_Core/skills/notification/skill.py",
+      "config": {
+        "enable_sound": true,
+        "enable_desktop": true,
+        "enable_log": true,
+        "max_history": 1000,
+        "log_file": "/python/logs/notifications.log"
+      }
+    }
+  ],
+  "workflows": [
+    {
+      "name": "import_and_build",
+      "description": "导入模型并构建关卡",
+      "steps": [
+        "NamingValidator.validate",
+        "SceneBuildingImporter.import",
+        "MaterialConfigurator.configure",
+        "LevelBuilder.build"
+      ]
+    },
+    {
+      "name": "full_pipeline",
+      "description": "完整工作流",
+      "steps": [
+        "NamingValidator.validate",
+        "SceneBuildingImporter.import",
+        "MaterialConfigurator.configure",
+        "LevelBuilder.build",
+        "ProjectMonitor.report"
+      ]
+    }
+  ]
+}

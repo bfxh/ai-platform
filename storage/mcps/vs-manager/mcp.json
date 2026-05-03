@@ -1,0 +1,10 @@
+{
+  "command": "%USERPROFILE%/AppData/Local/Programs/Python/Python310/python.exe",
+  "args": ["/python/MCP/vs_mgr.py"],
+  "env": {
+    "AI_PATH": "/python",
+    "MCP_PATH": "/python/MCP",
+    "DEV_PATH": "%DEVTOOLS_DIR%"
+  },
+  "description": "VS/VSCode 控制�� - open/info/build/rebuild/clean/ext/diff/openfile/folder/check/kill"
+}

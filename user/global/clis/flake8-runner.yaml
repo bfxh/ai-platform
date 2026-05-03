@@ -1,0 +1,17 @@
+name: "flake8-runner"
+description: "flake8 代码风格检查"
+exec_path: "flake8"
+params:
+  - name: target
+    type: string
+    default: "."
+    description: "检查目标目录"
+  - name: max_line_length
+    type: int
+    default: 120
+    description: "最大行长度"
+  - name: ignore
+    type: string
+    default: "E203,W503"
+    description: "忽略的规则代码"
+timeout: 120

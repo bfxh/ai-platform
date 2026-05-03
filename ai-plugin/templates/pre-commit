@@ -1,0 +1,55 @@
+#!/bin/bash
+# ============================================================
+# Git Pre-Commit Hook — 提交前自动代码审查
+# 安装: 复制此文件到 .git/hooks/pre-commit 并 chmod +x
+# 模板位置: D:/AI/ai-plugin/templates/pre-commit
+# ============================================================
+set -e
+
+REVIEW_SCRIPT="D:/AI/scripts/review.py"
+PYTHON="C:/Users/888/AppData/Local/Programs/Python/Python312/python.exe"
+
+echo "[pre-commit] 代码审查中..."
+
+# 获取所有暂存的 .py 文件
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.py$' || true)
+
+if [ -z "$STAGED_FILES" ]; then
+    echo "[pre-commit] 无 Python 文件变更，跳过审查。"
+    exit 0
+fi
+
+HAS_VIOLATION=0
+
+for file in $STAGED_FILES; do
+    echo "[pre-commit] 审查: $file"
+    
+    RESULT=$("$PYTHON" "$REVIEW_SCRIPT" "$file" 2>&1)
+    EXIT_CODE=$?
+    
+    if [ $EXIT_CODE -eq 0 ]; then
+        echo "  -> PASS"
+    elif [ $EXIT_CODE -eq 2 ]; then
+        echo "  -> ERROR: $RESULT"
+        echo "  [!] 审查服务不可用，允许提交（避免阻塞开发）"
+    else
+        echo "  -> VIOLATION FOUND"
+        echo "$RESULT" > "${file}.reviewed"
+        echo "  [!] 修正版本已写入: ${file}.reviewed"
+        echo "  请审查差异后覆盖原文件: mv ${file}.reviewed ${file}"
+        HAS_VIOLATION=1
+    fi
+done
+
+if [ $HAS_VIOLATION -eq 1 ]; then
+    echo ""
+    echo "=========================================="
+    echo "  审查发现违规，提交已阻止。"
+    echo "  查看 *.reviewed 文件获取修正版本。"
+    echo "  确认无误后: git add 修正文件 && git commit"
+    echo "=========================================="
+    exit 1
+fi
+
+echo "[pre-commit] 全部通过。"
+exit 0

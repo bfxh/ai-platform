@@ -1,0 +1,39 @@
+{
+  "session_id": "65af69ea",
+  "created_at": "2026-05-01T18:33:17.354206",
+  "updated_at": "2026-05-01T18:33:17.356207",
+  "agent": "trae_control",
+  "task": "创建 React 登录组件",
+  "status": "active",
+  "messages": [
+    {
+      "role": "user",
+      "content": "请创建一个 React 登录组件",
+      "timestamp": "2026-05-01T18:33:17.355206",
+      "metadata": {}
+    },
+    {
+      "role": "agent",
+      "content": "正在分析需求，准备创建组件...",
+      "timestamp": "2026-05-01T18:33:17.355206",
+      "metadata": {}
+    }
+  ],
+  "results": [
+    {
+      "success": true,
+      "summary": "Login 组件已创建: src/components/Login.tsx",
+      "detail": {},
+      "timestamp": "2026-05-01T18:33:17.355206"
+    },
+    {
+      "success": false,
+      "summary": "CSS 样式写入失败: IDE 未响应",
+      "detail": {},
+      "timestamp": "2026-05-01T18:33:17.356207"
+    }
+  ],
+  "metadata": {},
+  "message_count": 2,
+  "result_count": 2
+}

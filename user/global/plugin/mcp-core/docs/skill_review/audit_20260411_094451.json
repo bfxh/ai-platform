@@ -1,0 +1,834 @@
+{
+  "audit_time": "2026-04-11T09:44:51.424307",
+  "total_skills": 22,
+  "average_score": 80.2,
+  "pass": 20,
+  "warn": 2,
+  "fail": 0,
+  "results": [
+    {
+      "name": "ai_toolkit_ecosystem",
+      "status": "pass",
+      "score": 90.0,
+      "issues_count": 1,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        }
+      ],
+      "suggestions": [
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "ai_toolkit_linkage",
+      "status": "pass",
+      "score": 90.0,
+      "issues_count": 1,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        }
+      ],
+      "suggestions": [
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "ai_toolkit_manager",
+      "status": "pass",
+      "score": 90.0,
+      "issues_count": 1,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        }
+      ],
+      "suggestions": [
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "automated_testing",
+      "status": "pass",
+      "score": 90.0,
+      "issues_count": 1,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        }
+      ],
+      "suggestions": [
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "automated_workflow",
+      "status": "pass",
+      "score": 75.0,
+      "issues_count": 2,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        },
+        {
+          "severity": "error",
+          "msg": "[安全] skill.py: 代码注入风险: exec"
+        }
+      ],
+      "suggestions": []
+    },
+    {
+      "name": "auto_tester",
+      "status": "pass",
+      "score": 70.0,
+      "issues_count": 2,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 SKILL.md"
+        },
+        {
+          "severity": "warn",
+          "msg": "缺少 skill.json"
+        }
+      ],
+      "suggestions": [
+        "添加 SKILL.md 描述功能、用法、示例",
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "background_process_manager",
+      "status": "pass",
+      "score": 90.0,
+      "issues_count": 1,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        }
+      ],
+      "suggestions": [
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "continuous_integration",
+      "status": "pass",
+      "score": 90.0,
+      "issues_count": 1,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        }
+      ],
+      "suggestions": [
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "github_api_manager",
+      "status": "pass",
+      "score": 90.0,
+      "issues_count": 1,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        }
+      ],
+      "suggestions": [
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "github_branch_analyzer",
+      "status": "pass",
+      "score": 70.0,
+      "issues_count": 2,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 SKILL.md"
+        },
+        {
+          "severity": "warn",
+          "msg": "缺少 skill.json"
+        }
+      ],
+      "suggestions": [
+        "添加 SKILL.md 描述功能、用法、示例",
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "github_opensource",
+      "status": "pass",
+      "score": 100.0,
+      "issues_count": 0,
+      "issues": [],
+      "suggestions": [
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "github_project_search",
+      "status": "pass",
+      "score": 90.0,
+      "issues_count": 1,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        }
+      ],
+      "suggestions": [
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "github_repo_manager",
+      "status": "pass",
+      "score": 90.0,
+      "issues_count": 1,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        }
+      ],
+      "suggestions": [
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "github_skill_fuser",
+      "status": "warn",
+      "score": 55.0,
+      "issues_count": 3,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 SKILL.md"
+        },
+        {
+          "severity": "warn",
+          "msg": "缺少 skill.json"
+        },
+        {
+          "severity": "error",
+          "msg": "[安全] skill.py: 文件删除风险: shutil.rmtree"
+        }
+      ],
+      "suggestions": [
+        "添加 SKILL.md 描述功能、用法、示例"
+      ]
+    },
+    {
+      "name": "mempalace",
+      "status": "pass",
+      "score": 90.0,
+      "issues_count": 1,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        }
+      ],
+      "suggestions": [
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "network_bypass",
+      "status": "warn",
+      "score": 55.0,
+      "issues_count": 3,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 SKILL.md"
+        },
+        {
+          "severity": "warn",
+          "msg": "缺少 skill.json"
+        },
+        {
+          "severity": "error",
+          "msg": "[安全] skill.py: 文件删除风险: shutil.rmtree"
+        }
+      ],
+      "suggestions": [
+        "添加 SKILL.md 描述功能、用法、示例"
+      ]
+    },
+    {
+      "name": "project_doc_generator",
+      "status": "pass",
+      "score": 70.0,
+      "issues_count": 2,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 SKILL.md"
+        },
+        {
+          "severity": "warn",
+          "msg": "缺少 skill.json"
+        }
+      ],
+      "suggestions": [
+        "添加 SKILL.md 描述功能、用法、示例",
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "skill_reviewer",
+      "status": "pass",
+      "score": 65.0,
+      "issues_count": 3,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        },
+        {
+          "severity": "warn",
+          "msg": "缺少 skill.json"
+        },
+        {
+          "severity": "error",
+          "msg": "[安全] skill.py: 文件删除风险: shutil.rmtree"
+        }
+      ],
+      "suggestions": []
+    },
+    {
+      "name": "software_location_manager",
+      "status": "pass",
+      "score": 90.0,
+      "issues_count": 1,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        }
+      ],
+      "suggestions": [
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "software_scanner",
+      "status": "pass",
+      "score": 70.0,
+      "issues_count": 2,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 SKILL.md"
+        },
+        {
+          "severity": "warn",
+          "msg": "缺少 skill.json"
+        }
+      ],
+      "suggestions": [
+        "添加 SKILL.md 描述功能、用法、示例",
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "soft_location",
+      "status": "pass",
+      "score": 60.0,
+      "issues_count": 3,
+      "issues": [
+        {
+          "severity": "warn",
+          "msg": "缺少 SKILL.md"
+        },
+        {
+          "severity": "warn",
+          "msg": "缺少 README.md"
+        },
+        {
+          "severity": "warn",
+          "msg": "缺少 skill.json"
+        }
+      ],
+      "suggestions": [
+        "添加 SKILL.md 描述功能、用法、示例",
+        "考虑添加安全边界注释"
+      ]
+    },
+    {
+      "name": "system_optimizer",
+      "status": "pass",
+      "score": 85.0,
+      "issues_count": 1,
+      "issues": [
+        {
+          "severity": "error",
+          "msg": "[安全] skill.py: 文件删除风险: shutil.rmtree"
+        }
+      ],
+      "suggestions": []
+    }
+  ],
+  "mindmap": {
+    "title": "MCP Skills & Workflows 全局思维导图",
+    "generated_at": "2026-04-11T09:44:51.517512",
+    "nodes": [
+      {
+        "id": "ai_toolkit_ecosystem",
+        "label": "ai_toolkit_ecosystem",
+        "type": "skill",
+        "status": "pass",
+        "score": 90.0,
+        "children": [],
+        "metadata": {
+          "description": "AI工具生态系统 (ai_toolkit_ecosystem)",
+          "lines": 682,
+          "security": 0,
+          "deps": [
+            "subprocess",
+            "collections",
+            "defaultdict",
+            "Path",
+            "Any,"
+          ]
+        }
+      },
+      {
+        "id": "ai_toolkit_linkage",
+        "label": "ai_toolkit_linkage",
+        "type": "skill",
+        "status": "pass",
+        "score": 90.0,
+        "children": [],
+        "metadata": {
+          "description": "AI工具联动系统 (ai_toolkit_linkage)",
+          "lines": 567,
+          "security": 0,
+          "deps": [
+            "asyncio",
+            "concurrent",
+            "ThreadPoolExecutor,",
+            "dataclasses",
+            "dataclass,"
+          ]
+        }
+      },
+      {
+        "id": "ai_toolkit_manager",
+        "label": "ai_toolkit_manager",
+        "type": "skill",
+        "status": "pass",
+        "score": 90.0,
+        "children": [],
+        "metadata": {
+          "description": "AI工具包管理器 (ai_toolkit_manager)",
+          "lines": 479,
+          "security": 0,
+          "deps": [
+            "subprocess",
+            "Path",
+            "Dict,",
+            "io",
+            "name"
+          ]
+        }
+      },
+      {
+        "id": "automated_testing",
+        "label": "automated_testing",
+        "type": "skill",
+        "status": "pass",
+        "score": 90.0,
+        "children": [],
+        "metadata": {
+          "description": "自动化测试技能",
+          "lines": 696,
+          "security": 0,
+          "deps": [
+            "subprocess",
+            "time",
+            "MCP_Core",
+            "SkillBase",
+            "unittest"
+          ]
+        }
+      },
+      {
+        "id": "automated_workflow",
+        "label": "automated_workflow",
+        "type": "skill",
+        "status": "pass",
+        "score": 75.0,
+        "children": [],
+        "metadata": {
+          "description": "自动化工作流技能",
+          "lines": 757,
+          "security": 1,
+          "deps": [
+            "subprocess",
+            "time",
+            "Path",
+            "Dict,",
+            "MCP_Core"
+          ]
+        }
+      },
+      {
+        "id": "auto_tester",
+        "label": "auto_tester",
+        "type": "skill",
+        "status": "pass",
+        "score": 70.0,
+        "children": [],
+        "metadata": {
+          "description": "自动化测试系统",
+          "lines": 372,
+          "security": 0,
+          "deps": [
+            "time",
+            "subprocess",
+            "sqlite3",
+            "Path",
+            "Dict,"
+          ]
+        }
+      },
+      {
+        "id": "background_process_manager",
+        "label": "background_process_manager",
+        "type": "skill",
+        "status": "pass",
+        "score": 90.0,
+        "children": [],
+        "metadata": {
+          "description": "后台进程管理技能",
+          "lines": 477,
+          "security": 0,
+          "deps": [
+            "subprocess",
+            "MCP_Core",
+            "SkillBase",
+            "",
+            "BackgroundProcessManagerSkill"
+          ]
+        }
+      },
+      {
+        "id": "continuous_integration",
+        "label": "continuous_integration",
+        "type": "skill",
+        "status": "pass",
+        "score": 90.0,
+        "children": [],
+        "metadata": {
+          "description": "持续集成技能",
+          "lines": 576,
+          "security": 0,
+          "deps": [
+            "subprocess",
+            "time",
+            "MCP_Core",
+            "SkillBase",
+            ""
+          ]
+        }
+      },
+      {
+        "id": "github_api_manager",
+        "label": "github_api_manager",
+        "type": "skill",
+        "status": "pass",
+        "score": 90.0,
+        "children": [],
+        "metadata": {
+          "description": "GitHub API管理器 (github_api_manager)",
+          "lines": 953,
+          "security": 0,
+          "deps": [
+            "pickle",
+            "requests",
+            "datetime,",
+            "Path",
+            "Dict,"
+          ]
+        }
+      },
+      {
+        "id": "github_branch_analyzer",
+        "label": "github_branch_analyzer",
+        "type": "skill",
+        "status": "pass",
+        "score": 70.0,
+        "children": [],
+        "metadata": {
+          "description": "GitHub 分支分析器 (github_branch_analyzer)",
+          "lines": 539,
+          "security": 0,
+          "deps": [
+            "time",
+            "sqlite3",
+            "urllib",
+            "Path",
+            "List,"
+          ]
+        }
+      },
+      {
+        "id": "github_opensource",
+        "label": "github_opensource",
+        "type": "skill",
+        "status": "pass",
+        "score": 100.0,
+        "children": [],
+        "metadata": {
+          "description": "GitHub 开源管理系统 (github_opensource)",
+          "lines": 1140,
+          "security": 0,
+          "deps": [
+            "subprocess",
+            "dataclasses",
+            "asdict,",
+            "Path",
+            "Any,"
+          ]
+        }
+      },
+      {
+        "id": "github_project_search",
+        "label": "github_project_search",
+        "type": "skill",
+        "status": "pass",
+        "score": 90.0,
+        "children": [],
+        "metadata": {
+          "description": "GitHub项目搜索技能",
+          "lines": 658,
+          "security": 0,
+          "deps": [
+            "subprocess",
+            "Path",
+            "Dict,",
+            "MCP_Core",
+            "Skill"
+          ]
+        }
+      },
+      {
+        "id": "github_repo_manager",
+        "label": "github_repo_manager",
+        "type": "skill",
+        "status": "pass",
+        "score": 90.0,
+        "children": [],
+        "metadata": {
+          "description": "GitHub 仓库管理器 (github_repo_manager)",
+          "lines": 599,
+          "security": 0,
+          "deps": [
+            "shutil",
+            "subprocess",
+            "Path",
+            "Dict,",
+            "urllib"
+          ]
+        }
+      },
+      {
+        "id": "github_skill_fuser",
+        "label": "github_skill_fuser",
+        "type": "skill",
+        "status": "warn",
+        "score": 55.0,
+        "children": [],
+        "metadata": {
+          "description": "GitHub Skill 融合安装器 (github_skill_fuser)",
+          "lines": 616,
+          "security": 1,
+          "deps": [
+            "time",
+            "shutil",
+            "sqlite3",
+            "subprocess",
+            "urllib"
+          ]
+        }
+      },
+      {
+        "id": "mempalace",
+        "label": "mempalace",
+        "type": "skill",
+        "status": "pass",
+        "score": 90.0,
+        "children": [],
+        "metadata": {
+          "description": "MemPalace AI记忆系统 (mempalace)",
+          "lines": 1108,
+          "security": 0,
+          "deps": [
+            "sqlite3",
+            "Path",
+            "Dict,",
+            "hashlib",
+            "chromadb"
+          ]
+        }
+      },
+      {
+        "id": "network_bypass",
+        "label": "network_bypass",
+        "type": "skill",
+        "status": "warn",
+        "score": 55.0,
+        "children": [],
+        "metadata": {
+          "description": "网络突破下载系统 (network_bypass)",
+          "lines": 744,
+          "security": 1,
+          "deps": [
+            "time",
+            "shutil",
+            "hashlib",
+            "subprocess",
+            "urllib"
+          ]
+        }
+      },
+      {
+        "id": "project_doc_generator",
+        "label": "project_doc_generator",
+        "type": "skill",
+        "status": "pass",
+        "score": 70.0,
+        "children": [],
+        "metadata": {
+          "description": "项目文档自动生成系统",
+          "lines": 354,
+          "security": 0,
+          "deps": [
+            "Path",
+            "Dict,"
+          ]
+        }
+      },
+      {
+        "id": "skill_reviewer",
+        "label": "skill_reviewer",
+        "type": "skill",
+        "status": "pass",
+        "score": 65.0,
+        "children": [],
+        "metadata": {
+          "description": "Skill Reviewer & Mindmap Generator",
+          "lines": 422,
+          "security": 1,
+          "deps": [
+            "dataclasses",
+            "dataclass,",
+            "Path",
+            "Any,",
+            "argparse"
+          ]
+        }
+      },
+      {
+        "id": "software_location_manager",
+        "label": "software_location_manager",
+        "type": "skill",
+        "status": "pass",
+        "score": 90.0,
+        "children": [],
+        "metadata": {
+          "description": "软件位置管理器 (software_location_manager)",
+          "lines": 583,
+          "security": 0,
+          "deps": [
+            "glob",
+            "Path",
+            "Dict,",
+            "skills",
+            "Skill,"
+          ]
+        }
+      },
+      {
+        "id": "software_scanner",
+        "label": "software_scanner",
+        "type": "skill",
+        "status": "pass",
+        "score": 70.0,
+        "children": [],
+        "metadata": {
+          "description": "软件库扫描器",
+          "lines": 310,
+          "security": 0,
+          "deps": [
+            "sqlite3",
+            "hashlib",
+            "Path",
+            "Dict,",
+            "knowledge_base"
+          ]
+        }
+      },
+      {
+        "id": "soft_location",
+        "label": "soft_location",
+        "type": "skill",
+        "status": "pass",
+        "score": 60.0,
+        "children": [],
+        "metadata": {
+          "description": "-*- coding: utf-8 -*-",
+          "lines": 79,
+          "security": 0,
+          "deps": [
+            "sqlite3",
+            "Path",
+            "List,"
+          ]
+        }
+      },
+      {
+        "id": "system_optimizer",
+        "label": "system_optimizer",
+        "type": "skill",
+        "status": "pass",
+        "score": 85.0,
+        "children": [],
+        "metadata": {
+          "description": "系统优化技能",
+          "lines": 912,
+          "security": 1,
+          "deps": [
+            "hashlib",
+            "shutil",
+            "datetime,",
+            "Path",
+            "Any,"
+          ]
+        }
+      }
+    ],
+    "stats": {
+      "total_skills": 22,
+      "total_workflows": 0,
+      "pass": 20,
+      "warn": 2,
+      "fail": 0
+    }
+  }
+}

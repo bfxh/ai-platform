@@ -1,0 +1,101 @@
+[
+  {
+    "name": "QClaw",
+    "status": "passed",
+    "launched": true,
+    "is_running": true,
+    "startup_time_sec": 5.0,
+    "waited_sec": 5,
+    "exe_path": "%SOFTWARE_DIR%\\AI\\QClaw\\QClaw.exe",
+    "timestamp": "2026-04-11T11:49:37.733322"
+  },
+  {
+    "name": "StepFun",
+    "status": "passed",
+    "launched": true,
+    "is_running": true,
+    "startup_time_sec": 5.0,
+    "waited_sec": 5,
+    "exe_path": "%SOFTWARE_DIR%\\AI\\StepFun\\StepFun.exe",
+    "timestamp": "2026-04-11T11:49:42.988769"
+  },
+  {
+    "name": "WorkBuddy",
+    "status": "passed",
+    "launched": true,
+    "is_running": true,
+    "startup_time_sec": 8.0,
+    "waited_sec": 8,
+    "exe_path": "%SOFTWARE_DIR%\\AI\\WorkBuddy\\WorkBuddy.exe",
+    "timestamp": "2026-04-11T11:49:51.223424"
+  },
+  {
+    "name": "TraeCN",
+    "status": "passed",
+    "launched": true,
+    "is_running": true,
+    "startup_time_sec": 10.0,
+    "waited_sec": 10,
+    "exe_path": "%SOFTWARE_DIR%\\KF\\BC\\Trae CN\\Trae CN.exe",
+    "timestamp": "2026-04-11T11:50:01.503101"
+  },
+  {
+    "name": "VSCode",
+    "status": "warning",
+    "launched": true,
+    "is_running": false,
+    "startup_time_sec": 5.0,
+    "waited_sec": 5,
+    "exe_path": "%SOFTWARE_DIR%\\KF\\BC\\VS Code\\Microsoft VS Code\\Code.exe",
+    "timestamp": "2026-04-11T11:50:06.770886"
+  },
+  {
+    "name": "Blender",
+    "status": "warning",
+    "launched": true,
+    "is_running": false,
+    "startup_time_sec": 8.0,
+    "waited_sec": 8,
+    "exe_path": "%SOFTWARE_DIR%\\KF\\JM\\blender\\blender.exe",
+    "timestamp": "2026-04-11T11:50:14.959800"
+  },
+  {
+    "name": "Godot",
+    "status": "passed",
+    "launched": true,
+    "is_running": true,
+    "startup_time_sec": 6.0,
+    "waited_sec": 6,
+    "exe_path": "%SOFTWARE_DIR%\\KF\\JM\\Godot_v4.6.1-stable_win64.exe\\Godot_v4.6.1-stable_win64.exe",
+    "timestamp": "2026-04-11T11:50:21.186794"
+  },
+  {
+    "project": "browser-use-main",
+    "status": "failed",
+    "return_code": 1,
+    "stdout": "",
+    "stderr": "%USERPROFILE%\\AppData\\Local\\Programs\\Python\\Python310\\python.exe: No module named pytest\n",
+    "timestamp": "2026-04-11T11:50:21.223795"
+  },
+  {
+    "project": "browser-main",
+    "status": "failed",
+    "return_code": 101,
+    "stdout": "",
+    "stderr": "error: could not find `Cargo.toml` in `%SOFTWARE_DIR%\\LLQ\\browser-main` or any parent directory\n",
+    "timestamp": "2026-04-11T11:50:21.351795"
+  },
+  {
+    "project": "CalamityMod",
+    "status": "skipped",
+    "reason": "没有配置测试命令"
+  },
+  {
+    "project": "MCP_Core",
+    "status": "failed",
+    "return_code": 1,
+    "stdout": "",
+    "stderr": "%USERPROFILE%\\AppData\\Local\\Programs\\Python\\Python310\\python.exe: No module named pytest\n",
+    "timestamp": "2026-04-11T11:50:21.390795"
+  }
+]

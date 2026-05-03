@@ -1,0 +1,181 @@
+rules:
+  - id: asyncio-create-task-no-reference
+    patterns:
+      - pattern: asyncio.create_task(...)
+      - pattern-not: $VAR = asyncio.create_task(...)
+      - pattern-not: $SET.add(asyncio.create_task(...))
+    message: "asyncio.create_task() 返回值未保存，任务可能被垃圾回收。应保存到 self._tasks 集合: t = asyncio.create_task(...); self._tasks.add(t); t.add_done_callback(self._tasks.discard)"
+    severity: WARNING
+    languages: [python]
+
+  - id: bind-all-interfaces
+    pattern-either:
+      - pattern: "'0.0.0.0'"
+      - pattern: '"0.0.0.0"'
+    message: "服务绑定 0.0.0.0 会暴露到所有网络接口。应使用 127.0.0.1 仅监听本地，或通过配置项控制。"
+    severity: ERROR
+    languages: [python]
+
+  - id: cors-allow-origin-wildcard
+    pattern-either:
+      - pattern: "Access-Control-Allow-Origin', '*'"
+      - pattern: 'Access-Control-Allow-Origin", "*"'
+      - pattern: "Access-Control-Allow-Origin', '*'"
+      - pattern: 'allow_origins=["*"]'
+      - pattern: 'allow_origins="*"'
+    message: "CORS 允许所有来源 (Access-Control-Allow-Origin: *)，恶意网站可跨域访问本地服务。应限制为特定域名。"
+    severity: WARNING
+    languages: [python]
+
+  - id: pickle-load-without-hmac
+    patterns:
+      - pattern-either:
+          - pattern: pickle.loads(...)
+          - pattern: pickle.load(...)
+      - pattern-not-inside: |
+          hmac.compare_digest(...)
+          ...
+          pickle.loads(...)
+    message: "pickle.loads/load 无 HMAC 完整性校验，缓存文件被篡改可执行任意代码。应添加 HMAC 校验或改用 JSON 序列化。"
+    severity: ERROR
+    languages: [python]
+
+  - id: websocket-no-origin-check
+    patterns:
+      - pattern: web.WebSocketResponse()
+      - pattern-not-inside: |
+          ... origin ...
+          ...
+          web.WebSocketResponse()
+    message: "WebSocket 连接未验证 Origin 头，恶意网页可跨域连接。应检查 request.headers.get('Origin') 是否在白名单中。"
+    severity: WARNING
+    languages: [python]
+
+  - id: time-sleep-in-async
+    patterns:
+      - pattern-inside: |
+          async def $FUNC(...):
+              ...
+      - pattern: time.sleep(...)
+    message: "async 函数中使用 time.sleep() 会阻塞整个事件循环。应改用 await asyncio.sleep()。"
+    severity: ERROR
+    languages: [python]
+
+  - id: requests-session-no-close
+    patterns:
+      - pattern: self.$SESSION = requests.Session()
+      - pattern-not-inside: |
+          class $CLASS(...):
+              ...
+              def close(self):
+                  ...
+      - pattern-not-inside: |
+          class $CLASS(...):
+              ...
+              def __del__(self):
+                  ...
+    message: "requests.Session 创建后无 close()/__del__() 方法，连接池不会释放。应添加 close() 方法。"
+    severity: WARNING
+    languages: [python]
+
+  - id: shell-true-subprocess
+    pattern-either:
+      - pattern: subprocess.run(..., shell=True, ...)
+      - pattern: subprocess.Popen(..., shell=True, ...)
+      - pattern: subprocess.call(..., shell=True, ...)
+    message: "subprocess 使用 shell=True 存在命令注入风险。应改用参数列表形式 subprocess.run(['cmd', 'arg1', 'arg2'])。"
+    severity: WARNING
+    languages: [python]
+
+  - id: bare-except
+    pattern: |
+      except:
+          ...
+    message: "裸 except: 会捕获 KeyboardInterrupt/SystemExit 等不应被静默的异常。应改为 except Exception:。"
+    severity: WARNING
+    languages: [python]
+
+  - id: eval-usage
+    pattern: eval(...)
+    message: "eval() 存在代码注入风险，即使限制 __builtins__ 也可能被绕过。应使用 ast.literal_eval() 或自定义解析器。"
+    severity: ERROR
+    languages: [python]
+
+  - id: ssl-verify-disabled
+    pattern-either:
+      - pattern: verify=False
+      - pattern: ssl.CERT_NONE
+      - pattern: ssl._create_unverified_context
+    message: "SSL 证书验证被禁用，可能导致中间人攻击。应使用 core.secure_utils.create_ssl_context() 或 get_ssl_verify_path()。"
+    severity: WARNING
+    languages: [python]
+
+  - id: use-safe-exec-command
+    patterns:
+      - pattern-either:
+          - pattern: subprocess.run(..., shell=True, ...)
+          - pattern: subprocess.Popen(..., shell=True, ...)
+          - pattern: subprocess.call(..., shell=True, ...)
+      - pattern-not-inside: |
+          from core.secure_utils import ...
+          ...
+    message: "应使用 core.secure_utils.safe_exec_command() 替代 shell=True 的 subprocess 调用。safe_exec_command 提供白名单验证和危险字符检测。"
+    severity: WARNING
+    languages: [python]
+
+  - id: use-safe-xml-parse
+    patterns:
+      - pattern: xml.etree.ElementTree.fromstring(...)
+      - pattern-not: safe_xml_parse(...)
+    message: "应使用 core.secure_utils.safe_xml_parse() 替代 xml.etree.ElementTree.fromstring()。safe_xml_parse 使用 defusedxml 防止 XXE 攻击。"
+    severity: WARNING
+    languages: [python]
+
+  - id: use-safe-eval-expr
+    patterns:
+      - pattern: eval(...)
+      - pattern-not: safe_eval_expr(...)
+      - pattern-not: ast.literal_eval(...)
+    message: "应使用 core.secure_utils.safe_eval_expr() 替代 eval()。safe_eval_expr 使用 simpleeval 库，不可能执行任意代码。"
+    severity: ERROR
+    languages: [python]
+
+  - id: sync-requests-in-async
+    patterns:
+      - pattern-inside: |
+          async def $FUNC(...):
+              ...
+      - pattern-either:
+          - pattern: requests.get(...)
+          - pattern: requests.post(...)
+          - pattern: requests.put(...)
+          - pattern: requests.delete(...)
+    message: "async 函数中使用同步 requests 会阻塞事件循环。应使用 core.secure_utils.get_http_client() 获取 httpx.AsyncClient。"
+    severity: ERROR
+    languages: [python]
+
+  - id: hardcoded-secret-string
+    patterns:
+      - pattern-either:
+          - pattern: $VAR = "..."
+          - pattern: $VAR = b"..."
+      - metavariable-regex:
+          $VAR: "(?i).*(password|secret|api_key|token|hmac_key|private_key).*"
+      - pattern-not-inside: |
+          from core.secure_utils import SecureKeyManager
+          ...
+    message: "检测到硬编码密钥/密码。应使用 core.secure_utils.SecureKeyManager 管理密钥，首次运行自动生成随机密钥并存入系统密钥环。"
+    severity: WARNING
+    languages: [python]
+
+  - id: use-create-ssl-context
+    patterns:
+      - pattern-either:
+          - pattern: ssl.create_default_context()
+          - pattern: ssl.SSLContext(...)
+      - pattern-not-inside: |
+          from core.secure_utils import create_ssl_context
+          ...
+    message: "应使用 core.secure_utils.create_ssl_context() 创建SSL上下文。该函数默认启用证书验证并使用 certifi CA证书包。"
+    severity: INFO
+    languages: [python]

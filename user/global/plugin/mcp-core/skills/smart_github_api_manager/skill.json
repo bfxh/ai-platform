@@ -1,0 +1,83 @@
+{
+  "name": "smart_github_api_manager",
+  "version": "2.0.0",
+  "description": "智能GitHub API管理 - 实时同步、智能分类、版本管理",
+  "author": "MCP Core Team",
+  "created": "2026-04-18",
+  "enabled": true,
+  "category": "development",
+  "tags": ["github", "api", "smart", "discovery", "classification", "versioning"],
+  "entry_point": "skill.py",
+  "class_name": "SmartGitHubAPIManager",
+  "actions": [
+    {
+      "name": "get_all_apis",
+      "description": "获取所有GitHub API端点",
+      "params": {}
+    },
+    {
+      "name": "search_apis",
+      "description": "搜索API端点",
+      "params": {
+        "query": {"type": "string", "required": true, "description": "搜索查询"}
+      }
+    },
+    {
+      "name": "update_apis",
+      "description": "更新API端点信息",
+      "params": {}
+    },
+    {
+      "name": "get_api_details",
+      "description": "获取API详情",
+      "params": {
+        "api_id": {"type": "string", "required": true, "description": "API ID"}
+      }
+    },
+    {
+      "name": "test_api",
+      "description": "测试API调用",
+      "params": {
+        "endpoint": {"type": "string", "required": true, "description": "API端点"},
+        "method": {"type": "string", "required": true, "description": "HTTP方法"},
+        "params": {"type": "object", "required": false, "description": "API参数"}
+      }
+    },
+    {
+      "name": "export_apis",
+      "description": "导出API端点",
+      "params": {
+        "output_file": {"type": "string", "required": false, "default": "github_apis_smart_export.json", "description": "导出文件路径"}
+      }
+    },
+    {
+      "name": "discover_new_apis",
+      "description": "发现新的API端点",
+      "params": {}
+    },
+    {
+      "name": "classify_apis",
+      "description": "智能分类API端点",
+      "params": {}
+    },
+    {
+      "name": "get_api_versions",
+      "description": "获取API版本信息",
+      "params": {}
+    }
+  ],
+  "features": [
+    "智能API发现",
+    "实时同步",
+    "自动分类",
+    "版本管理",
+    "智能搜索",
+    "批量测试"
+  ],
+  "dependencies": [
+    "requests"
+  ],
+  "output": {
+    "type": "json"
+  }
+}

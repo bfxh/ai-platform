@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="CelShader" inherits="BaseShader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Post-process effect class that implements a simple posterization effect.
+	</brief_description>
+	<description>
+		Post-process effect class that implements a simple posterization effect based on the amount of color levels provided in the posterization variable.
+	</description>
+	<tutorials>
+	</tutorials>
+	<members>
+		<member name="m_levels" type="EncapsuledData<float>" setter="set" getter="get" default="16.0">
+			Controls how many color levels does the posterization effect use.
+		</member>
+	</members>
+</class>

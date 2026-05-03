@@ -1,0 +1,610 @@
+{
+  "version": "5.0",
+  "updated": "2026-04-25",
+  "name": "/python 架构配置 - 智能自动工作模式",
+  "git": {
+    "remote": "https://github.com/YOUR_USERNAME/ai-platform.git",
+    "lfs_tracking": [
+      "*.blend",
+      "*.zip",
+      "*.exe",
+      "*.rar",
+      "*.7z"
+    ],
+    "ignore": [
+      "CC/",
+      "gstack_core/logs/",
+      "MCP/**/__pycache__/"
+    ],
+    "include": [
+      "gstack_core/",
+      "MCP/",
+      "MCP_Core/skills/",
+      "*.json",
+      ".gitignore"
+    ]
+  },
+  "gstack": {
+    "priority": true,
+    "required": true,
+    "check_on_startup": true,
+    "path": "/python\\gstack_core",
+    "description": "GSTACK 是主要技能，所有工作流必须优先使用",
+    "welcome_message": "✅ GSTACK v3.1 已就绪 | MCP 可用: JM({jm_count}) BC({bc_count}) Tools({tools_count}) | CC 缓存未归档文件: {cc_count} 个",
+    "commands": {
+      "office_hours": "YC 风格产品验证",
+      "plan_ceo_review": "CEO 视角评审",
+      "plan_eng_review": "工程架构评审",
+      "plan_design_review": "设计评审",
+      "review": "代码审查（带自动修复）",
+      "investigate": "根因分析",
+      "design_consultation": "设计咨询",
+      "qa": "测试+自动修复",
+      "qa_only": "仅报告",
+      "ship": "自动化部署",
+      "document_release": "更新文档",
+      "retro": "团队回顾",
+      "codex": "第二意见",
+      "careful": "危险警告",
+      "freeze": "文件锁定",
+      "guard": "完全安全模式",
+      "skill_doctor": "Skills 自检与回滚",
+      "cc_cleanup": "CC 缓存清理扫描",
+      "git:status": "Git 状态检查",
+      "sync_assets": "同步资产到 CC/1_Raw",
+      "schedule:daily": "设置每日维护计划任务",
+      "ask": "Agent Skill Kit 技能系统",
+      "blender": "Blender 自然语言控制",
+      "workflow": "n8n 工作流自动化",
+      "narsil": "Narsil 代码分析",
+      "lint": "代码质量检查"
+    }
+  },
+  "fallback_mode": {
+    "description": "GSTACK 不可用时的降级方案",
+    "strict": {
+      "description": "严格模式 - 仅告知用户，不执行任何修改类操作",
+      "allow_read": true,
+      "allow_report": true,
+      "allow_modify": false,
+      "message": "⚠️ GSTACK 不可用 (strict 模式) - 仅提供只读服务"
+    },
+    "legacy": {
+      "description": "传统模式 - 允许调用 Python 或 MCP 服务器",
+      "allow_read": true,
+      "allow_report": true,
+      "allow_modify": true,
+      "require_confirmation": true,
+      "message": "⚠️ 非 GSTACK 模式，变更将不记录审计日志"
+    }
+  },
+  "auto_start": {
+    "description": "TRAE 自动启动配置",
+    "auto_load_resources": true,
+    "no_manual_commands": true,
+    "intelligent_work": true,
+    "loaded_resources": [
+      "/python\\user\\config",
+      "/python\\user\\plugins",
+      "/python\\user\\skills",
+      "/python\\storage\\mcp",
+      "/python\\storage\\cll",
+      "/python\\user\\conversations",
+      "/python\\user\\tasks"
+    ]
+  },
+  "mcp": {
+    "base_path": "/python\\storage\\mcp",
+    "categories": {
+      "JM": {
+        "name": "建模类",
+        "path": "/python\\storage\\mcp\\JM",
+        "description": "Blender、3D建模、场景生成、动画、材质、粒子效果等",
+        "keywords": [
+          "blender",
+          "3d",
+          "modeling",
+          "character",
+          "scene",
+          "animation",
+          "mesh",
+          "texture",
+          "ue",
+          "godot",
+          "unity",
+          "vision",
+          "video"
+        ],
+        "file_count": 30
+      },
+      "BC": {
+        "name": "代码类",
+        "path": "/python\\storage\\mcp\\BC",
+        "description": "代码生成、代码分析、调试、测试、部署等编程相关",
+        "keywords": [
+          "code",
+          "github",
+          "git",
+          "find",
+          "fix",
+          "patch",
+          "verify",
+          "search",
+          "workflow",
+          "dev"
+        ],
+        "file_count": 46
+      },
+      "Tools": {
+        "name": "工具类",
+        "path": "/python\\storage\\mcp\\Tools",
+        "description": "桌面自动化、下载管理、网络工具、系统监控等辅助工具",
+        "keywords": [
+          "download",
+          "network",
+          "system",
+          "monitor",
+          "automation",
+          "config",
+          "memory",
+          "cache"
+        ],
+        "file_count": 32
+      }
+    },
+    "rules": {
+      "new_files_must_be_categorized": true,
+      "check_category_before_save": true,
+      "config_schema_version": "2.0",
+      "require_category_field": true
+    }
+  },
+  "skills": {
+    "base_path": "/python\\user\\skills",
+    "index_file": "/python\\user\\skills\\README.md",
+    "description": "Skills 技能系统，提供高级 AI 功能",
+    "doctor_command": "skill_doctor",
+    "categories": {
+      "github": {
+        "path": "/python\\MCP_Core\\skills\\github_*",
+        "description": "GitHub 集成类技能"
+      },
+      "system": {
+        "path": "/python\\MCP_Core\\skills\\system_*",
+        "description": "系统管理类技能"
+      },
+      "workflow": {
+        "path": "/python\\MCP_Core\\skills\\*workflow*",
+        "description": "工作流自动化类技能"
+      },
+      "testing": {
+        "path": "/python\\MCP_Core\\skills\\*test*",
+        "description": "测试类技能"
+      }
+    },
+    "available_skills": [
+      "system_optimizer",
+      "github_api_manager",
+      "github_repo_manager",
+      "github_opensource",
+      "github_nlp_search",
+      "github_project_search",
+      "github_extended",
+      "github_api_tester",
+      "github_branch_analyzer",
+      "github_data_analytics",
+      "github_skill_discovery",
+      "github_skill_fuser",
+      "ai_toolkit_manager",
+      "ai_toolkit_linkage",
+      "ai_toolkit_ecosystem",
+      "auto_tester",
+      "automated_testing",
+      "automated_workflow",
+      "project_doc_generator",
+      "skill_reviewer",
+      "continuous_integration",
+      "background_process_manager",
+      "software_location_manager",
+      "software_scanner",
+      "mempalace",
+      "network_bypass",
+      "cc_cleanup_advisor",
+      "skill_doctor"
+    ]
+  },
+  "cll_projects": {
+    "name": "CLL 开源 LLM 项目集合",
+    "path": "/python\\storage\\cll",
+    "category": "开源LLM项目",
+    "project_count": 44,
+    "description": "包含 44 个主流 LLM/AI 开源项目，涵盖大语言模型、推理引擎、训练框架、量化工具等",
+    "index_file": "/python\\storage\\cll\\INDEX.md",
+    "categories": {
+      "llm": {
+        "name": "大语言模型",
+        "count": 6,
+        "projects": [
+          "Qwen",
+          "ChatGLM",
+          "Baichuan2",
+          "InternLM",
+          "llama",
+          "pythia"
+        ]
+      },
+      "inference": {
+        "name": "推理引擎",
+        "count": 5,
+        "projects": [
+          "vllm",
+          "llama.cpp",
+          "llama2.c",
+          "gpt-fast",
+          "LocalAI"
+        ]
+      },
+      "training": {
+        "name": "训练框架",
+        "count": 5,
+        "projects": [
+          "DeepSpeed",
+          "ColossalAI",
+          "composer",
+          "fairscale",
+          "ray"
+        ]
+      },
+      "quantization": {
+        "name": "量化工具",
+        "count": 3,
+        "projects": [
+          "AutoGPTQ",
+          "llm-awq",
+          "KVQuant"
+        ]
+      },
+      "finetuning": {
+        "name": "微调工具",
+        "count": 5,
+        "projects": [
+          "LoRA",
+          "peft",
+          "trl",
+          "trlx",
+          "axolotl"
+        ]
+      },
+      "vector_db": {
+        "name": "向量数据库",
+        "count": 3,
+        "projects": [
+          "milvus",
+          "qdrant",
+          "weaviate"
+        ]
+      },
+      "rlhf": {
+        "name": "RLHF/RLAF",
+        "count": 3,
+        "projects": [
+          "rl",
+          "spinningup",
+          "retro"
+        ]
+      },
+      "edge": {
+        "name": "移动端/边缘计算",
+        "count": 2,
+        "projects": [
+          "MNN",
+          "orca"
+        ]
+      },
+      "nlp": {
+        "name": "NLP 库",
+        "count": 5,
+        "projects": [
+          "PaddleNLP",
+          "seqio",
+          "optax",
+          "redis-py",
+          "nomic"
+        ]
+      },
+      "education": {
+        "name": "教育/研究",
+        "count": 5,
+        "projects": [
+          "nanoGPT",
+          "minGPT",
+          "lit-llama",
+          "gpt-neox",
+          "QLLM-main"
+        ]
+      },
+      "optimization": {
+        "name": "优化/加速",
+        "count": 1,
+        "projects": [
+          "xformers"
+        ]
+      },
+      "custom": {
+        "name": "自定义项目",
+        "count": 1,
+        "projects": [
+          "cllm"
+        ]
+      }
+    }
+  },
+  "cc": {
+    "name": "分类缓存 (Classification Cache)",
+    "path": "/python\\CC",
+    "description": "存储原始文件、旧版本文件、未使用文件，防止架构混乱",
+    "cleanup_advisor": "cc_cleanup_advisor",
+    "categories": {
+      "1_Raw": {
+        "name": "原始文件",
+        "path": "/python\\CC\\1_Raw",
+        "description": "从网上下载的原始文件，未经过任何修改",
+        "subdirs": [
+          "MCP",
+          "Skills",
+          "Projects",
+          "Others"
+        ],
+        "index": "/python\\CC\\1_Raw\\INDEX.md"
+      },
+      "2_Old": {
+        "name": "旧版本文件",
+        "path": "/python\\CC\\2_Old",
+        "description": "被新版本替换的旧文件，保留以便回滚",
+        "subdirs": [
+          "MCP",
+          "Skills",
+          "Projects",
+          "Others"
+        ],
+        "index": "/python\\CC\\2_Old\\INDEX.md"
+      },
+      "3_Unused": {
+        "name": "未使用文件",
+        "path": "/python\\CC\\3_Unused",
+        "description": "AI 未调用过的文件，定期审查清理",
+        "subdirs": [
+          "MCP",
+          "Skills",
+          "Projects",
+          "Others"
+        ],
+        "index": "/python\\CC\\3_Unused\\INDEX.md"
+      }
+    },
+    "rules": [
+      "每个分类必须保持索引文件更新",
+      "文件移动时必须同步更新索引",
+      "定期审查 3_Unused 目录进行清理",
+      "新下载文件首先存放于 1_Raw",
+      "超过 30 天未修改的文件建议清理"
+    ]
+  },
+  "directories": {
+    "root": "/python",
+    "user": "/python\\user",
+    "user_config": "/python\\user\\config",
+    "user_plugins": "/python\\user\\plugins",
+    "user_skills": "/python\\user\\skills",
+    "user_conversations": "/python\\user\\conversations",
+    "user_tasks": "/python\\user\\tasks",
+    "storage": "/python\\storage",
+    "storage_mcp": "/python\\storage\\mcp",
+    "storage_cll": "/python\\storage\\cll",
+    "storage_brain": "/python\\storage\\Brain",
+    "storage_cc": "/python\\storage\\CC",
+    "storage_data": "/python\\storage\\data",
+    "gstack_core": "/python\\gstack_core",
+    "mcp_core": "/python\\MCP_Core",
+    "core": "/python\\core",
+    "adapter": "/python\\adapter",
+    "projects_rj": "D:\\rj",
+    "projects_dx": "D:\\dx",
+    "config": "/python\\.trae",
+    "temp": "/python\\temp"
+  },
+  "protection": {
+    "marker_file": "/python\\.gstack_protected",
+    "architecture_files": [
+      "/python\\index.json",
+      "/python\\ai_architecture.json",
+      "/python\\.gstack_protected",
+      "/python\\CC\\README.md",
+      "/python\\CC\\1_Raw\\INDEX.md",
+      "/python\\CC\\2_Old\\INDEX.md",
+      "/python\\CC\\3_Unused\\INDEX.md",
+      "/python\\.trae\\project_rules.md",
+      "/python\\.trae\\user_rules.md"
+    ],
+    "rules": [
+      "任何涉及 /python 底层架构的修改都必须谨慎处理",
+      "禁止随意修改核心配置文件除非明确要求",
+      "MCP 文件必须按分类存放在指定目录",
+      "CC 目录文件移动时必须更新索引",
+      "非 GSTACK 发起的文件操作，禁止修改包含 .gstack_protected 的路径",
+      "修改架构文件前必须先备份到 CC/2_Old"
+    ],
+    "ignore_patterns": [
+      ".gstack_protected",
+      ".git",
+      "__pycache__",
+      "*.pyc",
+      "node_modules"
+    ]
+  },
+  "priority_order": [
+    "PIPELINE (强制五阶段)",
+    "GSTACK 工作流",
+    "ASK (Agent Skill Kit)",
+    "Python 脚本",
+    "PowerShell 脚本",
+    "MCP 服务器",
+    "Batch 脚本",
+    "系统命令"
+  ],
+  "pipeline": {
+    "version": "6.0",
+    "enabled": true,
+    "description": "TRAE 五阶段强制管道——所有项目必须先通过分析/安全/逆向/深度分析四个阶段，才能进入开发阶段",
+    "engine": "core/pipeline_engine.py",
+    "phases": {
+      "1_analysis": {
+        "name": "Preliminary Analysis",
+        "module": "core/pipeline/phase_analyzer.py",
+        "description": "项目架构扫描、代码语言/框架检测、依赖映射、特性识别",
+        "gate_condition": "必须检测到编程语言才能通过"
+      },
+      "2_security": {
+        "name": "Security Audit",
+        "module": "core/pipeline/phase_security.py",
+        "description": "密钥/Token泄露检测、不安全代码模式扫描、依赖漏洞检查",
+        "gate_condition": "CRITICAL级别发现则阻塞"
+      },
+      "3_reverse": {
+        "name": "Reverse Engineering",
+        "module": "core/pipeline/phase_reverse.py",
+        "description": "许可证检测、开源验证、二进制分析、反编译评估",
+        "gate_condition": "专有软件或无法确认许可证则阻塞"
+      },
+      "4_deep": {
+        "name": "Deep Analysis",
+        "module": "core/pipeline/phase_deep.py",
+        "description": "交叉分析前三个阶段结果、风险重评估、可行性判断",
+        "gate_condition": "所有阻断项清除后通过"
+      },
+      "5_dev": {
+        "name": "Development",
+        "module": "core/pipeline/phase_dev.py",
+        "description": "仅在前四个阶段通过后执行：编码、建模、测试、部署",
+        "gate_condition": "Phase 1-4 必须全部通过"
+      }
+    },
+    "enforcement": {
+      "strict_mode": true,
+      "skip_phases_on_opensource_mit": false,
+      "block_on_critical_security": true,
+      "block_on_proprietary": true,
+      "require_license_phase": true,
+      "max_phase_duration_seconds": 300
+    },
+    "integration": {
+      "brain_memory": true,
+      "event_bridge": true,
+      "report_path": "storage/data/pipeline_reports/"
+    }
+  },
+  "startup_checklist": [
+    "TRAE 自动加载所有资源",
+    "用户层资源自动加载",
+    "存储层资源自动加载",
+    "技能系统自动可用",
+    "MCP 工具自动可用",
+    "不需要手动启动任何服务",
+    "智能识别用户需求",
+    "在所有窗口都能正常工作",
+    "不要表现\"智障\"",
+    "提供实用的解决方案"
+  ],
+  "marketplace": {
+    "description": "GSTACK 技能市场接口",
+    "url": "",
+    "installed_packages": [],
+    "categories": {
+      "mcp": "MCP 工具包",
+      "skill": "技能包",
+      "workflow": "工作流包",
+      "experience": "体验包"
+    },
+    "installation_rules": [
+      "MCP 包自动安装到对应分类目录 (JM/BC/Tools)",
+      "Skill 包安装到 MCP_Core/skills/",
+      "自动更新索引文件和配置",
+      "支持版本管理和回滚"
+    ],
+    "commands": {
+      "install": "安装市场包",
+      "update": "更新市场包",
+      "list": "列出已安装包",
+      "remove": "移除市场包"
+    }
+  },
+  "scripts": {
+    "path": "/python\\scripts",
+    "description": "自动化脚本目录",
+    "scripts": {
+      "daily_github_update": {
+        "path": "/python\\scripts\\daily_github_update.py",
+        "description": "每日 GitHub 项目更新检查 (44个LLM项目)",
+        "schedule": "02:00",
+        "task_name": "AI_GitHub_Update"
+      },
+      "daily_backup": {
+        "path": "/python\\scripts\\daily_backup.py",
+        "description": "每日备份到 /python_temp",
+        "schedule": "04:00",
+        "task_name": "AI_Daily_Backup"
+      },
+      "schedule_tasks": {
+        "path": "/python\\scripts\\schedule_tasks.bat",
+        "description": "Windows 任务计划程序注册脚本"
+      }
+    }
+  },
+  "shared_context": {
+    "enabled": true,
+    "description": "Cross-Agent Shared Context System - 让 Qoder/TRAE 等 AI Agent 通过文件系统共享任务状态和文件操作信息",
+    "data_path": "storage/shared_context",
+    "polling_interval_seconds": 3,
+    "lock_timeout_seconds": 5,
+    "heartbeat_interval_seconds": 15,
+    "dead_agent_timeout_seconds": 60,
+    "max_file_operations_log_lines": 10000,
+    "max_knowledge_sync_queue_lines": 5000,
+    "integration": {
+      "brain": true,
+      "pipeline": true,
+      "context_manager": true,
+      "dispatcher": true
+    }
+  },
+  "automation": {
+    "backup": {
+      "target": "/python_temp\\backup",
+      "retention_days": 7,
+      "exclude_patterns": [
+        ".jar",
+        ".zip",
+        ".exe",
+        "__pycache__",
+        ".git",
+        "node_modules"
+      ],
+      "log_file": "/python\\logs\\backup_log.md"
+    },
+    "github_update": {
+      "projects_path": "/python\\CLL_Projects",
+      "project_count": 44,
+      "log_file": "/python\\logs\\github_update_log.md",
+      "api_cache_hours": 1
+    }
+  },
+  "last_check": "2026-04-23T13:24:47.069069",
+  "backups": [
+    {
+      "name": "test_backup",
+      "path": "/python\\backups\\test_backup",
+      "timestamp": "2026-04-22T16:14:03.081179",
+      "size": "7.73 MB"
+    }
+  ]
+}

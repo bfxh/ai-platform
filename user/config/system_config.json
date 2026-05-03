@@ -1,0 +1,51 @@
+{
+  "version": "1.0.0",
+  "directories": {
+    "user": {
+      "config": "user/config",
+      "profiles": "user/profiles",
+      "ui": "user/ui"
+    },
+    "projects": {
+      "default": "projects/default",
+      "templates": "projects/templates"
+    },
+    "storage": {
+      "models": "storage/models",
+      "data": "storage/data",
+      "cache": "storage/cache"
+    },
+    "plugins": {
+      "core": "plugins/core",
+      "skills": "plugins/skills",
+      "workflows": "plugins/workflows",
+      "mcp": "plugins/mcp",
+      "third-party": "plugins/third-party"
+    }
+  },
+  "system": {
+    "plugin_registry": ".plugin_registry.json",
+    "log_directory": "logs",
+    "temp_directory": "temp"
+  },
+  "ai": {
+    "providers": {
+      "stepfun": {
+        "enabled": true,
+        "api_key": "your-api-key-here"
+      },
+      "openai": {
+        "enabled": false,
+        "api_key": "your-api-key-here"
+      },
+      "claude": {
+        "enabled": false,
+        "api_key": "your-api-key-here"
+      },
+      "gemini": {
+        "enabled": false,
+        "api_key": "your-api-key-here"
+      }
+    }
+  }
+}

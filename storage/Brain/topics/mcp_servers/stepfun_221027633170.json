@@ -1,0 +1,47 @@
+{
+  "id": "stepfun_221027633170",
+  "date": "2026/3/12 22:05:25",
+  "title": "阶跃AI对话 [浏览器,邮件,收集,Brain]",
+  "summary": "会话221027633170，21次工具调用，使用工具: file_system_read,web_search,analyze_image,drawio,browser_use",
+  "tags": [
+    "浏览器",
+    "邮件",
+    "收集",
+    "Brain",
+    "搜索",
+    "MCP",
+    "画图"
+  ],
+  "source": "stepfun_log",
+  "session_id": "221027633170386944",
+  "user_instructions": [],
+  "results": [],
+  "score": 5,
+  "tools_used": [
+    "file_system_read",
+    "web_search",
+    "analyze_image",
+    "drawio",
+    "browser_use",
+    "email",
+    "file_system_edit",
+    "terminal_execute",
+    "file_system_write"
+  ],
+  "files_touched": [
+    "C:/Users",
+    "C://Users//abc//AppData//Roaming//stepfun-desktop/",
+    "C://Users//abc//AppData//Roaming//stepfun-desktop//",
+    "C://Users//abc//.stepfun/",
+    "C://Users//abc//.stepfun//browser.json/",
+    "C:/Users/abc/.stepfun/logs",
+    "C://Users//abc//.stepfun//logs//worker-2026-03-12.log",
+    "C:/Users/abc/.stepfun/logs/worker-2026-03-12.log",
+    "D://AI//MCP//15-Collector//scan_stepfun.py/",
+    "C:/Users/abc/.stepfun/logs//"
+  ],
+  "commands": [],
+  "first_time": "2026/3/12 22:05:25",
+  "last_time": "2026/3/12 22:14:41",
+  "task_count": 21
+}

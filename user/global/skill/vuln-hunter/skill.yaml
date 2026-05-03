@@ -1,0 +1,41 @@
+name: "vuln-hunter"
+description: "漏洞挖掘与安全审计 AI 知识包 — 覆盖 Web 测试、代码审计、网络侦察、反编译审计、CTF 解题"
+version: "1.0"
+author: "CLAUSE Security"
+type: "ai_knowledge_pack"
+
+actions:
+  - name: web_scan
+    description: "Web 应用安全测试 — SQL注入/XSS/CSRF/SSRF/命令注入/文件上传/反序列化"
+    knowledge: "knowledge/web_vuln_patterns.md"
+    tools: ["nmap", "sqlmap", "burp", "zap"]
+
+  - name: code_audit
+    description: "源代码安全审计 — 支持 Python/Java/JavaScript/PHP/C#/Go/C/C++/Rust 共 9 种语言, 55+ 漏洞类型"
+    knowledge: "knowledge/code_audit_checklist.md"
+    tools: ["bandit", "semgrep", "detect-secrets"]
+
+  - name: network_scan
+    description: "网络侦察与信息收集 — 端口扫描/服务识别/OS检测/版本探测"
+    knowledge: "knowledge/network_recon.md"
+    tools: ["nmap", "masscan", "rustscan"]
+
+  - name: decompile_audit
+    description: "反编译审计 — APK(Jadx)→Java审计 / DLL(dnSpy/ILSpy)→C#审计 / Binary(Ghidra)→伪代码分析"
+    knowledge: "knowledge/decompile_sop.md"
+    tools: ["jadx", "dnspy", "ilspy", "ghidra", "jd-gui", "resourcehacker"]
+
+  - name: exploit_verify
+    description: "无害漏洞验证 — 生成最小 PoC, 不执行破坏性操作"
+    knowledge: null
+    tools: ["python", "curl", "custom_scripts"]
+
+  - name: ctf_solve
+    description: "CTF 解题辅助 — Web 渗透/二进制逆向/密码学分析/取证分析"
+    knowledge: null
+    tools: ["pwntools", "ghidra", "jadx", "cyberchef"]
+
+security_rules:
+  - "禁止执行破坏性 payload"
+  - "禁止对未授权目标执行测试"
+  - "所有审计结果先输出报告, 仅在人工审核后执行修复"

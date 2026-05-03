@@ -1,0 +1,388 @@
+{
+  "version": "1.0.0",
+  "name": "StepFun MCP Integration System",
+  "description": "MCP (Model Context Protocol) integration for StepFun AI with Godot, Blender, UE5 workflow support",
+  "platform": "StepFun",
+  "supported_software": ["godot", "blender", "ue5", "unity", "maya"],
+  
+  "core_components": {
+    "mcp_server": {
+      "host": "localhost",
+      "port": 8766,
+      "protocol": "websocket",
+      "authentication": "token_based"
+    },
+    
+    "stepfun_bridge": {
+      "api_endpoint": "https://api.stepfun.com/v1",
+      "model": "step-1v",
+      "capabilities": [
+        "code_generation",
+        "code_analysis",
+        "bug_fixing",
+        "workflow_execution",
+        "skill_invocation"
+      ]
+    },
+    
+    "godot_integration": {
+      "plugin_path": "res://addons/stepfun_mcp/",
+      "features": [
+        "auto_bug_fix",
+        "code_generation",
+        "scene_optimization",
+        "asset_import_workflow"
+      ]
+    }
+  },
+  
+  "skills": {
+    "code_analysis": {
+      "name": "Code Analysis",
+      "description": "Analyze GDScript, Python, C# code for errors and optimizations",
+      "parameters": {
+        "code": "string",
+        "language": "enum[gdscript, python, csharp, cpp]",
+        "analysis_type": "enum[syntax, logic, performance, security]"
+      },
+      "return_type": {
+        "errors": "array",
+        "warnings": "array",
+        "suggestions": "array",
+        "optimized_code": "string"
+      }
+    },
+    
+    "auto_bug_fix": {
+      "name": "Auto Bug Fix",
+      "description": "Automatically detect and fix bugs in code",
+      "parameters": {
+        "file_path": "string",
+        "error_message": "string",
+        "context": "object"
+      },
+      "return_type": {
+        "fixed": "boolean",
+        "fixes_applied": "array",
+        "backup_path": "string"
+      }
+    },
+    
+    "workflow_execute": {
+      "name": "Workflow Execute",
+      "description": "Execute predefined workflows",
+      "parameters": {
+        "workflow_name": "string",
+        "inputs": "object",
+        "async": "boolean"
+      },
+      "return_type": {
+        "status": "enum[pending, running, completed, failed]",
+        "results": "object",
+        "logs": "array"
+      }
+    },
+    
+    "asset_convert": {
+      "name": "Asset Convert",
+      "description": "Convert assets between formats and engines",
+      "parameters": {
+        "source_path": "string",
+        "target_format": "enum[glb, fbx, obj, usd]",
+        "target_engine": "enum[godot, unity, ue5]",
+        "options": "object"
+      },
+      "return_type": {
+        "output_path": "string",
+        "conversion_log": "array",
+        "warnings": "array"
+      }
+    },
+    
+    "scene_optimize": {
+      "name": "Scene Optimize",
+      "description": "Optimize Godot scenes for performance",
+      "parameters": {
+        "scene_path": "string",
+        "optimization_level": "enum[low, medium, high]",
+        "target_fps": "integer"
+      },
+      "return_type": {
+        "optimizations_applied": "array",
+        "performance_gain": "float",
+        "before_after": "object"
+      }
+    }
+  },
+  
+  "workflows": {
+    "godot_project_setup": {
+      "name": "Godot Project Setup",
+      "description": "Set up a complete Godot project with best practices",
+      "steps": [
+        {
+          "step": 1,
+          "name": "Create Project Structure",
+          "skill": "file_management",
+          "action": "create_directories",
+          "params": {
+            "directories": [
+              "assets/models",
+              "assets/textures",
+              "assets/audio",
+              "scenes",
+              "scripts",
+              "ui"
+            ]
+          }
+        },
+        {
+          "step": 2,
+          "name": "Setup Git",
+          "skill": "version_control",
+          "action": "init_repository",
+          "params": {}
+        },
+        {
+          "step": 3,
+          "name": "Create Base Scenes",
+          "skill": "code_generation",
+          "action": "generate_scene",
+          "params": {
+            "scenes": ["main", "loading", "settings"]
+          }
+        },
+        {
+          "step": 4,
+          "name": "Setup Autoloads",
+          "skill": "code_generation",
+          "action": "generate_autoloads",
+          "params": {
+            "autoloads": ["GameManager", "AudioManager", "SettingsManager"]
+          }
+        }
+      ]
+    },
+    
+    "ue5_to_godot_migration": {
+      "name": "UE5 to Godot Migration",
+      "description": "Migrate assets from Unreal Engine 5 to Godot",
+      "steps": [
+        {
+          "step": 1,
+          "name": "Export from UE5",
+          "skill": "asset_convert",
+          "action": "export_from_ue5",
+          "params": {
+            "format": "glb",
+            "include_materials": true,
+            "include_animations": true
+          }
+        },
+        {
+          "step": 2,
+          "name": "Convert Materials",
+          "skill": "asset_convert",
+          "action": "convert_materials",
+          "params": {
+            "source": "ue5",
+            "target": "godot"
+          }
+        },
+        {
+          "step": 3,
+          "name": "Import to Godot",
+          "skill": "asset_convert",
+          "action": "import_to_godot",
+          "params": {
+            "import_settings": {
+              "generate_lods": true,
+              "import_materials": true
+            }
+          }
+        },
+        {
+          "step": 4,
+          "name": "Setup Nanite Equivalent",
+          "skill": "scene_optimize",
+          "action": "setup_lod_chain",
+          "params": {
+            "lod_count": 5,
+            "reduction_ratio": 0.5
+          }
+        },
+        {
+          "step": 5,
+          "name": "Setup Lumen Equivalent",
+          "skill": "scene_optimize",
+          "action": "setup_lighting",
+          "params": {
+            "use_ssao": true,
+            "use_ssr": true,
+            "bake_lightmaps": true
+          }
+        }
+      ]
+    },
+    
+    "auto_bug_fix_workflow": {
+      "name": "Auto Bug Fix Workflow",
+      "description": "Automatically detect and fix all bugs in a Godot project",
+      "steps": [
+        {
+          "step": 1,
+          "name": "Scan Project",
+          "skill": "code_analysis",
+          "action": "scan_all_scripts",
+          "params": {
+            "check_types": ["syntax", "runtime", "logic"]
+          }
+        },
+        {
+          "step": 2,
+          "name": "Analyze Bugs",
+          "skill": "code_analysis",
+          "action": "analyze_bugs",
+          "params": {}
+        },
+        {
+          "step": 3,
+          "name": "Auto Fix Simple Bugs",
+          "skill": "auto_bug_fix",
+          "action": "fix_simple_bugs",
+          "params": {
+            "auto_apply": true,
+            "create_backup": true
+          }
+        },
+        {
+          "step": 4,
+          "name": "Report Complex Bugs",
+          "skill": "code_analysis",
+          "action": "generate_report",
+          "params": {
+            "include_suggestions": true
+          }
+        }
+      ]
+    },
+    
+    "blender_to_godot_pipeline": {
+      "name": "Blender to Godot Pipeline",
+      "description": "Complete pipeline from Blender to Godot with live sync",
+      "steps": [
+        {
+          "step": 1,
+          "name": "Setup Blender Plugin",
+          "skill": "plugin_management",
+          "action": "install_blender_plugin",
+          "params": {}
+        },
+        {
+          "step": 2,
+          "name": "Setup Godot Plugin",
+          "skill": "plugin_management",
+          "action": "install_godot_plugin",
+          "params": {}
+        },
+        {
+          "step": 3,
+          "name": "Start Sync Server",
+          "skill": "network",
+          "action": "start_websocket_server",
+          "params": {
+            "port": 8765
+          }
+        },
+        {
+          "step": 4,
+          "name": "Connect Blender",
+          "skill": "network",
+          "action": "connect_client",
+          "params": {
+            "client": "blender"
+          }
+        },
+        {
+          "step": 5,
+          "name": "Connect Godot",
+          "skill": "network",
+          "action": "connect_client",
+          "params": {
+            "client": "godot"
+          }
+        },
+        {
+          "step": 6,
+          "name": "Enable Auto Sync",
+          "skill": "workflow",
+          "action": "enable_auto_sync",
+          "params": {
+            "sync_mesh": true,
+            "sync_material": true,
+            "sync_transform": true
+          }
+        }
+      ]
+    }
+  },
+  
+  "integration_points": {
+    "stepfun_api": {
+      "endpoints": {
+        "chat": "/chat/completions",
+        "embeddings": "/embeddings",
+        "images": "/images/generations"
+      },
+      "mcp_bridge": {
+        "enabled": true,
+        "tools_endpoint": "/mcp/tools",
+        "workflows_endpoint": "/mcp/workflows",
+        "execute_endpoint": "/mcp/execute"
+      }
+    },
+    
+    "godot_plugin": {
+      "features": [
+        "StepFun chat interface in editor",
+        "One-click bug fixing",
+        "AI-powered code generation",
+        "Asset optimization suggestions",
+        "Workflow automation"
+      ],
+      "ui_components": [
+        "ChatPanel",
+        "BugFixPanel",
+        "WorkflowPanel",
+        "CodeGenPanel"
+      ]
+    }
+  },
+  
+  "configuration": {
+    "auto_fix": {
+      "enabled": true,
+      "backup_before_fix": true,
+      "max_fixes_per_session": 100,
+      "allowed_fix_types": [
+        "syntax_error",
+        "type_mismatch",
+        "missing_file",
+        "undefined_function"
+      ]
+    },
+    
+    "workflow_execution": {
+      "default_timeout": 300,
+      "max_concurrent_workflows": 5,
+      "retry_failed_steps": true,
+      "retry_count": 3
+    },
+    
+    "logging": {
+      "level": "info",
+      "save_to_file": true,
+      "log_path": "user://stepfun_mcp_logs/"
+    }
+  }
+}

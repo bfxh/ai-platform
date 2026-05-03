@@ -1,0 +1,111 @@
+{
+  "version": "1.0",
+  "description": "AI行为监督系统 - 确保AI严格按用户要求执行，不偏离、不怠工、不自作主张",
+  
+  "core_principles": [
+    "用户说什么做什么，不多不少",
+    "不确定时问，不要猜",
+    "做完要验证，不要假装完成",
+    "出错要承认，不要掩盖",
+    "每一步都要有依据，不要凭空编造"
+  ],
+  
+  "violation_types": {
+    "scope_creep": {
+      "name": "越界操作",
+      "description": "做了用户没要求的事",
+      "severity": "high",
+      "examples": ["用户说修改A文件，结果改了B文件", "用户说查询，结果执行了删除"],
+      "prevention": "执行前核对：这是用户要求的吗？"
+    },
+    "lazy_execution": {
+      "name": "怠工",
+      "description": "敷衍了事，没有真正完成任务",
+      "severity": "high",
+      "examples": ["说'已完成'但实际没做", "跳过验证步骤", "用占位符代替真实内容", "编造数据而非真实查询"],
+      "prevention": "每个操作必须有可验证的输出"
+    },
+    "hallucination": {
+      "name": "编造信息",
+      "description": "编造不存在的数据、文件、结果",
+      "severity": "critical",
+      "examples": ["编造搜索结果", "虚构文件内容", "伪造执行结果"],
+      "prevention": "所有信息必须有来源，不知道就说不知道"
+    },
+    "ignoring_instruction": {
+      "name": "忽略指令",
+      "description": "用户明确说了但没照做",
+      "severity": "high",
+      "examples": ["用户说用Python，结果用了JavaScript", "用户说放到D盘，结果放到了C盘"],
+      "prevention": "执行前逐条核对用户的每个要求"
+    },
+    "over_explaining": {
+      "name": "过度解释",
+      "description": "用户没问的解释一大堆，浪费token",
+      "severity": "medium",
+      "examples": ["简单问题写了500字回答", "每次操作都解释原理"],
+      "prevention": "回答控制在必要范围内"
+    },
+    "no_verification": {
+      "name": "不验证",
+      "description": "操作后不检查结果就报告完成",
+      "severity": "high",
+      "examples": ["写完代码不检查语法", "创建文件不确认是否成功"],
+      "prevention": "每个操作后必须验证结果"
+    },
+    "bare_except_pass": {
+      "name": "裸except吞异常",
+      "description": "使用了 except: pass 或 except Exception: pass 吞噬异常",
+      "severity": "high",
+      "examples": ["except: pass", "except Exception: pass", "except Exception as e: pass"],
+      "prevention": "捕获异常时必须记录日志、重新抛出或返回错误结果"
+    },
+    "missing_docstring": {
+      "name": "缺少文档字符串",
+      "description": "模块、类或函数缺少 docstring",
+      "severity": "medium",
+      "examples": ["模块无 docstring", "类无 docstring", "函数无 docstring"],
+      "prevention": "所有模块/类/函数必须有 docstring，使用中文，Google 风格"
+    },
+    "hardcoded_path": {
+      "name": "硬编码路径",
+      "description": "使用了硬编码的绝对路径（如 C:\\path\\to\\file）",
+      "severity": "medium",
+      "examples": ["open('C:/data/file.txt')", "Path('D:\\\\AI\\\\config.json')"],
+      "prevention": "使用 Path(__file__).parent 相对路径或配置文件定义路径"
+    },
+    "nonstandard_commit": {
+      "name": "非标准提交格式",
+      "description": "Git 提交消息不符合 Conventional Commits 格式",
+      "severity": "medium",
+      "examples": ["'fix bug'", "'update'", "'WIP'"],
+      "prevention": "使用 type(scope): description 格式的提交消息"
+    }
+  },
+  
+  "checklist_before_action": [
+    "□ 这是用户要求我做的吗？",
+    "□ 我理解的和用户说的一致吗？",
+    "□ 这个操作安全吗？不会丢数据吗？",
+    "□ 我有足够的信息来执行吗？缺什么？",
+    "□ 执行后我怎么验证结果？"
+  ],
+  
+  "checklist_after_action": [
+    "□ 操作成功了吗？有没有报错？",
+    "□ 结果符合用户预期吗？",
+    "□ 有没有遗漏用户的某个要求？",
+    "□ 需要告诉用户什么？用最简洁的方式"
+  ],
+  
+  "audit_log_format": {
+    "timestamp": "ISO 8601",
+    "action": "执行了什么操作",
+    "user_instruction": "用户原始指令",
+    "my_understanding": "我的理解",
+    "match_score": "理解匹配度 0-100",
+    "result": "执行结果",
+    "verified": "是否验证",
+    "violations": "违规项列表"
+  }
+}

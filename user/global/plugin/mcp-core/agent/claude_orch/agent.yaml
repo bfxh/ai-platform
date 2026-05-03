@@ -1,0 +1,82 @@
+# Claude Orchestrator Agent — 编排代理描述符
+# 由 Dispatcher.scan() 自动发现并注册
+
+name: claude_orchestrator
+description: "Claude 编排代理 — 分析请求意图，将任务路由到合适的子代理执行。负责任务分解、上下文注入、和结果汇总。"
+version: "1.0.0"
+author: "Multica AI Platform"
+type: orchestrator
+
+# ============================================================
+# 模型配置
+# ============================================================
+model:
+  # 主模型 (需要 API key)
+  primary:
+    provider: anthropic
+    model: claude-3-sonnet-20240229
+
+  # 回退模型 (本地 Ollama, 免费)
+  fallback:
+    provider: ollama
+    model: qwen2.5-coder:7b
+    endpoint: http://localhost:11434/v1
+
+  # 回退检测: 连续失败 N 次后自动切换
+  fallback_threshold: 3
+
+# ============================================================
+# 路由配置
+# ============================================================
+routing:
+  # 路由规则文件 (相对于 agent.yaml 所在目录)
+  rules_file: routing_rules.yaml
+
+  # 默认代理 (无匹配规则时使用)
+  default_agent: trae_control
+
+  # 最长分析时间 (秒)
+  max_analysis_time: 30
+
+# ============================================================
+# 能力描述
+# ============================================================
+capabilities:
+  - intent_analysis        # 意图分析
+  - task_decomposition     # 任务分解
+  - context_injection      # 上下文注入
+  - result_aggregation     # 结果汇总
+  - fallback_handling      # 回退处理
+
+# ============================================================
+# 执行配置
+# ============================================================
+execution:
+  # 超时时间 (秒)
+  timeout: 300
+
+  # 最大重试次数
+  max_retries: 2
+
+  # 子代理任务超时
+  sub_agent_timeout: 120
+
+# ============================================================
+# 支持的子代理列表
+# ============================================================
+sub_agents:
+  - name: trae_control
+    type: ide
+    description: "TRAE IDE 控制代理 — 文件读写、代码生成、终端命令"
+
+  - name: qoder
+    type: code_analysis
+    description: "代码分析代理 — 代码审查、质量扫描、安全检测"
+
+  - name: trae_web_search
+    type: research
+    description: "网络搜索代理 — 搜索技术文档和解决方案"
+
+  - name: trae_desktop_automation
+    type: automation
+    description: "桌面自动化代理 — GUI 操作、窗口管理、系统控制"

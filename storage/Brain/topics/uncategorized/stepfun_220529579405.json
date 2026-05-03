@@ -1,0 +1,29 @@
+{
+  "id": "stepfun_220529579405",
+  "date": "2026/3/11 13:06:27",
+  "title": "阶跃AI对话 [对话]",
+  "summary": "会话220529579405，9次工具调用，使用工具: terminal_execute",
+  "tags": [
+    "对话"
+  ],
+  "source": "stepfun_log",
+  "session_id": "220529579405193216",
+  "user_instructions": [],
+  "results": [],
+  "score": 5,
+  "tools_used": [
+    "terminal_execute"
+  ],
+  "files_touched": [
+    "C://Users//abc//AppData//Local//*Douyin*//",
+    "C://Users//abc//AppData//",
+    "C://Users//abc//Desktop//",
+    "C://ProgramData//Microsoft//Windows//Start",
+    "C://Users//abc//",
+    "D:////"
+  ],
+  "commands": [],
+  "first_time": "2026/3/11 13:06:27",
+  "last_time": "2026/3/11 13:11:28",
+  "task_count": 9
+}

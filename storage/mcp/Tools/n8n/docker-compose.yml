@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: gstack_n8n
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+      - EXECUTIONS_MODE=regular
+      - EXECUTIONS_TIMEOUT=300
+      - GENERIC_TIMEZONE=Asia/Shanghai
+    volumes:
+      - ./workflows:/home/node/.n8n/workflows
+      - ./data:/home/node/.n8n
+    networks:
+      - gstack_network
+
+networks:
+  gstack_network:
+    driver: bridge

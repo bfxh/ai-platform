@@ -1,0 +1,30 @@
+name = "{项目名}"
+version = "0.1.0"
+description = ""
+
+[workspace]
+external_path = "."
+
+[workspace.ai_tools]
+python = { version = "3.10", role = "runtime" }
+
+[workspace.skills]
+
+[workspace.test_phases]
+launch = { order = 1, description = "启动", timeout = 60, required = true }
+core = { order = 2, description = "核心功能", timeout = 120, required = true }
+stability = { order = 3, description = "稳定性", timeout = 180, required = false }
+exit = { order = 4, description = "退出", timeout = 30, required = true }
+
+[includes]
+skills = []
+mcps = []
+clis = []
+workflows = []
+agents = []
+
+[environment]
+  [[environment.items]]
+  name = "PROJECT_DIR"
+  description = "项目目录"
+  example = "/python/projects/{项目名}"

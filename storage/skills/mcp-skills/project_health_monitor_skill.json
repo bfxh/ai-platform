@@ -1,0 +1,125 @@
+{
+  "version": "1.0.0",
+  "name": "Project Health Monitor Skill",
+  "description": "自动监控和修复Godot项目健康状态的MCP技能",
+  
+  "tools": [
+    {
+      "name": "check_project_health",
+      "description": "检查项目健康状态",
+      "parameters": {
+        "project_path": "string",
+        "check_types": ["parse_errors", "missing_files", "autoload_conflicts", "plugin_configs", "resource_refs"]
+      },
+      "return_type": {
+        "status": "enum[healthy, issues_found, critical]",
+        "issues": "array",
+        "warnings": "array",
+        "summary": "object"
+      }
+    },
+    
+    {
+      "name": "auto_fix_issues",
+      "description": "自动修复检测到的问题",
+      "parameters": {
+        "issues": "array",
+        "backup": "boolean"
+      },
+      "return_type": {
+        "fixed": "array",
+        "failed": "array",
+        "report": "object"
+      }
+    },
+    
+    {
+      "name": "monitor_project",
+      "description": "持续监控项目状态",
+      "parameters": {
+        "interval": "integer",
+        "auto_fix": "boolean"
+      },
+      "return_type": {
+        "monitoring_id": "string",
+        "status": "string"
+      }
+    },
+    
+    {
+      "name": "stop_monitoring",
+      "description": "停止监控",
+      "parameters": {
+        "monitoring_id": "string"
+      },
+      "return_type": {
+        "success": "boolean"
+      }
+    },
+    
+    {
+      "name": "get_health_history",
+      "description": "获取健康检查历史",
+      "parameters": {
+        "limit": "integer"
+      },
+      "return_type": {
+        "history": "array"
+      }
+    }
+  ],
+  
+  "workflows": {
+    "continuous_monitoring": {
+      "name": "Continuous Project Monitoring",
+      "description": "持续监控项目并在发现问题时自动修复",
+      "steps": [
+        {
+          "step": 1,
+          "name": "Initial Health Check",
+          "tool": "check_project_health",
+          "description": "执行初始健康检查"
+        },
+        {
+          "step": 2,
+          "name": "Auto Fix Issues",
+          "tool": "auto_fix_issues",
+          "description": "自动修复发现的问题",
+          "condition": "{{steps.1.output.issues.size > 0}}"
+        },
+        {
+          "step": 3,
+          "name": "Start Monitoring",
+          "tool": "monitor_project",
+          "description": "启动持续监控"
+        }
+      ]
+    },
+    
+    "pre_commit_check": {
+      "name": "Pre-Commit Health Check",
+      "description": "提交前检查项目健康状态",
+      "steps": [
+        {
+          "step": 1,
+          "name": "Check Health",
+          "tool": "check_project_health",
+          "description": "检查项目健康"
+        },
+        {
+          "step": 2,
+          "name": "Fix Issues",
+          "tool": "auto_fix_issues",
+          "description": "修复问题",
+          "condition": "{{steps.1.output.issues.size > 0}}"
+        },
+        {
+          "step": 3,
+          "name": "Verify Fix",
+          "tool": "check_project_health",
+          "description": "验证修复结果"
+        }
+      ]
+    }
+  }
+}

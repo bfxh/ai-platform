@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="DitherShader" inherits="BaseShader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Post-process effect class that implements bayer dithering.
+	</brief_description>
+	<description>
+		Post-process effect class that implements bayer dithering.
+	</description>
+	<tutorials>
+	</tutorials>
+	<members>
+		<member name="m_gamma_correction" type="EncapsuledData<float>" setter="set" getter="get" default="2.2">
+			Controls the gamma correction to ensure visibility on the screen with the bayer dithering effect applied.
+		</member>
+	</members>
+</class>

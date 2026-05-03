@@ -1,0 +1,91 @@
+# Test PlayGodot against our custom Godot fork
+name: Integration Tests (Custom Godot)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'python/**'
+      - 'examples/**'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+  # Also run when Godot fork is updated
+  repository_dispatch:
+    types: [godot-build-complete]
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    name: Test with Custom Godot
+
+    steps:
+      - name: Checkout PlayGodot
+        uses: actions/checkout@v4
+
+      - name: Download custom Godot
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          repo: Randroids-Dojo/godot
+          workflow: build-automation.yml
+          branch: automation
+          name: linux-editor-mono
+          path: godot-bin
+
+      - name: Setup custom Godot
+        run: |
+          chmod +x godot-bin/godot.linuxbsd.editor.x86_64.mono
+          sudo mv godot-bin/godot.linuxbsd.editor.x86_64.mono /usr/local/bin/godot
+          echo "Using custom Godot fork"
+          godot --version
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          cd python
+          pip install -e ".[dev]"
+
+      - name: Run unit tests with coverage
+        run: |
+          cd python
+          pytest tests/ -v --cov=playgodot --cov-report=xml --cov-report=term-missing
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        if: always()
+        with:
+          files: python/coverage.xml
+          fail_ci_if_error: false
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Import Godot project
+        run: |
+          echo "Importing tic-tac-toe project..."
+          timeout 30 godot --headless --path examples/tic-tac-toe/godot --import --quit || true
+          echo "Import complete"
+          echo "Project structure:"
+          ls -la examples/tic-tac-toe/godot/
+          cat examples/tic-tac-toe/godot/project.godot
+
+      - name: Test Godot headless startup
+        run: |
+          echo "Testing if Godot can start and run autoload..."
+          cd examples/tic-tac-toe/godot
+          timeout 10 godot --headless --path . --quit-after 3 2>&1 || echo "Godot exited with code $?"
+          echo "Godot startup test complete"
+
+      - name: Run tic-tac-toe integration tests
+        run: |
+          cd examples/tic-tac-toe
+          pytest tests/ -v -s --tb=short
+        timeout-minutes: 3
+
+      - name: Test summary
+        if: always()
+        run: |
+          echo "## Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "Tested with **custom Godot fork** from Randroids-Dojo/godot" >> $GITHUB_STEP_SUMMARY

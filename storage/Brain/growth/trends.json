@@ -1,0 +1,65 @@
+{
+  "accuracy": {
+    "current": 0.8499999999999999,
+    "history": [
+      {
+        "date": "2026-04-27T21:04:45.285949",
+        "value": 0.95,
+        "event": "error_resolved"
+      },
+      {
+        "date": "2026-04-27T21:05:40.843250",
+        "value": 0.8999999999999999,
+        "event": "error_resolved"
+      },
+      {
+        "date": "2026-04-27T21:06:15.902046",
+        "value": 0.8499999999999999,
+        "event": "error_resolved"
+      }
+    ],
+    "target": 0.95
+  },
+  "efficiency": {
+    "current": 1.0,
+    "history": [
+      {
+        "date": "2026-04-27T13:05:41.529505",
+        "value": 1.0,
+        "event": "task_complete"
+      }
+    ],
+    "target": 0.9
+  },
+  "compliance": {
+    "current": 1.0,
+    "history": [],
+    "target": 1.0
+  },
+  "knowledge": {
+    "current": 0,
+    "history": [],
+    "target": 100
+  },
+  "adaptability": {
+    "current": 1.0,
+    "history": [
+      {
+        "date": "2026-04-27T13:07:01.474853",
+        "value": 1.0,
+        "event": "task_complete"
+      },
+      {
+        "date": "2026-04-27T13:07:17.677633",
+        "value": 1.0,
+        "event": "task_complete"
+      },
+      {
+        "date": "2026-04-27T13:14:29.440419",
+        "value": 1.0,
+        "event": "task_complete"
+      }
+    ],
+    "target": 0.8
+  }
+}

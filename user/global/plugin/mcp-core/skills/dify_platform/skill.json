@@ -1,0 +1,47 @@
+{
+  "name": "dify_platform",
+  "version": "1.0.0",
+  "description": "Dify LLM 应用开发平台 - 支持构建、部署和管理 AI 应用",
+  "author": "langgenius",
+  "type": "mcp-skill",
+  "entry_point": "skill.py",
+  "actions": [
+    {
+      "name": "start_dify",
+      "description": "启动 Dify 服务",
+      "parameters": {
+        "port": "端口号",
+        "host": "主机地址"
+      }
+    },
+    {
+      "name": "stop_dify",
+      "description": "停止 Dify 服务"
+    },
+    {
+      "name": "create_application",
+      "description": "创建 AI 应用",
+      "parameters": {
+        "name": "应用名称",
+        "type": "应用类型"
+      }
+    },
+    {
+      "name": "deploy_application",
+      "description": "部署应用",
+      "parameters": {
+        "app_id": "应用ID"
+      }
+    },
+    {
+      "name": "list_applications",
+      "description": "列出所有应用"
+    }
+  ],
+  "dependencies": [],
+  "env_vars": {
+    "DIFY_HOST": "localhost",
+    "DIFY_PORT": "5001",
+    "DIFY_PATH": "/python/downloads/all_skills/dify"
+  }
+}

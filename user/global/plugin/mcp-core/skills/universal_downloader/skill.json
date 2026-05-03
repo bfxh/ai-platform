@@ -1,0 +1,63 @@
+{
+  "name": "universal_downloader",
+  "version": "1.0.0",
+  "description": "通用下载器 - 支持下载任何东西：文件、GitHub仓库、项目、模型、文档等",
+  "author": "MCP Core Team",
+  "type": "mcp-skill",
+  "entry_point": "skill.py",
+  "actions": [
+    {
+      "name": "download_file",
+      "description": "下载文件",
+      "parameters": {
+        "url": "文件URL",
+        "target_path": "保存路径"
+      }
+    },
+    {
+      "name": "download_github",
+      "description": "下载GitHub仓库",
+      "parameters": {
+        "repo_url": "仓库URL或full_name",
+        "target_dir": "目标目录"
+      }
+    },
+    {
+      "name": "download_github_zip",
+      "description": "下载GitHub仓库ZIP",
+      "parameters": {
+        "repo_full_name": "仓库全名 (owner/repo)",
+        "target_dir": "目标目录"
+      }
+    },
+    {
+      "name": "download_skill",
+      "description": "下载Skill",
+      "parameters": {
+        "skill_repo": "Skill仓库名",
+        "target_dir": "目标目录"
+      }
+    },
+    {
+      "name": "download_model",
+      "description": "下载AI模型",
+      "parameters": {
+        "model_url": "模型URL",
+        "target_dir": "目标目录"
+      }
+    },
+    {
+      "name": "batch_download",
+      "description": "批量下载",
+      "parameters": {
+        "urls": "URL列表",
+        "target_dir": "目标目录"
+      }
+    }
+  ],
+  "dependencies": ["requests"],
+  "env_vars": {
+    "DOWNLOAD_CACHE": "/python/downloads",
+    "GITHUB_TOKEN": ""
+  }
+}

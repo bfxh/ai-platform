@@ -1,0 +1,5 @@
+# Konfiguracja logowania
+"""
+logger.py
+"""
+

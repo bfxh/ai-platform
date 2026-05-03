@@ -1,0 +1,15 @@
+{
+  "id": "trae_fee7f55561a121c7_1777514973_workbench_auxiliarybar_viewCon_0",
+  "title": "[metadata] workbench.auxiliarybar.viewContainersWor",
+  "content": "[{\"id\": \"workbench.panel.chat\", \"visible\": false}, {\"id\": \"workbench.viewContainer.agentSessions\", \"visible\": false}, {\"id\": \"aicoding-chat-24e816e5-d596-40af-8e82-5c676d016d3e\", \"visible\": true}, {\"id\": \"aicoding-chat-e80967fb-2108-4da1-ba4b-092fca374c03\", \"visible\": false}, {\"id\": \"aicoding-chat-88617a34-a6c5-4e20-bd5b-b31985ff8bd7\", \"visible\": false}, {\"id\": \"aicoding-chat-3138c12d-a278-4082-add1-b86e70875f7c\", \"visible\": false}, {\"id\": \"aicoding-chat-fa9dd0d6-59d2-45d2-b399-96f8b15c28ed\", \"v",
+  "tags": [
+    "trae",
+    "conversation",
+    "metadata",
+    "workbench"
+  ],
+  "importance": 4,
+  "created_at": "2026-04-30T10:09:33.598534",
+  "updated_at": "2026-04-30T10:09:33.598534",
+  "access_count": 0
+}

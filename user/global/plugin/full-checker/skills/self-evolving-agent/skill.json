@@ -1,0 +1,11 @@
+{
+  "name": "self-evolving-agent",
+  "display_name": "自进化Agent",
+  "description": "自动将任务执行路径结晶为可复用技能",
+  "version": "1.0.0",
+  "category": "agent",
+  "source": "https://github.com/lsdefine/GenericAgent",
+  "project_path": "/python\\GenericAgent",
+  "memory_layers": ["L1_working", "L2_skill", "L3_longterm", "L4_archive"],
+  "atomic_tools": 9
+}

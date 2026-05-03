@@ -1,0 +1,88 @@
+name = "game-test"
+version = "2.0.0"
+description = "游戏�动化测试 - 玩���完整测试流�"
+
+[workspace]
+external_path = "/python/projects/game_test"
+
+[workspace.ai_tools]
+trae = { version = "1.107", role = "dispatcher" }
+ollama = { version = "0.21", path = "%OLLAMA_DIR%/ollama.exe", role = "model_server" }
+python = { version = "3.12", path = "%USERPROFILE%/AppData/Local/Programs/Python/Python312/python.exe", role = "runtime" }
+pyautogui = { version = "0.9+", role = "automation", description = "GUI �动化操控" }
+pillow = { version = "10+", role = "screenshot", description = "�图验�" }
+
+[workspace.skills]
+explore = { type = "skill", ref = "explore", description = "玩���操控：移动/跳跃/攻击/交互/视�" }
+verify = { type = "mcp", ref = "game-state", description = "监听游戏状�：位置/崩溃/帧率" }
+launch = { type = "cli", ref = "game-launcher", description = "�动游戏（�持启动器/直接/平台���" }
+test_loop = { type = "workflow", ref = "test-loop", description = "��测试工作�" }
+
+[workspace.test_phases]
+launch = { order = 1, description = "�动游戏，处理�动器/更新", timeout = 180, required = true }
+menu = { order = 2, description = "主菜单�航，进入游戏�项", timeout = 30, required = true }
+load = { order = 3, description = "等待游戏/世界加载完成", timeout = 120, required = true }
+movement = { order = 4, description = "基�操控：WASD移动+跳跃+视�", timeout = 60, required = true }
+gameplay = { order = 5, description = "玩法测试：攻�/交互/物品/建�", timeout = 120, required = false }
+stability = { order = 6, description = "稳定性验证：持续运�+内存监控", timeout = 300, required = false }
+exit = { order = 7, description = "保存��+日志收集", timeout = 30, required = true }
+
+[workspace.launch_types]
+direct = { description = "双击exe直接��", detect = "进程立即出现" }
+launcher = { description = "先弹出启动器窗口", detect = "�动器窗口标�", action = "点击�动按�" }
+platform = { description = "Steam/Epic等平�", detect = "平台协�链接", action = "调用平台CLI" }
+script = { description = "bat/sh/py包�脚�", detect = "脚本文件", action = "执�脚�" }
+
+[workspace.menu_types]
+standard = { description = "标准菜单", action = "点击单人游戏/��" }
+character_select = { description = "角色选择", action = "创建/选择角色" }
+save_select = { description = "存档选择", action = "选择存档或创建新世界" }
+mode_select = { description = "模式选择", action = "选择游戏模式" }
+
+[environment]
+  [[environment.items]]
+  name = "GAME_PATH"
+  description = "游戏�执�文件路�"
+  example = "C:/Games/game.exe"
+
+  [[environment.items]]
+  name = "GAME_WINDOW_TITLE"
+  description = "游戏窗口标�关��"
+  example = "Minecraft"
+
+  [[environment.items]]
+  name = "LAUNCHER_TITLE"
+  description = "�动器窗口标�（如有�"
+  example = "HMCL"
+
+  [[environment.items]]
+  name = "GAME_LOG_PATH"
+  description = "游戏日志文件��"
+  example = "C:/Users/xxx/.minecraft/versions/1.20.4/logs/latest.log"
+
+[software]
+  [[software.items]]
+  name = "game"
+  path = "game.exe"
+  version = "1.0"
+  params = ["--editor", "--map", "TestLab"]
+
+[[abilities]]
+  type = "skill"
+  name = "explore"
+  path = "skills/explore.py"
+
+[[abilities]]
+  type = "mcp"
+  name = "game-state"
+  path = "mcps/game-state/mcp.json"
+
+[[abilities]]
+  type = "cli"
+  name = "game-launcher"
+  path = "clis/game-launcher/cli.yaml"
+
+[[abilities]]
+  type = "workflow"
+  name = "test-loop"
+  path = "workflows/test-loop.yaml"

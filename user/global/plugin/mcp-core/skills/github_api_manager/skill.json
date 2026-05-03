@@ -1,0 +1,66 @@
+{
+  "name": "github_api_manager",
+  "version": "1.0.0",
+  "description": "GitHub API管理 - 获取和管理GitHub所有API端点",
+  "author": "MCP Core Team",
+  "created": "2026-04-09",
+  "enabled": true,
+  "category": "development",
+  "tags": ["github", "api", "development", "testing", "integration"],
+  "entry_point": "skill.py",
+  "class_name": "GitHubAPIManager",
+  "actions": [
+    {
+      "name": "get_all_apis",
+      "description": "获取所有GitHub API端点",
+      "params": {}
+    },
+    {
+      "name": "search_apis",
+      "description": "搜索API端点",
+      "params": {
+        "query": {"type": "string", "required": true, "description": "搜索查询"}
+      }
+    },
+    {
+      "name": "update_apis",
+      "description": "更新API端点信息",
+      "params": {}
+    },
+    {
+      "name": "get_api_details",
+      "description": "获取API详情",
+      "params": {
+        "api_id": {"type": "string", "required": true, "description": "API ID"}
+      }
+    },
+    {
+      "name": "test_api",
+      "description": "测试API调用",
+      "params": {
+        "endpoint": {"type": "string", "required": true, "description": "API端点"},
+        "method": {"type": "string", "required": true, "description": "HTTP方法"},
+        "params": {"type": "object", "required": false, "description": "API参数"}
+      }
+    },
+    {
+      "name": "export_apis",
+      "description": "导出API端点",
+      "params": {
+        "output_file": {"type": "string", "required": false, "default": "github_apis.json", "description": "导出文件路径"}
+      }
+    }
+  ],
+  "features": [
+    "API管理",
+    "API测试",
+    "缓存管理",
+    "导出功能"
+  ],
+  "dependencies": [
+    "requests"
+  ],
+  "output": {
+    "type": "json"
+  }
+}

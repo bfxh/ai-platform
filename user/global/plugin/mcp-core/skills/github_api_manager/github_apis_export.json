@@ -1,0 +1,103 @@
+{
+  "apis": [
+    {
+      "id": "github_rest_v3",
+      "name": "GitHub REST API v3",
+      "base_url": "https://api.github.com",
+      "description": "GitHub REST API v3",
+      "endpoints": [
+        {
+          "path": "/user",
+          "method": "GET",
+          "description": "获取当前用户信息"
+        },
+        {
+          "path": "/users/{username}",
+          "method": "GET",
+          "description": "获取指定用户信息"
+        },
+        {
+          "path": "/user/repos",
+          "method": "GET",
+          "description": "获取当前用户的仓库"
+        },
+        {
+          "path": "/repos/{owner}/{repo}",
+          "method": "GET",
+          "description": "获取指定仓库信息"
+        },
+        {
+          "path": "/repos/{owner}/{repo}/issues",
+          "method": "GET",
+          "description": "获取仓库的 issues"
+        },
+        {
+          "path": "/repos/{owner}/{repo}/pulls",
+          "method": "GET",
+          "description": "获取仓库的 pull requests"
+        },
+        {
+          "path": "/repos/{owner}/{repo}/commits",
+          "method": "GET",
+          "description": "获取仓库的 commits"
+        },
+        {
+          "path": "/repos/{owner}/{repo}/branches",
+          "method": "GET",
+          "description": "获取仓库的分支"
+        }
+      ]
+    },
+    {
+      "id": "github_graphql",
+      "name": "GitHub GraphQL API",
+      "base_url": "https://api.github.com/graphql",
+      "description": "GitHub GraphQL API",
+      "endpoints": [
+        {
+          "path": "/graphql",
+          "method": "POST",
+          "description": "GraphQL查询端点"
+        }
+      ]
+    },
+    {
+      "id": "github_apps",
+      "name": "GitHub Apps API",
+      "base_url": "https://api.github.com",
+      "description": "GitHub Apps API",
+      "endpoints": [
+        {
+          "path": "/app",
+          "method": "GET",
+          "description": "获取当前应用信息"
+        },
+        {
+          "path": "/apps/{app_slug}",
+          "method": "GET",
+          "description": "获取指定应用信息"
+        }
+      ]
+    },
+    {
+      "id": "github_oauth",
+      "name": "GitHub OAuth API",
+      "base_url": "https://github.com",
+      "description": "GitHub OAuth API",
+      "endpoints": [
+        {
+          "path": "/login/oauth/authorize",
+          "method": "GET",
+          "description": "OAuth授权端点"
+        },
+        {
+          "path": "/login/oauth/access_token",
+          "method": "POST",
+          "description": "获取访问令牌"
+        }
+      ]
+    }
+  ],
+  "last_updated": "2026-04-18T14:00:35.805741",
+  "exported_at": "2026-04-18T14:01:39.344864"
+}

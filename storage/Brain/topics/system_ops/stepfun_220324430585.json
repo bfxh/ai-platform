@@ -1,0 +1,30 @@
+{
+  "id": "stepfun_220324430585",
+  "date": "2026/3/10 23:30:56",
+  "title": "阶跃AI对话 [IronClaw,安装,开发,搜索]",
+  "summary": "会话220324430585，15次工具调用，使用工具: web_search,terminal_execute",
+  "tags": [
+    "IronClaw",
+    "安装",
+    "开发",
+    "搜索"
+  ],
+  "source": "stepfun_log",
+  "session_id": "220324430585909248",
+  "user_instructions": [],
+  "results": [],
+  "score": 5,
+  "tools_used": [
+    "web_search",
+    "terminal_execute"
+  ],
+  "files_touched": [
+    "D://Dev//编程语言//Git-Installer.exe//",
+    "C://Program",
+    "D://OpenClaw//ironclaw//"
+  ],
+  "commands": [],
+  "first_time": "2026/3/10 23:30:56",
+  "last_time": "2026/3/10 23:44:52",
+  "task_count": 15
+}

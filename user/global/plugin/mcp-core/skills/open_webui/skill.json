@@ -1,0 +1,48 @@
+{
+  "name": "open_webui",
+  "version": "1.0.0",
+  "description": "Open WebUI - 现代 AI 聊天界面，支持多种 LLM 模型",
+  "author": "open-webui",
+  "type": "mcp-skill",
+  "entry_point": "skill.py",
+  "actions": [
+    {
+      "name": "start_webui",
+      "description": "启动 Open WebUI 服务",
+      "parameters": {
+        "port": "端口号",
+        "host": "主机地址"
+      }
+    },
+    {
+      "name": "stop_webui",
+      "description": "停止 Open WebUI 服务"
+    },
+    {
+      "name": "create_chat",
+      "description": "创建聊天会话",
+      "parameters": {
+        "title": "聊天标题",
+        "model": "模型名称"
+      }
+    },
+    {
+      "name": "send_message",
+      "description": "发送消息",
+      "parameters": {
+        "chat_id": "聊天ID",
+        "message": "消息内容"
+      }
+    },
+    {
+      "name": "list_chats",
+      "description": "列出所有聊天会话"
+    }
+  ],
+  "dependencies": [],
+  "env_vars": {
+    "WEBUI_HOST": "localhost",
+    "WEBUI_PORT": "3000",
+    "WEBUI_PATH": "/python/downloads/all_skills/open-webui"
+  }
+}

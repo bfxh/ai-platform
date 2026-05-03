@@ -1,0 +1,19 @@
+{
+  "format_version": "1.0",
+  "generated_at": "2026-04-27T15:58:44.204485",
+  "active_agents": [
+    "Qoder_test",
+    "TRAE_test"
+  ],
+  "active_tasks": [
+    "task_test_1"
+  ],
+  "recently_modified_files": [
+    "/python/test.txt",
+    "/python/test.txt",
+    "/python/test.txt",
+    "/python/test.txt"
+  ],
+  "cross_agent_conflicts": [],
+  "merged_context": "2 agents active: Qoder_test(qoder): ; TRAE_test(trae): . 1 tasks in progress"
+}

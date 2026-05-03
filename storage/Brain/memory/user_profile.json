@@ -1,0 +1,62 @@
+{
+  "user_id": "default",
+  "created_at": "2026-03-11",
+  "updated_at": "2026-03-14",
+  
+  "preferences": {
+    "response_style": "简洁直接，不要废话",
+    "action_style": "直接执行，不给教程，不找借口",
+    "code_language": ["Python"],
+    "working_dirs": ["/python", "/python/MCP", "%DEVTOOLS_DIR%"],
+    "os": "Windows",
+    "important_rules": [
+      "严格按我说的做，不要自作主张",
+      "做完要验证，不要假装完成",
+      "不要开太多终端窗口",
+      "要高效，不要单一思维",
+      "会调取文件减少token",
+      "这些系统是要能成长的",
+      "要有监督机制防止怠工",
+      "说打开就直接打开，不要给教程",
+      "工具在D:\\Dev里，不要重复下载",
+      "用da.py操控桌面软件",
+      "每次新对话先读/python\\context.json"
+    ]
+  },
+  
+  "project_context": {
+    "current_project": "AI系统 (/python)",
+    "components": [
+      "MCP服务集群 (/python/MCP) - 22+个服务",
+      "Skills技能库 (/python/Skills) - 含model-extraction",
+      "Workflows工作流 (/python/Workflows) - 含model-extraction-pipeline",
+      "Brain大脑系统 (/python/Brain)",
+      "桌面自动化 (/python/MCP/da.py) - 59个动作",
+      "AI Master核心 (/python/ai_master.py)"
+    ],
+    "dev_tools": "%DEVTOOLS_DIR% - FModel/umodel/AssetRipper/Blender等",
+    "context_file": "/python/context.json - 启动上下文，每次新对话必读",
+    "tech_stack": ["Python", "JSON", "TCP Socket", "HTTP", "Windows API"],
+    "architecture": "单进程多线程 + 协调器 + Web UI + 桌面自动化"
+  },
+  
+  "interaction_history": {
+    "total_sessions": 2,
+    "common_tasks": [
+      "MCP服务开发和优化",
+      "系统架构设计",
+      "Bug修复和调试",
+      "功能扩展",
+      "游戏模型提取",
+      "桌面软件操控"
+    ],
+    "pain_points": [
+      "太多终端窗口导致卡顿",
+      "跨MCP通信超时问题",
+      "文件路径替换不生效",
+      "新对话不记得之前的配置和工具",
+      "说打开软件却给教程不执行",
+      "阶跃AI无法直接调取桌面软件"
+    ]
+  }
+}

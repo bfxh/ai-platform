@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "description": "AI记忆管理系统 - 跨会话记忆、知识积累、经验学习",
+  
+  "memory_types": {
+    "working_memory": {
+      "description": "当前会话的短期记忆",
+      "storage": "内存（会话结束即清除）",
+      "max_items": 50,
+      "strategy": "LRU淘汰最旧的"
+    },
+    "session_memory": {
+      "description": "会话摘要，持久化到文件",
+      "storage": "/python/Brain/memory/sessions/",
+      "format": "JSON",
+      "auto_save": true,
+      "retention": "最近100个会话",
+      "fields": ["session_id", "timestamp", "summary", "key_decisions", "user_preferences", "lessons_learned"]
+    },
+    "knowledge_base": {
+      "description": "从任务中积累的知识",
+      "storage": "/python/Brain/memory/knowledge/",
+      "categories": [
+        "user_preferences",
+        "project_context",
+        "error_solutions",
+        "tool_usage_patterns",
+        "domain_knowledge"
+      ]
+    }
+  },
+  
+  "user_profile": {
+    "file": "/python/Brain/memory/user_profile.json",
+    "tracks": [
+      "常用语言和框架",
+      "偏好的回答风格（简洁/详细）",
+      "常用文件路径",
+      "项目上下文",
+      "历史指令模式"
+    ]
+  },
+  
+  "recall_strategy": {
+    "description": "什么时候调取记忆",
+    "triggers": [
+      {"trigger": "用户提到之前的任务", "action": "搜索session_memory"},
+      {"trigger": "遇到类似的错误", "action": "搜索error_solutions"},
+      {"trigger": "用户说'像上次一样'", "action": "搜索最近的session_memory"},
+      {"trigger": "开始新任务", "action": "加载user_profile和project_context"}
+    ]
+  },
+  
+  "cleanup_policy": {
+    "session_memory": "保留最近100个，超出删除最旧的",
+    "knowledge_base": "按访问频率排序，低频知识归档",
+    "max_total_size_mb": 50
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "godot": {
+      "command": "python",
+      "args": [
+        "C:\\ruta\\a\\godot-mcp-bridge-cursor-ia\\mcp-server\\src\\main.py"
+      ],
+      "env": {
+        "GODOT_WS_URL": "ws://127.0.0.1:49631",
+        "GODOT_TOKEN_FILE": "C:\\Users\\TU_USUARIO\\AppData\\Roaming\\Godot\\app_userdata\\TU_PROYECTO\\godotbridge_token.txt"
+      }
+    },
+    "sprite-sheet-tools": {
+      "command": "python",
+      "args": [
+        "C:\\ruta\\a\\godot-mcp-bridge-cursor-ia\\sprite-sheet-mcp\\src\\main.py"
+      ],
+      "env": {
+        "SPRITE_MCP_VERBOSE": "0"
+      }
+    }
+  }
+}

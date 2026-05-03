@@ -1,0 +1,38 @@
+{
+  "name": "project-final-check",
+  "display_name": "项目最终检查",
+  "description": "项目最终全面检查 - 代码质量/测试/文档/安全/依赖",
+  "version": "1.0.0",
+  "category": "qa",
+  "check_types": [
+    {
+      "name": "code_quality",
+      "display_name": "代码质量",
+      "description": "检查代码结构、命名规范、超大文件等"
+    },
+    {
+      "name": "testing",
+      "display_name": "测试覆盖",
+      "description": "检查测试文件存在性和测试覆盖率"
+    },
+    {
+      "name": "documentation",
+      "display_name": "文档完整性",
+      "description": "检查README、文档目录、变更日志等"
+    },
+    {
+      "name": "security",
+      "display_name": "安全检查",
+      "description": "检查敏感信息、密钥保护等"
+    },
+    {
+      "name": "dependencies",
+      "display_name": "依赖管理",
+      "description": "检查锁文件、依赖版本等"
+    }
+  ],
+  "default_threshold": {
+    "min_test_files": 1,
+    "min_documentation": 1
+  }
+}

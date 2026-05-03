@@ -1,0 +1,22 @@
+{
+  "name": "dependency_checker",
+  "version": "1.0",
+  "description": "技能依赖锁检查器 - 验证 Skills 的依赖是否满足",
+  "category": "system",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "check": "检查指定技能的依赖",
+    "check-all": "检查所有技能的依赖",
+    "install": "安装缺失的依赖"
+  },
+  "rules": {
+    "requirement_file": "requirements.gstack",
+    "auto_install": false,
+    "python_version_check": true
+  },
+  "dependencies": [
+    "Python 3.6+",
+    "subprocess"
+  ]
+}

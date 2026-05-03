@@ -1,0 +1,4096 @@
+{
+  "migration_time": "2026-04-29T10:44:30.410904",
+  "total_migrated": 391,
+  "total_errors": 0,
+  "category_counts": {
+    "ai_models": 3,
+    "mcp_servers": 42,
+    "game_dev": 41,
+    "system_ops": 6,
+    "project_mgmt": 0,
+    "coding_patterns": 32,
+    "troubleshooting": 0,
+    "uncategorized": 267
+  },
+  "records": [
+    {
+      "file": "1f86c2169aab.json",
+      "from": "topics/",
+      "to": "ai_models/1f86c2169aab.json",
+      "category": "ai_models",
+      "tags": [
+        "Brain",
+        "AI",
+        "思维",
+        "记忆",
+        "监督",
+        "架构"
+      ],
+      "timestamp": "2026-04-29T10:44:30.159223"
+    },
+    {
+      "file": "2083df98a0fb.json",
+      "from": "topics/",
+      "to": "mcp_servers/2083df98a0fb.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "协调器",
+        "TCP",
+        "架构",
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.159223"
+    },
+    {
+      "file": "208665244cc1.json",
+      "from": "topics/",
+      "to": "mcp_servers/208665244cc1.json",
+      "category": "mcp_servers",
+      "tags": [
+        "IronClaw",
+        "安装",
+        "读取",
+        "MCP",
+        "文件"
+      ],
+      "timestamp": "2026-04-29T10:44:30.160225"
+    },
+    {
+      "file": "5a57fa15df5c.json",
+      "from": "topics/",
+      "to": "ai_models/5a57fa15df5c.json",
+      "category": "ai_models",
+      "tags": [
+        "MCP",
+        "网络",
+        "提示词",
+        "开发",
+        "AI"
+      ],
+      "timestamp": "2026-04-29T10:44:30.160225"
+    },
+    {
+      "file": "a88da8991a7a.json",
+      "from": "topics/",
+      "to": "mcp_servers/a88da8991a7a.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "优化",
+        "UI",
+        "架构"
+      ],
+      "timestamp": "2026-04-29T10:44:30.161223"
+    },
+    {
+      "file": "b1c1780459aa.json",
+      "from": "topics/",
+      "to": "ai_models/b1c1780459aa.json",
+      "category": "ai_models",
+      "tags": [
+        "收集",
+        "提示词",
+        "优化",
+        "AI"
+      ],
+      "timestamp": "2026-04-29T10:44:30.161223"
+    },
+    {
+      "file": "b4012bf0976b.json",
+      "from": "topics/",
+      "to": "game_dev/b4012bf0976b.json",
+      "category": "game_dev",
+      "tags": [
+        "提示词",
+        "开发",
+        "游戏",
+        "最佳实践"
+      ],
+      "timestamp": "2026-04-29T10:44:30.162223"
+    },
+    {
+      "file": "session_2026_03_12_main.json",
+      "from": "topics/",
+      "to": "mcp_servers/session_2026_03_12_main.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "架构",
+        "协调器",
+        "Brain",
+        "优化",
+        "开发",
+        "网络",
+        "提示词",
+        "IronClaw",
+        "安装",
+        "读取",
+        "收集"
+      ],
+      "timestamp": "2026-04-29T10:44:30.163224"
+    },
+    {
+      "file": "stepfun_216521282347.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216521282347.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.163224"
+    },
+    {
+      "file": "stepfun_216531609994.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216531609994.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.164223"
+    },
+    {
+      "file": "stepfun_216547559355.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216547559355.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.165224"
+    },
+    {
+      "file": "stepfun_216547578762.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216547578762.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.165224"
+    },
+    {
+      "file": "stepfun_216554933093.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216554933093.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.167222"
+    },
+    {
+      "file": "stepfun_216555028882.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216555028882.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.168222"
+    },
+    {
+      "file": "stepfun_216555144402.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216555144402.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.169221"
+    },
+    {
+      "file": "stepfun_216580168911.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216580168911.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.169221"
+    },
+    {
+      "file": "stepfun_216582798354.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216582798354.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.170224"
+    },
+    {
+      "file": "stepfun_216582840087.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216582840087.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.170224"
+    },
+    {
+      "file": "stepfun_216582859373.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216582859373.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.171222"
+    },
+    {
+      "file": "stepfun_216582954881.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216582954881.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.172222"
+    },
+    {
+      "file": "stepfun_216590800121.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216590800121.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.172222"
+    },
+    {
+      "file": "stepfun_216590900822.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216590900822.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.173224"
+    },
+    {
+      "file": "stepfun_216591041017.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216591041017.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.174308"
+    },
+    {
+      "file": "stepfun_216591076748.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_216591076748.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.174308"
+    },
+    {
+      "file": "stepfun_216614183937.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216614183937.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.175309"
+    },
+    {
+      "file": "stepfun_216621037312.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216621037312.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.176306"
+    },
+    {
+      "file": "stepfun_216621060439.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216621060439.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.177308"
+    },
+    {
+      "file": "stepfun_216621204057.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_216621204057.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.178311"
+    },
+    {
+      "file": "stepfun_216621264304.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216621264304.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.178311"
+    },
+    {
+      "file": "stepfun_216625136963.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216625136963.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.179306"
+    },
+    {
+      "file": "stepfun_216629942360.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_216629942360.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.179306"
+    },
+    {
+      "file": "stepfun_216629990775.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216629990775.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.180310"
+    },
+    {
+      "file": "stepfun_216829863450.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_216829863450.json",
+      "category": "mcp_servers",
+      "tags": [
+        "搜索",
+        "开发",
+        "MCP",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.181306"
+    },
+    {
+      "file": "stepfun_216834709070.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_216834709070.json",
+      "category": "game_dev",
+      "tags": [
+        "开发",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.181306"
+    },
+    {
+      "file": "stepfun_216835256460.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216835256460.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.182306"
+    },
+    {
+      "file": "stepfun_216835517254.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_216835517254.json",
+      "category": "mcp_servers",
+      "tags": [
+        "开发",
+        "MCP",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.184367"
+    },
+    {
+      "file": "stepfun_216836087616.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_216836087616.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.185366"
+    },
+    {
+      "file": "stepfun_216836540899.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_216836540899.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.186367"
+    },
+    {
+      "file": "stepfun_216836808173.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_216836808173.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.187367"
+    },
+    {
+      "file": "stepfun_216839303653.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216839303653.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.187367"
+    },
+    {
+      "file": "stepfun_216839604893.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_216839604893.json",
+      "category": "game_dev",
+      "tags": [
+        "安装",
+        "开发",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.190379"
+    },
+    {
+      "file": "stepfun_216840495268.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216840495268.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.190379"
+    },
+    {
+      "file": "stepfun_216841290818.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216841290818.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.191366"
+    },
+    {
+      "file": "stepfun_216841887055.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216841887055.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.191366"
+    },
+    {
+      "file": "stepfun_216842494198.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216842494198.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.192366"
+    },
+    {
+      "file": "stepfun_216843040942.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216843040942.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.193366"
+    },
+    {
+      "file": "stepfun_216844188164.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_216844188164.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.194141"
+    },
+    {
+      "file": "stepfun_219200186917.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219200186917.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.196136"
+    },
+    {
+      "file": "stepfun_219200423777.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219200423777.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.197135"
+    },
+    {
+      "file": "stepfun_219201485763.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219201485763.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.197135"
+    },
+    {
+      "file": "stepfun_219202401753.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219202401753.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.198136"
+    },
+    {
+      "file": "stepfun_219203393387.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_219203393387.json",
+      "category": "mcp_servers",
+      "tags": [
+        "开发",
+        "MCP",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.199136"
+    },
+    {
+      "file": "stepfun_219205782303.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219205782303.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.199136"
+    },
+    {
+      "file": "stepfun_219206034477.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219206034477.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.200136"
+    },
+    {
+      "file": "stepfun_219207621409.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219207621409.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.201135"
+    },
+    {
+      "file": "stepfun_219207942084.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219207942084.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.201135"
+    },
+    {
+      "file": "stepfun_219208713018.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219208713018.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.202135"
+    },
+    {
+      "file": "stepfun_219209753466.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219209753466.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.202135"
+    },
+    {
+      "file": "stepfun_219212524571.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219212524571.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.203135"
+    },
+    {
+      "file": "stepfun_219213037132.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_219213037132.json",
+      "category": "mcp_servers",
+      "tags": [
+        "开发",
+        "MCP",
+        "游戏",
+        "提示词"
+      ],
+      "timestamp": "2026-04-29T10:44:30.203135"
+    },
+    {
+      "file": "stepfun_219222786653.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219222786653.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.204147"
+    },
+    {
+      "file": "stepfun_219224455856.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219224455856.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.204663"
+    },
+    {
+      "file": "stepfun_219225396659.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219225396659.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.204663"
+    },
+    {
+      "file": "stepfun_219225522585.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219225522585.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.205661"
+    },
+    {
+      "file": "stepfun_219229746819.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219229746819.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.207661"
+    },
+    {
+      "file": "stepfun_219230665208.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219230665208.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.208661"
+    },
+    {
+      "file": "stepfun_219245317762.json",
+      "from": "topics/",
+      "to": "system_ops/stepfun_219245317762.json",
+      "category": "system_ops",
+      "tags": [
+        "搜索",
+        "安装",
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.209663"
+    },
+    {
+      "file": "stepfun_219246145965.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219246145965.json",
+      "category": "uncategorized",
+      "tags": [
+        "邮件"
+      ],
+      "timestamp": "2026-04-29T10:44:30.210661"
+    },
+    {
+      "file": "stepfun_219249509474.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_219249509474.json",
+      "category": "coding_patterns",
+      "tags": [
+        "搜索",
+        "开发",
+        "邮件"
+      ],
+      "timestamp": "2026-04-29T10:44:30.210661"
+    },
+    {
+      "file": "stepfun_219250050313.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219250050313.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.211661"
+    },
+    {
+      "file": "stepfun_219250751361.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219250751361.json",
+      "category": "game_dev",
+      "tags": [
+        "安装",
+        "开发",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.211661"
+    },
+    {
+      "file": "stepfun_219252234555.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219252234555.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.212661"
+    },
+    {
+      "file": "stepfun_219254730837.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219254730837.json",
+      "category": "game_dev",
+      "tags": [
+        "邮件",
+        "安装",
+        "游戏",
+        "搜索",
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.212661"
+    },
+    {
+      "file": "stepfun_219258507170.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219258507170.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.213661"
+    },
+    {
+      "file": "stepfun_219360824603.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219360824603.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.213661"
+    },
+    {
+      "file": "stepfun_219362041916.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219362041916.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.214679"
+    },
+    {
+      "file": "stepfun_219362345164.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219362345164.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.214679"
+    },
+    {
+      "file": "stepfun_219363006233.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219363006233.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.215671"
+    },
+    {
+      "file": "stepfun_219363345875.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219363345875.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.215671"
+    },
+    {
+      "file": "stepfun_219363518383.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219363518383.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.216670"
+    },
+    {
+      "file": "stepfun_219363685475.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_219363685475.json",
+      "category": "mcp_servers",
+      "tags": [
+        "开发",
+        "MCP",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.216670"
+    },
+    {
+      "file": "stepfun_219366329871.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219366329871.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.217670"
+    },
+    {
+      "file": "stepfun_219366494367.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219366494367.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.217670"
+    },
+    {
+      "file": "stepfun_219368969686.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219368969686.json",
+      "category": "game_dev",
+      "tags": [
+        "安装",
+        "开发",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.218670"
+    },
+    {
+      "file": "stepfun_219370114337.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219370114337.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.218670"
+    },
+    {
+      "file": "stepfun_219371084697.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219371084697.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.221682"
+    },
+    {
+      "file": "stepfun_219374418385.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219374418385.json",
+      "category": "uncategorized",
+      "tags": [
+        "画图"
+      ],
+      "timestamp": "2026-04-29T10:44:30.222670"
+    },
+    {
+      "file": "stepfun_219375085363.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219375085363.json",
+      "category": "game_dev",
+      "tags": [
+        "画图",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.223670"
+    },
+    {
+      "file": "stepfun_219375340079.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219375340079.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.223670"
+    },
+    {
+      "file": "stepfun_219375424644.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219375424644.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.224715"
+    },
+    {
+      "file": "stepfun_219376115350.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_219376115350.json",
+      "category": "coding_patterns",
+      "tags": [
+        "搜索",
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.230693"
+    },
+    {
+      "file": "stepfun_219379148733.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219379148733.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索",
+        "画图"
+      ],
+      "timestamp": "2026-04-29T10:44:30.235247"
+    },
+    {
+      "file": "stepfun_219379519610.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219379519610.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.235258"
+    },
+    {
+      "file": "stepfun_219380039662.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219380039662.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.236254"
+    },
+    {
+      "file": "stepfun_219381049516.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219381049516.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.236254"
+    },
+    {
+      "file": "stepfun_219382675543.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_219382675543.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.237254"
+    },
+    {
+      "file": "stepfun_219386818173.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219386818173.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.237254"
+    },
+    {
+      "file": "stepfun_219387360887.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_219387360887.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.238254"
+    },
+    {
+      "file": "stepfun_219389152840.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219389152840.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.238254"
+    },
+    {
+      "file": "stepfun_219400261824.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_219400261824.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.239253"
+    },
+    {
+      "file": "stepfun_219401669998.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219401669998.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.240254"
+    },
+    {
+      "file": "stepfun_219414392358.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219414392358.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.240254"
+    },
+    {
+      "file": "stepfun_219415941193.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219415941193.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.241255"
+    },
+    {
+      "file": "stepfun_219422621042.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219422621042.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.241255"
+    },
+    {
+      "file": "stepfun_219423401446.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219423401446.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.242254"
+    },
+    {
+      "file": "stepfun_219424500027.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219424500027.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.242254"
+    },
+    {
+      "file": "stepfun_219425377752.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219425377752.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.243325"
+    },
+    {
+      "file": "stepfun_219426317960.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219426317960.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.244254"
+    },
+    {
+      "file": "stepfun_219427699312.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219427699312.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.244254"
+    },
+    {
+      "file": "stepfun_219429593955.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219429593955.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.245254"
+    },
+    {
+      "file": "stepfun_219431670827.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219431670827.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.245254"
+    },
+    {
+      "file": "stepfun_219432528239.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219432528239.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.246254"
+    },
+    {
+      "file": "stepfun_219434300110.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219434300110.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.247254"
+    },
+    {
+      "file": "stepfun_219436741183.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219436741183.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.248255"
+    },
+    {
+      "file": "stepfun_219437433381.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219437433381.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.248255"
+    },
+    {
+      "file": "stepfun_219444223251.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219444223251.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.249255"
+    },
+    {
+      "file": "stepfun_219446658308.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219446658308.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.249255"
+    },
+    {
+      "file": "stepfun_219447059959.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219447059959.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.250254"
+    },
+    {
+      "file": "stepfun_219449780276.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219449780276.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.250254"
+    },
+    {
+      "file": "stepfun_219456353610.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219456353610.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.251254"
+    },
+    {
+      "file": "stepfun_219457057116.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219457057116.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.251254"
+    },
+    {
+      "file": "stepfun_219462104135.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219462104135.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.252255"
+    },
+    {
+      "file": "stepfun_219465128241.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219465128241.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.253254"
+    },
+    {
+      "file": "stepfun_219467198029.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219467198029.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.253911"
+    },
+    {
+      "file": "stepfun_219469460017.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219469460017.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.253911"
+    },
+    {
+      "file": "stepfun_219469663554.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219469663554.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.254910"
+    },
+    {
+      "file": "stepfun_219478477699.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219478477699.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.255914"
+    },
+    {
+      "file": "stepfun_219479122033.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219479122033.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.256914"
+    },
+    {
+      "file": "stepfun_219482741428.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219482741428.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.256914"
+    },
+    {
+      "file": "stepfun_219484255257.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219484255257.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.257914"
+    },
+    {
+      "file": "stepfun_219486321610.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219486321610.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.258914"
+    },
+    {
+      "file": "stepfun_219486636825.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219486636825.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.258914"
+    },
+    {
+      "file": "stepfun_219488766549.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219488766549.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.259912"
+    },
+    {
+      "file": "stepfun_219492697187.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219492697187.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.259912"
+    },
+    {
+      "file": "stepfun_219495546621.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219495546621.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.260914"
+    },
+    {
+      "file": "stepfun_219498731679.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219498731679.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.260914"
+    },
+    {
+      "file": "stepfun_219499859053.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219499859053.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.261914"
+    },
+    {
+      "file": "stepfun_219504626878.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219504626878.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.262913"
+    },
+    {
+      "file": "stepfun_219507367390.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219507367390.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.262913"
+    },
+    {
+      "file": "stepfun_219510761585.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219510761585.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.263924"
+    },
+    {
+      "file": "stepfun_219511119573.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219511119573.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.264935"
+    },
+    {
+      "file": "stepfun_219513714219.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219513714219.json",
+      "category": "game_dev",
+      "tags": [
+        "搜索",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.265922"
+    },
+    {
+      "file": "stepfun_219515419066.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219515419066.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.265922"
+    },
+    {
+      "file": "stepfun_219516196991.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219516196991.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.266922"
+    },
+    {
+      "file": "stepfun_219516848937.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219516848937.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.266922"
+    },
+    {
+      "file": "stepfun_219517683495.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219517683495.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.267924"
+    },
+    {
+      "file": "stepfun_219520579955.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219520579955.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.268438"
+    },
+    {
+      "file": "stepfun_219522665682.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219522665682.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.268438"
+    },
+    {
+      "file": "stepfun_219523286682.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219523286682.json",
+      "category": "uncategorized",
+      "tags": [
+        "画图"
+      ],
+      "timestamp": "2026-04-29T10:44:30.269436"
+    },
+    {
+      "file": "stepfun_219523527909.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219523527909.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.269436"
+    },
+    {
+      "file": "stepfun_219524006148.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219524006148.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.270436"
+    },
+    {
+      "file": "stepfun_219585122174.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219585122174.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.270436"
+    },
+    {
+      "file": "stepfun_219593385699.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219593385699.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.271436"
+    },
+    {
+      "file": "stepfun_219594118054.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219594118054.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.271436"
+    },
+    {
+      "file": "stepfun_219595555664.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219595555664.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.272436"
+    },
+    {
+      "file": "stepfun_219595908741.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219595908741.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.272436"
+    },
+    {
+      "file": "stepfun_219597825500.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219597825500.json",
+      "category": "uncategorized",
+      "tags": [
+        "画图"
+      ],
+      "timestamp": "2026-04-29T10:44:30.273467"
+    },
+    {
+      "file": "stepfun_219601091235.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219601091235.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.273981"
+    },
+    {
+      "file": "stepfun_219601422170.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219601422170.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.273981"
+    },
+    {
+      "file": "stepfun_219601854876.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219601854876.json",
+      "category": "uncategorized",
+      "tags": [
+        "画图"
+      ],
+      "timestamp": "2026-04-29T10:44:30.275992"
+    },
+    {
+      "file": "stepfun_219602490002.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219602490002.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.276980"
+    },
+    {
+      "file": "stepfun_219605957156.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219605957156.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.276980"
+    },
+    {
+      "file": "stepfun_219606677130.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219606677130.json",
+      "category": "uncategorized",
+      "tags": [
+        "画图"
+      ],
+      "timestamp": "2026-04-29T10:44:30.277980"
+    },
+    {
+      "file": "stepfun_219610073627.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219610073627.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.277980"
+    },
+    {
+      "file": "stepfun_219612112176.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219612112176.json",
+      "category": "game_dev",
+      "tags": [
+        "搜索",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.278980"
+    },
+    {
+      "file": "stepfun_219612755679.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219612755679.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.278980"
+    },
+    {
+      "file": "stepfun_219617144867.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219617144867.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.279980"
+    },
+    {
+      "file": "stepfun_219617254858.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219617254858.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.279980"
+    },
+    {
+      "file": "stepfun_219620259301.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219620259301.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.280980"
+    },
+    {
+      "file": "stepfun_219620526805.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219620526805.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.280980"
+    },
+    {
+      "file": "stepfun_219701878318.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219701878318.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.281980"
+    },
+    {
+      "file": "stepfun_219702236323.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219702236323.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.281980"
+    },
+    {
+      "file": "stepfun_219786331858.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219786331858.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.282980"
+    },
+    {
+      "file": "stepfun_219787085914.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219787085914.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.282980"
+    },
+    {
+      "file": "stepfun_219788343559.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219788343559.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.283989"
+    },
+    {
+      "file": "stepfun_219788733030.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219788733030.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.283989"
+    },
+    {
+      "file": "stepfun_219789509119.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219789509119.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.283989"
+    },
+    {
+      "file": "stepfun_219789612227.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219789612227.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.284988"
+    },
+    {
+      "file": "stepfun_219790909681.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219790909681.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.284988"
+    },
+    {
+      "file": "stepfun_219791798085.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_219791798085.json",
+      "category": "coding_patterns",
+      "tags": [
+        "搜索",
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.285988"
+    },
+    {
+      "file": "stepfun_219794147662.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219794147662.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.286986"
+    },
+    {
+      "file": "stepfun_219794518846.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219794518846.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.286986"
+    },
+    {
+      "file": "stepfun_219797946729.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_219797946729.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.287990"
+    },
+    {
+      "file": "stepfun_219798332785.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219798332785.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.287990"
+    },
+    {
+      "file": "stepfun_219798566232.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219798566232.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.288989"
+    },
+    {
+      "file": "stepfun_219802138344.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219802138344.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.288989"
+    },
+    {
+      "file": "stepfun_219804268103.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219804268103.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.289988"
+    },
+    {
+      "file": "stepfun_219804990362.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_219804990362.json",
+      "category": "mcp_servers",
+      "tags": [
+        "开发",
+        "MCP",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.289988"
+    },
+    {
+      "file": "stepfun_219807804392.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219807804392.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.290988"
+    },
+    {
+      "file": "stepfun_219809874109.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_219809874109.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.290988"
+    },
+    {
+      "file": "stepfun_219811600153.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_219811600153.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.291988"
+    },
+    {
+      "file": "stepfun_219811759033.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_219811759033.json",
+      "category": "coding_patterns",
+      "tags": [
+        "搜索",
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.291988"
+    },
+    {
+      "file": "stepfun_219812172109.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219812172109.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.292988"
+    },
+    {
+      "file": "stepfun_219814021848.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219814021848.json",
+      "category": "game_dev",
+      "tags": [
+        "开发",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.292988"
+    },
+    {
+      "file": "stepfun_219817084721.json",
+      "from": "topics/",
+      "to": "system_ops/stepfun_219817084721.json",
+      "category": "system_ops",
+      "tags": [
+        "安装",
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.294000"
+    },
+    {
+      "file": "stepfun_219879503649.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219879503649.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.294000"
+    },
+    {
+      "file": "stepfun_219880312223.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_219880312223.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.294997"
+    },
+    {
+      "file": "stepfun_219889461375.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219889461375.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.294997"
+    },
+    {
+      "file": "stepfun_219889514240.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_219889514240.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.295997"
+    },
+    {
+      "file": "stepfun_219890445468.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219890445468.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.295997"
+    },
+    {
+      "file": "stepfun_219892259324.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219892259324.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.296997"
+    },
+    {
+      "file": "stepfun_219896687125.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219896687125.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.296997"
+    },
+    {
+      "file": "stepfun_219900740287.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219900740287.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.299010"
+    },
+    {
+      "file": "stepfun_219905684943.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219905684943.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.299010"
+    },
+    {
+      "file": "stepfun_219906014473.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219906014473.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.299998"
+    },
+    {
+      "file": "stepfun_219907408546.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219907408546.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.300998"
+    },
+    {
+      "file": "stepfun_219909627404.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219909627404.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.300998"
+    },
+    {
+      "file": "stepfun_219913653156.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219913653156.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.302000"
+    },
+    {
+      "file": "stepfun_219920260414.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219920260414.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.302000"
+    },
+    {
+      "file": "stepfun_219921944901.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219921944901.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.302998"
+    },
+    {
+      "file": "stepfun_219922286024.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219922286024.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.302998"
+    },
+    {
+      "file": "stepfun_219922640073.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219922640073.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.303999"
+    },
+    {
+      "file": "stepfun_219924848961.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219924848961.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.303999"
+    },
+    {
+      "file": "stepfun_219931961469.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219931961469.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.305009"
+    },
+    {
+      "file": "stepfun_219932194891.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219932194891.json",
+      "category": "game_dev",
+      "tags": [
+        "搜索",
+        "开发",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.305009"
+    },
+    {
+      "file": "stepfun_219932318723.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219932318723.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.306007"
+    },
+    {
+      "file": "stepfun_219939441142.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219939441142.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.306007"
+    },
+    {
+      "file": "stepfun_219939765798.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219939765798.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.307007"
+    },
+    {
+      "file": "stepfun_219941774010.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219941774010.json",
+      "category": "game_dev",
+      "tags": [
+        "搜索",
+        "开发",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.307007"
+    },
+    {
+      "file": "stepfun_219947234302.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219947234302.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.308007"
+    },
+    {
+      "file": "stepfun_219948754296.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_219948754296.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.308007"
+    },
+    {
+      "file": "stepfun_219952219899.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219952219899.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.309007"
+    },
+    {
+      "file": "stepfun_219953823956.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219953823956.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.309007"
+    },
+    {
+      "file": "stepfun_219965362830.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_219965362830.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.310007"
+    },
+    {
+      "file": "stepfun_220041369084.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220041369084.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.310007"
+    },
+    {
+      "file": "stepfun_220042696615.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220042696615.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.311007"
+    },
+    {
+      "file": "stepfun_220063854559.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220063854559.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.311007"
+    },
+    {
+      "file": "stepfun_220063970879.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220063970879.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.312007"
+    },
+    {
+      "file": "stepfun_220064007470.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220064007470.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.312007"
+    },
+    {
+      "file": "stepfun_220065383118.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220065383118.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.313016"
+    },
+    {
+      "file": "stepfun_220150297017.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220150297017.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.313530"
+    },
+    {
+      "file": "stepfun_220151645515.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220151645515.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.314048"
+    },
+    {
+      "file": "stepfun_220152667986.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220152667986.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.314048"
+    },
+    {
+      "file": "stepfun_220152978570.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220152978570.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.315047"
+    },
+    {
+      "file": "stepfun_220156366191.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220156366191.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.315047"
+    },
+    {
+      "file": "stepfun_220157674533.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220157674533.json",
+      "category": "uncategorized",
+      "tags": [
+        "Skills",
+        "画图"
+      ],
+      "timestamp": "2026-04-29T10:44:30.316046"
+    },
+    {
+      "file": "stepfun_220163371581.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220163371581.json",
+      "category": "uncategorized",
+      "tags": [
+        "画图"
+      ],
+      "timestamp": "2026-04-29T10:44:30.316046"
+    },
+    {
+      "file": "stepfun_220165138159.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220165138159.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.317046"
+    },
+    {
+      "file": "stepfun_220165399028.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220165399028.json",
+      "category": "coding_patterns",
+      "tags": [
+        "搜索",
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.317046"
+    },
+    {
+      "file": "stepfun_220168001761.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220168001761.json",
+      "category": "coding_patterns",
+      "tags": [
+        "搜索",
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.318046"
+    },
+    {
+      "file": "stepfun_220173390104.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220173390104.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.319046"
+    },
+    {
+      "file": "stepfun_220173961209.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220173961209.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.320047"
+    },
+    {
+      "file": "stepfun_220174059351.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220174059351.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.321046"
+    },
+    {
+      "file": "stepfun_220174315841.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220174315841.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.321046"
+    },
+    {
+      "file": "stepfun_220180002839.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220180002839.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.322046"
+    },
+    {
+      "file": "stepfun_220180820351.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220180820351.json",
+      "category": "coding_patterns",
+      "tags": [
+        "搜索",
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.323078"
+    },
+    {
+      "file": "stepfun_220239279050.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220239279050.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.323078"
+    },
+    {
+      "file": "stepfun_220239320205.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220239320205.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.324055"
+    },
+    {
+      "file": "stepfun_220239337821.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220239337821.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.324055"
+    },
+    {
+      "file": "stepfun_220239432616.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220239432616.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.324767"
+    },
+    {
+      "file": "stepfun_220239572136.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220239572136.json",
+      "category": "mcp_servers",
+      "tags": [
+        "开发",
+        "MCP",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.325283"
+    },
+    {
+      "file": "stepfun_220239624908.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220239624908.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.325283"
+    },
+    {
+      "file": "stepfun_220240000664.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220240000664.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.326282"
+    },
+    {
+      "file": "stepfun_220240224052.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220240224052.json",
+      "category": "coding_patterns",
+      "tags": [
+        "搜索",
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.327284"
+    },
+    {
+      "file": "stepfun_220245885595.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220245885595.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.327284"
+    },
+    {
+      "file": "stepfun_220247842636.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220247842636.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.329294"
+    },
+    {
+      "file": "stepfun_220248945256.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220248945256.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.329294"
+    },
+    {
+      "file": "stepfun_220250469357.json",
+      "from": "topics/",
+      "to": "system_ops/stepfun_220250469357.json",
+      "category": "system_ops",
+      "tags": [
+        "搜索",
+        "安装"
+      ],
+      "timestamp": "2026-04-29T10:44:30.330282"
+    },
+    {
+      "file": "stepfun_220302201676.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220302201676.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.331281"
+    },
+    {
+      "file": "stepfun_220303014205.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220303014205.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.331281"
+    },
+    {
+      "file": "stepfun_220305424059.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220305424059.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.332281"
+    },
+    {
+      "file": "stepfun_220305973588.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220305973588.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.332281"
+    },
+    {
+      "file": "stepfun_220306842162.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220306842162.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.333309"
+    },
+    {
+      "file": "stepfun_220307817669.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220307817669.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "邮件",
+        "网络"
+      ],
+      "timestamp": "2026-04-29T10:44:30.333309"
+    },
+    {
+      "file": "stepfun_220314020616.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220314020616.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "Skills",
+        "网络"
+      ],
+      "timestamp": "2026-04-29T10:44:30.334290"
+    },
+    {
+      "file": "stepfun_220314169099.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220314169099.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.334290"
+    },
+    {
+      "file": "stepfun_220314813017.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220314813017.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.335291"
+    },
+    {
+      "file": "stepfun_220314875080.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220314875080.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.335291"
+    },
+    {
+      "file": "stepfun_220319063449.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220319063449.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索",
+        "邮件"
+      ],
+      "timestamp": "2026-04-29T10:44:30.336290"
+    },
+    {
+      "file": "stepfun_220319416874.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220319416874.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.336290"
+    },
+    {
+      "file": "stepfun_220320093969.json",
+      "from": "topics/",
+      "to": "system_ops/stepfun_220320093969.json",
+      "category": "system_ops",
+      "tags": [
+        "安装",
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.337290"
+    },
+    {
+      "file": "stepfun_220322022317.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220322022317.json",
+      "category": "mcp_servers",
+      "tags": [
+        "Skills",
+        "邮件",
+        "提示词",
+        "开发",
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.337290"
+    },
+    {
+      "file": "stepfun_220324055724.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220324055724.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.338290"
+    },
+    {
+      "file": "stepfun_220324430585.json",
+      "from": "topics/",
+      "to": "system_ops/stepfun_220324430585.json",
+      "category": "system_ops",
+      "tags": [
+        "IronClaw",
+        "安装",
+        "开发",
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.340296"
+    },
+    {
+      "file": "stepfun_220324725416.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220324725416.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "提示词",
+        "网络"
+      ],
+      "timestamp": "2026-04-29T10:44:30.340296"
+    },
+    {
+      "file": "stepfun_220326084861.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220326084861.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.341290"
+    },
+    {
+      "file": "stepfun_220327023882.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220327023882.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.342290"
+    },
+    {
+      "file": "stepfun_220328629159.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220328629159.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.342290"
+    },
+    {
+      "file": "stepfun_220329060107.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220329060107.json",
+      "category": "uncategorized",
+      "tags": [
+        "IronClaw",
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.342290"
+    },
+    {
+      "file": "stepfun_220330997968.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220330997968.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.343289"
+    },
+    {
+      "file": "stepfun_220331422637.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220331422637.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.343289"
+    },
+    {
+      "file": "stepfun_220332088932.json",
+      "from": "topics/",
+      "to": "system_ops/stepfun_220332088932.json",
+      "category": "system_ops",
+      "tags": [
+        "搜索",
+        "安装"
+      ],
+      "timestamp": "2026-04-29T10:44:30.344657"
+    },
+    {
+      "file": "stepfun_220332763854.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220332763854.json",
+      "category": "game_dev",
+      "tags": [
+        "搜索",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.344657"
+    },
+    {
+      "file": "stepfun_220333092465.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220333092465.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "提示词",
+        "网络"
+      ],
+      "timestamp": "2026-04-29T10:44:30.345654"
+    },
+    {
+      "file": "stepfun_220338138171.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220338138171.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.345654"
+    },
+    {
+      "file": "stepfun_220338225920.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220338225920.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "提示词",
+        "网络"
+      ],
+      "timestamp": "2026-04-29T10:44:30.346654"
+    },
+    {
+      "file": "stepfun_220343942760.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220343942760.json",
+      "category": "uncategorized",
+      "tags": [
+        "IronClaw"
+      ],
+      "timestamp": "2026-04-29T10:44:30.346654"
+    },
+    {
+      "file": "stepfun_220344684036.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220344684036.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.347654"
+    },
+    {
+      "file": "stepfun_220345307788.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220345307788.json",
+      "category": "uncategorized",
+      "tags": [
+        "IronClaw"
+      ],
+      "timestamp": "2026-04-29T10:44:30.347654"
+    },
+    {
+      "file": "stepfun_220345462315.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220345462315.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "提示词",
+        "网络"
+      ],
+      "timestamp": "2026-04-29T10:44:30.348654"
+    },
+    {
+      "file": "stepfun_220345928402.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220345928402.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.348654"
+    },
+    {
+      "file": "stepfun_220346413679.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220346413679.json",
+      "category": "uncategorized",
+      "tags": [
+        "IronClaw"
+      ],
+      "timestamp": "2026-04-29T10:44:30.349654"
+    },
+    {
+      "file": "stepfun_220347123469.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220347123469.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.349654"
+    },
+    {
+      "file": "stepfun_220347194696.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220347194696.json",
+      "category": "uncategorized",
+      "tags": [
+        "IronClaw"
+      ],
+      "timestamp": "2026-04-29T10:44:30.350656"
+    },
+    {
+      "file": "stepfun_220347375760.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220347375760.json",
+      "category": "uncategorized",
+      "tags": [
+        "IronClaw"
+      ],
+      "timestamp": "2026-04-29T10:44:30.350656"
+    },
+    {
+      "file": "stepfun_220347672491.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220347672491.json",
+      "category": "uncategorized",
+      "tags": [
+        "IronClaw",
+        "网络"
+      ],
+      "timestamp": "2026-04-29T10:44:30.351655"
+    },
+    {
+      "file": "stepfun_220348936788.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220348936788.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.351655"
+    },
+    {
+      "file": "stepfun_220349647685.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220349647685.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "提示词",
+        "网络"
+      ],
+      "timestamp": "2026-04-29T10:44:30.352654"
+    },
+    {
+      "file": "stepfun_220350586286.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220350586286.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.352654"
+    },
+    {
+      "file": "stepfun_220351399436.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220351399436.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "Skills"
+      ],
+      "timestamp": "2026-04-29T10:44:30.353742"
+    },
+    {
+      "file": "stepfun_220352491142.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220352491142.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.354259"
+    },
+    {
+      "file": "stepfun_220354522192.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220354522192.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "Skills",
+        "Brain"
+      ],
+      "timestamp": "2026-04-29T10:44:30.354772"
+    },
+    {
+      "file": "stepfun_220354717265.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220354717265.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.355771"
+    },
+    {
+      "file": "stepfun_220354856478.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220354856478.json",
+      "category": "mcp_servers",
+      "tags": [
+        "IronClaw",
+        "网络",
+        "提示词",
+        "游戏",
+        "开发",
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.355771"
+    },
+    {
+      "file": "stepfun_220355037252.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220355037252.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.356771"
+    },
+    {
+      "file": "stepfun_220357361719.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220357361719.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.356771"
+    },
+    {
+      "file": "stepfun_220357767799.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220357767799.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.356771"
+    },
+    {
+      "file": "stepfun_220360816860.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220360816860.json",
+      "category": "mcp_servers",
+      "tags": [
+        "开发",
+        "MCP",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.357771"
+    },
+    {
+      "file": "stepfun_220361537270.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220361537270.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.357771"
+    },
+    {
+      "file": "stepfun_220363841310.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220363841310.json",
+      "category": "mcp_servers",
+      "tags": [
+        "网络",
+        "MCP",
+        "Brain",
+        "提示词"
+      ],
+      "timestamp": "2026-04-29T10:44:30.358771"
+    },
+    {
+      "file": "stepfun_220368734947.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220368734947.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发",
+        "画图"
+      ],
+      "timestamp": "2026-04-29T10:44:30.358771"
+    },
+    {
+      "file": "stepfun_220368865587.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220368865587.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.359771"
+    },
+    {
+      "file": "stepfun_220513887146.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220513887146.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.359771"
+    },
+    {
+      "file": "stepfun_220514105187.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220514105187.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.360771"
+    },
+    {
+      "file": "stepfun_220518766900.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220518766900.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.360771"
+    },
+    {
+      "file": "stepfun_220519180974.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220519180974.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.361772"
+    },
+    {
+      "file": "stepfun_220520287696.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220520287696.json",
+      "category": "coding_patterns",
+      "tags": [
+        "搜索",
+        "开发",
+        "画图"
+      ],
+      "timestamp": "2026-04-29T10:44:30.361772"
+    },
+    {
+      "file": "stepfun_220521909512.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220521909512.json",
+      "category": "game_dev",
+      "tags": [
+        "搜索",
+        "开发",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.362771"
+    },
+    {
+      "file": "stepfun_220525126002.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220525126002.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.362771"
+    },
+    {
+      "file": "stepfun_220527392356.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220527392356.json",
+      "category": "game_dev",
+      "tags": [
+        "搜索",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.363782"
+    },
+    {
+      "file": "stepfun_220529007679.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220529007679.json",
+      "category": "game_dev",
+      "tags": [
+        "搜索",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.364295"
+    },
+    {
+      "file": "stepfun_220529579405.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220529579405.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.364295"
+    },
+    {
+      "file": "stepfun_220530701188.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220530701188.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.365294"
+    },
+    {
+      "file": "stepfun_220531845491.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220531845491.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.365294"
+    },
+    {
+      "file": "stepfun_220533246111.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220533246111.json",
+      "category": "game_dev",
+      "tags": [
+        "搜索",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.366296"
+    },
+    {
+      "file": "stepfun_220534442331.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220534442331.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.367295"
+    },
+    {
+      "file": "stepfun_220534765506.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220534765506.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.367295"
+    },
+    {
+      "file": "stepfun_220535211164.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220535211164.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.368295"
+    },
+    {
+      "file": "stepfun_220539272399.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220539272399.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.368295"
+    },
+    {
+      "file": "stepfun_220539513521.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220539513521.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.369295"
+    },
+    {
+      "file": "stepfun_220540606519.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220540606519.json",
+      "category": "mcp_servers",
+      "tags": [
+        "IronClaw",
+        "网络",
+        "游戏",
+        "开发",
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.371294"
+    },
+    {
+      "file": "stepfun_220545451276.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220545451276.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.372295"
+    },
+    {
+      "file": "stepfun_220603707860.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220603707860.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.372295"
+    },
+    {
+      "file": "stepfun_220603736503.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220603736503.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.373295"
+    },
+    {
+      "file": "stepfun_220604021376.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220604021376.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.373295"
+    },
+    {
+      "file": "stepfun_220609649050.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220609649050.json",
+      "category": "mcp_servers",
+      "tags": [
+        "开发",
+        "MCP",
+        "Skills"
+      ],
+      "timestamp": "2026-04-29T10:44:30.374308"
+    },
+    {
+      "file": "stepfun_220610128983.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220610128983.json",
+      "category": "game_dev",
+      "tags": [
+        "搜索",
+        "开发",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.374308"
+    },
+    {
+      "file": "stepfun_220664427562.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220664427562.json",
+      "category": "game_dev",
+      "tags": [
+        "开发",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.375305"
+    },
+    {
+      "file": "stepfun_220666097218.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220666097218.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.375305"
+    },
+    {
+      "file": "stepfun_220666355335.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220666355335.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.376304"
+    },
+    {
+      "file": "stepfun_220666430417.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220666430417.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.376304"
+    },
+    {
+      "file": "stepfun_220666507869.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220666507869.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.378820"
+    },
+    {
+      "file": "stepfun_220667701539.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220667701539.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.379820"
+    },
+    {
+      "file": "stepfun_220669015162.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220669015162.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.379820"
+    },
+    {
+      "file": "stepfun_220669938949.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220669938949.json",
+      "category": "game_dev",
+      "tags": [
+        "搜索",
+        "开发",
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.380818"
+    },
+    {
+      "file": "stepfun_220671195004.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220671195004.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.380818"
+    },
+    {
+      "file": "stepfun_220673058869.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220673058869.json",
+      "category": "mcp_servers",
+      "tags": [
+        "开发",
+        "MCP",
+        "Skills"
+      ],
+      "timestamp": "2026-04-29T10:44:30.381822"
+    },
+    {
+      "file": "stepfun_220677063251.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220677063251.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.382820"
+    },
+    {
+      "file": "stepfun_220677503011.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220677503011.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.382820"
+    },
+    {
+      "file": "stepfun_220678672110.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220678672110.json",
+      "category": "mcp_servers",
+      "tags": [
+        "IronClaw",
+        "MCP",
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.383822"
+    },
+    {
+      "file": "stepfun_220678792902.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220678792902.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.384343"
+    },
+    {
+      "file": "stepfun_220679684498.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220679684498.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.384343"
+    },
+    {
+      "file": "stepfun_220873271244.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220873271244.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.385335"
+    },
+    {
+      "file": "stepfun_220873934951.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220873934951.json",
+      "category": "mcp_servers",
+      "tags": [
+        "安装",
+        "开发",
+        "MCP",
+        "网络"
+      ],
+      "timestamp": "2026-04-29T10:44:30.385335"
+    },
+    {
+      "file": "stepfun_220874861619.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220874861619.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.388347"
+    },
+    {
+      "file": "stepfun_220874987193.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220874987193.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.388347"
+    },
+    {
+      "file": "stepfun_220875457282.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220875457282.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.389335"
+    },
+    {
+      "file": "stepfun_220879217857.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220879217857.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.390335"
+    },
+    {
+      "file": "stepfun_220880024795.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220880024795.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.390335"
+    },
+    {
+      "file": "stepfun_220887676648.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220887676648.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.391335"
+    },
+    {
+      "file": "stepfun_220888230720.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220888230720.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.391335"
+    },
+    {
+      "file": "stepfun_220889432313.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220889432313.json",
+      "category": "mcp_servers",
+      "tags": [
+        "读取",
+        "MCP",
+        "Skills"
+      ],
+      "timestamp": "2026-04-29T10:44:30.392335"
+    },
+    {
+      "file": "stepfun_220894193963.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220894193963.json",
+      "category": "mcp_servers",
+      "tags": [
+        "读取",
+        "开发",
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.392335"
+    },
+    {
+      "file": "stepfun_220894719615.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220894719615.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.393335"
+    },
+    {
+      "file": "stepfun_220895073224.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220895073224.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.394353"
+    },
+    {
+      "file": "stepfun_220895807147.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220895807147.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.394869"
+    },
+    {
+      "file": "stepfun_220901362629.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220901362629.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.394869"
+    },
+    {
+      "file": "stepfun_220902094002.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220902094002.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.395870"
+    },
+    {
+      "file": "stepfun_220902622451.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220902622451.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.395870"
+    },
+    {
+      "file": "stepfun_220903079097.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220903079097.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.396870"
+    },
+    {
+      "file": "stepfun_220963573099.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220963573099.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.396870"
+    },
+    {
+      "file": "stepfun_220963595145.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220963595145.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.397869"
+    },
+    {
+      "file": "stepfun_220963626136.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220963626136.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.397869"
+    },
+    {
+      "file": "stepfun_220963947256.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220963947256.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.398870"
+    },
+    {
+      "file": "stepfun_220966177037.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220966177037.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.399871"
+    },
+    {
+      "file": "stepfun_220967725196.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_220967725196.json",
+      "category": "mcp_servers",
+      "tags": [
+        "收集",
+        "提示词",
+        "Brain",
+        "开发",
+        "MCP"
+      ],
+      "timestamp": "2026-04-29T10:44:30.399871"
+    },
+    {
+      "file": "stepfun_220970451397.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220970451397.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.400870"
+    },
+    {
+      "file": "stepfun_220970507546.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220970507546.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.400870"
+    },
+    {
+      "file": "stepfun_220970650752.json",
+      "from": "topics/",
+      "to": "coding_patterns/stepfun_220970650752.json",
+      "category": "coding_patterns",
+      "tags": [
+        "开发"
+      ],
+      "timestamp": "2026-04-29T10:44:30.401870"
+    },
+    {
+      "file": "stepfun_220971702499.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220971702499.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.401870"
+    },
+    {
+      "file": "stepfun_220972725205.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_220972725205.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.402870"
+    },
+    {
+      "file": "stepfun_220974290616.json",
+      "from": "topics/",
+      "to": "game_dev/stepfun_220974290616.json",
+      "category": "game_dev",
+      "tags": [
+        "游戏"
+      ],
+      "timestamp": "2026-04-29T10:44:30.402870"
+    },
+    {
+      "file": "stepfun_221027390118.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_221027390118.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.403873"
+    },
+    {
+      "file": "stepfun_221027409660.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_221027409660.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.404389"
+    },
+    {
+      "file": "stepfun_221027633170.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_221027633170.json",
+      "category": "mcp_servers",
+      "tags": [
+        "浏览器",
+        "邮件",
+        "收集",
+        "Brain",
+        "搜索",
+        "MCP",
+        "画图"
+      ],
+      "timestamp": "2026-04-29T10:44:30.404909"
+    },
+    {
+      "file": "stepfun_221029086203.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_221029086203.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.404909"
+    },
+    {
+      "file": "stepfun_221030167482.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_221030167482.json",
+      "category": "uncategorized",
+      "tags": [
+        "搜索"
+      ],
+      "timestamp": "2026-04-29T10:44:30.405907"
+    },
+    {
+      "file": "stepfun_221031464620.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_221031464620.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.405907"
+    },
+    {
+      "file": "stepfun_221032328551.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_221032328551.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.406908"
+    },
+    {
+      "file": "stepfun_221032836976.json",
+      "from": "topics/",
+      "to": "uncategorized/stepfun_221032836976.json",
+      "category": "uncategorized",
+      "tags": [
+        "对话"
+      ],
+      "timestamp": "2026-04-29T10:44:30.406908"
+    },
+    {
+      "file": "stepfun_221039261253.json",
+      "from": "topics/",
+      "to": "mcp_servers/stepfun_221039261253.json",
+      "category": "mcp_servers",
+      "tags": [
+        "MCP",
+        "收集"
+      ],
+      "timestamp": "2026-04-29T10:44:30.407904"
+    }
+  ],
+  "errors": []
+}

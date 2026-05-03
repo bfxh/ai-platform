@@ -1,0 +1,51 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "uvx.exe",
+      "args": [
+        "defenter-proxy==0.0.96",
+        "--wrapped-config",
+        "{\"command\": \"%USERPROFILE%/AppData/Local/Programs/Python/Python310/python.exe\", \"args\": [\"/python/storage/mcp/Tools/da.py\"], \"env\": {}, \"description\": \"Full Access Filesystem Server\"}",
+        "--name",
+        "filesystem"
+      ],
+      "env": {}
+    },
+    "agents-md-discovery": {
+      "command": "node",
+      "args": [
+        "/python/user/global/plugin/agents-md/server.mjs"
+      ],
+      "env": {
+        "PROJECT_ROOT": "/python"
+      }
+    },
+    "ollama-ws-bridge": {
+      "command": "node",
+      "args": [
+        "/python/user/global/plugin/ollama-bridge/bridge.mjs"
+      ],
+      "env": {
+        "OLLAMA_BASE": "http://localhost:11434",
+        "WS_PORT": "11435"
+      }
+    },
+    "mcp-core-skills": {
+      "command": "python",
+      "args": [
+        "/python/user/global/plugin/mcp-core/server.py"
+      ],
+      "env": {}
+    },
+    "deveco-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@deveco-codegenie/mcp"
+      ],
+      "env": {
+        "DEVECO_PATH": "%DEVECO_PATH%"
+      }
+    }
+  }
+}

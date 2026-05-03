@@ -1,0 +1,49 @@
+name = "gstack-core"
+version = "1.0.0"
+description = "GSTACK Core - Auto DevOps, build verification, self-check, sandbox management"
+
+[workspace]
+external_path = "."
+
+[workspace.ai_tools]
+python = { version = "3.12", path = "%USERPROFILE%/AppData/Local/Programs/Python/Python312/python.exe", role = "runtime" }
+powershell = { version = "7", role = "runtime" }
+ollama = { version = "0.21", path = "%OLLAMA_DIR%/ollama.exe", role = "model_server" }
+
+[workspace.skills]
+autodevops = { type = "skill", ref = "autodevops", description = "Automated DevOps pipeline" }
+self_check = { type = "skill", ref = "self_check", description = "System self-check and verification" }
+build_verify = { type = "skill", ref = "build_verify", description = "Build verification and testing" }
+sandbox = { type = "skill", ref = "sandbox_manager", description = "Sandbox execution management" }
+
+[environment]
+  [[environment.items]]
+  name = "GSTACK_CORE_DIR"
+  description = "GSTACK Core 根目"
+  example = "/python/user/global/plugin/gstack-core"
+
+[software]
+  [[software.items]]
+  name = "python"
+  path = "%USERPROFILE%/AppData/Local/Programs/Python/Python312/python.exe"
+  version = "3.12"
+
+[[abilities]]
+  type = "skill"
+  name = "autodevops"
+  path = "autodevops.py"
+
+[[abilities]]
+  type = "skill"
+  name = "self-check"
+  path = "verify.py"
+
+[[abilities]]
+  type = "skill"
+  name = "build-verify"
+  path = "full_verify.py"
+
+[[abilities]]
+  type = "skill"
+  name = "sandbox-manager"
+  path = "sandbox_manager.py"

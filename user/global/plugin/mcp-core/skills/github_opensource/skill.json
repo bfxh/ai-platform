@@ -1,0 +1,52 @@
+{
+  "name": "github_opensource",
+  "version": "1.0.0",
+  "description": "GitHub开源管理系统 - 仓库管理、配置优化、自动发布",
+  "author": "AI Assistant",
+  "type": "mcp-skill",
+  "entry_point": "skill.py",
+  "actions": [
+    {
+      "name": "init_project",
+      "description": "初始化开源项目",
+      "parameters": {
+        "project_name": "项目名称",
+        "project_type": "项目类型 (ai_toolkit/mcp_framework/automation_tools)"
+      }
+    },
+    {
+      "name": "generate_config",
+      "description": "生成仓库配置",
+      "parameters": {
+        "project_type": "项目类型"
+      }
+    },
+    {
+      "name": "create_structure",
+      "description": "创建项目结构",
+      "parameters": {
+        "project_name": "项目名称"
+      }
+    },
+    {
+      "name": "sync_to_github",
+      "description": "同步到GitHub",
+      "parameters": {
+        "repo_path": "仓库路径"
+      }
+    },
+    {
+      "name": "generate_full_project",
+      "description": "生成完整项目",
+      "parameters": {
+        "project_name": "项目名称",
+        "project_type": "项目类型"
+      }
+    }
+  ],
+  "dependencies": [],
+  "env_vars": {
+    "AI_PATH": "/python",
+    "GITHUB_CONFIG_PATH": "/python/Config/github"
+  }
+}

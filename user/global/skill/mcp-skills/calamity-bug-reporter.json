@@ -1,0 +1,111 @@
+{
+  "name": "calamity-bug-reporter",
+  "display_name": "灾厄模组Bug报告提交器",
+  "description": "自动化提交bug报告到灾厄模组官方GitHub仓库",
+  "version": "1.0.0",
+  "author": "Local Software Integration Expert",
+  "category": "automation",
+  "icon": "🐛",
+  "inputs": [
+    {
+      "name": "bug_title",
+      "type": "string",
+      "required": true,
+      "description": "Bug标题"
+    },
+    {
+      "name": "bug_description",
+      "type": "string",
+      "required": true,
+      "description": "Bug详细描述"
+    },
+    {
+      "name": "steps_to_reproduce",
+      "type": "string",
+      "required": true,
+      "description": "复现步骤"
+    },
+    {
+      "name": "expected_behavior",
+      "type": "string",
+      "required": true,
+      "description": "预期行为"
+    },
+    {
+      "name": "actual_behavior",
+      "type": "string",
+      "required": true,
+      "description": "实际行为"
+    },
+    {
+      "name": "fix_code",
+      "type": "string",
+      "required": false,
+      "description": "修复代码（可选）"
+    },
+    {
+      "name": "labels",
+      "type": "array",
+      "required": false,
+      "description": "标签列表",
+      "default": ["bug"]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "success",
+      "type": "boolean",
+      "description": "是否成功提交"
+    },
+    {
+      "name": "issue_url",
+      "type": "string",
+      "description": "创建的GitHub Issue URL"
+    },
+    {
+      "name": "message",
+      "type": "string",
+      "description": "结果消息"
+    }
+  ],
+  "steps": [
+    {
+      "name": "验证输入",
+      "description": "验证所有必需的输入参数"
+    },
+    {
+      "name": "检查GitHub认证",
+      "description": "检查GitHub API访问权限"
+    },
+    {
+      "name": "生成Issue内容",
+      "description": "根据模板生成完整的Issue内容"
+    },
+    {
+      "name": "提交到GitHub",
+      "description": "使用GitHub API创建Issue"
+    },
+    {
+      "name": "返回结果",
+      "description": "返回提交结果和Issue URL"
+    }
+  ],
+  "examples": [
+    {
+      "name": "提交加密原理图Bug",
+      "input": {
+        "bug_title": "Encrypted Schematics Not Unlocking Recipes",
+        "bug_description": "Encrypted Schematics fail to unlock recipes when placed in inventory",
+        "steps_to_reproduce": "1. Obtain an Encrypted Schematic\n2. Place it in inventory\n3. Check if recipes are unlocked",
+        "expected_behavior": "Recipes should be unlocked immediately",
+        "actual_behavior": "Recipes are not unlocked",
+        "labels": ["bug", "recipes", "encrypted-schematics"]
+      },
+      "output": {
+        "success": true,
+        "issue_url": "https://github.com/CalamityMod/CalamityModPublic/issues/XXXX",
+        "message": "Bug report submitted successfully"
+      }
+    }
+  ]
+}

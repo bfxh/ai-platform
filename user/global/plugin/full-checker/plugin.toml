@@ -1,0 +1,65 @@
+[project]
+name = "full-checker"
+version = "1.0.0"
+description = "全项目最终检查插件 - 项目结束前必须执行的全面检查"
+authors = ["MCP Core"]
+
+[plugin]
+skills_dir = "skills"
+entry_point = "full_checker:FullChecker"
+
+[[skills]]
+name = "qa-fullstack-testing"
+path = "skills/qa-fullstack-testing"
+
+[[skills]]
+name = "cypress-qa-testing"
+path = "skills/cypress-qa-testing"
+
+[[skills]]
+name = "project-final-check"
+path = "skills/project-final-check"
+
+[[skills]]
+name = "wechat-remote-control"
+path = "skills/wechat-remote-control"
+
+[[skills]]
+name = "obsidian-knowledge"
+path = "skills/obsidian-knowledge"
+
+[[skills]]
+name = "multi-device-workflow"
+path = "skills/multi-device-workflow"
+
+[[skills]]
+name = "self-evolving-agent"
+path = "skills/self-evolving-agent"
+
+[[skills]]
+name = "mcp-second-brain"
+path = "skills/mcp-second-brain"
+
+[[skills]]
+name = "web-content-reach"
+path = "skills/web-content-reach"
+
+[[skills]]
+name = "local-llm-engine"
+path = "skills/local-llm-engine"
+
+[[skills]]
+name = "ragflow-knowledge"
+path = "skills/ragflow-knowledge"
+
+[[skills]]
+name = "n8n-workflow"
+path = "skills/n8n-workflow"
+
+[[skills]]
+name = "mcp-marketplace"
+path = "skills/mcp-marketplace"
+
+[settings]
+check_on_project_end = true
+auto_invoke_threshold = 0.8

@@ -1,0 +1,36 @@
+# 开发依赖
+# 包含所有开发、测试和文档工具
+
+# 测试
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-asyncio>=0.21.0
+pytest-timeout>=2.2.0
+
+# 代码质量
+black>=23.0.0
+isort>=5.12.0
+mypy>=1.0.0
+autopep8>=2.0.0
+pylint>=2.17.0
+flake8>=6.0.0
+
+# 文档
+pdoc>=14.0.0
+sphinx>=6.0.0
+sphinx-rtd-theme>=1.2.0
+
+# 类型检查
+typing-extensions>=4.0.0
+
+# 安全检查
+safety>=2.3.0
+bandit>=1.7.0
+
+# 性能分析
+py-spy>=0.3.14
+memory-profiler>=0.61.0
+
+# 开发工具
+pre-commit>=3.3.0
+ipython>=8.0.0

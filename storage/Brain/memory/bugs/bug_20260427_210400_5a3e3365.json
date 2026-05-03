@@ -1,0 +1,20 @@
+{
+  "bug_id": "bug_20260427_210400_5a3e3365",
+  "timestamp": "2026-04-27T21:04:00.362138",
+  "agent_id": "TRAE",
+  "task_description": "修改 TRAE 配置文件",
+  "error_message": "PermissionError: [Errno 13] Access denied writing to config",
+  "error_type": "permission",
+  "fix_description": "以管理员权限运行或修改文件权限",
+  "files_involved": [
+    ".trae/config.toml"
+  ],
+  "severity": "medium",
+  "tags": [
+    "permission",
+    "config"
+  ],
+  "recurrence_count": 0,
+  "last_seen": "2026-04-27T21:04:00.362138",
+  "first_seen": "2026-04-27T21:04:00.362138"
+}

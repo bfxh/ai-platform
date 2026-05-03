@@ -1,0 +1,183 @@
+{
+  "name": "disk_indexer",
+  "version": "2.0.0",
+  "description": "D盘全盘索引与查询系统 - 以%DEV_DIR%为核心",
+  "author": "/python",
+  "primary_dev_path": "%DEV_DIR%",
+  "capabilities": [
+    "scan_disk",
+    "query_projects",
+    "query_code",
+    "query_games",
+    "query_devtools",
+    "query_ai",
+    "query_rust",
+    "query_python",
+    "query_all"
+  ],
+  "scan_config": {
+    "primary_path": "%DEV_DIR%",
+    "root_paths": [
+      "%DEV_DIR%",
+      "/python",
+      "D:\\DEV\\工具\\GitHub",
+      "%SOFTWARE_DIR%\\KF",
+      "%SOFTWARE_DIR%\\GJ",
+      "D:\\vcp\\VCPToolBox-main",
+      "D:\\项目文件夹",
+      "D:\\GJ BZM"
+    ],
+    "exclude_patterns": [
+      "node_modules",
+      "__pycache__",
+      ".git",
+      "bin",
+      "obj",
+      "venv",
+      ".gradle",
+      "build",
+      "dist",
+      "target"
+    ],
+    "exclude_extensions": [
+      ".exe", ".dll", ".so", ".jar", ".zip", ".7z", ".rar",
+      ".pak", ".blob", ".cache", ".pyc", ".pyo", ".o", ".obj"
+    ],
+    "include_extensions": [
+      ".py", ".rs", ".go", ".java", ".cs", ".cpp", ".c", ".h",
+      ".ts", ".js", ".json", ".md", ".toml", ".yaml", ".yml",
+      ".sln", ".godot", ".gd", ".cfg"
+    ]
+  },
+  "dev_categories": {
+    "泰拉科技": {
+      "name": "泰拉科技",
+      "path": "%DEV_DIR%\\泰拉科技",
+      "tech": ["Godot", "Rust", "C#", "UE5", "Python"],
+      "sub_projects": {
+        "terratech_physics": {
+          "path": "%DEV_DIR%\\泰拉科技\\泰拉科技\\terratech-physics",
+          "tech": "Rust+Godot",
+          "desc": "泰拉科技物理引擎 Rust+Godot"
+        },
+        "terra_tech_godot": {
+          "path": "%DEV_DIR%\\泰拉科技\\泰拉科技\\terra_tech_godot",
+          "tech": "Godot",
+          "desc": "泰拉科技Godot版"
+        },
+        "TerraTech_Godot_Project": {
+          "path": "%DEV_DIR%\\泰拉科技\\泰拉科技\\TerraTech_Godot_Project",
+          "tech": "Godot",
+          "desc": "泰拉科技Godot完整项目"
+        },
+        "TerraTech_LagFix": {
+          "path": "%DEV_DIR%\\泰拉科技\\泰拉科技\\泰拉科技\\TerraTechLagFix",
+          "tech": "C#",
+          "desc": "泰拉科技LagFix优化模组"
+        },
+        "BeyondUE5": {
+          "path": "%DEV_DIR%\\泰拉科技\\BeyondUE5",
+          "tech": "UE5+GDScript",
+          "desc": "Beyond UE5插件"
+        },
+        "UE_Automation": {
+          "path": "%DEV_DIR%\\泰拉科技\\UE_Automation",
+          "tech": "Python",
+          "desc": "UE5自动化工具"
+        },
+        "terratech_godot_rust": {
+          "path": "%DEV_DIR%\\泰拉科技\\泰拉科技\\TerraTech项目\\terratech_godot_rust",
+          "tech": "Rust+Godot",
+          "desc": "泰拉科技Rust+Godot版"
+        },
+        "TerraTech_Clean": {
+          "path": "%DEV_DIR%\\泰拉科技\\泰拉科技\\TerraTech项目\\TerraTech-Clean",
+          "tech": "Godot+Rust",
+          "desc": "泰拉科技Clean版"
+        },
+        "TerraTechClone": {
+          "path": "%DEV_DIR%\\泰拉科技\\泰拉科技\\TerraTech项目\\TerraTechClone",
+          "tech": "Godot+Rust",
+          "desc": "泰拉科技克隆版"
+        },
+        "TerraTech_Godot": {
+          "path": "%DEV_DIR%\\泰拉科技\\泰拉科技\\TerraTech项目\\TerraTech-Godot",
+          "tech": "Godot+Rust",
+          "desc": "泰拉科技Godot版(核心)"
+        }
+      }
+    },
+    "泰拉瑞亚": {
+      "name": "泰拉瑞亚Mod",
+      "path": "%DEV_DIR%\\泰拉瑞亚",
+      "tech": ["C#", "tModLoader"],
+      "sub_projects": {
+        "CalamityMod": {
+          "path": "%DEV_DIR%\\泰拉瑞亚\\模组源码\\CalamityMod",
+          "tech": "C#",
+          "desc": "灾厄模组源码"
+        },
+        "tModLoader": {
+          "path": "%DEV_DIR%\\泰拉瑞亚\\模组源码\\tModLoader",
+          "tech": "C#",
+          "desc": "tModLoader加载器源码"
+        }
+      }
+    },
+    "星际战甲": {
+      "name": "星际战甲",
+      "path": "%DEV_DIR%\\星际战甲",
+      "tech": ["JavaScript", "TypeScript", "Node.js"],
+      "sub_projects": {
+        "warframe_items": {
+          "path": "%DEV_DIR%\\星际战甲\\warframe-items",
+          "tech": "TypeScript",
+          "desc": "Warframe物品数据库"
+        },
+        "warframe_drop_data": {
+          "path": "%DEV_DIR%\\星际战甲\\warframe-drop-data",
+          "tech": "JavaScript",
+          "desc": "Warframe掉落数据"
+        },
+        "warframe_progress": {
+          "path": "%DEV_DIR%\\星际战甲\\warframe-progress-tool",
+          "tech": "Node.js",
+          "desc": "Warframe进度工具"
+        }
+      }
+    },
+    "我的": {
+      "name": "个人项目",
+      "path": "%DEV_DIR%\\我的",
+      "tech": ["Blender"],
+      "desc": "个人创意项目"
+    }
+  },
+  "other_categories": {
+    "ai_system": {
+      "name": "AI系统",
+      "keywords": ["ai", "mcp", "gstack", "skill", "blender", "modeling"],
+      "paths": ["/python"]
+    },
+    "rust_project": {
+      "name": "Rust项目",
+      "keywords": ["rust", "cargo", "toml"],
+      "extensions": [".rs", "Cargo.toml"]
+    },
+    "game_engine": {
+      "name": "游戏引擎",
+      "keywords": ["godot", "unreal", "unity", "bevy", "ue"],
+      "paths": ["%SOFTWARE_DIR%\\KF\\JM\\UE_5.6", "%SOFTWARE_DIR%\\KF\\JM\\Godot"]
+    },
+    "github_clone": {
+      "name": "GitHub克隆项目",
+      "keywords": ["github"],
+      "paths": ["D:\\DEV\\工具\\GitHub"]
+    },
+    "vcp_toolbox": {
+      "name": "VCP工具箱",
+      "keywords": ["vcp", "toolbox"],
+      "paths": ["D:\\vcp\\VCPToolBox-main"]
+    }
+  }
+}

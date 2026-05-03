@@ -1,0 +1,170 @@
+{
+  "known_software": {
+    "cbdd7e355c67": {
+      "name": "AI",
+      "path": "%SOFTWARE_DIR%\\AI",
+      "category": "unknown",
+      "exe_files": [
+        "StepFun\\StepFun.exe",
+        "StepFun\\resources\\app.asar.unpacked\\dist\\addon\\parfait_crash_handler.exe",
+        "StepFun\\resources\\app.asar.unpacked\\tools\\stepclaw-core.exe",
+        "StepFun\\resources\\app.asar.unpacked\\tools\\uvx\\win32-x64\\uv.exe",
+        "StepFun\\resources\\app.asar.unpacked\\tools\\uvx\\win32-x64\\uvx.exe",
+        "StepFun\\resources\\stepclaw-bundle\\node_modules\\.bin\\anthropic-ai-sdk.cmd"
+      ],
+      "detected_at": "2026-04-02T15:41:42.044517",
+      "size_mb": 1841.12,
+      "integrated": true,
+      "integration_date": "2026-04-02T15:42:58.300201"
+    },
+    "fe19ce7ea23e": {
+      "name": "GJ",
+      "path": "%SOFTWARE_DIR%\\GJ",
+      "category": "unknown",
+      "exe_files": [
+        "ContextMenuManager.NET.4.0.exe",
+        "7-Zip\\7z.exe",
+        "7-Zip\\7zFM.exe",
+        "7-Zip\\7zG.exe",
+        "DiskGenius\\DGFileViewer.exe",
+        "DriverTalent\\!)清除残留.bat",
+        "UniGetUI.x64\\Assets\\Utilities\\install_scoop.cmd"
+      ],
+      "detected_at": "2026-04-02T15:41:42.852978",
+      "size_mb": 1498.55,
+      "integrated": true,
+      "integration_date": "2026-04-02T15:42:58.301201"
+    },
+    "e2bbb32540b9": {
+      "name": "JSQ",
+      "path": "%SOFTWARE_DIR%\\JSQ",
+      "category": "unknown",
+      "exe_files": [
+        "Steam  _v3.1.0_win_x64\\Steam++.exe",
+        "Steam  _v3.1.0_win_x64\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.3\\createdump.exe",
+        "Steam  _v3.1.0_win_x64\\modules\\Accelerator\\Steam++.Accelerator.exe"
+      ],
+      "detected_at": "2026-04-02T15:41:43.043793",
+      "size_mb": 355.47,
+      "integrated": true,
+      "integration_date": "2026-04-02T15:42:58.301201"
+    },
+    "4599ee25282c": {
+      "name": "KF",
+      "path": "%SOFTWARE_DIR%\\KF",
+      "category": "unknown",
+      "exe_files": [
+        "BC\\Rust\\.cargo\\bin\\cargo-clippy.exe",
+        "BC\\Rust\\.cargo\\bin\\cargo-fmt.exe",
+        "BC\\Rust\\.cargo\\bin\\cargo-miri.exe",
+        "BC\\Rust\\.cargo\\bin\\cargo.exe",
+        "BC\\Rust\\.cargo\\bin\\clippy-driver.exe",
+        "BC\\VS\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\Squish4RunTestCase.bat",
+        "BC\\Rust\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\rust-windbg.cmd"
+      ],
+      "detected_at": "2026-04-02T15:42:35.862849",
+      "size_mb": 63242.64,
+      "integrated": true,
+      "integration_date": "2026-04-02T15:42:58.301201"
+    },
+    "08c6274d5e82": {
+      "name": "QDQ",
+      "path": "%SOFTWARE_DIR%\\QDQ",
+      "category": "unknown",
+      "exe_files": [
+        "ATLauncher\\ATLauncher.exe",
+        "ATLauncher\\jre\\bin\\jabswitch.exe",
+        "ATLauncher\\jre\\bin\\jaccessinspector.exe",
+        "ATLauncher\\jre\\bin\\jaccesswalker.exe",
+        "ATLauncher\\jre\\bin\\java.exe"
+      ],
+      "detected_at": "2026-04-02T15:42:35.948972",
+      "size_mb": 162.93,
+      "integrated": true,
+      "integration_date": "2026-04-02T15:42:58.302198"
+    },
+    "61238f962b29": {
+      "name": "WL",
+      "path": "%SOFTWARE_DIR%\\WL",
+      "category": "unknown",
+      "exe_files": [
+        "Netch\\Netch.exe",
+        "Netch\\bin\\pcap2socks.exe",
+        "Netch\\bin\\v2ray-sn.exe",
+        "101\\一键设备网络优化.bat",
+        "101\\右键管理员运行-网络优化.bat"
+      ],
+      "detected_at": "2026-04-02T15:42:35.977335",
+      "size_mb": 208.24,
+      "integrated": true,
+      "integration_date": "2026-04-02T15:42:58.302198"
+    },
+    "8659550eb6c3": {
+      "name": "QQ",
+      "path": "F:\\rj\\QQ",
+      "category": "communication",
+      "exe_files": [
+        "Inet Download Manager v6.37 Build 16 (1)\\idman637build16.exe",
+        "Inet Download Manager v6.37 Build 16 (1)\\IDM清理工具.exe",
+        "Inet Download Manager v6.37 Build 16 (1)\\破解补丁.exe",
+        "Tencent Files\\nt_qq\\global\\nt_data\\MiniApp\\3.1.0.1\\QQMiniApp.exe",
+        "Tencent Files\\nt_qq\\global\\nt_data\\MiniApp\\3.1.0.1\\resources\\app\\plugins\\bugreport\\TxBugReport.exe"
+      ],
+      "detected_at": "2026-04-02T15:42:55.282362",
+      "size_mb": 3368.52,
+      "integrated": true,
+      "integration_date": "2026-04-02T15:42:58.302198"
+    },
+    "1800c1576f55": {
+      "name": "wenjianruanjian",
+      "path": "F:\\rj\\wenjianruanjian",
+      "category": "unknown",
+      "exe_files": [
+        "TreeSizeFreeSetup.exe"
+      ],
+      "detected_at": "2026-04-02T15:42:55.283358",
+      "size_mb": 13.19,
+      "integrated": true,
+      "integration_date": "2026-04-02T15:42:58.303194"
+    },
+    "91104abfb933": {
+      "name": "wx",
+      "path": "F:\\rj\\wx",
+      "category": "unknown",
+      "exe_files": [
+        "WeChatWin.exe",
+        "WeChat Files\\wxid_hfo6s4t2d2yn22\\FileStorage\\File\\2025-07\\PCL.exe"
+      ],
+      "detected_at": "2026-04-02T15:42:56.674534",
+      "size_mb": 4826.51,
+      "integrated": true,
+      "integration_date": "2026-04-02T15:42:58.303194"
+    },
+    "47f3a77e0f92": {
+      "name": "xwechat_files",
+      "path": "F:\\rj\\xwechat_files",
+      "category": "communication",
+      "exe_files": [
+        "wxid_hfo6s4t2d2yn22_7d4b\\msg\\file\\2025-07\\PCL.exe",
+        "wxid_hfo6s4t2d2yn22_7d4b\\msg\\file\\2025-07\\PCL\\Plain Craft Launcher 2.exe"
+      ],
+      "detected_at": "2026-04-02T15:42:58.279237",
+      "size_mb": 1830.53,
+      "integrated": true,
+      "integration_date": "2026-04-02T15:42:58.303194"
+    }
+  },
+  "integrated_software": [
+    "cbdd7e355c67",
+    "fe19ce7ea23e",
+    "e2bbb32540b9",
+    "4599ee25282c",
+    "08c6274d5e82",
+    "61238f962b29",
+    "8659550eb6c3",
+    "1800c1576f55",
+    "91104abfb933",
+    "47f3a77e0f92"
+  ],
+  "last_scan": "2026-04-02T15:42:58.304191"
+}

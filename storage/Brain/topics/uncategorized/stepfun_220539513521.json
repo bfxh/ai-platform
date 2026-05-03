@@ -1,0 +1,24 @@
+{
+  "id": "stepfun_220539513521",
+  "date": "2026/3/11 13:45:57",
+  "title": "阶跃AI对话 [搜索]",
+  "summary": "会话220539513521，6次工具调用，使用工具: web_search",
+  "tags": [
+    "搜索"
+  ],
+  "source": "stepfun_log",
+  "session_id": "220539513521938432",
+  "user_instructions": [],
+  "results": [],
+  "score": 5,
+  "tools_used": [
+    "web_search"
+  ],
+  "files_touched": [
+    "C:////Users////用户名.ollama////models），无需手动管理。//n2."
+  ],
+  "commands": [],
+  "first_time": "2026/3/11 13:45:57",
+  "last_time": "2026/3/11 13:47:45",
+  "task_count": 6
+}

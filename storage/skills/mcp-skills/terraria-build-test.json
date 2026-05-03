@@ -1,0 +1,229 @@
+{
+  "name": "terraria-build-test",
+  "version": "1.0.0",
+  "description": "泰拉瑞亚模组编译和测试技能 - 自动化编译、测试和部署流程",
+  "author": "AI Assistant",
+  "category": "game_modding",
+  "tags": ["terraria", "build", "test", "compile", "automation"],
+  
+  "capabilities": [
+    "自动编译项目",
+    "运行测试套件",
+    "性能基准测试",
+    "生成测试报告",
+    "部署到tModLoader"
+  ],
+  
+  "requirements": {
+    "build_tools": [
+      {
+        "name": ".NET SDK",
+        "version": "6.0+",
+        "required": true
+      },
+      {
+        "name": "Visual Studio",
+        "version": "2022+",
+        "required": false
+      },
+      {
+        "name": "MSBuild",
+        "version": "17.0+",
+        "required": false
+      }
+    ],
+    "test_frameworks": [
+      "NUnit",
+      "xUnit",
+      "MSTest"
+    ]
+  },
+  
+  "inputs": {
+    "project_path": {
+      "type": "string",
+      "required": true,
+      "description": "项目文件路径",
+      "default": "%DEV_DIR%\\泰拉瑞亚\\模组源码\\CalamityMod\\CalamityMod.csproj"
+    },
+    "build_config": {
+      "type": "string",
+      "required": false,
+      "description": "编译配置",
+      "default": "Release",
+      "enum": ["Debug", "Release"]
+    },
+    "run_tests": {
+      "type": "boolean",
+      "required": false,
+      "description": "运行测试",
+      "default": true
+    },
+    "test_categories": {
+      "type": "array",
+      "required": false,
+      "description": "测试类别",
+      "default": ["unit", "performance", "compatibility"]
+    },
+    "generate_report": {
+      "type": "boolean",
+      "required": false,
+      "description": "生成测试报告",
+      "default": true
+    }
+  },
+  
+  "outputs": {
+    "build_result": {
+      "type": "object",
+      "description": "编译结果"
+    },
+    "test_results": {
+      "type": "array",
+      "description": "测试结果列表"
+    },
+    "performance_metrics": {
+      "type": "object",
+      "description": "性能指标"
+    },
+    "report_path": {
+      "type": "string",
+      "description": "报告文件路径"
+    }
+  },
+  
+  "workflow": {
+    "steps": [
+      {
+        "id": "check_environment",
+        "name": "检查编译环境",
+        "description": "检查.NET SDK、MSBuild等编译工具",
+        "action": "check_build_environment"
+      },
+      {
+        "id": "restore_packages",
+        "name": "恢复NuGet包",
+        "description": "恢复项目依赖的NuGet包",
+        "action": "restore_nuget_packages"
+      },
+      {
+        "id": "build_project",
+        "name": "编译项目",
+        "description": "编译模组项目",
+        "action": "build_mod_project"
+      },
+      {
+        "id": "run_unit_tests",
+        "name": "运行单元测试",
+        "description": "运行单元测试套件",
+        "action": "run_unit_tests"
+      },
+      {
+        "id": "run_performance_tests",
+        "name": "运行性能测试",
+        "description": "运行性能基准测试",
+        "action": "run_performance_tests"
+      },
+      {
+        "id": "run_compatibility_tests",
+        "name": "运行兼容性测试",
+        "description": "运行模组兼容性测试",
+        "action": "run_compatibility_tests"
+      },
+      {
+        "id": "generate_report",
+        "name": "生成报告",
+        "description": "生成编译和测试报告",
+        "action": "generate_build_test_report"
+      }
+    ]
+  },
+  
+  "test_suites": {
+    "unit_tests": [
+      {
+        "name": "系统初始化测试",
+        "description": "验证GPU粒子系统是否正确初始化"
+      },
+      {
+        "name": "粒子生成测试",
+        "description": "测试粒子生成功能"
+      },
+      {
+        "name": "粒子更新测试",
+        "description": "测试粒子更新逻辑"
+      },
+      {
+        "name": "粒子渲染测试",
+        "description": "测试粒子渲染功能"
+      }
+    ],
+    "performance_tests": [
+      {
+        "name": "性能基准测试",
+        "description": "测试大量粒子性能"
+      },
+      {
+        "name": "内存测试",
+        "description": "测试内存使用情况"
+      },
+      {
+        "name": "压力测试",
+        "description": "测试极限情况"
+      }
+    ],
+    "compatibility_tests": [
+      {
+        "name": "模组兼容性测试",
+        "description": "测试模组兼容性"
+      },
+      {
+        "name": "API测试",
+        "description": "测试模组间通信API"
+      }
+    ]
+  },
+  
+  "commands": {
+    "build": {
+      "description": "编译模组项目",
+      "usage": "terraria-build-test build --project_path %DEV_DIR%\\泰拉瑞亚\\模组源码\\CalamityMod\\CalamityMod.csproj --config Release"
+    },
+    "test": {
+      "description": "运行测试",
+      "usage": "terraria-build-test test --project_path %DEV_DIR%\\泰拉瑞亚\\模组源码\\CalamityMod --categories unit,performance"
+    },
+    "benchmark": {
+      "description": "运行性能基准测试",
+      "usage": "terraria-build-test benchmark --particle_count 10000"
+    },
+    "deploy": {
+      "description": "部署到tModLoader",
+      "usage": "terraria-build-test deploy --mod_name CalamityMod"
+    },
+    "report": {
+      "description": "生成测试报告",
+      "usage": "terraria-build-test report --output %DEV_DIR%\\泰拉瑞亚\\测试报告.md"
+    }
+  },
+  
+  "examples": [
+    {
+      "name": "编译并测试CalamityMod",
+      "command": "terraria-build-test build --project_path %DEV_DIR%\\泰拉瑞亚\\模组源码\\CalamityMod\\CalamityMod.csproj --run_tests true",
+      "result": "编译成功，8/8测试通过"
+    },
+    {
+      "name": "运行性能基准测试",
+      "command": "terraria-build-test benchmark --particle_count 50000",
+      "result": "性能测试完成，FPS提升2.5倍"
+    }
+  ],
+  
+  "metadata": {
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "license": "MIT",
+    "repository": "local"
+  }
+}

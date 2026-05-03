@@ -1,0 +1,22 @@
+{
+  "name": "cc_cleanup_advisor",
+  "version": "1.0",
+  "description": "CC 缓存清理扫描器 - 扫描未使用文件并生成清理建议",
+  "category": "system",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "scan": "扫描 1_Raw 和 3_Unused 目录，生成清理建议",
+    "cleanup": "执行清理建议（需确认）",
+    "report": "生成分类统计报告"
+  },
+  "rules": {
+    "unused_threshold_days": 30,
+    "auto_update_index": true,
+    "require_confirmation": true
+  },
+  "dependencies": [
+    "PowerShell 5.0+",
+    "/python/ai_architecture.json"
+  ]
+}

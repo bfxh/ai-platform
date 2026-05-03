@@ -1,0 +1,129 @@
+{
+  "name": "渲染队列",
+  "description": "监听 Inbox 目录，新 .blend 文件自动渲染",
+  "nodes": [
+    {
+      "name": "监视 Inbox",
+      "type": "n8n-nodes-base.watch",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ],
+      "parameters": {
+        "path": "/python\\Inbox",
+        "watchEvents": [
+          "add"
+        ],
+        "includeBinary": true
+      }
+    },
+    {
+      "name": "过滤 .blend 文件",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [
+        450,
+        300
+      ],
+      "parameters": {
+        "value1": "={{ $json.name }}",
+        "operation": "endsWith",
+        "value2": ".blend"
+      }
+    },
+    {
+      "name": "调用 Blender MCP",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        650,
+        300
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:8400/render",
+        "bodyParameters": {
+          "parameters": {
+            "file": "={{ $json.path }}",
+            "output": "={{ $json.name.replace('.blend', '_render.png') }}"
+          }
+        }
+      }
+    },
+    {
+      "name": "移动到 CC",
+      "type": "n8n-nodes-base.moveBinaryData",
+      "typeVersion": 1,
+      "position": [
+        850,
+        300
+      ],
+      "parameters": {
+        "operation": "moveFile",
+        "fileName": "={{ $json.path }}",
+        "newPath": "/python\\CC\\1_Raw"
+      }
+    },
+    {
+      "name": "发送通知",
+      "type": "n8n-nodes-base.email",
+      "typeVersion": 1,
+      "position": [
+        1050,
+        300
+      ],
+      "parameters": {
+        "to": "user@example.com",
+        "subject": "渲染完成",
+        "body": "={{ $json.name }} 渲染已完成"
+      }
+    }
+  ],
+  "connections": {
+    "监视 Inbox": {
+      "main": [
+        [
+          {
+            "node": "过滤 .blend 文件",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "过滤 .blend 文件": {
+      "main": [
+        [
+          {
+            "node": "调用 Blender MCP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "调用 Blender MCP": {
+      "main": [
+        [
+          {
+            "node": "移动到 CC",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "移动到 CC": {
+      "main": [
+        [
+          {
+            "node": "发送通知",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

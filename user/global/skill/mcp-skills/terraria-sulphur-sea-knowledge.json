@@ -1,0 +1,84 @@
+{
+  "name": "terraria-sulphur-sea-knowledge",
+  "display_name": "泰拉瑞亚沉沦之海知识修复",
+  "description": "解决灾厄模组中已获得沉沦之海材料但显示没有沉沦之海知识的问题",
+  "version": "1.0.0",
+  "author": "Local Software Integration Expert",
+  "category": "游戏工具",
+  "icon": "📚",
+  "inputs": [
+    {
+      "name": "action",
+      "type": "string",
+      "required": true,
+      "description": "操作类型: reset_flag (重置击杀标志) 或 add_item (直接添加物品)",
+      "enum": ["reset_flag", "add_item"]
+    },
+    {
+      "name": "world_name",
+      "type": "string",
+      "required": false,
+      "description": "要修改的世界名称 (仅reset_flag操作需要)"
+    },
+    {
+      "name": "player_name",
+      "type": "string",
+      "required": false,
+      "description": "要修改的玩家名称 (仅add_item操作需要)"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "success",
+      "type": "boolean",
+      "description": "操作是否成功"
+    },
+    {
+      "name": "message",
+      "type": "string",
+      "description": "操作结果消息"
+    }
+  ],
+  "steps": [
+    {
+      "name": "验证输入",
+      "description": "验证用户输入参数"
+    },
+    {
+      "name": "执行操作",
+      "description": "根据选择的操作类型执行相应的修复"
+    },
+    {
+      "name": "生成解决方案",
+      "description": "生成详细的解决方案步骤"
+    },
+    {
+      "name": "返回结果",
+      "description": "返回操作结果和解决方案"
+    }
+  ],
+  "examples": [
+    {
+      "name": "重置水生灾厄击杀标志",
+      "input": {
+        "action": "reset_flag",
+        "world_name": "我的世界"
+      },
+      "output": {
+        "success": true,
+        "message": "已生成重置水生灾厄击杀标志的解决方案"
+      }
+    },
+    {
+      "name": "直接添加沉沦之海知识",
+      "input": {
+        "action": "add_item",
+        "player_name": "我的角色"
+      },
+      "output": {
+        "success": true,
+        "message": "已生成添加沉沦之海知识的解决方案"
+      }
+    }
+  ]
+}

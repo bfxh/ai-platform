@@ -1,0 +1,17 @@
+name: "User Story"
+description: "Suggest a new user story"
+labels: ["user-story"]
+body:
+  - type: textarea
+    id: us-description
+    attributes:
+      label: "Description (if applicable) & Acceptance Criteria"
+      description: "Provide a description of the user story and list the acceptance criteria."
+      value: |
+        **Description:**  
+        _As a user of the plugin, I..._  
+
+        **Acceptance Criteria:**  
+        - [ ] Criterion 1  
+        - [ ] Criterion 2  
+        - [ ] Criterion 3

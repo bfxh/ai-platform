@@ -1,0 +1,107 @@
+{
+  "name": "continuous_integration",
+  "display_name": "持续集成",
+  "description": "自动化构建、测试和部署流程",
+  "version": "1.0.0",
+  "author": "MCP Core Team",
+  "requires": [],
+  "category": "development",
+  "entry_point": "continuous_integration:ContinuousIntegrationSkill",
+  "config": {
+    "ci_config": "ci_config.json",
+    "build_dir": "build",
+    "artifacts_dir": "artifacts",
+    "steps": [
+      "install",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "commands": {
+      "install": ["pip", "install", "-r", "requirements.txt"],
+      "build": ["python", "-m", "build"],
+      "test": ["python", "-m", "pytest"],
+      "deploy": ["twine", "upload", "dist/*"]
+    },
+    "environments": {
+      "default": {
+        "python_version": "3.10",
+        "requirements": "requirements.txt"
+      }
+    }
+  },
+  "commands": [
+    {
+      "name": "run",
+      "description": "运行完整的CI流程",
+      "parameters": [
+        {
+          "name": "environment",
+          "type": "string",
+          "required": false,
+          "description": "环境名称"
+        },
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "工作目录"
+        },
+        {
+          "name": "steps",
+          "type": "array",
+          "required": false,
+          "description": "执行步骤列表"
+        }
+      ]
+    },
+    {
+      "name": "build",
+      "description": "构建项目",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "工作目录"
+        }
+      ]
+    },
+    {
+      "name": "test",
+      "description": "测试项目",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "工作目录"
+        }
+      ]
+    },
+    {
+      "name": "deploy",
+      "description": "部署项目",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "工作目录"
+        }
+      ]
+    },
+    {
+      "name": "generate-config",
+      "description": "生成CI配置文件",
+      "parameters": [
+        {
+          "name": "template",
+          "type": "string",
+          "required": false,
+          "description": "配置模板 (github-actions)"
+        }
+      ]
+    }
+  ]
+}

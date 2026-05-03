@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="VHSShader" inherits="BaseShader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Post-process effect class that implements a VHS-tape-like effect.
+	</brief_description>
+	<description>
+		Post-process effect class that implements a VHS-tape-like effect.
+		This effect has multiple parameters that one could play with and is one of the most customizable ones from [b]GodotStylizedShadersPlugin[/b].
+	</description>
+	<tutorials>
+	</tutorials>
+	<members>
+		<member name="m_scanline_blend_factor" type="EncapsuledData<float>" setter="set" getter="get" default="0.01"></member>
+		<member name="m_scanline_height" type="EncapsuledData<float>" setter="set" getter="get" default="4.0"></member>
+		<member name="m_scanline_intensity" type="EncapsuledData<float>" setter="set" getter="get" default="0.25"></member>
+		<member name="m_scanline_scroll_speed" type="EncapsuledData<float>" setter="set" getter="get" default="16.0"></member>
+		<member name="m_scanline_enabled" type="EncapsuledData<bool>" setter="set" getter="get" default="true"></member>
+		<member name="m_grain_intensity" type="EncapsuledData<float>" setter="set" getter="get" default="2.0"></member>
+		<member name="m_grain_enabled" type="EncapsuledData<bool>" setter="set" getter="get" default="true"></member>
+		<member name="m_vertical_band_speed" type="EncapsuledData<float>" setter="set" getter="get" default="0.2"></member>
+		<member name="m_vertical_band_height" type="EncapsuledData<float>" setter="set" getter="get" default="0.01"></member>
+		<member name="m_vertical_band_intensity" type="EncapsuledData<float>" setter="set" getter="get" default="0.2"></member>
+		<member name="m_vertical_band_choppiness" type="EncapsuledData<float>" setter="set" getter="get" default="0.2"></member>
+		<member name="m_vertical_band_static_amount" type="EncapsuledData<float>" setter="set" getter="get" default="0.02"></member>
+		<member name="m_vertical_band_warp_factor" type="EncapsuledData<float>" setter="set" getter="get" default="0.005"></member>
+		<member name="m_vertical_band_enabled" type="EncapsuledData<bool>" setter="set" getter="get" default="true"></member>
+		<member name="m_dt" type="EncapsuledData<float>" setter="set" getter="get" default="0.0"></member>
+	</members>
+</class>

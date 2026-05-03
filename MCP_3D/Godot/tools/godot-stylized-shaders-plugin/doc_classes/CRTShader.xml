@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="CRTShader" inherits="BaseShader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Post-process effect class that implements a simple CRT-screen-like effect.
+	</brief_description>
+	<description>
+		Post-process effect class that implements a simple CRT-screen-like effect. The user may control the curvature, the vignette and the brightness.
+	</description>
+	<tutorials>
+	</tutorials>
+	<members>
+		<member name="m_curvature" type="EncapsuledData<float>" setter="set" getter="get" default="7.0">
+			Controls the curvature of the fake CRT-screen effect.
+		</member>
+		<member name="m_vignette_mul" type="EncapsuledData<float>" setter="set" getter="get" default="2.0">
+			Controls the multiplier variable of the vignette for the CRT effect.
+		</member>
+		<member name="m_brightness" type="EncapsuledData<float>" setter="set" getter="get" default="0.9">
+			Controls the brightness of the CRT effect.
+		</member>
+	</members>
+</class>

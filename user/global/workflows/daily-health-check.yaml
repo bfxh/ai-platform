@@ -1,0 +1,51 @@
+name: "daily-health-check"
+description: "每日系统健康检查 — 检查核心模块、存储、session、规则引擎状态"
+version: "1.0"
+trigger: "scheduled:daily"
+
+nodes:
+  - id: check-core-modules
+    type: skill
+    ref: system-verifier
+    action: verify_core_imports
+    description: "验证所有核心模块可导入"
+
+  - id: check-storage
+    type: skill
+    ref: system-verifier
+    action: verify_storage
+    params:
+      checks:
+        - session_dir
+        - cc_cache
+        - evo_data
+        - rules_file
+    description: "检查存储目录完整性"
+
+  - id: check-sessions
+    type: mcp
+    ref: session_list
+    description: "列出近期会话"
+
+  - id: check-evo-health
+    type: skill
+    ref: system-verifier
+    action: evo_health_report
+    description: "获取进化引擎健康报告"
+
+  - id: generate-report
+    type: skill
+    ref: report-generator
+    action: generate_daily_report
+    condition: "previous_step.success == True"
+    description: "生成每日报告"
+
+edges:
+  - from: check-core-modules
+    to: check-storage
+  - from: check-storage
+    to: check-sessions
+  - from: check-sessions
+    to: check-evo-health
+  - from: check-evo-health
+    to: generate-report

@@ -1,0 +1,29 @@
+{
+  "name": "高速文件传输工作流",
+  "version": "1.0",
+  "description": "仅执行文件传输，不配置集群",
+  "steps": [
+    {
+      "id": 1,
+      "name": "启动接收端",
+      "description": "在目标电脑启动接收服务",
+      "command": "start_high_speed_receive.bat",
+      "target": "remote",
+      "blocking": true
+    },
+    {
+      "id": 2,
+      "name": "执行传输",
+      "description": "开始高速文件传输",
+      "command": "start_high_speed_send.bat",
+      "depends_on": [1]
+    },
+    {
+      "id": 3,
+      "name": "验证完整性",
+      "description": "检查文件传输完整性",
+      "command": "python verify_transfer.py",
+      "depends_on": [2]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "ai_toolkit_linkage",
+  "version": "1.0.0",
+  "description": "多AI工具联动系统 - 链式执行、并行执行、智能路由",
+  "author": "AI Assistant",
+  "created": "2026-04-04",
+  "enabled": true,
+  "category": "ai_tools",
+  "tags": ["ai", "toolkit", "linkage", "chain", "parallel", "routing"],
+  "entry_point": "skill.py",
+  "class_name": "AIToolkitLinkage",
+  "actions": [
+    {
+      "name": "chain_execute",
+      "description": "链式执行 - 工具输出作为下一个工具输入",
+      "params": {
+        "task_config": {"type": "object", "required": true}
+      }
+    },
+    {
+      "name": "parallel_execute",
+      "description": "并行执行 - 多工具同时处理",
+      "params": {
+        "task_config": {"type": "object", "required": true}
+      }
+    },
+    {
+      "name": "route_execute",
+      "description": "智能路由 - 根据任务选择最佳工具",
+      "params": {
+        "task_description": {"type": "string", "required": true},
+        "available_tools": {"type": "array", "required": true}
+      }
+    },
+    {
+      "name": "create_workflow_template",
+      "description": "创建工作流模板",
+      "params": {
+        "template_type": {"type": "string", "required": true}
+      }
+    }
+  ],
+  "workflow_templates": ["content_creation", "code_review", "research"],
+  "output": {
+    "type": "json"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "name": "system_optimizer",
+  "version": "1.0.0",
+  "description": "系统优化技能 - 清理备份、临时文件、统一日志和配置",
+  "author": "AI Assistant",
+  "created": "2026-04-04",
+  "enabled": true,
+  "category": "system",
+  "tags": ["optimization", "cleanup", "maintenance", "config"],
+  "entry_point": "skill.py",
+  "class_name": "SystemOptimizerSkill",
+  "actions": [
+    {
+      "name": "clean_backups",
+      "description": "清理旧备份文件",
+      "params": {
+        "max_age_days": {
+          "type": "integer",
+          "default": 30,
+          "description": "保留最大天数"
+        },
+        "keep_count": {
+          "type": "integer",
+          "default": 5,
+          "description": "最少保留数量"
+        }
+      }
+    },
+    {
+      "name": "clean_temp",
+      "description": "清理临时文件",
+      "params": {
+        "max_age_hours": {
+          "type": "integer",
+          "default": 24,
+          "description": "保留最大小时数"
+        }
+      }
+    },
+    {
+      "name": "unify_logs",
+      "description": "统一日志管理",
+      "params": {}
+    },
+    {
+      "name": "unify_config",
+      "description": "统一配置管理",
+      "params": {}
+    },
+    {
+      "name": "check_dependencies",
+      "description": "检查依赖关系",
+      "params": {}
+    },
+    {
+      "name": "full_optimize",
+      "description": "完整优化",
+      "params": {}
+    }
+  ],
+  "config": {
+    "max_backup_age_days": 30,
+    "min_backup_keep_count": 5,
+    "max_temp_age_hours": 24,
+    "log_rotation_size": "10MB",
+    "log_backup_count": 5
+  },
+  "dependencies": [],
+  "output": {
+    "type": "json",
+    "schema": {
+      "cleaned_files": "list",
+      "cleaned_size": "integer",
+      "errors": "list",
+      "warnings": "list",
+      "updated_configs": "list"
+    }
+  }
+}

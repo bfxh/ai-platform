@@ -1,0 +1,33 @@
+[02:29:49] === STEP 1: Update Trae CN mcp.json ===
+[02:29:50] Trae CN mcp.json updated with 10 3D MCP servers!
+[02:29:50] 
+[02:29:50] === STEP 2: Install Godot addons to FragmentWeaponGame ===
+[02:29:50]   Fuku installed!
+[02:29:50]   AI Context Generator installed!
+[02:29:50]   VoronoiShatter installed!
+[02:29:50]   Vollkorn MCP scripts installed!
+[02:29:50]   Godot AI (hi-godot) plugin installed!
+[02:29:50] All Godot addons installed!
+[02:29:50] 
+[02:29:50] === STEP 3: Clone new discovered tools ===
+[02:29:50] CLONE: Blender AI Builder...
+[02:29:53] OK: Blender AI Builder
+[02:29:53] CLONE: Blender LLM Addin...
+[02:34:54] FAIL: Blender LLM Addin
+[02:34:54] CLONE: Blender AI Agent...
+[02:35:08] FAIL: Blender AI Agent
+[02:35:08] CLONE: Unreal Engine MCP (flopperam)...
+[02:35:22] FAIL: Unreal Engine MCP (flopperam)
+[02:35:22] SKIP: Unity MCP
+[02:35:22] CLONE: Unreal Analyzer MCP...
+[02:35:25] OK: Unreal Analyzer MCP
+[02:35:25] CLONE: UE5-MCP Research...
+[02:35:27] OK: UE5-MCP Research
+[02:35:27] CLONE: HoMM3 Soundtrack (free CC)...
+[02:35:29] FAIL: HoMM3 Soundtrack (free CC)
+[02:35:29] 
+[02:35:29] === STEP 4: pip install blender-mcp-enhanced ===
+[02:35:35] blender-mcp-enhanced installed!
+[02:35:35] 
+[02:35:35] === ALL DONE ===
+[02:35:35] Trae CN + Godot project + new tools all configured!

@@ -1,0 +1,26 @@
+{
+  "id": "stepfun_220527392356",
+  "date": "2026/3/11 12:58:19",
+  "title": "阶跃AI对话 [搜索,游戏]",
+  "summary": "会话220527392356，4次工具调用，使用工具: file_system_read,web_search",
+  "tags": [
+    "搜索",
+    "游戏"
+  ],
+  "source": "stepfun_log",
+  "session_id": "220527392356687872",
+  "user_instructions": [],
+  "results": [],
+  "score": 5,
+  "tools_used": [
+    "file_system_read",
+    "web_search"
+  ],
+  "files_touched": [
+    "D://泰拉科技//泰拉科技模组方案//Unity版本升级.html/"
+  ],
+  "commands": [],
+  "first_time": "2026/3/11 12:58:19",
+  "last_time": "2026/3/11 13:02:00",
+  "task_count": 4
+}

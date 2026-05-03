@@ -1,0 +1,114 @@
+# Email Authentication Code Script
+# Pobieranie kodu uwierzytelniającego ze skrzynki email i wpisywanie go w formularz
+
+# Definicja parametrów
+email_addr = "test@email.com";  # Adres email, z którego pobieramy wiadomości
+subject_filter = "Kod uwierzytelniający";  # Filtr tematu wiadomości
+regex_pattern = "\\b\\d{6}\\b";  # Wzorzec dla 6-cyfrowego kodu
+
+# Pobieranie ostatnich wiadomości z określonego adresu
+emails = get_emails(
+    from=email_addr,
+    subject_filter=subject_filter,
+    max_count=1
+);
+
+# Sprawdzenie czy znaleziono wiadomości
+if emails {
+    # Wyciągnięcie kodu z treści wiadomości
+    auth_code = extract_code(
+        text=emails[0].body,
+        regex=regex_pattern
+    );
+
+    # Wypisanie znalezionego kodu (do celów diagnostycznych)
+    print(text=f"Znaleziono kod: {auth_code}");
+
+    # Sprawdzenie czy kod został wyodrębniony
+    if auth_code {
+        # Znaleziono kod, wpisz go w pole formularza
+        # Najpierw znajdź pole formularza
+        if screen_contains(image="auth_code_field.png") {
+            position = find_on_screen(image="auth_code_field.png");
+            if position {
+                # Kliknij w pole formularza
+                click(x=position[0], y=position[1]);
+                wait(seconds=0.5);
+
+                # Usuń istniejący tekst z pola (jeśli istnieje)
+                hotkey(keys=["ctrl", "a"]);
+                press_key(key="delete");
+                wait(seconds=0.2);
+
+                # Wpisz kod uwierzytelniający
+                type_text(text=auth_code);
+                wait(seconds=0.5);
+
+                # Kliknij przycisk potwierdzenia
+                if screen_contains(image="submit_button.png") {
+                    click(image="submit_button.png");
+
+                    # Czekaj na zakończenie procesu uwierzytelniania
+                    wait(seconds=3);
+
+                    # Sprawdź czy uwierzytelnianie się powiodło
+                    if screen_contains(image="success_icon.png") {
+                        print(text="Uwierzytelnianie zakończone sukcesem!");
+                    } else {
+                        print(text="Nie można potwierdzić powodzenia uwierzytelniania.");
+                    }
+                } else {
+                    print(text="Nie znaleziono przycisku potwierdzenia.");
+                }
+            } else {
+                print(text="Nie udało się określić pozycji pola formularza.");
+            }
+        } else {
+            print(text="Nie znaleziono pola formularza na ekranie.");
+        }
+    } else {
+        print(text="Nie udało się wyodrębnić kodu z wiadomości.");
+    }
+} else {
+    print(text="Nie znaleziono wiadomości pasujących do kryteriów.");
+
+    # Alternatywne podejście - odświeżyć skrzynkę i spróbować ponownie
+    repeat 3 {
+        print(text="Oczekiwanie na wiadomość...");
+        wait(seconds=10);
+
+        # Spróbuj ponownie pobrać wiadomości
+        emails = get_emails(
+            from=email_addr,
+            subject_filter=subject_filter,
+            max_count=1
+        );
+
+        if emails {
+            auth_code = extract_code(
+                text=emails[0].body,
+                regex=regex_pattern
+            );
+
+            if auth_code {
+                print(text=f"Znaleziono kod po ponownej próbie: {auth_code}");
+
+                # Wpisz kod w pole formularza
+                if screen_contains(image="auth_code_field.png") {
+                    click(image="auth_code_field.png");
+                    wait(seconds=0.5);
+                    type_text(text=auth_code);
+                    wait(seconds=0.5);
+
+                    if screen_contains(image="submit_button.png") {
+                        click(image="submit_button.png");
+                        wait(seconds=3);
+                    }
+                }
+
+                # Zakończ pętlę, bo znaleźliśmy kod
+                break;
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="ManualArrayInspector" inherits="VBoxContainer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		UI class that acts as an "inspector" for the [b]EffectArray[/b] within [b]GodotStylizedShadersPlugin[/b].
+	</brief_description>
+	<description>
+		UI class that acts as an "inspector" for the [b]EffectArray[/b] within [b]GodotStylizedShadersPlugin[/b].
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="get_effects" qualifiers="const">
+			<return type="BaseShader[]" />
+			<description>
+			</description>
+		</method>
+		<method name="set_effects">
+			<return type="void" />
+			<param index="0" name="effects" type="BaseShader[]" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<signals>
+		<signal name="order_changed">
+			<param index="0" name="effects" type="Array" />
+			<description>
+				Can be used to check whether the order in which the effects are stored in the array has been changed. This signal is used to update the main EffectArray.
+			</description>
+		</signal>
+	</signals>
+</class>

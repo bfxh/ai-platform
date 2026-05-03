@@ -1,0 +1,19 @@
+{
+  "name": "cypress-qa-testing",
+  "display_name": "Cypress QA测试",
+  "description": "Cypress自动化测试框架 - TypeScript+Cucumber BDD",
+  "version": "1.0.0",
+  "source": "https://github.com/ricardoisgood/cypress-qa-automation",
+  "category": "testing",
+  "project_path": "/python\\cypress-qa-automation",
+  "commands": [
+    {
+      "name": "cypress:open",
+      "description": "打开Cypress测试运行器"
+    },
+    {
+      "name": "cypress:run",
+      "description": "无头模式运行测试并生成报告"
+    }
+  ]
+}

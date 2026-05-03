@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="PixelShader" inherits="BaseShader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Post-process effect that produces a "pixelization" effect.
+	</brief_description>
+	<description>
+		Post-process effect that produces a "pixelization" effect.
+		This can be achieved by giving this effect a target width and height (e.g. 640x360)
+	</description>
+	<tutorials>
+	</tutorials>
+	<members>
+		<member name="target_width" type="EncapsuledData<int>" setter="set" getter="get" default="320"></member>
+		<member name="target_height" type="EncapsuledData<int>" setter="set" getter="get" default="180"></member>
+	</members>
+</class>

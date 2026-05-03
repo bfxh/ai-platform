@@ -1,0 +1,99 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+*.tsbuildinfo
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.eggs/
+
+# Unreal Engine
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vscode/
+.vs/
+*.VC.db
+*.opensdf
+*.opendb
+*.sdf
+*.sln
+*.suo
+*.xcodeproj
+*.xcworkspace
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Testing
+coverage/
+.nyc_output/
+
+# Build outputs
+*.dll
+*.dylib
+*.exe
+*.pdb
+*.lib
+*.a
+*.la
+*.lai
+*.so.*
+*.out
+*.app
+
+.claude/settings.local.json
+
+# Demo folder (Unreal Engine experimental/test content)
+Demo/*
+# Keep only the project file and documentation
+!Demo/*.uproject
+!Demo/README_SHOWCASE.md
+# Include demo showcase content and test assets
+!Demo/Content/
+!Demo/Content/*.umap
+!Demo/Content/TestBlueprints/
+!Demo/Content/TestBlueprints/**
+!Demo/Content/Demo/
+!Demo/Content/Demo/**
+# Demo/Content/Tests/ is excluded — created by test runs, cleaned by reset_demo_scene
+# Always ignore Unreal's generated folders
+Demo/Saved/
+Demo/Intermediate/
+Demo/DerivedDataCache/
+Demo/Binaries/
+Demo/Config/

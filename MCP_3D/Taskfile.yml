@@ -1,0 +1,163 @@
+# Godot + ComfyUI + Blender + UE5 全局自动化 Taskfile
+# 用法: task run-godot-test / task exo-cluster / task comfyui-3d 等
+version: '3'
+
+vars:
+  GODOT: 'D:\rj\KF\JM\Godot_v4.6.1-stable_win64.exe'
+  GODOT_PROJECT: 'D:\rj\KF\JM\GodotProject'
+  PYTHON: 'C:\Users\888\AppData\Local\Programs\Python\Python312\python.exe'
+  COMFYUI: 'D:\rj\AI\ComfyUI'
+  BLENDER: 'D:\rj\KF\JM\blender\blender.exe'
+
+tasks:
+  # ===== 游戏测试 =====
+  run-godot-test:
+    desc: 运行Godot GUT单元测试(headless)
+    cmds:
+      - '{{.GODOT}} --headless --path {{.GODOT_PROJECT}} -s addons/gut/gut_cmdln.gd -gexit'
+  
+  run-godot-test-verbose:
+    desc: 运行Godot测试(详细输出)
+    cmds:
+      - '{{.GODOT}} --headless --path {{.GODOT_PROJECT}} -s addons/gut/gut_cmdln.gd -gdir=res://tests -gprefix=test_ -gsuffix=.gd -glog=3 -gexit'
+
+  run-e2e-test:
+    desc: 运行godot-e2e端到端测试
+    cmds:
+      - '{{.PYTHON}} -m pytest \MCP_3D\Testing\godot-e2e\tests -v'
+
+  run-all-tests:
+    desc: 运行全部测试
+    deps: [run-godot-test, run-e2e-test]
+
+  # ===== Godot游戏自动化 =====
+  launch-godot-editor:
+    desc: 启动Godot编辑器并打开项目
+    cmds:
+      - '{{.GODOT}} --editor --path {{.GODOT_PROJECT}}'
+
+  launch-godot-game:
+    desc: 启动Godot游戏(直接运行)
+    cmds:
+      - '{{.GODOT}} --path {{.GODOT_PROJECT}}'
+
+  godot-headless-screenshot:
+    desc: Godot headless截图
+    cmds:
+      - '{{.GODOT}} --headless --path {{.GODOT_PROJECT}} --quit-after 30'
+
+  # ===== 分布式AI集群 =====
+  cluster-status:
+    desc: 检查集群设备在线状态
+    cmds:
+      - powershell -File \MCP_3D\Network\exo_cluster_start.ps1
+
+  exo-desktop:
+    desc: 启动台式机exo节点(orchestrator)
+    cmds:
+      - '{{.PYTHON}} -m exo --node-id desktop-orchestrator'
+
+  exo-desktop-full:
+    desc: 台式机orchestrator(完整参数)
+    cmds:
+      - '{{.PYTHON}} -m exo --node-id desktop-orchestrator --listen-host 192.168.1.6 --port 52415'
+
+  exo-run-model:
+    desc: 在分布式集群上运行模型
+    cmds:
+      - '{{.PYTHON}} -m exo run llama3.2 --prompt "hello world"'
+
+  net-setup-desktop:
+    desc: 配置台式机网络共享+防火墙
+    cmds:
+      - powershell -File \MCP_3D\Network\desktop_network_setup.ps1
+
+  # ===== ComfyUI自动化 =====
+  comfyui-start:
+    desc: 启动ComfyUI服务
+    cmds:
+      - '{{.PYTHON}} {{.COMFYUI}}\main.py --listen 0.0.0.0 --port 8188'
+
+  comfyui-3d-image2model:
+    desc: ComfyUI图片转3D模型工作流
+    cmds:
+      - 'echo "1. 打开 http://localhost:8188"'
+      - 'echo "2. 加载 ComfyUI-3D-Pack 节点"'
+      - 'echo "3. 选择 InstantMesh/TripoSR/Hunyuan3D"'
+      - 'echo "4. 输入图片，生成GLB/OBJ模型"'
+
+  # ===== Blender自动化 =====
+  blender-start:
+    desc: 启动Blender
+    cmds:
+      - '{{.BLENDER}}'
+
+  blender-mcp-connect:
+    desc: 通过MCP连接Blender
+    cmds:
+      - 'uvx blender-mcp'
+
+  # ===== UE5自动化 =====
+  ue5-launch:
+    desc: 启动UE5编辑器
+    cmds:
+      - 'D:\rj\KF\JM\UE_5.6\Engine\Binaries\Win64\UnrealEditor.exe'
+
+  # ===== 桌面自动化 =====
+  rpa-example:
+    desc: RPALite桌面自动化示例
+    cmds:
+      - '{{.PYTHON}} \MCP_3D\Automation\RPALite\examples\basic_usage.py'
+
+  # ===== GitHub CI/CD =====
+  ci-test:
+    desc: CI/CD快速测试(无GUI)
+    cmds:
+      - task: run-all-tests
+
+  # ===== 综合启动 =====
+  dev-all:
+    desc: 一键启动开发环境
+    cmds:
+      - 'start "" "{{.GODOT}}" --editor --path {{.GODOT_PROJECT}}'
+      - 'start "" "{{.PYTHON}}" {{.COMFYUI}}\main.py --listen 0.0.0.0 --port 8188'
+      - 'echo "Godot + ComfyUI 已启动!"'
+
+  # ===== 笔记本+手机连接 =====
+  setup-laptop:
+    desc: 笔记本端自动配置(需在笔记本上运行 \MCP_3D\Network\laptop_bootstrap.ps1)
+    cmds:
+      - 'echo "===================================="'
+      - 'echo " 笔记本配置步骤 (在笔记本上操作)"'
+      - 'echo "===================================="'
+      - 'echo "1. 把 \MCP_3D\Network\ 整个文件夹复制到笔记本"'
+      - 'echo "2. 笔记本连上同一WiFi (192.168.1.x)"'
+      - 'echo "3. 在笔记本上右键 laptop_bootstrap.ps1 -> 使用PowerShell运行"'
+      - 'echo "4. 自动完成: 挂载共享盘 + 安装exo + 加入集群"'
+      - 'echo "===================================="'
+
+  check-laptop:
+    desc: 检查笔记本是否在线
+    cmds:
+      - 'ping -n 1 192.168.1.14 && echo "笔记本在线!" || echo "笔记本离线"'
+
+  setup-phone:
+    desc: 华为手机exo节点配置
+    cmds:
+      - 'echo "===================================="'
+      - 'echo " 华为手机配置 (Termux)"'
+      - 'echo "===================================="'
+      - 'echo "1. F-Droid下载Termux"'
+      - 'echo "2. pkg install python git openssh"'
+      - 'echo "3. pip install exo"'
+      - 'echo "4. 连WiFi后: ifconfig 查IP"'
+      - 'echo "5. exo --discovery-address 192.168.1.6"'
+
+  # ===== 全自动游戏世界测试 =====
+  auto-game-test:
+    desc: 全自动游戏世界测试流程
+    cmds:
+      - task: run-godot-test
+      - task: run-e2e-test
+      - 'echo "=== 全自动测试完成 ==="'
+      - 'echo "单元测试 + E2E测试 全部通过!"'

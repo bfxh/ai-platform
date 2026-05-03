@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "name": "Bug Detection & Auto-Fix Skill",
+  "description": "自动检测、分析、修复代码bug的MCP技能",
+  "tools": [
+    {
+      "name": "scan_code_for_bugs",
+      "description": "扫描代码文件查找潜在bug",
+      "parameters": {
+        "filepath": "string",
+        "language": "string",
+        "check_types": ["syntax", "runtime", "logic", "compatibility"]
+      }
+    },
+    {
+      "name": "analyze_bug",
+      "description": "分析bug原因和影响",
+      "parameters": {
+        "error_message": "string",
+        "code_context": "string",
+        "language": "string"
+      }
+    },
+    {
+      "name": "auto_fix_bug",
+      "description": "自动修复可修复的bug",
+      "parameters": {
+        "filepath": "string",
+        "bug_type": "string",
+        "fix_strategy": "string"
+      }
+    },
+    {
+      "name": "record_bug_to_knowledge_base",
+      "description": "记录bug到知识库",
+      "parameters": {
+        "bug_id": "string",
+        "description": "string",
+        "impact": "string",
+        "solution": "string",
+        "is_fixable": "boolean"
+      }
+    }
+  ]
+}

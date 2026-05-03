@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bsr74f2a6142u"]
+
+[node name="StylizedToolbar" type="ToolPanel"]
+
+[node name="PluginLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Stylized Plugin"
+horizontal_alignment = 1
+
+[node name="ApplyToContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="ApplyToText" type="Label" parent="ApplyToContainer"]
+layout_mode = 2
+text = "Apply to"
+
+[node name="OptionButton" type="OptionButton" parent="ApplyToContainer"]
+layout_mode = 2
+item_count = 1
+popup/item_0/text = "None"
+popup/item_0/id = 0
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="ToggleContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CelToggle" type="CheckButton" parent="ToggleContainer"]
+layout_mode = 2
+text = "Cel Shader"
+
+[node name="OutlineToggle" type="CheckButton" parent="ToggleContainer"]
+layout_mode = 2
+text = "Outline Shader"
+
+[node name="InvertToggle" type="CheckButton" parent="ToggleContainer"]
+layout_mode = 2
+text = "Invert Color"
+
+[node name="CRTToggle" type="CheckButton" parent="ToggleContainer"]
+layout_mode = 2
+text = "CRT Effect"
+
+[node name="DitherToggle" type="CheckButton" parent="ToggleContainer"]
+layout_mode = 2
+text = "Dither Effect"
+
+[node name="PixelToggle" type="CheckButton" parent="ToggleContainer"]
+layout_mode = 2
+text = "Pixelization Effect"
+
+[node name="VHSToggle" type="CheckButton" parent="ToggleContainer"]
+layout_mode = 2
+text = "VHS Effect"
+
+[node name="BloomToggle" type="CheckButton" parent="ToggleContainer"]
+layout_mode = 2
+text = "HDR Bloom Effect"
+
+[node name="KuwaharaToggle" type="CheckButton" parent="ToggleContainer"]
+layout_mode = 2
+text = "Kuwahara Effect"
+
+[node name="HSeparator2" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="ArrayOrder" type="ManualArrayInspector" parent="."]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 2

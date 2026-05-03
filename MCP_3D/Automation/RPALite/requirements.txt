@@ -1,0 +1,53 @@
+# Core dependencies
+numpy>=1.21.0
+Pillow>=9.0.0
+pyautogui>=0.9.53
+keyboard>=0.13.5
+mouse>=0.7.1
+pyperclip>=1.8.2
+deprecated>=1.2.13
+robotframework>=6.0.0
+
+# Computer Vision & Image Processing
+opencv-python>=4.9.0.80
+opencv-contrib-python>=4.6.0.66
+opencv-python-headless>=4.9.0.80
+
+# OCR & Deep Learning
+--extra-index-url https://download.pytorch.org/whl/torch_stable.html
+torch>=2.0.0
+torchvision>=0.15.0
+easyocr>=1.7.1
+
+# Platform specific dependencies
+# Windows
+pywinauto>=0.6.8; sys_platform == 'win32'
+uiautomation>=2.0.0; sys_platform == 'win32'
+
+# macOS
+# pyobjc>=8.0; sys_platform == 'darwin'  # Full package no longer needed
+
+# macOS specific dependencies
+pyobjc-core>=8.0,<9.0; sys_platform == 'darwin'
+pyobjc-framework-Cocoa>=8.0,<9.0; sys_platform == 'darwin'  # Foundation, AppKit
+pyobjc-framework-Quartz>=8.0,<9.0; sys_platform == 'darwin'  # Screen capture, CoreGraphics
+pyobjc-framework-ApplicationServices>=8.0,<9.0; sys_platform == 'darwin'  # Accessibility, User input
+
+# Testing & Development
+pytest>=6.2.5
+pytest-md>=0.2.0
+pytest-emoji>=0.2.0
+build>=1.2.1
+semantic-version>=2.8.0
+PyGithub>=1.55.0
+requests>=2.25.0
+
+# Utilities
+github-release-downloader>=1.1.0
+
+# Linux specific dependencies (X11 required)
+xdotool>=3.0; sys_platform == 'linux'
+wmctrl>=1.0; sys_platform == 'linux'
+python-xlib>=0.30; sys_platform == 'linux'
+paddlepaddle
+paddleocr

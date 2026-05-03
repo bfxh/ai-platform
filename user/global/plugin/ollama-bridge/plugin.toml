@@ -1,0 +1,46 @@
+name = "ollama-bridge"
+version = "1.0.0"
+description = "Ollama-WS Bridge - Local AI model access via WebSocket"
+
+[workspace]
+external_path = "."
+
+[workspace.ai_tools]
+ollama = { version = "0.21", path = "%OLLAMA_DIR%/ollama.exe", role = "model_server" }
+node = { version = "18", role = "runtime" }
+
+[workspace.skills]
+local_chat = { type = "mcp", ref = "ollama-ws-bridge", description = "Local AI chat via Ollama" }
+agents_md = { type = "mcp", ref = "agents-md-discovery", description = "Project context injection" }
+
+[environment]
+  [[environment.items]]
+  name = "OLLAMA_BASE"
+  description = "Ollama API 地址"
+  example = "http://localhost:11434"
+
+  [[environment.items]]
+  name = "DEFAULT_MODEL"
+  description = "默认模型"
+  example = "qwen2.5-coder:7b"
+
+  [[environment.items]]
+  name = "WS_PORT"
+  description = "WebSocket 端口"
+  example = "11435"
+
+[software]
+  [[software.items]]
+  name = "node"
+  path = "node"
+  version = "18"
+
+  [[software.items]]
+  name = "ollama"
+  path = "%OLLAMA_DIR%/ollama.exe"
+  version = "0.21"
+
+[[abilities]]
+  type = "mcp"
+  name = "ollama-ws-bridge"
+  path = "bridge.mjs"

@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "install_path": "/python\\storage\\mcp",
+  "skills_path": "/python\\user\\skills",
+  "workflows_path": "/python\\user\\workflows",
+  "registry_path": "/python\\.mcp\\registry.json",
+  "installed_skills": 13,
+  "installed_workflows": 1,
+  "install_date": "2026-04-05",
+  "auto_load": true,
+  "description": "TRAE 启动时自动加载 MCP 服务器"
+}

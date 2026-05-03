@@ -1,0 +1,15 @@
+{
+  "name": "web-content-reach",
+  "display_name": "全网内容检索",
+  "description": "合规读取B站/小红书/GitHub等公开内容",
+  "version": "1.0.0",
+  "category": "search",
+  "source": "https://github.com/Panniantong/Agent-Reach",
+  "platforms": ["bilibili", "xiaohongshu", "github", "reddit", "youtube"],
+  "compliance": {
+    "public_content_only": true,
+    "local_processing": true,
+    "no_api_key_required": true,
+    "no_data_upload": true
+  }
+}

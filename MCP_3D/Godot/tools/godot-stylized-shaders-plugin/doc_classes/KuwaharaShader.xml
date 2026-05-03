@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="KuwaharaShader" inherits="BaseShader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Multi-pass post-process effect that implements the [b]Anisotropic Kuwahara Filter[/b].
+	</brief_description>
+	<description>
+		Multi-pass post-process effect that implements the [b]Anisotropic Kuwahara Filter[/b].
+		The passes are: Downsample Pass, Structure Tensor Pass, Horizontal Blur Pass, Vertical Blur Pass, Composite Pass, Upsample Pass.
+		The effect was implemented thanks to [b]Acerola[/b]'s [url=https://www.youtube.com/watch?v=LDhN-JK3U9g]video[/url] on the effect and also thanks to his [url=https://github.com/GarrettGunnell/AcerolaFX/blob/c33f779b093fa1e25faf0c77ef22c3fe6902e2fe/Shaders/AcerolaFX_KuwaharaFilter.fx#L4]GitHub repository[/url] with the implementation.
+	
+		This effect is the only one within [b]GodotStylizedShadersPlugin[/b] that contains interchangable (default) presets. The user may also add their own through code/scripting.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="get_preset">
+			<return type="KuwaharaPreset"/>
+			<description>
+				Returns the currently applied preset for the Kuwahara filter.
+			</description>
+		</method>
+		<method name="set_preset">
+			<return type="void"/>
+			<param index="0" name="p" type="KuwaharaPreset"/>
+			<description>
+				Sets a preset for the Kuwahara filter.
+				The default available presets are: FAST, SUBTLE, OIL, ANIME
+			</description>
+		</method>
+		<method name="set_preset">
+			<return type="void"/>
+			<param index="0" name="config" type="KuwaharaPresetConfig"/>
+			<description>
+				Sets a preset for the Kuwahara filter, but with a given configuration. (In this instance, a configuration is a struct containing the variables, which can be made from code/scripting)
+			</description>
+		</method>
+		<method name="set_preset_as_selected">
+			<return type="void"/>
+			<param index="0" name="index" type="int"/>
+			<description>
+				Applies the configuration of the current preset enum-index.
+			</description>
+		</method>
+		<method name="get_preset_configs">
+			<return type="KuwaharaPresetConfig[]"/>
+			<description>
+				Gets the vector of preset configs, which the user may use to index into.
+			</description>
+		</method>
+		<method name="add_preset_config">
+			<return type="void"/>
+			<param index="0" name="config" type="KuwaharaPresetConfig"/>
+			<description>
+				Adds a KuwaharaPresetConfig to the active array of preset configs.
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="downsample_factor" type="EncapsuledData<int>" setter="set" getter="get" default="2">
+			Controls the amount by which the screen texture is downsampled to improve performance while using the Kuwahara filter.
+		</member>
+		<member name="radius" type="EncapsuledData<float>" setter="set" getter="get" default="3.0"></member>
+		<member name="kernel_size" type="EncapsuledData<float>" setter="set" getter="get" default="7.0"></member>
+		<member name="alpha" type="EncapsuledData<float>" setter="set" getter="get" default="1.0"></member>
+		<member name="sectors" type="EncapsuledData<float>" setter="set" getter="get" default="8.0"></member>
+		<member name="sharpness" type="EncapsuledData<float>" setter="set" getter="get" default="8.0"></member>
+	</members>
+</class>

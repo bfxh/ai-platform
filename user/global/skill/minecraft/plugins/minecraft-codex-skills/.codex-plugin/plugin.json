@@ -1,0 +1,32 @@
+{
+  "name": "minecraft-codex-skills",
+  "version": "2.4.0",
+  "description": "A dual-target Minecraft development skills bundle for Codex and Claude Code.",
+  "author": {
+    "name": "Jahrome907"
+  },
+  "homepage": "https://github.com/Jahrome907/minecraft-agent-skills",
+  "repository": "https://github.com/Jahrome907/minecraft-agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "minecraft",
+    "skills",
+    "codex",
+    "claude",
+    "neoforge",
+    "fabric",
+    "paper"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Minecraft Codex Skills",
+    "shortDescription": "12 reusable Minecraft development and operations skills for Codex.",
+    "longDescription": "Bundle modding, plugin-dev, datapack, commands, testing, CI/CD, world generation, resource pack, server admin, WorldEdit ops, and EssentialsX ops skills in one installable package.",
+    "developerName": "Jahrome907",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ]
+  }
+}

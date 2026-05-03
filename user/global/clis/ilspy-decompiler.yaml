@@ -1,0 +1,20 @@
+name: "ilspy-decompiler"
+description: "ILSpy .NET 反编译器 — 开源 .NET 程序集分析"
+exec_path: "D:\\rj\\KF\\FBY\\ILSpy\\ILSpy.exe"
+params:
+  - name: target
+    type: string
+    required: true
+    description: "目标 .NET DLL/EXE 文件路径"
+  - name: output_dir
+    type: string
+    default: "output/ilspy_out"
+    description: "输出目录 (通过命令行参数)"
+  - name: language
+    type: string
+    default: "CSharp"
+    description: "目标语言: CSharp / IL / VB"
+timeout: 300
+output:
+  type: "directory"
+  description: "反编译源码目录"

@@ -1,0 +1,69 @@
+name = "global-capabilities"
+version = "1.0.0"
+description = "全局项目 - 境基能力声明，供其他 AI 件识"
+
+[workspace]
+external_path = "."
+
+[workspace.ai_tools]
+trae = { version = "1.107", role = "dispatcher", description = "TRAE IDE 动化" }
+ollama = { version = "0.21", path = "%OLLAMA_DIR%/ollama.exe", role = "model_server", description = "地大模型服务" }
+python = { version = "3.12", path = "%USERPROFILE%/AppData/Local/Programs/Python/Python312/python.exe", role = "runtime", description = "Python 运时" }
+node = { version = "18", role = "runtime", description = "Node.js 运时" }
+git = { version = "2.x", path = "%GIT_DIR%/cmd/git.exe", role = "vcs", description = "版本控制" }
+java = { version = "17", role = "runtime", description = "Java 运时 (Minecraft)" }
+rust = { version = "1.70+", role = "runtime", description = "Rust 编译" }
+powershell = { version = "7", role = "runtime", description = "PowerShell 脚本引擎" }
+ffmpeg = { version = "6.x", role = "media", description = "音理" }
+
+[workspace.skills]
+agents_md = { type = "mcp", ref = "agents-md-discovery", description = "项目上下文自动发现与注入" }
+ollama_chat = { type = "mcp", ref = "ollama-ws-bridge", description = " AI 对话 (Ollama)" }
+mcp_core = { type = "plugin", ref = "mcp-core", description = "MCP 核心能系" }
+gstack = { type = "plugin", ref = "gstack-core", description = "GSTACK 动化 DevOps" }
+minecraft = { type = "skill", ref = "minecraft-skill", description = "Minecraft 动化能包" }
+code_analyzer = { type = "skill", ref = "code-analyzer", description = "代码分析" }
+web_builder = { type = "skill", ref = "web-builder", description = "Web 构建" }
+software_scanner = { type = "skill", ref = "software_scanner", description = "地软件扫" }
+auto_tester = { type = "skill", ref = "auto_tester", description = "动化测试" }
+network_bypass = { type = "skill", ref = "network_bypass", description = "网络限制突破" }
+skill_doctor = { type = "skill", ref = "skill_doctor", description = "能健康诊与修" }
+
+[workspace.models]
+qwen2_5_coder = { provider = "ollama", model = "qwen2.5-coder:7b", description = "代码生成模型" }
+deepseek_coder = { provider = "ollama", model = "deepseek-coder:6.7b", description = "深度代码模型" }
+
+[[abilities]]
+  type = "mcp"
+  name = "agents-md-discovery"
+  path = "plugin/agents-md/server.mjs"
+
+[[abilities]]
+  type = "mcp"
+  name = "ollama-ws-bridge"
+  path = "plugin/ollama-bridge/bridge.mjs"
+
+[[abilities]]
+  type = "plugin"
+  name = "mcp-core"
+  path = "plugin/mcp-core/plugin.toml"
+
+[[abilities]]
+  type = "plugin"
+  name = "gstack-core"
+  path = "plugin/gstack-core/plugin.toml"
+
+[[abilities]]
+  type = "skill"
+  name = "minecraft-skill"
+  path = "skill/minecraft/skill.py"
+
+[[abilities]]
+  type = "skill"
+  name = "code-analyzer"
+  path = "skill/code-analyzer/analyzer.py"
+
+[[abilities]]
+  type = "skill"
+  name = "web-builder"
+  path = "skill/web-builder/builder.py"

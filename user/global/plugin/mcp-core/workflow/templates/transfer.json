@@ -1,0 +1,48 @@
+{
+  "name": "文件传输",
+  "version": "2.0",
+  "description": "传输文件并实时通知状态",
+  "steps": [
+    {
+      "id": "notify_start",
+      "name": "发送开始通知",
+      "description": "通知传输开始",
+      "skill": "notification",
+      "action": "notify",
+      "params": {
+        "title": "文件传输",
+        "message": "开始传输文件...",
+        "type": "info"
+      }
+    },
+    {
+      "id": "send_files",
+      "name": "发送文件",
+      "description": "执行文件传输",
+      "skill": "network_transfer",
+      "action": "send",
+      "params": {
+        "target": "$target_ip",
+        "files": "$files"
+      },
+      "depends_on": ["notify_start"]
+    },
+    {
+      "id": "notify_complete",
+      "name": "发送完成通知",
+      "description": "通知传输完成",
+      "skill": "notification",
+      "action": "notify",
+      "params": {
+        "title": "传输完成",
+        "message": "文件传输成功完成！",
+        "type": "success",
+        "sound": "complete"
+      },
+      "depends_on": ["send_files"]
+    }
+  ],
+  "config": {
+    "timeout": 300
+  }
+}

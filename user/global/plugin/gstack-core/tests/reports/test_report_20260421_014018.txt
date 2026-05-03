@@ -1,0 +1,38 @@
+============================================================
+GSTACK 深度测试报告
+============================================================
+生成时间: 2026-04-21T01:40:10.609981
+
+测试摘要:
+  总测试数: 9
+  通过: 8
+  失败: 1
+  通过率: 88.9%
+
+------------------------------------------------------------
+详细结果:
+------------------------------------------------------------
+
+[ASK Skill]
+  ✅ test_initialization 
+  ✅ test_skills_loaded 
+  ✅ test_run_invalid_skill 
+
+[Blender MCP]
+  ✅ test_initialization 
+  ✅ test_status_check 
+
+[Narsil MCP]
+  ❌ Narsil MCP 模块加载 
+     错误: module 'narsil_skill' has no attribute 'NarsilMCP'
+
+[n8n Workflow]
+  ✅ test_initialization 
+  ✅ test_status_check 
+
+[Security]
+  ✅ test_path_safety 
+
+============================================================
+报告结束
+============================================================

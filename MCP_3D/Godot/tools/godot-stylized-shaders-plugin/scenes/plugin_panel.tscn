@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://pamwj5c086u1"]
+
+[node name="PluginPanel" type="ToolPanel"]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Random rotation between 0 and the inputted angle"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Apply rotation"

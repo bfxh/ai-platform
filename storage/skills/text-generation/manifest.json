@@ -1,0 +1,11 @@
+{
+  "manifest": {
+    "name": "Text Generation Skill",
+    "version": "1.0.0",
+    "description": "Text generation skill",
+    "author": "AI System",
+    "dependencies": [
+      "core.ai.models"
+    ]
+  }
+}

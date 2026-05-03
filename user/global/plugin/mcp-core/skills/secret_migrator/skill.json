@@ -1,0 +1,28 @@
+{
+  "name": "secret_migrator",
+  "version": "1.0",
+  "description": "敏感配置加密工具 - 扫描硬编码密钥并迁移到 .env 文件",
+  "category": "security",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "migrate": "扫描并迁移密钥到 .env",
+    "scan": "仅扫描不迁移",
+    "check": "检查 .env 文件配置"
+  },
+  "rules": {
+    "env_file": "/python/.env",
+    "scan_patterns": [
+      "api[_\s-]?key",
+      "token",
+      "secret",
+      "password",
+      "credential"
+    ],
+    "auto_backup": true
+  },
+  "dependencies": [
+    "Python 3.6+",
+    "re"
+  ]
+}

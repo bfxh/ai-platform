@@ -1,0 +1,155 @@
+[2026-04-25 10:46:09] [INFO] ====== Phase 1: Clean __pycache__ ======
+[2026-04-25 10:46:10] [INFO]   DEL: \python\core\plugin_system\__pycache__
+[2026-04-25 10:46:15] [INFO]   DEL: \python\gstack_core\__pycache__
+[2026-04-25 10:46:15] [INFO]   DEL: \python\MCP_Core\__pycache__
+[2026-04-25 10:46:15] [INFO]   DEL: \python\MCP_Core\skills\__pycache__
+[2026-04-25 10:46:15] [INFO]   DEL: \python\MCP_Core\skills\automated_testing\__pycache__
+[2026-04-25 10:46:15] [INFO]   DEL: \python\MCP_Core\skills\automated_workflow\__pycache__
+[2026-04-25 10:46:15] [INFO]   DEL: \python\MCP_Core\skills\background_process_manager\__pycache__
+[2026-04-25 10:46:15] [INFO]   DEL: \python\MCP_Core\skills\claude_code\__pycache__
+[2026-04-25 10:46:15] [INFO]   DEL: \python\MCP_Core\skills\continuous_integration\__pycache__
+[2026-04-25 10:46:15] [INFO]   DEL: \python\MCP_Core\skills\dify_platform\__pycache__
+[2026-04-25 10:46:15] [INFO]   DEL: \python\MCP_Core\skills\github_api_manager\__pycache__
+[2026-04-25 10:46:16] [INFO]   DEL: \python\MCP_Core\skills\github_project_search\__pycache__
+[2026-04-25 10:46:16] [INFO]   DEL: \python\MCP_Core\skills\java_guide\__pycache__
+[2026-04-25 10:46:16] [INFO]   DEL: \python\MCP_Core\skills\mempalace\__pycache__
+[2026-04-25 10:46:16] [INFO]   DEL: \python\MCP_Core\skills\n8n_workflow\__pycache__
+[2026-04-25 10:46:16] [INFO]   DEL: \python\MCP_Core\skills\open_webui\__pycache__
+[2026-04-25 10:46:16] [INFO]   DEL: \python\MCP_Core\skills\software_location_manager\__pycache__
+[2026-04-25 10:46:16] [INFO]   DEL: \python\MCP_Core\workflow\__pycache__
+[2026-04-25 10:46:17] [INFO]   DEL: \python\user\plugins\__pycache__
+[2026-04-25 10:46:21] [INFO]   DEL: \python\MCP_Core\.pytest_cache
+[2026-04-25 10:46:22] [INFO] Cleaned 20 cache directories
+[2026-04-25 10:46:22] [INFO] ====== Phase 2: Remove outdated scripts ======
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\find_all_ext.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\find_all_ext.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\find_blockers.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\find_blockers.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\find_prompt.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\find_prompt.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\find_restriction.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\find_restriction.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\find_risk_check.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\find_risk_check.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\find_risk_cn.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\find_risk_cn.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\find_solo_config.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\find_solo_config.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\find_system_prompt.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\find_system_prompt.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\find_trae.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\find_trae.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\find_w_func.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\find_w_func.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\fix_all_blocking.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\fix_all_blocking.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\fix_all_prompts.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\fix_all_prompts.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\fix_everything_final.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\fix_everything_final.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\fix_v3_complete.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\fix_v3_complete.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\full_access_fix.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\full_access_fix.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\full_audit.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\full_audit.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\patch_cline_access.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\patch_cline_access.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\patch_cline_block.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\patch_cline_block.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\patch_tool_descriptions.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\patch_tool_descriptions.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\verify_one.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\verify_one.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\verify_patch.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\verify_patch.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\search_all_settings.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\search_all_settings.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\search_sandbox_config.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\search_sandbox_config.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\search_trae_core.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\search_trae_core.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\search_workbench.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\search_workbench.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\ultimate_diagnose.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\ultimate_diagnose.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\final_check.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\final_check.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\final_comprehensive_fix.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BC\final_comprehensive_fix.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\example_plugin.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\example_connector_plugin.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\example_enhancer_plugin.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\example_tool_plugin.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\example_plugin_system_usage.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\test_ai_3d_modeling_v3.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\test_ai_3d_v3_functional.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\test_ai_3d_v3_structure.py
+[2026-04-25 10:46:22] [INFO] Removed 64 outdated scripts
+[2026-04-25 10:46:22] [INFO] ====== Phase 3: Remove duplicate plugins ======
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\ai_architecture_server.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\claude_code_bridge.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\code_intelligence.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\code_quality.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\deep_search_workbench.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\dev_mgr.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\game_ai_workflow.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\github_accelerator.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\github_auto_commit.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\github_auto_dl.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\github_dl.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\github_project_manager.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\github_workflow.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\hallucination_detector.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\mcp_workflow.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\smart_workflow.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\unified_workflow.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\web_research.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\vs_mgr.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\vscode_ai.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\ai_3d_modeling_v3.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\ai_software.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\ai_software_gpu.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\blender_automation.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\blender_mcp.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\blender_mcp_server.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\blender_ue_pipeline.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\character_generator.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\generate_characters_workflow.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\godot_mcp.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\godot_mcp_server.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\godot_scene_assembler.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\modeling_pipeline.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\scene_generator.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\ue5_manager.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\ue_import.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\ue_mcp.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\unity_mcp.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\video_processor_gpu.py
+[2026-04-25 10:46:22] [INFO]   DEL: \python\user\plugins\vision_pro.py
+[2026-04-25 10:46:22] [INFO] Removed 40 duplicate plugins from user/plugins
+[2026-04-25 10:46:22] [INFO] Removed 0 duplicate files from storage/mcp root
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\Architecture.md
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\BugCheck.md
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\Code-Analysis.md
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\Storage-Frontend.md
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\Validation.md
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\REFACTOR_GUIDE.md
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\REFACTOR_PLAN.md
+[2026-04-25 10:46:22] [INFO]   DEL: \python\storage\mcp\mcp-config.json.backup
+[2026-04-25 10:46:22] [INFO] ====== Phase 4: Verify system ======
+[2026-04-25 10:46:22] [INFO]   [OK] \python\storage\mcp\BC (24 files)
+[2026-04-25 10:46:22] [INFO]   [OK] \python\storage\mcp\JM (27 files)
+[2026-04-25 10:46:22] [INFO]   [OK] \python\storage\mcp\Tools (54 files)
+[2026-04-25 10:46:22] [INFO]   [OK] \python\MCP_Core\skills (144 files)
+[2026-04-25 10:46:22] [INFO]   [OK] \python\user\skills (296 files)
+[2026-04-25 10:46:22] [INFO]   [OK] \python\user\plugins (68 files)
+[2026-04-25 10:46:22] [INFO]   [OK] \python\core (32 files)
+[2026-04-25 10:46:22] [INFO]   [OK] \python\resource_registry.json
+[2026-04-25 10:46:22] [INFO]   [OK] \python\storage\mcp\mcp-config.json
+[2026-04-25 10:46:22] [INFO]   [OK] \python\core\resource_manager.py
+[2026-04-25 10:46:22] [INFO]   [OK] \python\MCP_Core\skills\base.py
+[2026-04-25 10:46:22] [INFO] 
+[2026-04-25 10:46:22] [INFO] ====== DONE ======
+[2026-04-25 10:46:22] [INFO] Log: \python\update_log_20260425_104609.txt
+[2026-04-25 10:46:22] [INFO] Errors: 0

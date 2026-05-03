@@ -1,0 +1,148 @@
+# MCP 工作流配置
+# 统一软件集成调用框架配置
+
+{
+  "version": "1.0.0",
+  "name": "MCP Workflow",
+  "description": "统一软件集成调用框架",
+  
+  "optimization": {
+    "cache_enabled": true,
+    "cache_ttl": 3600,
+    "token_limit": 4000,
+    "auto_route": true,
+    "batch_operations": true,
+    "compression": true
+  },
+  
+  "paths": {
+    "mcp_dir": "/python/MCP",
+    "skills_dir": "/python/Skills",
+    "workflows_dir": "/python/Workflows/templates",
+    "config_dir": "/python/MCP_Skills",
+    "cache_dir": "/python/Temp/mcp_workflow_cache",
+    "log_dir": "/python/logs"
+  },
+  
+  "software_registry": {
+    "source": "/python/MCP/mcp-config.json",
+    "auto_discover": true,
+    "refresh_interval": 300
+  },
+  
+  "workflows": {
+    "source": "/python/Workflows/templates",
+    "hot_reload": true,
+    "auto_backup": true,
+    "enabled_workflows": [
+      "auto_categorize_download",
+      "batch_download_workflow",
+      "github_auto_update_workflow",
+      "download_and_extract_workflow",
+      "download_and_adapt_plugin",
+      "batch_download_and_adapt_plugins",
+      "auto_update_plugins",
+      "search_and_download_plugin",
+      "install_plugin_bundle"
+    ]
+  },
+  
+  "download": {
+    "enabled": true,
+    "default_dir": "D:/Downloads",
+    "github_dir": "%DEVTOOLS_DIR%/GitHub",
+    "plugin_dir": "F:/插件",
+    "max_concurrent": 3,
+    "chunk_size": 8192,
+    "timeout": 300,
+    "retry_count": 3,
+    "auto_extract": true,
+    "auto_categorize": true,
+    "use_mirror": true,
+    "mirrors": [
+      "https://mirror.ghproxy.com/",
+      "https://gh-proxy.com/",
+      "https://ghproxy.net/",
+      "https://github.moeyy.xyz/"
+    ],
+    "categories": {
+      "software": {
+        "extensions": [".exe", ".msi", ".dmg", ".pkg", ".deb", ".rpm", ".appimage"],
+        "path": "D:/Downloads/Software"
+      },
+      "game": {
+        "extensions": [".zip", ".rar", ".7z", ".iso", ".bin"],
+        "keywords": ["game", "patch", "mod", "dlc"],
+        "path": "D:/Downloads/Games"
+      },
+      "video": {
+        "extensions": [".mp4", ".avi", ".mkv", ".mov", ".wmv", ".flv", ".webm"],
+        "path": "D:/Downloads/Media/Video"
+      },
+      "audio": {
+        "extensions": [".mp3", ".flac", ".wav", ".aac", ".ogg", ".m4a", ".wma"],
+        "path": "D:/Downloads/Media/Audio"
+      },
+      "image": {
+        "extensions": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp", ".svg", ".ico"],
+        "path": "D:/Downloads/Media/Images"
+      },
+      "document": {
+        "extensions": [".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".txt", ".md", ".epub"],
+        "path": "D:/Downloads/Documents"
+      },
+      "archive": {
+        "extensions": [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz"],
+        "path": "D:/Downloads/Archives"
+      },
+      "temp": {
+        "extensions": [],
+        "path": "D:/Downloads/Temp"
+      }
+    }
+  },
+  
+  "plugin": {
+    "enabled": true,
+    "plugin_dir": "F:/插件",
+    "target_base": "%SOFTWARE_DIR%/KF/JM",
+    "backup_dir": "%SOFTWARE_DIR%/KF/JM/Backups",
+    "platforms": {
+      "godot": {
+        "addons_dir": "addons",
+        "config_file": "plugin.cfg"
+      },
+      "blender": {
+        "addons_dir": "scripts/addons",
+        "config_file": "__init__.py"
+      },
+      "ue5": {
+        "addons_dir": "Plugins",
+        "config_file": ".uplugin"
+      }
+    },
+    "auto_backup": true,
+    "auto_config": true
+  },
+  
+  "github": {
+    "auto_commit_message": "Auto commit at {timestamp}",
+    "default_branch": "main",
+    "create_readme": true,
+    "create_gitignore": true,
+    "auto_detect_language": true
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "max_size": "10MB",
+    "max_files": 5,
+    "format": "%(asctime)s [%(name)s] %(levelname)s: %(message)s"
+  },
+  
+  "security": {
+    "token_encryption": false,
+    "allowed_paths": ["/python", "%DEVTOOLS_DIR%", "D:/Projects", "D:/Downloads"],
+    "blocked_commands": ["rm -rf", "del /f /s", "format"]
+  }
+}

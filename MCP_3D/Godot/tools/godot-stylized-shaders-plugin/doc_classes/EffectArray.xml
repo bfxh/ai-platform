@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="EffectArray" inherits="Resource" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Helper class that stores an array of the post-process effects.
+	</brief_description>
+	<description>
+		Helper class that stores an array of the [b]BaseShader[/b]-derived post-process effects, used both in-game and in the editor UI.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="add_effect">
+			<return type="void"/>
+			<param index="0" name="effect" type="Ref<BaseShader>"/>
+			<description>
+				Function that can be called to add a [b]BaseShader[/b]-derived class to the [b]EffectArray[/b].
+			</description>
+		</method>
+			<method name="remove_effect">
+			<return type="void"/>
+			<param index="0" name="effect" type="Ref<BaseShader>"/>
+			<description>
+				Function that can be called to remove a [b]BaseShader[/b]-derived class from the [b]EffectArray[/b].
+			</description>
+		</method>
+			<method name="remove_effect">
+			<return type="void"/>
+			<param index="0" name="index" type="int"/>
+			<description>
+				Function that can be called to remove a [b]BaseShader[/b]-derived class from the [b]EffectArray[/b], but by indexing into the array.
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="effects" type="BaseShader[]" setter="set_effects" getter="get_effects" default="[]">
+			An array of type [b]BaseShader[/b], which may include derived classes from [b]BaseShader[/b]. This can be used both in-game but also for the GodotStylizedShadersPlugin editor UI. 
+		</member>
+	</members>
+</class>

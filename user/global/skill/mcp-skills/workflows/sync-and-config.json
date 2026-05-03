@@ -1,0 +1,86 @@
+{
+  "name": "同步与配置",
+  "version": "1.0",
+  "description": "传输文件后自动配置目标系统",
+  "steps": [
+    {
+      "id": 1,
+      "name": "扫描网络设备",
+      "command": "python scan_network.py",
+      "target": "local"
+    },
+    {
+      "id": 2,
+      "name": "配置双网卡",
+      "command": "python configure_dual_network.py",
+      "depends_on": [1]
+    },
+    {
+      "id": 3,
+      "name": "传输 /python",
+      "command": "python high_speed_transfer_v2.py",
+      "depends_on": [2]
+    },
+    {
+      "id": 4,
+      "name": "配置目标电脑防火墙",
+      "command": "python configure_target.py --step firewall",
+      "target": "remote",
+      "depends_on": [3]
+    },
+    {
+      "id": 5,
+      "name": "配置目标电脑共享",
+      "command": "python configure_target.py --step shares",
+      "target": "remote",
+      "depends_on": [4]
+    },
+    {
+      "id": 6,
+      "name": "安装 EXo (目标电脑)",
+      "command": "install-exo.bat",
+      "target": "remote",
+      "depends_on": [5],
+      "timeout": 600
+    },
+    {
+      "id": 7,
+      "name": "配置 EXo 集群",
+      "command": "python configure_target.py --step exo",
+      "target": "remote",
+      "depends_on": [6]
+    },
+    {
+      "id": 8,
+      "name": "启动 EXo 节点 (双方)",
+      "command": "start-cluster.bat",
+      "target": "both",
+      "depends_on": [7]
+    },
+    {
+      "id": 9,
+      "name": "验证集群状态",
+      "command": "python verify_cluster.py",
+      "depends_on": [8]
+    },
+    {
+      "id": 10,
+      "name": "发送完成通知",
+      "command": "python send_notification.py --type config_complete",
+      "target": "both",
+      "depends_on": [9]
+    }
+  ],
+  "config": {
+    "source": {
+      "name": "Huawei_PC",
+      "ip_wired": "192.168.2.3",
+      "ip_wireless": "192.168.1.3"
+    },
+    "target": {
+      "name": "PC_Node2",
+      "ip_wired": "192.168.2.10",
+      "ip_wireless": "192.168.1.10"
+    }
+  }
+}

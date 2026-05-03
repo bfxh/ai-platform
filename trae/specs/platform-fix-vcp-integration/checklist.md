@@ -1,0 +1,13 @@
+- [x] scanner.py 环境变量展开：os.path.expandvars() 已添加，Ollama 路径能被正确检测
+- [x] Python 版本统一：AGENTS.md/plugin.toml/INDEX.md 均引用 Python 3.12
+- [x] health_check.bat 修复：GStackCore 导入不再报 ImportError
+- [x] user/global/INDEX.md 同步：每个条目对应的目录确实存在
+- [x] mcp-config.json 路径修复：所有路径指向实际存在的文件
+- [x] 插件注册表优先级：77 个插件按类别分配了非零优先级
+- [x] GSTACK 命令路由：gstack status/review/check/fix/pipeline/skill-doctor 可执行
+- [x] VCPToolBox 进程守护：杀掉进程后 30 秒内自动重启
+- [x] Bun 在 PATH 中：新 CMD 窗口 bun --version 正常输出
+- [x] AGENTS.md 更新：包含 VCPToolBox 桥接架构和 Claude Code 集成说明
+- [x] 删除保护规则：.trae/user_rules.md 中删除保护规则存在且完整
+- [x] VCPToolBox 管理面板：http://127.0.0.1:6006/AdminPanel/ 可正常访问
+- [x] 端到端验证：Claude Code → VCPToolBox(6005) → Ollama(11434) API 调用成功

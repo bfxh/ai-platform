@@ -1,0 +1,124 @@
+{
+  "software": {
+    "blender": {
+      "display_name": "Blender",
+      "current_version": "5.1.0",
+      "latest_version": "5.1.0",
+      "upgrade_source": "github",
+      "source_url": "https://github.com/blender/blender",
+      "install_path": "%SOFTWARE_DIR%\\KF\\JM\\blender",
+      "category": "game_engine",
+      "auto_upgrade": false,
+      "last_check": "2026-04-14T10:30:00",
+      "upgrade_status": "error"
+    },
+    "godot": {
+      "display_name": "Godot Engine",
+      "current_version": "4.6.1",
+      "latest_version": "4.6.1",
+      "upgrade_source": "github",
+      "source_url": "https://github.com/godotengine/godot",
+      "install_path": "%SOFTWARE_DIR%\\KF\\JM",
+      "category": "game_engine",
+      "auto_upgrade": true,
+      "last_check": "2026-04-14T10:45:00",
+      "upgrade_status": "latest"
+    },
+    "ollama": {
+      "display_name": "Ollama",
+      "current_version": "0.1.40",
+      "latest_version": "",
+      "upgrade_source": "github",
+      "source_url": "https://github.com/ollama/ollama",
+      "install_path": "C:\\Users\\Default\\AppData\\Local\\Programs\\Ollama",
+      "category": "ai_tool",
+      "auto_upgrade": true,
+      "last_check": null,
+      "upgrade_status": "unknown"
+    },
+    "obs-studio": {
+      "display_name": "OBS Studio",
+      "current_version": "30.1.0",
+      "latest_version": "",
+      "upgrade_source": "github",
+      "source_url": "https://github.com/obsproject/obs-studio",
+      "install_path": "D:\\Program Files\\obs-studio",
+      "category": "media",
+      "auto_upgrade": false,
+      "last_check": null,
+      "upgrade_status": "unknown"
+    },
+    "7zip": {
+      "display_name": "7-Zip",
+      "current_version": "24.07",
+      "latest_version": "",
+      "upgrade_source": "github",
+      "source_url": "https://github.com/jinfeihan57/7zip",
+      "install_path": "C:\\Program Files\\7-Zip",
+      "category": "system",
+      "auto_upgrade": false,
+      "last_check": null,
+      "upgrade_status": "unknown"
+    },
+    "powertoys": {
+      "display_name": "PowerToys",
+      "current_version": "0.76.0",
+      "latest_version": "",
+      "upgrade_source": "github",
+      "source_url": "https://github.com/microsoft/PowerToys",
+      "install_path": "C:\\Program Files\\PowerToys",
+      "category": "system",
+      "auto_upgrade": true,
+      "last_check": null,
+      "upgrade_status": "unknown"
+    },
+    "everything": {
+      "display_name": "Everything",
+      "current_version": "1.4.1.1022",
+      "latest_version": "",
+      "upgrade_source": "url",
+      "source_url": "https://www.voidtools.com/Everything-1.4.1.1022.x64.zip",
+      "install_path": "D:\\Dev\\工具\\Everything",
+      "category": "system",
+      "auto_upgrade": false,
+      "last_check": null,
+      "upgrade_status": "unknown"
+    },
+    "git": {
+      "display_name": "Git",
+      "current_version": "2.45.0",
+      "latest_version": "",
+      "upgrade_source": "github",
+      "source_url": "https://github.com/git-for-windows/git",
+      "install_path": "C:\\Program Files\\Git",
+      "category": "dev_tool",
+      "auto_upgrade": false,
+      "last_check": null,
+      "upgrade_status": "unknown"
+    },
+    "vscode": {
+      "display_name": "Visual Studio Code",
+      "current_version": "1.89.0",
+      "latest_version": "",
+      "upgrade_source": "github",
+      "source_url": "https://github.com/microsoft/vscode",
+      "install_path": "C:\\Program Files\\Microsoft VS Code",
+      "category": "dev_tool",
+      "auto_upgrade": true,
+      "last_check": null,
+      "upgrade_status": "unknown"
+    },
+    "python": {
+      "display_name": "Python",
+      "current_version": "3.12.3",
+      "latest_version": "",
+      "upgrade_source": "url",
+      "source_url": "https://www.python.org/ftp/python/3.12.3/python-3.12.3-amd64.exe",
+      "install_path": "C:\\Python312",
+      "category": "dev_tool",
+      "auto_upgrade": false,
+      "last_check": null,
+      "upgrade_status": "unknown"
+    }
+  }
+}

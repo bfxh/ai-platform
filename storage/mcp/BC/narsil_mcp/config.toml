@@ -1,0 +1,13 @@
+{
+  "name": "Narsil MCP",
+  "version": "1.0.0",
+  "description": "High-performance Rust-based code analysis MCP",
+  "category": "BC",
+  "entry_point": "narsil-client.py",
+  "server_path": "narsil-server.exe",
+  "port": 8401,
+  "analysis_targets": [
+    "/python\\gstack_core",
+    "/python\\MCP_Core"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "stepfun_220531845491",
+  "date": "2026/3/11 13:15:50",
+  "title": "阶跃AI对话 [搜索]",
+  "summary": "会话220531845491，5次工具调用，使用工具: web_search",
+  "tags": [
+    "搜索"
+  ],
+  "source": "stepfun_log",
+  "session_id": "220531845491187712",
+  "user_instructions": [],
+  "results": [],
+  "score": 5,
+  "tools_used": [
+    "web_search"
+  ],
+  "files_touched": [],
+  "commands": [],
+  "first_time": "2026/3/11 13:15:50",
+  "last_time": "2026/3/11 13:19:10",
+  "task_count": 5
+}

@@ -1,0 +1,20 @@
+name: "dnspy-decompiler"
+description: ".NET 程序集反编译器 — 输出 C# 源码"
+exec_path: "D:\\rj\\KF\\FBY\\dnSpy\\dnSpy.Console.exe"
+params:
+  - name: target
+    type: string
+    required: true
+    description: "目标 .NET DLL/EXE 文件路径"
+  - name: output_dir
+    type: string
+    default: "output/dnspy_out"
+    description: "反编译输出目录"
+  - name: options
+    type: string
+    default: "--dont-ask --no-gui"
+    description: "额外选项"
+timeout: 300
+output:
+  type: "directory"
+  description: "C# 源码工程目录"

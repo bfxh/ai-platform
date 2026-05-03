@@ -1,0 +1,24 @@
+name: "jadx-decompiler"
+description: "Android APK/DEX 反编译器 — 输出 Java 源码"
+exec_path: "D:\\rj\\KF\\FBY\\jadx\\bin\\jadx.bat"
+params:
+  - name: target
+    type: string
+    required: true
+    description: "目标 APK/DEX/AAR 文件路径"
+  - name: output_dir
+    type: string
+    default: "output/jadx_out"
+    description: "反编译输出目录"
+  - name: options
+    type: string
+    default: "--deobf --show-bad-code"
+    description: "额外参数 (--deobf 反混淆, --show-bad-code 显示无法编译的代码)"
+  - name: threads
+    type: int
+    default: 4
+    description: "并行线程数"
+timeout: 600
+output:
+  type: "directory"
+  description: "包含完整 Java 源码和资源的目录"

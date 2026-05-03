@@ -1,0 +1,72 @@
+{
+  "name": "software_location_manager",
+  "version": "1.0.0",
+  "description": "软件位置管理 - 管理软件安装位置和自动扫描",
+  "author": "MCP Core Team",
+  "created": "2026-04-09",
+  "enabled": true,
+  "category": "system",
+  "tags": ["software", "management", "scanning", "system", "tools"],
+  "entry_point": "skill.py",
+  "class_name": "SoftwareLocationManager",
+  "actions": [
+    {
+      "name": "add_location",
+      "description": "添加软件位置",
+      "params": {
+        "location": {"type": "string", "required": true, "description": "软件位置路径"}
+      }
+    },
+    {
+      "name": "remove_location",
+      "description": "删除软件位置",
+      "params": {
+        "location_id": {"type": "string", "required": true, "description": "位置ID"}
+      }
+    },
+    {
+      "name": "list_locations",
+      "description": "列出所有软件位置",
+      "params": {}
+    },
+    {
+      "name": "scan_locations",
+      "description": "扫描所有位置",
+      "params": {}
+    },
+    {
+      "name": "search_software",
+      "description": "搜索软件",
+      "params": {
+        "query": {"type": "string", "required": true, "description": "软件搜索查询"}
+      }
+    },
+    {
+      "name": "list_software",
+      "description": "列出所有软件",
+      "params": {}
+    },
+    {
+      "name": "get_software_details",
+      "description": "获取软件详情",
+      "params": {
+        "software_id": {"type": "string", "required": true, "description": "软件ID"}
+      }
+    },
+    {
+      "name": "update_software",
+      "description": "更新软件列表",
+      "params": {}
+    }
+  ],
+  "features": [
+    "位置管理",
+    "软件管理",
+    "自动扫描",
+    "默认位置"
+  ],
+  "dependencies": [],
+  "output": {
+    "type": "json"
+  }
+}

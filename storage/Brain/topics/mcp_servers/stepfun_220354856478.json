@@ -1,0 +1,38 @@
+{
+  "id": "stepfun_220354856478",
+  "date": "2026/3/11 01:31:53",
+  "title": "阶跃AI对话 [IronClaw,网络,提示词,游戏]",
+  "summary": "会话220354856478，20次工具调用，使用工具: terminal_execute",
+  "tags": [
+    "IronClaw",
+    "网络",
+    "提示词",
+    "游戏",
+    "开发",
+    "MCP"
+  ],
+  "source": "stepfun_log",
+  "session_id": "220354856478142464",
+  "user_instructions": [],
+  "results": [],
+  "score": 5,
+  "tools_used": [
+    "terminal_execute"
+  ],
+  "files_touched": [
+    "D://AI//MCP//mcp_hub.py//",
+    "D://AI//MCP//02-Windows//windows_mcp_server.py//",
+    "D://AI//MCP//08-AI//ai_core_mcp_server.py//",
+    "D://AI//MCP//08-AI//ai_agent_mcp_server.py//",
+    "D://AI//MCP//08-AI//ai_workflow_mcp_server.py//",
+    "D://AI//MCP//08-AI//ai_knowledge_mcp_server.py//",
+    "D://AI//MCP//03-GameDev//godot_mcp_server.py//",
+    "D://AI//MCP//03-GameDev//unity_mcp_server.py//",
+    "D://AI//MCP//03-GameDev//unreal_mcp_server.py//",
+    "D://AI//MCP//03-GameDev//steam_mcp_server.py//"
+  ],
+  "commands": [],
+  "first_time": "2026/3/11 01:31:53",
+  "last_time": "2026/3/11 01:50:46",
+  "task_count": 20
+}

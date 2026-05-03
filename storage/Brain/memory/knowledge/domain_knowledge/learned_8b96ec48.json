@@ -1,0 +1,14 @@
+{
+  "id": "learned_8b96ec48",
+  "title": "Python数据导出模式",
+  "content": "使用csv.DictWriter和json.dump统一处理数据导出",
+  "tags": [
+    "python",
+    "export",
+    "pattern"
+  ],
+  "importance": 5,
+  "created_at": "2026-04-27T13:07:01.480165",
+  "updated_at": "2026-04-27T13:07:01.480165",
+  "access_count": 0
+}

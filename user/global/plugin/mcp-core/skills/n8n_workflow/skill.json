@@ -1,0 +1,47 @@
+{
+  "name": "n8n_workflow",
+  "version": "1.0.0",
+  "description": "n8n 工作流自动化平台 - 支持 400+ 集成的公平代码工作流自动化",
+  "author": "n8n-io",
+  "type": "mcp-skill",
+  "entry_point": "skill.py",
+  "actions": [
+    {
+      "name": "start_n8n",
+      "description": "启动 n8n 服务",
+      "parameters": {
+        "port": "端口号",
+        "host": "主机地址"
+      }
+    },
+    {
+      "name": "stop_n8n",
+      "description": "停止 n8n 服务"
+    },
+    {
+      "name": "create_workflow",
+      "description": "创建工作流",
+      "parameters": {
+        "name": "工作流名称",
+        "description": "工作流描述"
+      }
+    },
+    {
+      "name": "execute_workflow",
+      "description": "执行工作流",
+      "parameters": {
+        "workflow_id": "工作流ID"
+      }
+    },
+    {
+      "name": "list_workflows",
+      "description": "列出所有工作流"
+    }
+  ],
+  "dependencies": [],
+  "env_vars": {
+    "N8N_HOST": "localhost",
+    "N8N_PORT": "5678",
+    "N8N_PATH": "/python/downloads/all_skills/n8n"
+  }
+}

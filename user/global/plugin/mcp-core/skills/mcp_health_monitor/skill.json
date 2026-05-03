@@ -1,0 +1,23 @@
+{
+  "name": "mcp_health_monitor",
+  "version": "1.0",
+  "description": "MCP 健康度监控看板 - 检测所有 MCP 服务器的运行状态",
+  "category": "system",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "check": "执行健康度检查",
+    "report": "生成健康度报告",
+    "summary": "生成摘要报告"
+  },
+  "rules": {
+    "auto_generate_report": true,
+    "report_path": "/python/reports",
+    "timeout_seconds": 10
+  },
+  "dependencies": [
+    "Python 3.6+",
+    "requests",
+    "/python/MCP/mcp-config.json"
+  ]
+}

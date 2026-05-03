@@ -1,0 +1,21 @@
+- [x] core/目录结构创建完成，__init__.py可导入
+- [x] config.yaml存在且包含blender_path/godot_path/ue5_path/output_dir配置
+- [x] core/config.py 能加载config.yaml，缺失时自动扫描生成
+- [x] core/scanner.py 的 analyze_project() 功能与原版一致
+- [x] core/godot_builder.py 包含GodotSceneBuilder/GodotMaterialBuilder/GodotProjectInitializer
+- [x] core/blender_bridge.py 包含Blender调用逻辑，支持模板加载
+- [x] core/converters.py 包含7个转换器，统一继承BaseConverter
+- [x] core/cli.py 包含CLI入口和MCP服务注册
+- [x] bake_templates/default_cyan_metallic.py 存在且可被blender_bridge加载
+- [x] bake_templates/warm_metallic.py 存在且可被blender_bridge加载
+- [x] bake_templates/preserve_original.py 存在且可被blender_bridge加载
+- [x] conversion_matrix.yaml 存在且包含1610条路径数据
+- [x] engine_converter_extended.py 从yaml加载矩阵而非硬编码
+- [x] core/state.py 支持保存/恢复/清理转换状态
+- [x] drag_convert.py 使用core模块API，不再内嵌BLENDER_SCRIPT
+- [x] engine_converter_ui.py 使用core模块API
+- [x] 拖拽转换.bat 和 启动转换器.bat 更新为新入口
+- [x] OBJ拖入测试通过（无材质模型→蓝青金属GLB→Godot场景）
+- [x] STL拖入测试通过（CAD模型→GLB→Godot场景）
+- [x] FBX拖入测试通过（有材质模型→保留原始贴图→Godot场景）
+- [x] 删除config.yaml后重新扫描测试通过

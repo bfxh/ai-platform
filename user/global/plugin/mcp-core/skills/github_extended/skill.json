@@ -1,0 +1,95 @@
+{
+  "name": "github_extended",
+  "version": "1.0.0",
+  "description": "GitHub扩展功能系统 - 速率限制管理、批量操作、数据处理、分析工具",
+  "author": "MCP Core Team",
+  "created": "2026-04-18",
+  "enabled": true,
+  "category": "development",
+  "tags": ["github", "api", "extended", "rate-limit", "batch", "data-processing", "analysis", "visualization"],
+  "entry_point": "skill.py",
+  "class_name": "GitHubExtended",
+  "actions": [
+    {
+      "name": "rate_limit_management",
+      "description": "速率限制管理",
+      "params": {
+        "action": {"type": "string", "required": false, "default": "check", "description": "操作类型 (check, wait, optimize)"},
+        "wait_time": {"type": "number", "required": false, "default": 60, "description": "等待时间（秒）"}
+      }
+    },
+    {
+      "name": "batch_operation",
+      "description": "批量操作",
+      "params": {
+        "operations": {"type": "array", "required": true, "description": "操作列表"},
+        "concurrency": {"type": "number", "required": false, "default": 5, "description": "并发数"},
+        "rate_limit_safe": {"type": "boolean", "required": false, "default": true, "description": "速率限制安全模式"}
+      }
+    },
+    {
+      "name": "data_processing",
+      "description": "数据处理",
+      "params": {
+        "action": {"type": "string", "required": false, "default": "transform", "description": "处理类型 (transform, filter, aggregate, normalize, enrich)"},
+        "data": {"type": "object", "required": false, "description": "输入数据"},
+        "input_file": {"type": "string", "required": false, "description": "输入文件路径"},
+        "output_file": {"type": "string", "required": false, "description": "输出文件路径"},
+        "transform_rules": {"type": "object", "required": false, "description": "转换规则"},
+        "filter_rules": {"type": "object", "required": false, "description": "过滤规则"},
+        "aggregate_rules": {"type": "object", "required": false, "description": "聚合规则"},
+        "enrichment": {"type": "object", "required": false, "description": "丰富数据"}
+      }
+    },
+    {
+      "name": "analysis",
+      "description": "分析工具",
+      "params": {
+        "analysis_type": {"type": "string", "required": false, "default": "api_usage", "description": "分析类型 (api_usage, performance, error_analysis, trends)"},
+        "data": {"type": "object", "required": false, "description": "输入数据"},
+        "input_file": {"type": "string", "required": false, "description": "输入文件路径"}
+      }
+    },
+    {
+      "name": "intelligent_scheduling",
+      "description": "智能调度",
+      "params": {
+        "operations": {"type": "array", "required": true, "description": "操作列表"},
+        "strategy": {"type": "string", "required": false, "default": "rate_limit_aware", "description": "调度策略 (rate_limit_aware, priority, batch_size)"}
+      }
+    },
+    {
+      "name": "error_handling",
+      "description": "错误处理",
+      "params": {
+        "error_type": {"type": "string", "required": true, "description": "错误类型 (rate_limit, authentication, network)"},
+        "error_data": {"type": "object", "required": false, "description": "错误数据"}
+      }
+    },
+    {
+      "name": "data_visualization",
+      "description": "数据可视化",
+      "params": {
+        "visualization_type": {"type": "string", "required": false, "default": "api_usage", "description": "可视化类型 (api_usage, performance, error_analysis, trends)"},
+        "data": {"type": "object", "required": false, "description": "输入数据"},
+        "input_file": {"type": "string", "required": false, "description": "输入文件路径"},
+        "output_file": {"type": "string", "required": false, "description": "输出文件路径"}
+      }
+    }
+  ],
+  "features": [
+    "速率限制管理",
+    "批量操作",
+    "数据处理",
+    "分析工具",
+    "智能调度",
+    "错误处理",
+    "数据可视化"
+  ],
+  "dependencies": [
+    "requests"
+  ],
+  "output": {
+    "type": "json"
+  }
+}

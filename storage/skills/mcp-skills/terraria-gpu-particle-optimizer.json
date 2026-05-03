@@ -1,0 +1,145 @@
+{
+  "name": "terraria-gpu-particle-optimizer",
+  "version": "2.0.0",
+  "description": "泰拉瑞亚GPU粒子系统优化技能 - 为模组添加GPU加速粒子效果",
+  "author": "AI Assistant",
+  "category": "game_modding",
+  "tags": ["terraria", "gpu", "particles", "optimization", "calamitymod"],
+  
+  "capabilities": [
+    "GPU粒子系统创建",
+    "计算着色器生成",
+    "实例化渲染优化",
+    "性能监控集成",
+    "配置系统生成"
+  ],
+  
+  "requirements": {
+    "platform": ["windows"],
+    "software": ["Visual Studio", ".NET SDK", "tModLoader"],
+    "hardware": {
+      "gpu": "DirectX 11+",
+      "vram": "2GB+"
+    }
+  },
+  
+  "inputs": {
+    "mod_name": {
+      "type": "string",
+      "required": true,
+      "description": "目标模组名称",
+      "default": "CalamityMod"
+    },
+    "mod_path": {
+      "type": "string",
+      "required": true,
+      "description": "模组源码路径",
+      "default": "%DEV_DIR%\\泰拉瑞亚\\模组源码\\CalamityMod"
+    },
+    "max_particles": {
+      "type": "integer",
+      "required": false,
+      "description": "最大粒子数量",
+      "default": 10000,
+      "min": 1000,
+      "max": 100000
+    },
+    "enable_compute_shaders": {
+      "type": "boolean",
+      "required": false,
+      "description": "启用计算着色器",
+      "default": true
+    },
+    "enable_instancing": {
+      "type": "boolean",
+      "required": false,
+      "description": "启用实例化渲染",
+      "default": true
+    }
+  },
+  
+  "outputs": {
+    "files_created": {
+      "type": "array",
+      "description": "创建的文件列表"
+    },
+    "performance_improvement": {
+      "type": "object",
+      "description": "性能提升数据"
+    },
+    "installation_guide": {
+      "type": "string",
+      "description": "安装指南路径"
+    }
+  },
+  
+  "workflow": {
+    "steps": [
+      {
+        "id": "analyze_mod",
+        "name": "分析模组结构",
+        "description": "分析目标模组的粒子系统结构",
+        "action": "analyze_particle_system"
+      },
+      {
+        "id": "generate_shaders",
+        "name": "生成GPU着色器",
+        "description": "生成计算着色器和渲染着色器",
+        "action": "generate_gpu_shaders"
+      },
+      {
+        "id": "create_particle_system",
+        "name": "创建粒子系统",
+        "description": "创建GPU粒子系统核心文件",
+        "action": "create_gpu_particle_system"
+      },
+      {
+        "id": "add_config",
+        "name": "添加配置系统",
+        "description": "添加GPU粒子配置和监控系统",
+        "action": "add_config_system"
+      },
+      {
+        "id": "generate_docs",
+        "name": "生成文档",
+        "description": "生成优化指南和安装说明",
+        "action": "generate_documentation"
+      }
+    ]
+  },
+  
+  "commands": {
+    "optimize": {
+      "description": "优化模组粒子系统",
+      "usage": "terraria-gpu-particle-optimizer optimize --mod_name CalamityMod --max_particles 10000"
+    },
+    "benchmark": {
+      "description": "运行性能基准测试",
+      "usage": "terraria-gpu-particle-optimizer benchmark --mod_name CalamityMod"
+    },
+    "install": {
+      "description": "安装GPU粒子系统到模组",
+      "usage": "terraria-gpu-particle-optimizer install --mod_path %DEV_DIR%\\泰拉瑞亚\\模组源码\\CalamityMod"
+    }
+  },
+  
+  "examples": [
+    {
+      "name": "优化CalamityMod粒子系统",
+      "command": "terraria-gpu-particle-optimizer optimize --mod_name CalamityMod --max_particles 50000",
+      "result": "GPU粒子系统已安装，性能提升10-50倍"
+    },
+    {
+      "name": "为ThoriumMod添加GPU粒子",
+      "command": "terraria-gpu-particle-optimizer optimize --mod_name ThoriumMod --enable_compute_shaders true",
+      "result": "GPU粒子系统已集成，兼容层已配置"
+    }
+  ],
+  
+  "metadata": {
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "license": "MIT",
+    "repository": "local"
+  }
+}

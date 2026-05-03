@@ -1,0 +1,34 @@
+name: explore
+entry: explore.py
+description: 玩家视角操控角色（移动、跳跃、攻击、交互、视角旋转、完整探索）
+timeout: 120
+permissions:
+  delete: false
+  network: false
+  filesystem: ["/python/projects/game_test/screenshots"]
+actions:
+  - name: move
+    params: [direction, duration]
+    description: "移动 (forward/backward/left/right)"
+  - name: jump
+    params: [count]
+    description: "跳跃"
+  - name: attack
+    params: []
+    description: "攻击"
+  - name: interact
+    params: [key]
+    description: "交互 (默认E键)"
+  - name: look_around
+    params: []
+    description: "视角旋转"
+  - name: full_explore
+    params: []
+    description: "完整探索流程"
+  - name: record_result
+    params: []
+    description: "记录结果"
+tags:
+  - game
+  - test
+  - automation

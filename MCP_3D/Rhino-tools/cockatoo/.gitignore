@@ -1,0 +1,16 @@
+.vscode/
+
+__pycache__/
+
+/dist/
+
+/Examples/*__DEV.gh
+/Examples/00_archive/*__DEV.gh
+
+/UserObjects_deprecated/
+/usrobj_src_deprecated/
+
+/modules/cockatoo/_backup.py
+/modules/cockatoo/_sketches_reference.py
+
+/gource.txt

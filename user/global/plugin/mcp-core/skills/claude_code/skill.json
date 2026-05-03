@@ -1,0 +1,44 @@
+{
+  "name": "claude_code",
+  "version": "1.0.0",
+  "description": "Everything Claude Code - Claude Code 性能优化系统和最佳实践",
+  "author": "affaan-m",
+  "type": "mcp-skill",
+  "entry_point": "skill.py",
+  "actions": [
+    {
+      "name": "optimize_code",
+      "description": "优化代码性能",
+      "parameters": {
+        "code": "代码内容",
+        "language": "编程语言"
+      }
+    },
+    {
+      "name": "get_best_practices",
+      "description": "获取最佳实践",
+      "parameters": {
+        "language": "编程语言"
+      }
+    },
+    {
+      "name": "generate_code",
+      "description": "生成代码",
+      "parameters": {
+        "prompt": "提示词",
+        "language": "编程语言"
+      }
+    },
+    {
+      "name": "analyze_code",
+      "description": "分析代码",
+      "parameters": {
+        "code": "代码内容"
+      }
+    }
+  ],
+  "dependencies": [],
+  "env_vars": {
+    "CLAUDE_CODE_PATH": "/python/downloads/all_skills/everything-claude-code"
+  }
+}

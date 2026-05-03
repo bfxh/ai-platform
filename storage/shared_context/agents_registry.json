@@ -1,0 +1,18 @@
+{
+  "format_version": "1.0",
+  "agents": {
+    "Qoder": {
+      "agent_id": "Qoder",
+      "agent_type": "qoder",
+      "pid": 6056,
+      "session_id": "",
+      "working_directory": "/python",
+      "status": "active",
+      "capabilities": [],
+      "current_task": "",
+      "current_task_id": "",
+      "heartbeat_at": "2026-04-27T21:06:15.962058",
+      "registered_at": "2026-04-27T21:06:15.962058"
+    }
+  }
+}

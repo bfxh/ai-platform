@@ -1,0 +1,21 @@
+{
+  "name": "gstack_remember",
+  "version": "1.0",
+  "description": "GSTACK 记忆命令 - 将会话信息写入 user_rules.md 供 AI 隐式加载",
+  "category": "system",
+  "author": "GSTACK",
+  "created": "2026-04-19",
+  "commands": {
+    "remember": "添加会话备忘录",
+    "list": "列出会话备忘录",
+    "clear": "清除会话备忘录"
+  },
+  "rules": {
+    "rules_file": "/python/.trae/user_rules.md",
+    "auto_prepend": true,
+    "max_reminders": 10
+  },
+  "dependencies": [
+    "Python 3.6+"
+  ]
+}

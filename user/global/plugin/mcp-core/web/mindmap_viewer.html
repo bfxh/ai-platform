@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小龙虾思维导图 - IronClaw Observer</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DouyinSansBold', 'Montserrat', sans-serif;
+    background: #0a0e1a;
+    color: #e2e8f0;
+    overflow: hidden;
+    height: 100vh;
+  }
+  #canvas {
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+  }
+  #canvas:active { cursor: grabbing; }
+  .node {
+    position: absolute;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s;
+    white-space: nowrap;
+    user-select: none;
+  }
+  .node:hover { transform: scale(1.05) translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.5); z-index: 100; }
+  .node-type-skill { background: linear-gradient(135deg, #667eea22, #764ba222); border: 1px solid #667eea66; color: #a5b4fc; }
+  .node-type-workflow { background: linear-gradient(135deg, #f093fb22, #f5576c22); border: 1px solid #f093fb66; color: #fda085; }
+  .node-type-dimension { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #94a3b8; font-size: 12px; }
+  .node-status-pass { border-color: #10b981 !important; }
+  .node-status-warn { border-color: #f59e0b !important; }
+  .node-status-fail { border-color: #ef4444 !important; }
+  .node-score {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    background: rgba(255,255,255,0.1);
+  }
+  .edge { position: absolute; pointer-events: none; }
+  #sidebar {
+    position: fixed; top: 20px; right: 20px; width: 320px;
+    background: rgba(15,23,42,0.95);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    backdrop-filter: blur(20px);
+  }
+  #sidebar h2 { font-size: 16px; margin-bottom: 12px; color: #f1f5f9; }
+  #sidebar h3 { font-size: 13px; color: #64748b; margin: 12px 0 6px; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+  .stat-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+  }
+  .stat-val { font-size: 24px; font-weight: 700; }
+  .stat-lbl { font-size: 11px; color: #64748b; margin-top: 4px; }
+  .pass-color { color: #10b981; }
+  .warn-color { color: #f59e0b; }
+  .fail-color { color: #ef4444; }
+  .detail-item {
+    padding: 8px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+  .detail-item strong { color: #a5b4fc; }
+  #header {
+    position: fixed; top: 20px; left: 20px;
+    background: rgba(15,23,42,0.95);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 12px 20px;
+    backdrop-filter: blur(20px);
+  }
+  #header h1 { font-size: 18px; color: #f1f5f9; }
+  #header p { font-size: 12px; color: #64748b; margin-top: 4px; }
+  #loading {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    color: #667eea; font-size: 20px; text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div id="header">
+  <h1>IronClaw 思维导图</h1>
+  <p>小龙虾行为追踪 &amp; Skill审查可视化</p>
+</div>
+
+<div id="loading">加载中...</div>
+
+<svg id="edges-svg" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;">
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="rgba(255,255,255,0.2)"/>
+    </marker>
+  </defs>
+</svg>
+<canvas id="canvas" style="display:none;"></canvas>
+<div id="nodes-container" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;"></div>
+
+<div id="sidebar" style="display:none;">
+  <h2>审查统计</h2>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-val pass-color" id="stat-pass">-</div><div class="stat-lbl">通过</div></div>
+    <div class="stat-card"><div class="stat-val warn-color" id="stat-warn">-</div><div class="stat-lbl">警告</div></div>
+    <div class="stat-card"><div class="stat-val fail-color" id="stat-fail">-</div><div class="stat-lbl">失败</div></div>
+  </div>
+  <h3>最近行为</h3>
+  <div id="recent-actions"></div>
+  <h3>工作流状态</h3>
+  <div id="workflow-status"></div>
+</div>
+
+<script>
+// ─── 配色方案 ─────────────────────────────────────
+const COLORS = {
+  skill:    { bg: '#667eea', light: '#818cf8' },
+  workflow: { bg: '#f093fb', light: '#fda085' },
+  step:     { bg: '#10b981', light: '#34d399' },
+  thinking: { bg: '#38bdf8', light: '#7dd3fc' },
+  claim:    { bg: '#f59e0b', light: '#fbbf24' },
+  pass:     '#10b981',
+  warn:     '#f59e0b',
+  fail:     '#ef4444',
+};
+
+// ─── 全局状态 ─────────────────────────────────────
+let panX = 0, panY = 0, scale = 1;
+let dragStart = null, isPanning = false;
+let nodeElements = [];
+let allNodes = [];
+let edges = [];
+
+// ─── 布局算法（简化树状） ──────────────────────────
+function layoutTree(nodes, startX, startY, levelGapX = 200, levelGapY = 60) {
+  if (!nodes || nodes.length === 0) return;
+  const count = nodes.length;
+  const totalH = (count - 1) * levelGapY;
+  nodes.forEach((node, i) => {
+    node.x = startX;
+    node.y = startY - totalH / 2 + i * levelGapY;
+    if (node.children && node.children.length > 0) {
+      layoutTree(node.children, startX + levelGapX, node.y, levelGapX, levelGapY);
+    }
+  });
+}
+
+function flattenNodes(node, arr = [], parent = null) {
+  arr.push({ ...node, parent });
+  if (node.children) {
+    node.children.forEach(c => flattenNodes(c, arr, node));
+  }
+  return arr;
+}
+
+function collectEdges(nodes, arr = []) {
+  function walk(n) {
+    (n.children || []).forEach(c => {
+      arr.push({ from: n, to: c });
+      walk(c);
+    });
+  }
+  walk(nodes);
+  return arr;
+}
+
+// ─── 绘制 ─────────────────────────────────────────
+function drawMindMap(mindmapData) {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('sidebar').style.display = 'block';
+
+  const root = mindmapData.root || mindmapData;
+  if (!root) {
+    // 全局视图
+    const nodes = mindmapData.nodes || [];
+    // 环形布局
+    const cx = window.innerWidth / 2 - 160;
+    const cy = window.innerHeight / 2;
+    const r = Math.min(400, nodes.length * 40);
+    nodes.forEach((n, i) => {
+      const angle = (2 * Math.PI * i) / nodes.length - Math.PI / 2;
+      n.x = cx + r * Math.cos(angle);
+      n.y = cy + r * Math.sin(angle);
+    });
+    allNodes = nodes;
+    edges = [];
+  } else {
+    layoutTree([root], 200, window.innerHeight / 2, 220, 55);
+    allNodes = flattenNodes(root);
+    edges = collectEdges(root);
+  }
+
+  // 更新统计
+  const stats = mindmapData.stats || {};
+  document.getElementById('stat-pass').textContent = stats.pass || 0;
+  document.getElementById('stat-warn').textContent = stats.warn || 0;
+  document.getElementById('stat-fail').textContent = stats.fail || 0;
+
+  // 绘制边
+  drawEdges();
+
+  // 绘制节点
+  drawNodes();
+}
+
+function drawEdges() {
+  const svg = document.getElementById('edges-svg');
+  svg.innerHTML = `<defs><marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(255,255,255,0.15)"/></marker></defs>`;
+
+  edges.forEach(e => {
+    const x1 = e.from.x + panX, y1 = e.from.y + panY;
+    const x2 = e.to.x + panX, y2 = e.to.y + panY;
+    const mx = (x1 + x2) / 2;
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', `M${x1},${y1} Q${mx},${y1} ${x2},${y2}`);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', 'rgba(255,255,255,0.15)');
+    path.setAttribute('stroke-width', '1.5');
+    path.setAttribute('marker-end', 'url(#arrowhead)');
+    svg.appendChild(path);
+  });
+}
+
+function drawNodes() {
+  const container = document.getElementById('nodes-container');
+  container.innerHTML = '';
+
+  allNodes.forEach(n => {
+    const el = document.createElement('div');
+    el.className = `node node-type-${n.type || 'skill'}`;
+
+    // 状态颜色
+    if (n.status === 'pass') el.classList.add('node-status-pass');
+    else if (n.status === 'warn') el.classList.add('node-status-warn');
+    else if (n.status === 'fail') el.classList.add('node-status-fail');
+
+    // 标签
+    const label = document.createElement('span');
+    label.textContent = n.label || n.id || '';
+    el.appendChild(label);
+
+    // 分数
+    if (n.score !== undefined) {
+      const score = document.createElement('span');
+      score.className = 'node-score';
+      score.textContent = n.score;
+      el.appendChild(score);
+    }
+
+    // 定位
+    const nx = n.x + panX;
+    const ny = n.y + panY;
+    el.style.left = nx + 'px';
+    el.style.top = ny + 'px';
+    el.style.transform = 'translate(-50%,-50%)';
+
+    // 点击事件
+    el.addEventListener('click', () => showDetail(n));
+
+    container.appendChild(el);
+    nodeElements.push(el);
+  });
+}
+
+function showDetail(n) {
+  const recent = document.getElementById('recent-actions');
+  recent.innerHTML = `
+    <div class="detail-item">
+      <strong>${n.label || n.id}</strong><br>
+      类型: ${n.type || 'unknown'}<br>
+      状态: ${n.status || '-'}<br>
+      分数: ${n.score !== undefined ? n.score : '-'}<br>
+      描述: ${(n.metadata && n.metadata.description) || '-'}<br>
+      代码行: ${(n.metadata && n.metadata.lines) || '-'}
+    </div>
+  `;
+}
+
+// ─── 平移缩放 ─────────────────────────────────────
+document.getElementById('canvas').addEventListener('mousedown', e => {
+  if (e.button === 0) {
+    isPanning = true;
+    dragStart = { x: e.clientX - panX, y: e.clientY - panY };
+  }
+});
+window.addEventListener('mousemove', e => {
+  if (isPanning && dragStart) {
+    panX = e.clientX - dragStart.x;
+    panY = e.clientY - dragStart.y;
+    drawEdges();
+    drawNodes();
+  }
+});
+window.addEventListener('mouseup', () => {
+  isPanning = false;
+  dragStart = null;
+});
+window.addEventListener('wheel', e => {
+  e.preventDefault();
+  const factor = e.deltaY < 0 ? 1.1 : 0.9;
+  scale = Math.max(0.3, Math.min(3, scale * factor));
+  panX = panX * factor + e.clientX * (1 - factor);
+  panY = panY * factor + e.clientY * (1 - factor);
+  drawEdges();
+  drawNodes();
+});
+
+// ─── 加载数据 ─────────────────────────────────────
+async function loadData() {
+  try {
+    const resp = await fetch('/api/observer/mindmap');
+    if (resp.ok) {
+      const data = await resp.json();
+      drawMindMap(data);
+      return;
+    }
+  } catch (_) {}
+
+  // Fallback: 演示数据
+  drawMindMap({
+    title: 'IronClaw 行为追踪演示',
+    root: {
+      id: 'root', label: 'D:\\AI 工作流', type: 'skill', status: 'pass',
+      score: 100,
+      children: [
+        { id: 's1', label: 'MCP Core 启动', type: 'step', status: 'pass', score: 100, children: [] },
+        { id: 's2', label: 'Skill 加载', type: 'step', status: 'pass', score: 95, children: [] },
+        { id: 's3', label: '知识库查询', type: 'step', status: 'warn', score: 72, children: [] },
+        { id: 's4', label: '行为追踪', type: 'step', status: 'pass', score: 100, children: [] },
+      ]
+    },
+    stats: { pass: 3, warn: 1, fail: 0 }
+  });
+}
+
+loadData();
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+{"name": "FragmentWeaponWorkflow",
+ "version": "1.0.0",
+ "description": "碎片武器系统工作流",
+ "workflows": {
+    "start_and_test_game": {
+      "description": "启动游戏并测试系统",
+      "steps": [
+        {
+          "command": "start_game",
+          "parameters": {
+            "project_path": "%SOFTWARE_DIR%\\KF\\JM\\GodotProject"
+          },
+          "wait_for_completion": true
+        },
+        {
+          "command": "test_system",
+          "parameters": {},
+          "wait_for_completion": true
+        }
+      ]
+    },
+    "collect_and_craft": {
+      "description": "收集碎片并制造武器",
+      "steps": [
+        {
+          "command": "collect_fragment",
+          "parameters": {
+            "fragment_type": "common",
+            "quantity": 10
+          },
+          "wait_for_completion": true
+        },
+        {
+          "command": "collect_fragment",
+          "parameters": {
+            "fragment_type": "rare",
+            "quantity": 5
+          },
+          "wait_for_completion": true
+        },
+        {
+          "command": "craft_weapon",
+          "parameters": {
+            "weapon_type": "sword"
+          },
+          "wait_for_completion": true
+        },
+        {
+          "command": "get_inventory",
+          "parameters": {},
+          "wait_for_completion": true
+        }
+      ]
+    },
+    "full_game_cycle": {
+      "description": "完整的游戏周期",
+      "steps": [
+        {
+          "command": "start_game",
+          "parameters": {
+            "project_path": "%SOFTWARE_DIR%\\KF\\JM\\GodotProject"
+          },
+          "wait_for_completion": true
+        },
+        {
+          "command": "collect_fragment",
+          "parameters": {
+            "fragment_type": "common",
+            "quantity": 20
+          },
+          "wait_for_completion": true
+        },
+        {
+          "command": "collect_fragment",
+          "parameters": {
+            "fragment_type": "rare",
+            "quantity": 10
+          },
+          "wait_for_completion": true
+        },
+        {
+          "command": "collect_fragment",
+          "parameters": {
+            "fragment_type": "epic",
+            "quantity": 5
+          },
+          "wait_for_completion": true
+        },
+        {
+          "command": "craft_weapon",
+          "parameters": {
+            "weapon_type": "sword"
+          },
+          "wait_for_completion": true
+        },
+        {
+          "command": "craft_weapon",
+          "parameters": {
+            "weapon_type": "axe"
+          },
+          "wait_for_completion": true
+        },
+        {
+          "command": "craft_weapon",
+          "parameters": {
+            "weapon_type": "bow"
+          },
+          "wait_for_completion": true
+        },
+        {
+          "command": "get_inventory",
+          "parameters": {},
+          "wait_for_completion": true
+        },
+        {
+          "command": "stop_game",
+          "parameters": {},
+          "wait_for_completion": true
+        }
+      ]
+    }
+  }
+}
